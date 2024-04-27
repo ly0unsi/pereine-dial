@@ -3,7 +3,7 @@
 # abdellah edit
 # Copyright (C) 2024  Matt Florell <vicidial@gmail.com>    LICENSE: AGPLv2
 # anas edit
-# nassim edit
+# nassim edit merci abdel
 # Other scripts that this application depends on:
 # - vdc_db_query.php: Updates information in the database
 # - manager_send.php: Sends manager actions to the DB for execution
