@@ -1,6 +1,6 @@
 <?php
 # vicidial.php - the web-based version of the astVICIDIAL client application
-# 
+# abdellah edit
 # Copyright (C) 2024  Matt Florell <vicidial@gmail.com>    LICENSE: AGPLv2
 #
 # Other scripts that this application depends on:
