@@ -1,0 +1,4 @@
+TODAY:     Monday        2024-04-08
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent02             agent02      17  0:00:48  0:01:08  0:00:03  0:00:08  0:02:07  0:17:47  2024-04-08 00:02:29  2024-04-08 00:20:16

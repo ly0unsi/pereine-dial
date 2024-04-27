@@ -1,0 +1,40 @@
+
+Sunday    2024-03-24
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent01             agent01       2  0:00:00  0:00:00  0:00:00  0:00:00  0:00:00 20:59:26  2024-03-24 00:58:03  2024-03-24 21:57:29
+
+Monday    2024-03-25
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent02             agent02      71  0:01:36  0:10:58  0:03:45  0:00:29  0:16:48  2:31:47  2024-03-25 14:43:43  2024-03-25 17:15:30
+
+Tuesday   2024-03-26
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent01             agent01       3  0:00:07  0:00:50  0:00:01  0:00:08  0:01:06  0:11:44  2024-03-26 17:32:39  2024-03-26 17:44:23
+agent02             agent02     144  0:01:24  0:39:38  0:00:22  0:00:25  0:41:49  1:48:24  2024-03-26 15:04:43  2024-03-26 16:53:07
+
+Wednesday 2024-03-27
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent01             agent01       1  0:00:00  0:00:00  0:00:00  0:00:00  0:00:00  0:00:00  2024-03-27 23:24:32  2024-03-27 23:24:32
+agent02             agent02     211  0:03:24  0:28:10  0:11:03  0:01:19  0:43:56 17:10:10  2024-03-27 00:36:37  2024-03-27 17:46:47
+
+Thursday  2024-03-28
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent01             agent01      13  0:00:00  0:05:40  0:00:00  0:00:00  0:05:40  7:13:48  2024-03-28 15:23:15  2024-03-28 22:37:03
+agent02             agent02      55  0:00:06  0:01:21  0:00:03  0:00:06  0:01:36  7:51:28  2024-03-28 15:22:10  2024-03-28 23:13:38
+
+Friday    2024-03-29
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent01             agent01       6  0:00:00  0:00:00  0:00:00  0:00:00  0:00:00 18:51:32  2024-03-29 03:56:25  2024-03-29 22:47:57
+agent02             agent02     134  0:00:03  0:07:37  0:00:00  0:00:03  0:07:43 20:49:40  2024-03-29 02:26:17  2024-03-29 23:15:57
+
+Saturday  2024-03-30
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent01             agent01      17  0:00:00  0:00:30  0:00:00  0:00:00  0:00:30  7:42:15  2024-03-30 15:16:31  2024-03-30 22:58:46
+agent02             agent02      69  0:00:22  0:06:49  0:00:03  0:00:05  0:07:19  2:49:18  2024-03-30 15:22:24  2024-03-30 18:11:42

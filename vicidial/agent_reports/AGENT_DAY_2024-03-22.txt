@@ -1,0 +1,4 @@
+TODAY:     Friday        2024-03-22
+
+AGENT                USER     CALLS  TALK     PAUSE    WAIT     DISPO    ACTIVE   LOGTIME  FIRST                LAST                    
+agent02             agent02       3  0:00:00  0:00:04  0:00:00  0:00:00  0:00:04  0:00:17  2024-03-22 00:20:13  2024-03-22 00:20:30
