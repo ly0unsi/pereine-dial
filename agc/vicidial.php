@@ -23265,7 +23265,7 @@ $zi=2;
 														</a>
 													</li>
 													<li class="nav-item">
-														<a class="nav-link" data-bs-toggle="tab" href="#Script" role="tab">
+														<a class="nav-link" data-bs-toggle="tab" href="#ScriptContents" role="tab">
 															<i class="far fa-user"></i> Script
 														</a>
 													</li>
@@ -23822,8 +23822,34 @@ $zi=2;
 														</div>
 													</form>	
 												</div>	
-												<div class="tab-pane active" id="Script" role="tabpanel" onclick="ScriptPanelToFront('YES');">
-													
+												<div class="tab-pane active" id="ScriptContents" role="tabpanel" >
+													<span style="position:absolute;left:<?php echo $AMwidth ?>px;top:<?php echo $SRheight ?>px;z-index:<?php $zi++; echo $zi ?>;" >
+													<a id="ScriptRefresH" href="#" onclick="RefresHScript('','YES')"><?php echo _QXZ("refresh"); ?></a>
+													</span>
+													<a href="#" alt="SCRIPT" onclick="ScriptPanelToFront('YES');"><?php echo _QXZ("SCRIPT"); ?></a>
+													<?php if ($SSenable_second_script > 0)
+													{echo "<a href=\"#\" onclick=\"ScriptPanel2ToFront('YES');\"><img src=\"./images/"._QXZ("vdc_tab_script2.gif")."\" alt=\"SCRIPT 2\"  /></a>\n";}
+													?>
+													<?php if ($custom_fields_enabled > 0)
+													{echo "<a href=\"#\" onclick=\"FormPanelToFront('YES');\"><img src=\"./images/"._QXZ("vdc_tab_form.gif")."\" alt=\"FORM\"  /></a>\n";}
+													?>
+													<?php if ($email_enabled > 0)
+													{echo "<a href=\"#\" onclick=\"EmailPanelToFront('YES');\"><img src=\"./images/"._QXZ("vdc_tab_email.gif")."\" alt=\"EMAIL\"  /></a>\n";}
+													?>
+													<?php if ($chat_enabled > 0)
+														{
+														# INTERNAL CHAT
+														# Always show if chat is enabled for the system
+														echo "<a href=\"#\" onclick=\"InternalChatContentsLoad('YES');\"><img src=\"./images/"._QXZ("vdc_tab_chat_internal.gif")."\" name='InternalChatImg' alt=\"CHAT\" /></a>\n";
+
+														if ($campaign_chat_enabled=='Y')
+															{
+															# CUSTOMER CHAT
+															# Only show if chat is enabled for the system AND the campaign the agent is using.
+															echo "<a href=\"#\" onclick=\"CustomerChatPanelToFront('1', 'YES');\"><img src=\"./images/"._QXZ("vdc_tab_chat_customer.gif")."\" name='CustomerChatImg' alt=\"CHAT\" /></a>\n";
+															}
+														}
+													?>
 												</div>									
 											</div>
 						</span>	
@@ -24605,12 +24631,12 @@ if ($agent_display_dialable_leads > 0)
 	if ($state_descriptions_banner > 0)
         {echo "<img src=\"./images/"._QXZ("pixel.gif")."\" width=\"1px\" height=\"".$banner_height."px\" /><br />\n";}
 	?>
-    <table border="0" bgcolor="<?php echo $SCRIPT_COLOR ?>" width="<?php echo $SPwidth ?>px" height="<?php echo $SSheight ?>px"><tr><td align="left" valign="top"><font class="sb_text"><div class="noscroll_script" id="ScriptContents"><?php echo _QXZ("AGENT SCRIPT"); ?></div></font></td></tr></table>
+    <!--<table border="0" bgcolor="<?php echo $SCRIPT_COLOR ?>" width="<?php echo $SPwidth ?>px" height="<?php echo $SSheight ?>px"><tr><td align="left" valign="top"><font class="sb_text"><div class="noscroll_script" id="ScriptContents"><?php echo _QXZ("AGENT SCRIPT"); ?></div></font></td></tr></table>-->
 </span>
 
-<span style="position:absolute;left:<?php echo $AMwidth ?>px;top:<?php echo $SRheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptRefresH">
+<!--<span style="position:absolute;left:<?php echo $AMwidth ?>px;top:<?php echo $SRheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptRefresH">
 <a href="#" onclick="RefresHScript('','YES')"><font class="body_small"><?php echo _QXZ("refresh"); ?></font></a>
-</span>
+</span>-->
 
 <span style="position:absolute;left:<?php if ($script_tab_frame_size == 'LEFT_EDGE') {echo "0";} else {echo "154";} ?>px;top:<?php echo $SFheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="Script2Panel">
 	<?php
@@ -24997,7 +25023,7 @@ if ($agent_display_dialable_leads > 0)
 </span>
 
 <span style="position:absolute;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="AgenTDisablEBoX">
-    <table border="0" bgcolor="#FFFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("Your session has been disabled"); ?><br /><a href="#" onclick="LogouT('DISABLED','','');return false;"><?php echo _QXZ("CLICK HERE TO RESET YOUR SESSION"); ?></a></font><br /><br /><!--<a href="#" onclick="hideDiv('AgenTDisablEBoX');return false;">Go Back</a>-->
+    <table border="0" bgcolor="black" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("Your session has been disabled"); ?><br /><a href="#" onclick="LogouT('DISABLED','','');return false;"><?php echo _QXZ("CLICK HERE TO RESET YOUR SESSION"); ?></a></font><br /><br /><!--<a href="#" onclick="hideDiv('AgenTDisablEBoX');return false;">Go Back</a>-->
     </td></tr></table>
 </span>
 
