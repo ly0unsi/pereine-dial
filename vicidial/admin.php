@@ -6766,7 +6766,8 @@ echo "<div id='HelpDisplayDiv' class='help_info' style='display:none;'></div>";
 
 echo "<link rel=\"stylesheet\" href=\"calendar.css\">\n";
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"vicidial_stylesheet.php\">\n";
-
+require('../agc/pereine/velzon/agent/velzon_head.php');
+require('../agc/pereine/velzon/agent/velzon_css.php');
 if ($SSnocache_admin=='1')
 	{
 	echo "<META HTTP-EQUIV=\"Pragma\" CONTENT=\"no-cache\">\n";
