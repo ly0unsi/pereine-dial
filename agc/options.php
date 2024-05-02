@@ -1,4 +1,4 @@
-<?php
+      <?php
 # options.php - manually defined options for vicidial.php
 # 
 # Copyright (C) 2023  Matt Florell <vicidial@gmail.com>    LICENSE: AGPLv2
@@ -113,6 +113,8 @@ $INSERT_first_onload	= '';	# inserted at the beginning of the first section of t
 $INSERT_window_onload	= '';	# inserted at the end of the onload function
 $INSERT_agent_events	= '';	# inserted within the agent_events function
 $INSERT_before_body_close = '
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="../agc/pereine/velzon/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="../agc/pereine/velzon/assets/libs/simplebar/simplebar.min.js"></script>
       <script src="../agc/pereine/velzon/assets/libs/node-waves/waves.min.js"></script>

@@ -5893,6 +5893,7 @@ if ( ($calls_waiting_vl_two != 'DISABLED') and (strlen($calls_waiting_vl_two) > 
 	echo $INSERT_head_script;
 ?>
 	<script language="Javascript">
+
 	
 	var needToConfirmExit = true;
 	var source = null;
@@ -11823,6 +11824,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 // Send the Manual Dial Next Number request
 	function ManualDialNext(mdnCBid,mdnBDleadid,mdnDiaLCodE,mdnPhonENumbeR,mdnStagE,mdVendorid,mdgroupalias,mdtype,MDNclick)
 		{
+			
 		if (MDNclick=='YES')
 			{button_click_log = button_click_log + "" + SQLdate + "-----ManualDialNext---" + mdnCBid + " " + mdnBDleadid + " " + mdnDiaLCodE + " " + mdnPhonENumbeR + " " + mdnStagE + " " + mdVendorid + " " + mdgroupalias + " " + mdtype + " " + LIVE_campaign_recording + "|";}
 		UpdatESettingS();
