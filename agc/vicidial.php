@@ -7,7 +7,7 @@
 # Other scripts that this application depends on:
 # - vdc_db_query.php: Updates information in the database
 # - manager_send.php: Sends manager actions to the DB for execution
-# - conf_exten_check.php: time sync and status updater, calls in queue
+# - conf_exten_check.php: time sync and status updater, calls in queue test de anas
 # - vdc_script_display.php: displays script with variables
 # - vdc_form_display.php: display custom fields form
 # - vdc_email_display.php: display email interface
