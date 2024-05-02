@@ -6766,7 +6766,8 @@ echo "<div id='HelpDisplayDiv' class='help_info' style='display:none;'></div>";
 
 echo "<link rel=\"stylesheet\" href=\"calendar.css\">\n";
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"vicidial_stylesheet.php\">\n";
-
+require('../agc/pereine/velzon/agent/velzon_head.php');
+require('../agc/pereine/velzon/agent/velzon_css.php');
 if ($SSnocache_admin=='1')
 	{
 	echo "<META HTTP-EQUIV=\"Pragma\" CONTENT=\"no-cache\">\n";
@@ -51070,7 +51071,7 @@ if ($ADD==999990)
 		echo "<TABLE width=$section_width cellpadding=6 cellspacing=0>\n";
 		echo "<tr"; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='realtime_report.php?report_display_type=HTML';\"";} echo ">";
 		echo "<td align='center' valign='middle' bgcolor='#$SSmenu_background' rowspan=2><a href=\"realtime_report.php?report_display_type=HTML\"><img src=\"images/icon_users.png\" width=42 height=42 border=0></a></td>";
-		echo "<td align='center' valign='middle' bgcolor='#$SSmenu_background'><font style=\"font-family:HELVETICA;font-size:11;color:white;font-weight:bold;\">"._QXZ("Agents Logged In")."</font></td>";
+		echo "<td align='center' valign='middle' bgcolor='#$SSmenu_background'><font style=\"font-family:HELVETICA;font-size:11;color:white;font-weight:bold;\">"._QXZ("Agent Logged In")."</font></td>";
 		echo "<td width=10 rowspan=2> &nbsp; </td>";
 		echo "<td align='center' valign='middle' bgcolor='#$SSmenu_background' rowspan=2><a href=\"realtime_report.php?report_display_type=HTML\"><img src=\"images/icon_agentsincalls.png\" width=42 height=42 border=0></a></td>";
 		echo "<td align='center' valign='middle' bgcolor='#$SSmenu_background'><font style=\"font-family:HELVETICA;font-size:11;color:white;font-weight:bold;\">"._QXZ("Agents In Calls")."</font></td>";
