@@ -7,7 +7,7 @@
 # Other scripts that this application depends on:
 # - vdc_db_query.php: Updates information in the database
 # - manager_send.php: Sends manager actions to the DB for execution
-# - conf_exten_check.php: time sync and status updater, calls in queue
+# - conf_exten_check.php: time sync and status updater, calls in queue test de anas
 # - vdc_script_display.php: displays script with variables
 # - vdc_form_display.php: display custom fields form
 # - vdc_email_display.php: display email interface
@@ -23265,7 +23265,7 @@ $zi=2;
 														</a>
 													</li>
 													<li class="nav-item">
-														<a class="nav-link" data-bs-toggle="tab" href="#Script" role="tab">
+														<a class="nav-link" data-bs-toggle="tab" href="#ScriptContents" role="tab">
 															<i class="far fa-user"></i> Script
 														</a>
 													</li>
@@ -23821,22 +23821,13 @@ $zi=2;
 															</div>															
 														</div>
 													</form>	
-												</div>
-											<div class="tab-content text-muted">	
-												<div class="tab-pane active" id="Script" role="tabpanel">
-													<div class="row" id="ScriptContents">
-														<span style="position:absolute;left:<?php if ($script_tab_frame_size == 'LEFT_EDGE') {echo "0";} else {echo "154";} ?>px;top:<?php echo $SFheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptPanel">
-															<?php
-															if ($webphone_location == 'bar')
-																{echo "<img src=\"./images/"._QXZ("pixel.gif")."\" width=\"1px\" height=\"".$webphone_height."px\" /><br />\n";}
-															if ($state_descriptions_banner > 0)
-																{echo "<img src=\"./images/"._QXZ("pixel.gif")."\" width=\"1px\" height=\"".$banner_height."px\" /><br />\n";}
-															?>
-															
-														</span>
-															
-															<a class="btn btn-info " id="ScriptRefresH" href="#" onclick="RefresHScript('','YES')"><?php echo _QXZ("Script"); ?></a>
-															
+												</div>	
+												<div class="tab-pane active" id="ScriptContents" role="tabpanel" >
+													
+														<div class="row">
+															<span style="position:absolute;left:<?php echo $AMwidth ?>px;top:<?php echo $SRheight ?>px;z-index:<?php $zi++; echo $zi ?>;" >
+															<a id="ScriptRefresH" href="#" onclick="RefresHScript('','YES')"><?php echo _QXZ("refresh"); ?></a>
+															</span>
 															<a href="#" alt="SCRIPT" onclick="ScriptPanelToFront('YES');"><?php echo _QXZ("SCRIPT"); ?></a>
 															<?php if ($SSenable_second_script > 0)
 															{echo "<a href=\"#\" onclick=\"ScriptPanel2ToFront('YES');\"><img src=\"./images/"._QXZ("vdc_tab_script2.gif")."\" alt=\"SCRIPT 2\"  /></a>\n";}
@@ -23861,10 +23852,9 @@ $zi=2;
 																	}
 																}
 															?>
-														</div>
-															
-												</div>
-											</div>									
+														</div>									
+													
+												</div>									
 											</div>
 						</span>	
 						
@@ -23880,7 +23870,7 @@ $zi=2;
 	<div class="col-xxl-3">
 		<div class="card mt-n5">
 			<div class="card-body p-4">
-				<div class="text-center">
+				
 															<div class="profile-user position-relative d-inline-block mx-auto  mb-4">
 															<div class="alert alert-success material-shadow col-xxl-12 col-md-12" role="alert">
 																<span id="post_phone_time_diff_span"><b><font color="red"><span id="post_phone_time_diff_span_contents"></span></font></b></span>
@@ -23903,46 +23893,77 @@ $zi=2;
 															<p class="text-muted mb-0"><?php echo "$VD_login-$SIP_user" ?></p>
 															
 
-				</div>				
-				<!--end col-->
-                            <div class="col">
-                                <div class="p-2">
-								
-                                    <h3 class="text-black mb-1"><?php echo _QXZ("STATUS:"); ?></h3>
-                                    <p class="text-black text-opacity-75"><span id="MainStatuSSpan"></span></p>
-									<p class="text-black text-opacity-75"><span id="timer_alt_display"></span></p>
-									<p class="text-black text-opacity-75"><span id="manual_auto_next_display"></span></p>
-                                    <div class="hstack text-black-50 gap-1">
-                                        <div class="me-2"><?php echo _QXZ("seconds:"); ?></div>
-                                        <div>
-										<span <?php $zi++; echo $zi ?> id="SecondSspan"><span id="SecondSDISP"> </span>
+															<!--end col-->
+															<div class="col-12 col-lg-auto order-last order-lg-0">
+                                <div class="row text text-black-50 text-center">
+                                    <div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("Customer Time:"); ?></h4>
+                                            <p class="fs-14 mb-0"><span name="custdatetime" id="custdatetime" class="log_title"></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("Channel:"); ?> </h4>
+                                            <p class="fs-14 mb-0"><span name="callchannel" id="callchannel" class="cust_form"> </span></p>
+                                        </div>
+                                    </div>
+									<div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("LIVE"); ?></h4>
+                                            <p class="fs-14 mb-0"><span id="status"></span></p>
+                                        </div>
+                                    </div>
+									<div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("session ID:"); ?> </h4>
+                                            <p class="fs-14 mb-0"><span id="sessionIDspan"></span></p>
+                                        </div>
+                                    </div>
+									<div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><span id="AgentStatusCalls"></span></h4>
+                                            <p class="fs-14 mb-0"><span id="AgentStatusEmails"></span></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                           
-							<ul class="list-group">
-								<li class="list-group-item"><i class="ri-timer-line align-middle me-2"></i> 
-									<h4 class="text-black "><?php echo _QXZ("Customer Time:"); ?></h4>
-									<p class="fs-14 mb-0"><span name="custdatetime" id="custdatetime" class="log_title"></p>
-								</li>
-								<li class="list-group-item"><i class="ri-file-copy-2-line align-middle me-2"></i>
-									<h4 class="text-black "><?php echo _QXZ("Channel:"); ?> </h4>
-									<p class="fs-14 mb-0"><span name="callchannel" id="callchannel" class="cust_form"> </span></p>
-								</li>
-								<li class="list-group-item"><i class="ri-calendar-2-line align-middle me-2"></i>
-									<h4 class="text-black "><?php echo _QXZ("LIVE"); ?></h4>
-                                    <p class="fs-14 mb-0"><span id="status"></span><br></p>
-								</li>
-								<li class="list-group-item"><i class="ri-secure-payment-line align-middle me-2"></i>
-									<h4 class="text-black "><?php echo _QXZ("session ID:"); ?> </h4>
-                                    <p class="fs-14 mb-0"><span id="sessionIDspan"></span></p>
-								</li>
-								<li class="list-group-item"><i class="ri-phone-line align-middle me-2"></i> 
-									<h4 class="text-black "><span id="AgentStatusCalls"></span></h4>
-                                    <p class="fs-14 mb-0"><span id="AgentStatusEmails"></span></p>
-								</li>
-							</ul>
+                            <!--end col-->
+                            <div class="col-12 col-lg-auto order-last order-lg-0">
+                                <div class="row text text-black-50 text-center">
+                                    <div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("Customer Time:"); ?></h4>
+                                            <p class="fs-14 mb-0"><span name="custdatetime" id="custdatetime" class="log_title"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("Channel:"); ?> </h4>
+                                            <p class="fs-14 mb-0"><span name="callchannel" id="callchannel" class="cust_form"> </span></p>
+                                        </div>
+                                    </div>
+									<div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("LIVE"); ?></h4>
+                                            <p class="fs-14 mb-0"><span id="status"></span></p>
+                                        </div>
+                                    </div>
+									<div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><?php echo _QXZ("session ID:"); ?> </h4>
+                                            <p class="fs-14 mb-0"><span id="sessionIDspan"></span></p>
+                                        </div>
+                                    </div>
+									<div class="col-lg-2 col-4">
+                                        <div class="p-2">
+                                            <h4 class="text-black mb-1"><span id="AgentStatusCalls"></span></h4>
+                                            <p class="fs-14 mb-0"><span id="AgentStatusEmails"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col-->
 																
 				
 					
@@ -24627,7 +24648,15 @@ if ($agent_display_dialable_leads > 0)
 
 
 
-
+<span style="position:absolute;left:<?php if ($script_tab_frame_size == 'LEFT_EDGE') {echo "0";} else {echo "154";} ?>px;top:<?php echo $SFheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptPanel">
+	<?php
+	if ($webphone_location == 'bar')
+        {echo "<img src=\"./images/"._QXZ("pixel.gif")."\" width=\"1px\" height=\"".$webphone_height."px\" /><br />\n";}
+	if ($state_descriptions_banner > 0)
+        {echo "<img src=\"./images/"._QXZ("pixel.gif")."\" width=\"1px\" height=\"".$banner_height."px\" /><br />\n";}
+	?>
+    <!--<table border="0" bgcolor="<?php echo $SCRIPT_COLOR ?>" width="<?php echo $SPwidth ?>px" height="<?php echo $SSheight ?>px"><tr><td align="left" valign="top"><font class="sb_text"><div class="noscroll_script" id="ScriptContents"><?php echo _QXZ("AGENT SCRIPT"); ?></div></font></td></tr></table>-->
+</span>
 
 <!--<span style="position:absolute;left:<?php echo $AMwidth ?>px;top:<?php echo $SRheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptRefresH">
 <a href="#" onclick="RefresHScript('','YES')"><font class="body_small"><?php echo _QXZ("refresh"); ?></font></a>
@@ -25018,7 +25047,7 @@ if ($agent_display_dialable_leads > 0)
 </span>
 
 <span style="position:absolute;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="AgenTDisablEBoX">
-    <table border="0" bgcolor="#FFFFFF" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("Your session has been disabled"); ?><br /><a href="#" onclick="LogouT('DISABLED','','');return false;"><?php echo _QXZ("CLICK HERE TO RESET YOUR SESSION"); ?></a></font><br /><br /><!--<a href="#" onclick="hideDiv('AgenTDisablEBoX');return false;">Go Back</a>-->
+    <table border="0" bgcolor="black" width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("Your session has been disabled"); ?><br /><a href="#" onclick="LogouT('DISABLED','','');return false;"><?php echo _QXZ("CLICK HERE TO RESET YOUR SESSION"); ?></a></font><br /><br /><!--<a href="#" onclick="hideDiv('AgenTDisablEBoX');return false;">Go Back</a>-->
     </td></tr></table>
 </span>
 
@@ -25836,7 +25865,7 @@ if ($agent_display_dialable_leads > 0)
 </span>-->
 
 <!--<span style="position:absolute;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="DeactivateDOlDSessioNSpan">
-<div style="display: none;"><table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sh_text"><?php echo _QXZ("Another live agent session was open using your user ID. It has been disabled. Click OK to continue to the agent screen."); ?><br /><a href="#" onclick="hideDiv('DeactivateDOlDSessioNSpan');return false;"><?php echo _QXZ("OK"); ?></a> </font>
+<div style="display: none;"><table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sh_text"><?php echo _QXZ("Another live agent session was open using your user ID. It has been disabled. Click OK to continue to the agent screen."); ?><br /><a href="#" onclick="hideDiv('DeactivateDOlDSessioNSpan');return false;"><?php echo _QXZ("OK"); ?></a> --></font>
     </td></tr></table></div>
 </span>-->
 
