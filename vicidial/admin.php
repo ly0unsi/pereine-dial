@@ -6752,8 +6752,9 @@ if ($SSnocache_admin=='1')
 	header ("Cache-Control: no-cache, must-revalidate");  // HTTP/1.1
 	header ("Pragma: no-cache");                          // HTTP/1.0
 	}
-echo "<html>\n";
-echo "<head>\n";
+
+echo '<html lang="en" data-layout="horizontal" data-layout-style="" data-layout-position="fixed" data-topbar="light">';
+echo "<head>\n<br><br><br>";
 echo "<!-- VERSION: $admin_version   BUILD: $build   ADD: $ADD   PHP_SELF: $PHP_SELF-->\n";
 echo "<META NAME=\"ROBOTS\" CONTENT=\"NONE\">\n";
 echo "<META NAME=\"COPYRIGHT\" CONTENT=\"&copy; 2023 ViciDial Group\">\n";
@@ -51253,7 +51254,7 @@ if ($ADD==31)
 echo '<div class="row">';
 echo '<div class="card-body">';
 echo '<div class="table-responsive table-card">';
-echo '<table class="table table-borderless table-centered align-middle table-nowrap mb-0">';
+echo '<table class="table table-bordered border-Info table-nowrap">';
 echo '<thead class="text-muted table-light">';
 echo '<tr>';
 echo "<th scope=\"col\">"._QXZ("Records")."</th>";
@@ -51502,29 +51503,61 @@ echo '</div>';
 			$stmt="SELECT * from vicidial_daily_max_stats where stats_date='$today' and stats_flag='OPEN' and stats_type='TOTAL' $LOGallowed_campaignsSQL order by stats_date, campaign_id asc";
 			if ($DB) {echo "|$stmt|\n";}
 			$rslt=mysql_to_mysqli($stmt, $link);
+			echo "<label align='left' style=\"font-family:HELVETICA;font-size:16;color:black;font-weight:bold;\">"._QXZ("Total Stats for Today").":</label>";
+			echo "<p align='right'><a class=\"btn btn-soft-secondary waves-effect material-shadow-none\" href='$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL'>"._QXZ("View max stats")."</a></p>";
 			echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
-			echo "<tr>";
-			echo "<td align='left' colspan='3'><font style=\"font-family:HELVETICA;font-size:12;color:black;font-weight:bold;\">"._QXZ("Total Stats for Today").":</font></td>";
-			echo "<td align='right'><font size=1><a href='$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL'>["._QXZ("view max stats")."]</a></font></td>";
-			echo "</tr>";
-			echo "<tr bgcolor=black>";
-			# echo "<td><font size=1 color=white align=left><B>CAMPAIGN ID</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Calls")." &nbsp;</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Inbound Calls")." &nbsp;</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Outbound Calls")." &nbsp;</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Maximum Agents")." &nbsp;</B></font></td>";
+			echo '<div class="col-xl-6">';
+			echo '<div class="card">';
+			echo '<div class="live-preview">';
+			echo '<div class="table-responsive">';
+			echo '<table class="table table-bordered border-Info table-nowrap">';
+			echo '<thead class="table-light">';
+			echo '<tr>';
+			echo '<th scope="col">Total Calls</th>';
+			echo '<th scope="col">Total Inbound Calls</th>';
+			echo '<th scope="col">Total Outbound Calls</th>';
+			echo '<th scope="col">Maximum Agents</th>';
+			echo '</tr>';
+			echo '</thead>';
+			echo '<tbody>';
+			
+
+			// echo "<tr>";
+			// echo "<td align='left' colspan='3'><font style=\"font-family:HELVETICA;font-size:12;color:black;font-weight:bold;\">"._QXZ("Total Stats for Today").":</font></td>";
+			 
+			// echo "</tr>";
+			// echo "<tr bgcolor=black>";
+			// # echo "<td><font size=1 color=white align=left><B>CAMPAIGN ID</B></font></td>";
+			// echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Calls")." &nbsp;</B></font></td>";
+			// echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Inbound Calls")." &nbsp;</B></font></td>";
+			// echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Outbound Calls")." &nbsp;</B></font></td>";
+			// echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Maximum Agents")." &nbsp;</B></font></td>";
 	
+
+
 			if (mysqli_num_rows($rslt)>0) 
 				{
 				while ($row=mysqli_fetch_array($rslt)) 
 					{
-					echo "<tr bgcolor='#$SSstd_row2_background'>";
-				#	echo "<td align='left'><font size=1>".$row["campaign_id"]."</font></td>";
-					echo "<td align='center'><font size=1>".($total_calls+0)."</font></td>";
-					echo "<td align='center'><font size=1>".($total_inbound+0)."</font></td>";
-					echo "<td align='center'><font size=1>".($total_outbound+0)."</font></td>";
-					echo "<td align='center'><font size=1>".($row["max_agents"]+0)."</font></td>";
-					echo "</tr>";
+				// 	echo "<tr bgcolor='#$SSstd_row2_background'>";
+				// #	echo "<td align='left'><font size=1>".$row["campaign_id"]."</font></td>";
+				// 	echo "<td align='center'><font size=1>".($total_calls+0)."</font></td>";
+				// 	echo "<td align='center'><font size=1>".($total_inbound+0)."</font></td>";
+				// 	echo "<td align='center'><font size=1>".($total_outbound+0)."</font></td>";
+				// 	echo "<td align='center'><font size=1>".($row["max_agents"]+0)."</font></td>";
+				// 	echo "</tr>";
+				// 	echo '<tr>';
+			echo "<td class=\"fw-medium\">".($total_calls+0)."</td>";
+			echo "<td class=\"fw-medium\">".($total_inbound+0)."</td>";
+			echo "<td class=\"fw-medium\">".($total_outbound+0)."</td>";
+			echo "<td class=\"fw-medium\">".($row["max_agents"]+0)."</td>";
+			echo '</tr>';
+			
+			echo '</div>';
+			
+			echo '</div><!-- end card-body -->';
+			echo '</div><!-- end card -->';
+			echo '</div><!-- end col -->';
 					}
 				} 
 			else 
@@ -51532,8 +51565,10 @@ echo '</div>';
 				echo "<tr bgcolor='#$SSstd_row2_background'>";
 				echo "<td align='center' colspan='4'><font size=1>*** "._QXZ("NO ACTIVITY FOR")." $today ***</font></td>";
 				echo "</tr>";
+				
 				}
 			echo "</TABLE></center>\n";
+			
 	
 			$total_calls=0;
 			$total_inbound=0;
@@ -51551,19 +51586,36 @@ echo '</div>';
 					if (preg_match('/CAMPAIGN/', $rowx[0])) {$total_outbound+=$rowx[1];}
 					}
 				}
-	
+			echo "<label align='left' style=\"font-family:HELVETICA;font-size:16;color:black;font-weight:bold;\">"._QXZ("Total Stats for Yesterday").":</label>";
 			echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
-			echo "<tr>";
-			echo "<td align='left' colspan='3'><font style=\"font-family:HELVETICA;font-size:12;color:black;font-weight:bold;\">"._QXZ("Total Stats for Yesterday").":</font></td>";
-			echo "<td align='right'><font size=1><a href='$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL'>["._QXZ("view max stats")."]</a></font></td>";
-			echo "</tr>";
-			echo "<tr bgcolor=black>";
-		#	echo "<td><font size=1 color=white align=left><B>CAMPAIGN ID</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Calls")." &nbsp;</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Inbound Calls")." &nbsp;</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Outbound Calls")." &nbsp;</B></font></td>";
-			echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Maximum Agents")." &nbsp;</B></font></td>";
+			echo '<div class="col-xl-6">';
+			echo '<div class="card">';
+			echo "<td align='right'><a class=\"btn btn-soft-secondary waves-effect material-shadow-none\" href='$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL'>"._QXZ("View max stats")."</a></td>";
+			echo '<div class="live-preview">';
+			echo '<div class="table-responsive">';
+			echo '<table class="table table-bordered border-Info table-nowrap">';
+			echo '<thead class="table-light">';
+			echo '<tr>';
+			echo '<th scope="col">Total Calls</th>';
+			echo '<th scope="col">Total Inbound Calls</th>';
+			echo '<th scope="col">Total Outbound Calls</th>';
+			echo '<th scope="col">Maximum Agents</th>';
+			echo '</tr>';
+			echo '</thead>';
+			echo '<tbody>';
+		// 	echo "<tr>";
+		// 	echo "<td align='left' colspan='3'><font style=\"font-family:HELVETICA;font-size:12;color:black;font-weight:bold;\">"._QXZ("Total Stats for Yesterday").":</font></td>";
+		 	
+		// 	echo "</tr>";
+		// 	echo "<tr bgcolor=black>";
+		// #	echo "<td><font size=1 color=white align=left><B>CAMPAIGN ID</B></font></td>";
+		// 	echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Calls")." &nbsp;</B></font></td>";
+		// 	echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Inbound Calls")." &nbsp;</B></font></td>";
+		// 	echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Total Outbound Calls")." &nbsp;</B></font></td>";
+		// 	echo "<td><font size=1 color=white><B>&nbsp; "._QXZ("Maximum Agents")." &nbsp;</B></font></td>";
 	
+			
+			
 			$stmt="SELECT * from vicidial_daily_max_stats where stats_date='$yesterday' and stats_type='TOTAL' $LOGallowed_campaignsSQL order by stats_date, campaign_id asc";
 			if ($DB) {echo "|$stmt|\n";}
 			$rslt=mysql_to_mysqli($stmt, $link);
@@ -51571,13 +51623,27 @@ echo '</div>';
 				{
 				while ($row=mysqli_fetch_array($rslt)) 
 					{
-					echo "<tr bgcolor='#$SSstd_row2_background'>";
-					#echo "<td align='left'><font size=1>".$row["campaign_id"]."</font></td>";
-					echo "<td align='center'><font size=1>".($row["total_calls"]+0)." / ".($total_calls+0)."</font></td>";
-					echo "<td align='center'><font size=1>".($total_inbound+0)."</font></td>";
-					echo "<td align='center'><font size=1>".($total_outbound+0)."</font></td>";
-					echo "<td align='center'><font size=1>".($row["max_agents"]+0)."</font></td>";
-					echo "</tr>";
+					// echo "<tr bgcolor='#$SSstd_row2_background'>";
+					// #echo "<td align='left'><font size=1>".$row["campaign_id"]."</font></td>";
+					// echo "<td align='center'><font size=1>".($row["total_calls"]+0)." / ".($total_calls+0)."</font></td>";
+					// echo "<td align='center'><font size=1>".($total_inbound+0)."</font></td>";
+					// echo "<td align='center'><font size=1>".($total_outbound+0)."</font></td>";
+					// echo "<td align='center'><font size=1>".($row["max_agents"]+0)."</font></td>";
+					// echo "</tr>";
+
+					echo "<td class=\"fw-medium\">".($row["total_calls"]+0)." / ".($total_calls+0)."</td>";
+					echo "<td class=\"fw-medium\">".($total_inbound+0)."</td>";
+					echo "<td class=\"fw-medium\">".($total_outbound+0)."</td>";
+					echo "<td class=\"fw-medium\">".($row["max_agents"]+0)."</td>";
+					
+					echo '</tr>';
+					
+					echo '</div>';
+					echo '</div><!-- end card-body -->';
+					echo '</div><!-- end card -->';
+					echo '</div><!-- end col -->';
+
+
 					}
 				} 
 			else 
@@ -51601,6 +51667,13 @@ echo '</div>';
 			echo "</FONT><BR><BR>";
 			}
 		}
+
+
+
+
+
+
+
 	
 	##### If report run, update the time in the vicidial_report_log table #####
 	if ( ($ADD==999993) or ($ADD==999992) or ($ADD==730000000000000) or ($ADD==830000000000000) )
