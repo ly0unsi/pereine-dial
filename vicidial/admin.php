@@ -6753,7 +6753,7 @@ if ($SSnocache_admin=='1')
 	header ("Pragma: no-cache");                          // HTTP/1.0
 	}
 
-echo '<html lang="en" data-layout="horizontal" data-layout-style="" data-layout-position="fixed" data-topbar="light">';
+echo '<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">';
 echo "<head>\n<br><br><br>";
 echo "<!-- VERSION: $admin_version   BUILD: $build   ADD: $ADD   PHP_SELF: $PHP_SELF-->\n";
 echo "<META NAME=\"ROBOTS\" CONTENT=\"NONE\">\n";
@@ -8051,7 +8051,7 @@ if ($ADD==99999)
 	echo "<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=iso-8859-1\">\n";
 	echo "<META HTTP-EQUIV=Refresh CONTENT=\"0; URL=./help.php\">\n";
 	echo "</HEAD>\n";
-	echo "<BODY BGCOLOR=#FFFFFF marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>\n";
+	echo "<BODY >\n";
 	echo "<a href=\"./help.php\">"._QXZ("click here to continue").". . .</a>\n";
 	exit;
 	}
@@ -45911,7 +45911,7 @@ if ($ADD==31)
 		$subhead_font = "style=\"font-family:HELVETICA;font-size:14;color:BLACK;font-weight:bold;\"";
 		?>
 	
-		</head><BODY BGCOLOR=WHITE>
+		</head><BODY >
 		<img src="images/icon_black_inbound.png" alt="Inbound" width=42 height=42> <FONT FACE="ARIAL,HELVETICA" SIZE=4><B> <?php echo _QXZ("Inbound"); ?></B></FONT><BR><CENTER>
 		<TABLE BORDER=0 CELLPADDING=5 CELLSPACING=0 WIDTH=800>
 		<?php
@@ -51132,7 +51132,7 @@ if ($ADD==31)
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$agent_total</span></h4>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View net earnings</a>';
+			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			echo '<span class="avatar-title bg-success-subtle rounded fs-3">';
@@ -51143,7 +51143,8 @@ if ($ADD==31)
 			echo '</div><!-- end card body -->';
 			echo '</div><!-- end card -->';
 			echo '</div><!-- end col -->';
-			echo '';
+
+		
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
 			echo '<div class="card card-animate">';
@@ -51161,7 +51162,7 @@ if ($ADD==31)
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$agent_incall</span></h4>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View all orders</a>';
+			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			echo '<span class="avatar-title bg-info-subtle rounded fs-3">';
@@ -51172,7 +51173,7 @@ if ($ADD==31)
 			echo '</div><!-- end card body -->';
 			echo '</div><!-- end card -->';
 			echo '</div><!-- end col -->';
-			echo '';
+			
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
 			echo '<div class="card card-animate">';
@@ -51190,7 +51191,7 @@ if ($ADD==31)
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$agent_incall</span></h4>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">See details</a>';
+			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			echo '<span class="avatar-title bg-warning-subtle rounded fs-3">';
@@ -51201,7 +51202,7 @@ if ($ADD==31)
 			echo '</div><!-- end card body -->';
 			echo '</div><!-- end card -->';
 			echo '</div><!-- end col -->';
-			echo '';
+			
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
 			echo '<div class="card card-animate">';
@@ -51219,7 +51220,7 @@ if ($ADD==31)
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$ringing_calls</span></h4>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">Withdraw money</a>';
+			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			echo '<span class="avatar-title bg-primary-subtle rounded fs-3">';
@@ -52256,14 +52257,14 @@ echo '</div>';
 	
 	$RUNtime = ($ENDtime - $STARTtime);
 	
-	echo "</TD></TR>\n";
-	echo "<TR><TD bgcolor=#$SSmenu_background ALIGN=CENTER>\n";
-	echo "<FONT STYLE=\"font-family:HELVETICA;font-size:9;color:white;\"><br><br><!-- RUNTIME: $RUNtime seconds<BR> -->";
-	echo _QXZ("VERSION").": $admin_version<BR>";
-	echo _QXZ("BUILD").": $build\n";
-	if (!preg_match("/_BUILD_/",$SShosted_settings))
-		{echo "<BR><a href=\"$PHP_SELF?ADD=999995\"><font color=white>&copy; 2024 ViciDial Group</font></a><BR><img src=\"images/pixel.gif\">";}
-	echo "</FONT>\n";
+	// echo "</TD></TR>\n";
+	// echo "<TR><TD bgcolor=#$SSmenu_background ALIGN=CENTER>\n";
+	// echo "<FONT STYLE=\"font-family:HELVETICA;font-size:9;color:white;\"><br><br><!-- RUNTIME: $RUNtime seconds<BR> -->";
+	// echo _QXZ("VERSION").": $admin_version<BR>";
+	// echo _QXZ("BUILD").": $build\n";
+	// if (!preg_match("/_BUILD_/",$SShosted_settings))
+	// 	{echo "<BR><a href=\"$PHP_SELF?ADD=999995\"><font color=white>&copy; 2024 ViciDial Group</font></a><BR><img src=\"images/pixel.gif\">";}
+	// echo "</FONT>\n";
 	?>
 	
 	</TD><TD BGCOLOR=#<?php echo $SSframe_background ?>>
