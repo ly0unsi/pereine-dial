@@ -98,7 +98,7 @@
 #            - Changed several permissions to database-defined
 # 60419-1529 - Prevent manual dial or callbacks when alt-dial lead not finished
 # 60420-1647 - Fixed DiaLDiaLAltPhonE error, Call Agent Again DialControl error
-# 60421-1229 - Check GET/POST vars lines with isset to not trigger PHP NOTICES
+# 60421-1229 - Check GET/POST vars lines finction with isset to not trigger PHP NOTICES
 # 60424-1005 - Fixed Alt phone disabled bug for callbacks and manual dials
 # 60426-1058 - Added vicidial_user setting for default blended check for CLOSER
 # 60501-1008 - Added option to manual dial screen to manually lookup phone number
@@ -1418,7 +1418,7 @@ else
 
     <script type="text/javascript">
 
-	<!-- 
+	
 	function browser_dimensions() 
 		{
 		var nothing=0;
@@ -10063,7 +10063,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						else 
 							{
 							Internal_chat_print="NO";
-							document.images['InternalChatImg'].src=image_internal_chat_OFF.src;
+							//document.images['InternalChatImg'].src=image_internal_chat_OFF.src;
 							}
 
 						var ChatIFrame = document.getElementById('InternalChatIFrame');
@@ -10317,12 +10317,12 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 
 				document.vicidial_form.search_phone_number.value='';
 				document.vicidial_form.search_lead_id.value='';
-				document.vicidial_form.search_vendor_lead_code.value='';
-				document.vicidial_form.search_first_name.value='';
-				document.vicidial_form.search_last_name.value='';
-				document.vicidial_form.search_city.value='';
-				document.vicidial_form.search_state.value='';
-				document.vicidial_form.search_postal_code.value='';
+				// document.vicidial_form.search_vendor_lead_code.value='';
+				// document.vicidial_form.search_first_name.value='';
+				// document.vicidial_form.search_last_name.value='';
+				// document.vicidial_form.search_city.value='';
+				// document.vicidial_form.search_state.value='';
+				// document.vicidial_form.search_postal_code.value='';
 				}
 			}
 		}
@@ -10700,12 +10700,12 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 								hideDiv('LeaDInfOBox');
 								document.vicidial_form.search_phone_number.value='';
 								document.vicidial_form.search_lead_id.value='';
-								document.vicidial_form.search_vendor_lead_code.value='';
-								document.vicidial_form.search_first_name.value='';
-								document.vicidial_form.search_last_name.value='';
-								document.vicidial_form.search_city.value='';
-								document.vicidial_form.search_state.value='';
-								document.vicidial_form.search_postal_code.value='';
+								// document.vicidial_form.search_vendor_lead_code.value='';
+								// document.vicidial_form.search_first_name.value='';
+								// document.vicidial_form.search_last_name.value='';
+								// document.vicidial_form.search_city.value='';
+								// document.vicidial_form.search_state.value='';
+								// document.vicidial_form.search_postal_code.value='';
 
 								lead_dial_number = document.vicidial_form.phone_number.value;
 								var dispnum = document.vicidial_form.phone_number.value;
@@ -17033,6 +17033,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 				}
 			else
 				{
+					$('#hangupModal').modal('hide');
 				if (document.vicidial_form.DiaLAltPhonE.checked==true)
 					{
 					var man_status = ""; 
@@ -17324,26 +17325,26 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					document.vicidial_form.CallBackCommenTsField.value = '';
 					document.vicidial_form.search_phone_number.value='';
 					document.vicidial_form.search_lead_id.value='';
-					document.vicidial_form.search_vendor_lead_code.value='';
-					document.vicidial_form.search_first_name.value='';
-					document.vicidial_form.search_last_name.value='';
-					document.vicidial_form.search_city.value='';
-					document.vicidial_form.search_state.value='';
-					document.vicidial_form.search_postal_code.value='';
-					document.vicidial_form.MDPhonENumbeR.value = '';
-					document.vicidial_form.MDDiaLOverridE.value = '';
-					document.vicidial_form.MDLeadID.value = '';
-					document.vicidial_form.MDLeadIDEntry.value='';
-					document.vicidial_form.MDType.value = '';
-					document.vicidial_form.MDPhonENumbeRHiddeN.value = '';
+					// document.vicidial_form.search_vendor_lead_code.value='';
+					// document.vicidial_form.search_first_name.value='';
+					// document.vicidial_form.search_last_name.value='';
+					// document.vicidial_form.search_city.value='';
+					// document.vicidial_form.search_state.value='';
+					// document.vicidial_form.search_postal_code.value='';
+					// document.vicidial_form.MDPhonENumbeR.value = '';
+					// document.vicidial_form.MDDiaLOverridE.value = '';
+					// document.vicidial_form.MDLeadID.value = '';
+					// document.vicidial_form.MDLeadIDEntry.value='';
+					// document.vicidial_form.MDType.value = '';
+					// document.vicidial_form.MDPhonENumbeRHiddeN.value = '';
 					inbound_lead_search=0;
 					inbound_ingroup='';
 					cid_lock=0;
 					timer_alt_trigger=0;
 					last_mdtype='';
-					document.getElementById("timer_alt_display").innerHTML = '';
-					document.getElementById("manual_auto_next_display").innerHTML = '';
-					document.getElementById("RecorDID").innerHTML = '';
+					// document.getElementById("timer_alt_display").innerHTML = '';
+					// document.getElementById("manual_auto_next_display").innerHTML = '';
+					// document.getElementById("RecorDID").innerHTML = '';
 					dial_next_failed=0;
 					xfer_agent_selected=0;
 					hangup_both=0;
@@ -17423,7 +17424,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						}
 					CBcommentsBoxhide();
 					EAcommentsBoxhide();
-					ContactSearchReset();
+					// ContactSearchReset();
 					ViewComments('OFF','OFF');
 					if (script_top_dispo == 'Y')
 						{
@@ -21020,6 +21021,7 @@ function phone_number_format(formatphone) {
 // Submitting the callback date and time to the system
 	function CallBackDatE_submit()
 		{
+			alert("sbmit")
 		button_click_log = button_click_log + "" + SQLdate + "-----CallBackDatE_submit---|";
 		CallBackDatEForM = document.vicidial_form.CallBackDatESelectioN.value;
 		CallBackCommenTs = document.vicidial_form.CallBackCommenTsField.value;
@@ -21175,7 +21177,12 @@ function phone_number_format(formatphone) {
 			if ( (timer_action_message.length > 0) || (timer_action == 'MESSAGE_ONLY') )
 				{
                 document.getElementById("TimerContentSpan").innerHTML = "<b><?php echo _QXZ("TIMER NOTIFICATION:"); ?> " + timer_action_seconds + " seconds<br /><br />" + timer_action_message + "</b>";
-
+				Swal.fire({
+				title: 'DIAL Alert',
+				text:  timer_action_message,
+				icon: 'error',
+				confirmButtonText: 'Ok'
+			})
 				showDiv('TimerSpan');
 				}
 
@@ -21596,7 +21603,8 @@ function phone_number_format(formatphone) {
 					showDiv('ScriptTopBGspan');
 					document.getElementById("ScriptPanel").style.zIndex = 100;
 					}
-				showDiv('DispoSelectBox');
+				// showDiv('DispoSelectBox');
+				$('#hangupModal').modal('show');
 				DispoSelectContent_create('','ReSET');
 				WaitingForNextStep=1;
 				open_dispo_screen=0;
@@ -22857,13 +22865,15 @@ function phone_number_format(formatphone) {
 
 	function ScriptPanelToFront(SPFclick)
 		{
+			// alert("clicked")
 		if (SPFclick=='YES')
 			{button_click_log = button_click_log + "" + SQLdate + "-----ScriptPanelToFront---" + CalL_ScripT_id + " " + CalL_ScripT_color + "|";}
 		var CBSPheight = '<?php echo $QLheight ?>px';
 		document.getElementById("CallbacksButtons").style.top = CBSPheight;
 		document.getElementById("CallbacksButtons").style.left = '340px';
 		showDiv('ScriptPanel');
-		showDiv('ScriptRefresH');
+		
+		// showDiv('ScriptRefresH');
 		if ( (OtherTab == '0') && (comments_all_tabs == 'ENABLED') )
 			{
 			OtherTab='1';
@@ -23097,16 +23107,42 @@ $zi=2;
 
 <body  onload="begin_all_refresh();"  onunload="BrowserCloseLogout();"> <!-- alert_box('BIG ALERT', '36', 'Courier', '#FF0', 'bold|italics'); //-->
 	<!-- <canvas id="confetti-canvas" style="display:block;z-index:999999;pointer-events:none"></canvas> //-->
-<!-- Begin page -->
+	<!-- Begin page -->
+
+	<!--Hangaup modal -->
+	<div class="modal fade" id="hangupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Qualification</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body" id="DispoSelectContent" >
+			
+		</div>
+		<div class="modal-footer">
+		<a class="btn btn-success w-lg waves-effect waves-light" role="button" href="#" onclick="DispoSelect_submit('','','YES');return false;"><?php echo _QXZ("SUBMIT"); ?></a>
+		<a class="btn btn-warning w-md waves-effect waves-light" role="button" href="#" onclick="DispoSelectContent_create('','ReSET','YES');return false;"><?php echo _QXZ("CLEAR FORM"); ?></a>
+
+		<a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a>
+			
+		</div>
+		</div>
+	</div>
+	</div>
+
 	<div id="layout-wrapper">
 	<?php
 	require_once('./pereine/velzon/agent/velzon_header.php');
 	?>
-	<form name=vicidial_form id=vicidial_form onsubmit="return false;">
+	<form name="vicidial_form" id="vicidial_form" onsubmit="return false;">
 
 		<span style="position:absolute;display:none;left:0px;top:0px;z-index:300;" id="LoadingBox">
 		
-			
+			<input type="hidden" name="extension" id="extension" />
+			<input type="hidden" name="custom_field_values" id="custom_field_values" value="" />
+			<input type="hidden" name="FORM_LOADED" id="FORM_LOADED" value="0" />
+
 			<div class="d-flex justify-content-center">
 				<div class="spinner-border" role="status">
 					<span class="visually-hidden">Loading...</span>
@@ -23117,7 +23153,7 @@ $zi=2;
 
 		<!-- ZZZZZZZZZZZZ  header -->
 
-		<!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="Header">
+		<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="Header">
 			<table border="0" cellpadding="0" cellspacing="0" bgcolor="white" width="<?php echo $MNwidth ?>px" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" valign="top" align="left">
 			<tr valign="top" align="left"><td colspan="3" valign="top" align="left">
 			<input type="hidden" name="extension" id="extension" />
@@ -23140,7 +23176,7 @@ $zi=2;
 			<?php	echo "<a href=\"#\" onclick=\"NormalLogout();return false;needToConfirmExit = false;\">"._QXZ("LOGOUT")."</a>\n"; ?>
 			</font></td></tr>
 			</table>
-		</span>-->
+		</span>
 
 		<div class="vertical-overlay"></div>
  		<div class="main-content">
@@ -23306,7 +23342,7 @@ $zi=2;
 														</a>
 													</li>
 													<li class="nav-item">
-														<a class="nav-link" data-bs-toggle="tab" href="#Script" role="tab">
+														<a class="nav-link"  onclick="ScriptPanelToFront('YES');" data-bs-toggle="tab" href="#Script" role="tab">
 															<i class="far fa-user"></i> Script
 														</a>
 													</li>
@@ -23322,7 +23358,7 @@ $zi=2;
 													</li>
 												</ul>
 											</div>
-										<div class="card-body p-4">
+										<div style="padding: 0 1.5rem 1.5rem 1.5rem !important;" class="card-body p-4">
 											<div class="tab-content">
 												<div class="tab-pane active" id="Fiche" role="tabpanel">
 													<form action="javascript:void(0);">
@@ -23862,10 +23898,14 @@ $zi=2;
 															</div>															
 														</div>
 													</form>	
+												</div>
+
+												<div class="tab-pane" id="Script"  role="tabpanel">
+													<button class="btn btn-sm btn-outline-primary float-end block" onclick="RefresHScript('','YES')">refresh</button>
+													<div id="ScriptContents">
+													</div>
 												</div>	
-												<div class="tab-pane active" id="Script" role="tabpanel" onclick="ScriptPanelToFront('YES');">
-													
-												</div>									
+
 											</div>
 						</span>	
 						
@@ -23885,6 +23925,7 @@ $zi=2;
 			<div class="card-body">
 				<div class="text-center" id="CallState">
 				<div  style ="font-size: 21px;" class="badge bg-danger-subtle text-danger">No Live call</div>
+				<img src="" id="InternalChatImg" alt="">
 				</div>
 				<ul class="list-group list-group-flush mt-2">
 					<li class="list-group-item d-flex flex-wrap  align-items-center">
@@ -23950,6 +23991,10 @@ $zi=2;
 							<li class="list-group-item d-flex align-items-center">
 								<?php echo _QXZ("Session ID"); ?> 
 								<span class="ms-auto " id="sessionIDspan"></span>
+							</li>
+							<li class="list-group-item d-flex align-items-center">
+								<?php echo _QXZ("Queu Notice"); ?> 
+								<span class="ms-auto " id="ManualQueueNotice"></span>
 							</li>
 
 							<!--
@@ -24681,7 +24726,7 @@ if ($agent_display_dialable_leads > 0)
 <span style="position:absolute;display:none;left:<?php echo $MUwidth ?>px;top:<?php echo $SLheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="AgentMuteSpan"></span>
 
 
-
+<!--
 <span style="position:absolute;display:none;left:<?php if ($script_tab_frame_size == 'LEFT_EDGE') {echo "0";} else {echo "154";} ?>px;top:<?php echo $SFheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptPanel">
 	<?php
 	if ($webphone_location == 'bar')
@@ -24691,6 +24736,7 @@ if ($agent_display_dialable_leads > 0)
 	?>
     <table border="0" bgcolor="<?php echo $SCRIPT_COLOR ?>" width="<?php echo $SPwidth ?>px" height="<?php echo $SSheight ?>px"><tr><td align="left" valign="top"><font class="sb_text"><div class="noscroll_script" id="ScriptContents"><?php echo _QXZ("AGENT SCRIPT"); ?></div></font></td></tr></table>
 </span>
+-->
 
 <span style="position:absolute;display:none;left:<?php echo $AMwidth ?>px;top:<?php echo $SRheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="ScriptRefresH">
 <a href="#" onclick="RefresHScript('','YES')"><font class="body_small"><?php echo _QXZ("refresh"); ?></font></a>
@@ -25652,7 +25698,7 @@ if ($agent_display_dialable_leads > 0)
 	</td></tr></table>
 </span>-->
 
-<!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="SearcHForMDisplaYBox">
+<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="SearcHForMDisplaYBox">
 	<table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center" valign="top"> &nbsp; &nbsp; &nbsp; <font class="sd_text"><?php echo _QXZ("SEARCH FOR A LEAD:"); ?></font> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font class="sh_text"><a href="#" onclick="LeaDSearcHVieWClose();return false;"><?php echo _QXZ("close"); ?> [X]</a><br />
 	<?php
 	if ($webphone_location == 'bar')
@@ -25743,7 +25789,7 @@ if ($agent_display_dialable_leads > 0)
 	</table>
 	<br /><br /> &nbsp;
 	</td></tr></table>
-</span>-->
+</span>
 
 <!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="SearcHResultSDisplaYBox">
 	<table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center" valign="top"> &nbsp; &nbsp; &nbsp; <font class="sd_text"><?php echo _QXZ("SEARCH RESULTS:"); ?></font> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font class="sh_text"><a href="#" onclick="hideDiv('SearcHResultSDisplaYBox');return false;"><?php echo _QXZ("close"); ?> [X]</a><br />
@@ -25873,7 +25919,7 @@ if ($agent_display_dialable_leads > 0)
     </td></tr></table>
 </span>
 
-<!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="ManualValidateBox">
+<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="ManualValidateBox">
 	<table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center" valign="top"> <font class="sd_text"><?php echo _QXZ("Manual Dial Validation"); ?>:</font><br /><br /><font class="sh_text">
 	<?php
 	if ($webphone_location == 'bar')
@@ -25892,31 +25938,31 @@ if ($agent_display_dialable_leads > 0)
 
 	<br /><br /> &nbsp;</font>
 	</td></tr></table>
-</span>-->
+</span>
 
 
 <? $zi = ($zi + 100); ?>
 
-<!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="blind_monitor_alert_span">
+<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="blind_monitor_alert_span">
 <table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center" valign="top"> <font class="sd_text"><?php echo _QXZ("ALERT :"); ?></font><br /><font class="sh_text">
 	<b><font color="red" size="5"> &nbsp; &nbsp; <span id="blind_monitor_alert_span_contents"></span></b></font>
 	<br /><br /> <a href="#" onclick="hideDiv('blind_monitor_alert_span');return false;"><?php echo _QXZ("Go Back"); ?></a>
 	</font>
 	</td></tr></table>
-</span>-->
+</span>
 
-<!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="DeactivateDOlDSessioNSpan">
+<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="DeactivateDOlDSessioNSpan">
 <div style="display: none;"><table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sh_text"><?php echo _QXZ("Another live agent session was open using your user ID. It has been disabled. Click OK to continue to the agent screen."); ?><br /><a href="#" onclick="hideDiv('DeactivateDOlDSessioNSpan');return false;"><?php echo _QXZ("OK"); ?></a> --></font>
     </td></tr></table></div>
-</span>-->
+</span>
 
-<!--<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="InvalidOpenerSpan">
+<span style="position:absolute;display:none;left:0px;top:0px;z-index:<?php $zi++; echo $zi ?>;" id="InvalidOpenerSpan">
 <div style="display: none;"> <table border="0"  width="<?php echo $CAwidth ?>px" height="<?php echo $WRheight ?>px"><tr><td align="center"><font class="sd_text"><?php echo _QXZ("This agent screen was not opened properly."); ?></font><br />
     </td></tr></table></div>
-</span>-->
+</span>
 
 
-<!--<div id="HolidayDisplayDiv" style="position:absolute;display:none;top:0;left:0;display:none;;z-index:<?php $zi++; echo $zi ?>;"></div>-->
+<div id="HolidayDisplayDiv" style="position:absolute;display:none;top:0;left:0;display:none;;z-index:<?php $zi++; echo $zi ?>;"></div>
 
 <span style="position:absolute;display:none;left:0px;top:<?php echo $GHheight ?>px;z-index:<?php $zi++; echo $zi ?>;" id="GENDERhideFORieALT"></span>
 
@@ -25928,7 +25974,7 @@ if ($agent_display_dialable_leads > 0)
 
 
 </form>-->
-// To coomment after
+
 <form name="alert_form" id="alert_form" onsubmit="return false;">
 
 <div style="display:none;position:absolute;right:20px;top:80px;z-index:<?php $zi++; echo $zi ?>;" id="AlertBox"  class="alert alert-danger alert-dismissible fade show" role="alert">
