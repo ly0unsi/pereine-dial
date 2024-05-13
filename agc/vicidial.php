@@ -17409,7 +17409,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					if (hide_gender < 1)
 						{
 						document.getElementById("GENDERhideFORieALT").innerHTML = '';
-						document.getElementById("GENDERhideFORie").innerHTML = "<select size=\"1\" name=\"gender_list\" class=\"cust_form\" id=\"gender_list\"><option value=\"U\"><?php echo _QXZ("U - Undefined"); ?></option><option value=\"M\"><?php echo _QXZ("M - Male"); ?></option><option value=\"F\"><?php echo _QXZ("F - Female"); ?></option></select>";
+						document.getElementById("GENDERhideFORie").innerHTML = "<select size=\"1\" name=\"gender_list\" class=\"form-select\" id=\"gender_list\"><option value=\"U\"><?php echo _QXZ("U - Undefined"); ?></option><option value=\"M\"><?php echo _QXZ("M - Male"); ?></option><option value=\"F\"><?php echo _QXZ("F - Female"); ?></option></select>";
 						}
 					hideDiv('DispoSelectBox');
 					hideDiv('DispoButtonHideA');
@@ -24083,7 +24083,7 @@ $zi=2;
 		?>	
 		
 		</td></tr>
-		<tr><td colspan="3"><span id="busycallsdebug"></span></td></tr>
+		<!--<tr><td colspan="3"><span id="busycallsdebug"></span></td></tr>
 		<tr><td width="150px" align="left" valign="top">
 		<span class="text_input" id="MainPanelCustInfo">
 			<table>
@@ -24106,11 +24106,11 @@ $zi=2;
 						?>
 						</td>
 					</tr>
-		</table>
+		</table>-->
 	</table>
 	<!-- BEGIN *********   Here is the main VICIDIAL display panel -->
 	<!--<span style="position:absolute;display:none;left:0px;top:2186px;z-index:<?php $zi++; echo $zi ?>;" id="MainPanel">
-    <table border="0" bgcolor="<?php echo $MAIN_COLOR ?>" width="<?php echo $MNwidth ?>px" id="MainTable">
+    <!--<table border="0" bgcolor="<?php echo $MAIN_COLOR ?>" width="<?php echo $MNwidth ?>px" id="MainTable">-->
     <tr><td colspan="3">
 	<?php
 	if ($webphone_location == 'bar')
