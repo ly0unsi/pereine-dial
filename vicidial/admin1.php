@@ -6761,7 +6761,6 @@ echo "<META NAME=\"AUTHOR\" CONTENT=\"ViciDial Group\">\n";
 echo "<script language=\"JavaScript\" src=\"calendar_db.js\"></script>\n";
 echo "<script language=\"JavaScript\" src=\"help.js\"></script>\n";
 
-
 echo "<div id='HelpDisplayDiv' class='help_info' style='display:none;'></div>";
 
 echo "<link rel=\"stylesheet\" href=\"calendar.css\">\n";
@@ -8384,7 +8383,7 @@ if ($ADD==7111111)
 
 $no_title=1;
 $ADMIN=$PHP_SELF;
-require("admin_header.php");
+require("admin_header1.php");
 
 if ( ($SSadmin_modify_refresh > 1) and (preg_match("/^3|^4/",$ADD)) )
 	{
