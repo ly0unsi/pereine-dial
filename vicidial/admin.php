@@ -45593,6 +45593,8 @@ if ($ADD==31)
 	######################
 	if ($ADD==10)
 		{
+		echo "<div class=\"main-content\">";
+		echo "<br>";
 		echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
