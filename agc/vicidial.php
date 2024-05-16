@@ -1441,14 +1441,14 @@ if ($login_submit_once > 0)
 		submit_clicks++;
 		if (submit_clicks > 1)
 			{
-			document.getElementById("login_sub").value='<?php echo _QXZ("Loading, please wait..."); ?> ' + submit_clicks;
+				document.getElementById("login_sub").value='<?php echo _QXZ("Loading, please wait..."); ?> ' + submit_clicks;
 			}
 		else
 			{
-			document.vicidial_form.submit();
-			document.getElementById("login_sub").value='<?php echo _QXZ("Loading, please wait..."); ?>';
-			document.getElementById("login_sub").disabled=true;
-			document.getElementById("LoginLoadingBox").style.visibility = 'visible';
+				document.vicidial_form.submit();
+				document.getElementById("login_sub").value='<?php echo _QXZ("Loading, please wait..."); ?>';
+				document.getElementById("login_sub").disabled=true;
+				// document.getElementById("LoginLoadingBox").style.visibility = 'visible';
 			}
 		}
 
@@ -2859,10 +2859,14 @@ else
 			$label_rank =				_QXZ("Rank");
 			$label_owner =				_QXZ("Owner");
 			$label_entry_list_id =		_QXZ("Entry List ID");
-
-			$stmt="SELECT label_title,label_first_name,label_middle_initial,label_last_name,label_address1,label_address2,label_address3,label_city,label_state,label_province,label_postal_code,label_vendor_lead_code,label_gender,label_phone_number,label_phone_code,label_alt_phone,label_security_phrase,label_email,label_comments,label_lead_id,label_list_id,label_entry_date,label_gmt_offset_now,label_source_id,label_called_since_last_reset,label_status,label_user,label_date_of_birth,label_country_code,label_last_local_call_time,label_called_count,label_rank,label_owner,label_entry_list_id from system_settings;";
+			
+			// vicidial_list
+			$stmt="SELECT label_title,label_first_name,label_middle_initial,label_last_name,label_address1,label_address2,label_address3,label_city,label_state,label_province,label_postal_code,label_vendor_lead_code,label_gender,label_phone_number,label_phone_code,label_alt_phone,label_security_phrase,label_email,label_comments,label_lead_id,label_list_id,label_entry_date,label_gmt_offset_now,label_source_id,label_called_since_last_reset,label_status,label_user,label_date_of_birth,label_country_code,label_last_local_call_time,label_called_count,label_rank,label_owner,label_entry_list_id from  vicidial_list;";
+			
 			$rslt=mysql_to_mysqli($stmt, $link);
 			$row=mysqli_fetch_row($rslt);
+			// echo "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
+			// echo $row ;
 			if (strlen($row[0])>0)	{$label_title =				$row[0];}
 			if (strlen($row[1])>0)	{$label_first_name =		$row[1];}
 			if (strlen($row[2])>0)	{$label_middle_initial =	$row[2];}
@@ -8009,14 +8013,17 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 							if ( (AGLogiN == 'DEAD_VLA') && ( (vicidial_agent_disable == 'LIVE_AGENT') || (vicidial_agent_disable == 'ALL') ) )
 								{
 								button_click_log = button_click_log + "" + SQLdate + "-----agent_disabled---" + AGLogiN + " " + vicidial_agent_disable + " " + AGLogiN_notes + " AGENT-TIME--" + agent_datetime + "|";
-								showDiv('AgenTDisablEBoX');
+								// showDiv('AgenTDisablEBoX');
+								$("#sessionExpiredModal").modal('show');
+								
 								refresh_interval = 7300000;
 								agent_events('session_disabled', 'LIVE_AGENT', aec);   aec++;
 								}
 							if ( (AGLogiN == 'DEAD_EXTERNAL') && ( (vicidial_agent_disable == 'EXTERNAL') || (vicidial_agent_disable == 'ALL') ) )
 								{
 								button_click_log = button_click_log + "" + SQLdate + "-----agent_disabled---" + AGLogiN + " " + vicidial_agent_disable + " " + AGLogiN_notes + " AGENT-TIME--" + agent_datetime + "|";
-								showDiv('AgenTDisablEBoX');
+								// showDiv('AgenTDisablEBoX');
+								$("#sessionExpiredModal").modal('show');
 								refresh_interval = 7300000;
 								agent_events('session_disabled', 'DEAD_EXTERNAL', aec);   aec++;
 								}
@@ -18084,7 +18091,8 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 	function NoneInSession()
 		{
 		button_click_log = button_click_log + "" + SQLdate + "-----NoneInSessionShow---|";
-		showDiv('NoneInSessionBox');
+		// showDiv('NoneInSessionBox');
+		$("#noSessionModal").modal("show")
 		agent_events('none_in_session', '', aec);   aec++;
 		document.getElementById("NoneInSessionID").innerHTML = session_id;
 		WaitingForNextStep=1;
@@ -18092,14 +18100,17 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 	function NoneInSessionOK()
 		{
 		button_click_log = button_click_log + "" + SQLdate + "-----NoneInSessionOK---|";
-		hideDiv('NoneInSessionBox');
+		// hideDiv('NoneInSessionBox');
+		$('#noSessionModal').modal('hide');
 		WaitingForNextStep=0;
 		nochannelinsession=0;
 		}
 	function NoneInSessionCalL(tempstate)
 		{
+
 		button_click_log = button_click_log + "" + SQLdate + "-----NoneInSessionCalL---" + tempstate + "|";
-		hideDiv('NoneInSessionBox');
+		// hideDiv('NoneInSessionBox');
+		$('#noSessionModal').modal('hide');
 		WaitingForNextStep=0;
 		nochannelinsession=0;
 
@@ -18645,9 +18656,12 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					}
 				else
 					{
-					agent_events('logged_out', tempreason, aec);   aec++;
 
-					document.getElementById("LogouTProcess").innerHTML = "<br /><br /><font class=\"loading_text\"><?php echo _QXZ("LOGOUT PROCESSING..."); ?></font><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src=\"./images/<?php echo _QXZ("agent_loading_animation.gif"); ?>\" height=\"206px\" width=\"206px\" alt=\"<?php echo _QXZ("LOGOUT PROCESSING..."); ?>\" />";
+					agent_events('logged_out', tempreason, aec);   aec++;
+					$('#sessionExpiredModal').modal('hide');
+					$('#logoutModal').modal('show');
+
+					document.getElementById("LogouTProcess").innerHTML = "<br /><br /><font class=\"loading_text\"><?php echo _QXZ("LOGOUT PROCESSING..."); ?></font><br /><br /> <div style=\"width: 100px;height: 100px;color: #0ab39c;\" class=\"spinner-border spinner-border-sm\" role=\"status\"><span class=\"sr-only\">Loading...</span></div>";
 					//	document.getElementById("LogouTProcess").innerHTML = "<?php echo _QXZ("LOGOUT PROCESSING..."); ?>";
 					var xmlhttp=false;
 					/*@cc_on @*/
@@ -18666,32 +18680,32 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					@end @*/
 					if (!xmlhttp && typeof XMLHttpRequest!='undefined')
 						{
-						xmlhttp = new XMLHttpRequest();
+							xmlhttp = new XMLHttpRequest();
 						}
 					if (xmlhttp) 
 						{
-						VDlogout_query = "server_ip=" + server_ip + "&session_name=" + session_name + "&ACTION=userLOGout&format=text&user=" + user + "&pass=" + pass + "&campaign=" + campaign + "&conf_exten=" + session_id + "&extension=" + extension + "&protocol=" + protocol + "&agent_log_id=" + agent_log_id + "&no_delete_sessions=" + no_delete_sessions + "&phone_ip=" + phone_ip + "&enable_sipsak_messages=" + enable_sipsak_messages + "&LogouTKicKAlL=" + LogouTKicKAlL + "&ext_context=" + ext_context + "&qm_extension=" + qm_extension + "&stage=" + tempreason + "&pause_trigger=" + temppause + "&dial_method=" + dial_method + "&pause_max_url_trigger=" + temp_pause_max_url_trigger;
-						xmlhttp.open('POST', 'vdc_db_query.php'); 
-						xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
-						xmlhttp.send(VDlogout_query); 
-						xmlhttp.onreadystatechange = function()
+							VDlogout_query = "server_ip=" + server_ip + "&session_name=" + session_name + "&ACTION=userLOGout&format=text&user=" + user + "&pass=" + pass + "&campaign=" + campaign + "&conf_exten=" + session_id + "&extension=" + extension + "&protocol=" + protocol + "&agent_log_id=" + agent_log_id + "&no_delete_sessions=" + no_delete_sessions + "&phone_ip=" + phone_ip + "&enable_sipsak_messages=" + enable_sipsak_messages + "&LogouTKicKAlL=" + LogouTKicKAlL + "&ext_context=" + ext_context + "&qm_extension=" + qm_extension + "&stage=" + tempreason + "&pause_trigger=" + temppause + "&dial_method=" + dial_method + "&pause_max_url_trigger=" + temp_pause_max_url_trigger;
+							xmlhttp.open('POST', 'vdc_db_query.php'); 
+							xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
+							xmlhttp.send(VDlogout_query); 
+							xmlhttp.onreadystatechange = function()
+
 							{ 
 							if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
 								{
-							//	alert(VDlogout_query);
-							//	alert(xmlhttp.responseText);
-								needToConfirmExit = false;
+									//	alert(VDlogout_query);
+									//	alert(xmlhttp.responseText);
 
-								document.getElementById("LogouTProcess").innerHTML = "<br /><br /><font class=\"loading_text\"><?php echo _QXZ("LOGOUT PROCESS COMPLETE, YOU MAY NOW CLOSE YOUR BROWSER OR LOG BACK IN"); ?></font><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src=\"./images/<?php echo _QXZ("agent_loading_done.gif"); ?>\" height=\"206px\" width=\"206px\" alt=\"<?php echo _QXZ("LOGOUT PROCESS COMPLETE, YOU MAY NOW CLOSE YOUR BROWSER OR LOG BACK IN"); ?>\" />";
-
-								agent_events('logged_out_complete', '', aec);   aec++;
+									needToConfirmExit = false;
+									document.getElementById("LogouTProcess").innerHTML = "<br /><br /><font class=\"loading_text\"><?php echo _QXZ("LOGOUT PROCESS COMPLETE, YOU MAY NOW CLOSE YOUR BROWSER OR LOG BACK IN"); ?></font><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i style='font-size: 90px;color: #0ab39c;' class='bx bxs-check-circle'></i>";
+									agent_events('logged_out_complete', '', aec);   aec++;
 								}
 							}
 						delete xmlhttp;
 						}
 
 					hideDiv('MainPanel');
-					showDiv('LogouTBox');
+					// showDiv('LogouTBox');
 					refresh_interval = 7300000;
 					var logout_content='';
 					if (tempreason=='SHIFT')
@@ -18709,20 +18723,20 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						{
 						if (agent_logout_link == '1')
 							{
-							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"loading_text\"><a href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + UnixTime + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&phone_pass=" + phone_pass + "&VD_pass=" + orig_pass + "&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a class=\"btn btn-success w-lg waves-effect waves-light\" href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + UnixTime + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&phone_pass=" + phone_pass + "&VD_pass=" + orig_pass + "&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 							}
 						else if (agent_logout_link == '2')
 							{
-							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"loading_text\"><a href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + UnixTime + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + UnixTime + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 							}
 						else
 							{
-							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"loading_text\"><a href=\"" + agcPAGE + "?relogin=YES&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE + "?relogin=YES&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 							}
 						}
 					else
 						{
-						document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"loading_text\"><a href=\"" + agcPAGE + "\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+						document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE + "\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 						}
 
 					logout_stop_timeouts = 1;
@@ -21343,7 +21357,8 @@ function phone_number_format(formatphone) {
 			hideDiv('AgenTDisablEBoX');
 			hideDiv('SysteMDisablEBoX');
 			hideDiv('CustomerGoneBox');
-			hideDiv('NoneInSessionBox');
+			// hideDiv('NoneInSessionBox');
+			$('#noSessionModal').modal('hide');
 			hideDiv('WrapupBox');
 			hideDiv('FSCREENWrapupBox');
 			hideDiv('TransferMain');
@@ -23111,24 +23126,77 @@ $zi=2;
 
 	<!--Hangaup modal -->
 	<div class="modal fade" id="hangupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Qualification</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		</div>
-		<div class="modal-body" id="DispoSelectContent" >
-			
-		</div>
-		<div class="modal-footer">
-		<a class="btn btn-success w-lg waves-effect waves-light" role="button" href="#" onclick="DispoSelect_submit('','','YES');return false;"><?php echo _QXZ("SUBMIT"); ?></a>
-		<a class="btn btn-warning w-md waves-effect waves-light" role="button" href="#" onclick="DispoSelectContent_create('','ReSET','YES');return false;"><?php echo _QXZ("CLEAR FORM"); ?></a>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Qualification</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body" id="DispoSelectContent" >
+				
+			</div>
+			<div class="modal-footer">
+			<a class="btn btn-success w-lg waves-effect waves-light" role="button" href="#" onclick="DispoSelect_submit('','','YES');return false;"><?php echo _QXZ("SUBMIT"); ?></a>
+			<a class="btn btn-warning w-md waves-effect waves-light" role="button" href="#" onclick="DispoSelectContent_create('','ReSET','YES');return false;"><?php echo _QXZ("CLEAR FORM"); ?></a>
 
-		<a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a>
-			
-		</div>
+			<a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a>
+				
+			</div>
+			</div>
 		</div>
 	</div>
+	<!--logout modal -->
+	<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Qualification</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body text-center pb-2" id="LogouTProcess" >
+				
+			</div>
+			<div class="modal-footer">
+			<div id="LogouTBoxLink"></div>
+			
+			
+				
+			</div>
+			</div>
+		</div>
+	</div>
+	<!--disbaled session modal -->
+	<div class="modal fade" id="sessionExpiredModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			
+			<div class="modal-body  text-center pb-2" style="height: 30vh;display: flex;font-size: 24px;align-items: center;justify-content: center;" >
+				Your session has been disabled
+			</div>
+			<div class="modal-footer">
+			<a class="btn btn-sm btn-success" href="#" onclick="LogouT('DISABLED','','');return false;">CLICK HERE TO RESET YOUR SESSION</a>
+			
+			
+				
+			</div>
+			</div>
+		</div>
+	</div>
+	<!--no session modal -->
+	<div class="modal fade" id="noSessionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			
+			<div class="modal-body  text-center pb-2" style="height: 30vh;display: flex;font-size: 24px;align-items: center;justify-content: center;" >
+			<?php echo _QXZ("No one is in your session:"); ?> <span id="NoneInSessionID">
+				
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-sm btn-success" href="#" onclick="NoneInSessionCalL();return false;"><?php echo _QXZ("Call Agent Again"); ?></a>
+				<a class="btn btn-sm btn-danger" href="#" onclick="NoneInSessionOK();return false;"><?php echo _QXZ("Go Back"); ?></a>
+			</div>
+			</div>
+		</div>
 	</div>
 
 	<div id="layout-wrapper">
@@ -23246,10 +23314,10 @@ $zi=2;
                         </div>
                     </div>
                     <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
-                        <div class="row g-4">
+                        <div class="row g-4 mt-4">
                             <div class="col-auto">
                                 <div class="avatar-lg">
-                                    <img src="/agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
+                                    <img src="/abdellah/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
                                 </div>
                             </div>
                             
@@ -24014,7 +24082,8 @@ $zi=2;
 		<!-- added -->
 		
 		<!--end card-->
-		<div class="card mt-3">
+		
+		<div class="card mt-3 d-none">
 			<div class="card-body">
 				<div class="d-flex align-items-center mb-5">
 					<div class="flex-grow-1">
@@ -24054,7 +24123,7 @@ $zi=2;
 				
 			</div>
 		</div>
-		<div class="card mt-3">
+		<div class="card mt-3 d-none">
 			<div class="card-body">
 				<div class="d-flex align-items-center mb-4">
 					<div class="flex-grow-0">
@@ -24069,6 +24138,7 @@ $zi=2;
 				<img style="visibility:hidden" src="./images/<?php echo _QXZ("agc_live_call_OFF.gif"); ?>" name="livecall" alt="Live Call" width="109px" height="30px" border="0" />	
 			</div>
 		</div>
+		
 		<!--end card-->
 	</div>
 	
