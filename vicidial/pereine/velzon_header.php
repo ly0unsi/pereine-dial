@@ -426,6 +426,9 @@
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <ul class="nav nav-sm flex-column">
+                                                    <li class="nav-item">
+                                                            <a href="?ADD=11" class="nav-link" data-key="t-alerts">Add A New Campaign</a>
+                                                        </li>
                                                         <li class="nav-item">
                                                             <a href="?ADD=10" class="nav-link" data-key="t-alerts">Campaigns Main</a>
                                                         </li>

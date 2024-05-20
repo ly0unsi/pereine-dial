@@ -249,7 +249,10 @@ echo "<TITLE>"._QXZ("Server-Specific Real-Time Report")."</TITLE></HEAD><BODY BG
 $short_header=1;
 
 require("admin_header.php");
+require_once('./pereine/velzon_header.php');
 
+echo '<div class="main-content">';
+echo '<br><br><br><br><br>';
 echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
 
 echo "<PRE><FONT SIZE=2>";
