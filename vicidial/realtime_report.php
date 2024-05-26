@@ -2116,6 +2116,9 @@ if (preg_match("/LIMITED/",$report_display_type))
 	$no_header=1;
 
 	require("admin_header.php");
+	require_once('./pereine/velzon_header.php');
+	
+
 
 	echo "<FORM ACTION=\"$PHP_SELF\" METHOD=GET NAME=REALTIMEform ID=REALTIMEform>\n";
 	echo "<INPUT TYPE=HIDDEN NAME=cursorX ID=cursorX>\n";
@@ -2131,6 +2134,10 @@ else
 	$short_header=1;
 
 	require("admin_header.php");
+	require_once('./pereine/velzon_header.php');
+	echo '<div class="main-content">';
+	echo '<div class="page-content">';
+	echo '<div class="container-fluid">';
 
 	echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
 

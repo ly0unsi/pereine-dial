@@ -8581,10 +8581,15 @@ if ($ADD==11)
 		// echo "<TABLE><TR><TD>\n";
 		// echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		echo '<div class="row g-3">';
+		echo '<div class="col-lg-9">';
+		echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
+		echo "<i class=\"ri-contacts-book-line label-icon\"></i><strong><h2>"._QXZ("ADD A NEW CAMPAIGN")."</h2></strong>";
+		echo '</div>';
+
 		echo '<div class="col-lg-12">';
 		echo '<div class="card">';
 		echo '<div class="card-header align-items-center d-flex">';
-		echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW CAMPAIGN")."</h4>";
+		//echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW CAMPAIGN")."</h4>";
 		echo '<div class="flex-shrink-0">';
 
 		echo '</div>';
@@ -8982,74 +8987,22 @@ if ($ADD==111)
 		echo '<div class="container-fluid">'; 
 
 echo '<div class="row">';
-echo '<div class="col-lg-12">';
+echo '<div class="col-lg-9">';
+echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
+echo '<i class="ri-file-list-line label-icon"></i><strong><h2>ADD A NEW LIST</h2></strong>';
+echo '</div>';
+
 echo '<div class="card">';
 echo '<div class="card-header align-items-center d-flex">';
-echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW LIST")."</h4>";
+//echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW LIST")."</h4>";
 echo '<div class="flex-shrink-0">';
-
 echo '</div>';
 echo '</div><!-- end card header -->';
 echo '<div class="card-body">';
 //echo '<p class="text-muted">Use <code>form-floating</code> class to enable floating labels with Bootstrap’s textual form fields.</p>';
 echo '<div class="live-preview">';
 echo '<form action="#">';
-// echo '<div class="row g-3">';
-// echo '<div class="col-lg-6">';
-// echo '<div class="form-floating">';
-// echo '<input name="list_id" type="text" class="form-control" id="firstnamefloatingInput" placeholder="List ID">';
-// echo "<label for=\"firstnamefloatingInput\">"._QXZ("List ID")."</label>";
-// echo '</div>';
-// echo '</div>';
-// echo '<div class="col-lg-6">';
-// echo '<div class="form-floating">';
-// echo '<input name="list_name" type="text" class="form-control" id="lastnamefloatingInput" placeholder="List Namee">';
-// echo "<label for=\"lastnamefloatingInput\">"._QXZ("List Name")."</label>";
-// echo '</div>';
-// echo '</div>';
-// echo '<div class="col-lg-4">';
-// echo '<div class="form-floating">';
-// echo '<input name="list_description" type="email" class="form-control" id="emailfloatingInput" placeholder="List Description">';
-// echo "<label for=\"emailfloatingInput\">"._QXZ("List Description")."</label>";
-// echo '</div>';
-// echo '</div>';
 
-// echo '<div class="col-lg-4">';
-// echo '<div class="form-floating">';
-// echo '<select name="campaign_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">';
-// echo '<option selected>Choose...</option>';
-// echo '<option value="1">USA</option>';
-// echo '<option value="2">Brazil</option>';
-// echo '<option value="3">France</option>';
-// echo '<option value="4">Germany</option>';
-// echo '</select>';
-// echo "<label for=\"floatingSelect\">"._QXZ("Campaign")."</label>";
-// echo '</div>';
-// echo '</div>';
-// echo '<div class="col-lg-4">';
-// echo '<div class="form-floating">';
-// echo '<select name="active" class="form-select" id="floatingSelect" aria-label="Floating label select example">';
-// echo '<option selected>Choose...</option>';
-// echo '<option value="1">USA</option>';
-// echo '<option value="2">Brazil</option>';
-// echo '<option value="3">France</option>';
-// echo '<option value="4">Germany</option>';
-// echo '</select>';
-// echo "<label for=\"floatingSelect\">"._QXZ("Active")."</label>";
-// echo '</div>';
-// echo '</div>';
-// echo '<div class="col-lg-12">';
-// echo '<div class="text-end">';
-// echo '<button name="SUBMIT" type="submit" class="btn btn-primary">Submit</button>';
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// echo '</form>';
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
 		// echo "<TABLE><TR><TD>\n";
 		// echo "<img src=\"images/icon_black_lists.png\" alt=\"Lists\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
@@ -26390,6 +26343,9 @@ if ( ($ADD==31) and ( (!preg_match("/$campaign_id/i", $LOGallowed_campaigns)) an
 
 if ($ADD==31)
 	{
+		echo "<div class=\"main-content\">";
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">'; 
 	if ($LOGmodify_campaigns==1)
 		{
 		if ( ($SSadmin_modify_refresh > 1) and ($modify_refresh_set < 1) )
@@ -45950,19 +45906,27 @@ if ($ADD==31)
 	######################
 	if ($ADD==10)
 		{
-			echo "<div class=\"main-content\">";
+		echo "<div class=\"main-content\">";
 		echo "<br>"; 
 		echo '<div class="page-content">';
 		echo '<div class="container-fluid">'; 
-			echo '<div class="page-content">';
-			echo '<div class="container-fluid">';
-		echo "<TABLE><TR><TD>\n";
+		// 	echo '<div class="page-content">';
+		// 	echo '<div class="container-fluid">';
+
+			echo "<h2 >"._QXZ("CAMPAIGN LISTINGS")."</h2>";		
+		 echo '<div class="container-fluid">';	
+		echo '<div class="card">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo '</div><!-- end card header -->';
+
+
+		//echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
 		if (file_exists('options.php'))
 			{require('options.php');}
 	
-		echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> "._QXZ("CAMPAIGN LISTINGS").":\n";
+		//echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> "._QXZ("CAMPAIGN LISTINGS").":\n";
 		if ( (preg_match('/display_active/',$status)) or ( (!preg_match('/display_all/',$status)) and ($active_only_default_campaigns > 0) ) )
 			{
 			$SQLstatus = 'Y';
@@ -45971,7 +45935,7 @@ if ($ADD==31)
 		else
 			{
 			$SQLstatus = '';
-			echo " &nbsp; <a href=\"$PHP_SELF?ADD=10&status=display_active\"><font size=1 color=black>"._QXZ("show only active campaigns")."</a>\n";
+			//echo " &nbsp; <a href=\"$PHP_SELF?ADD=10&status=display_active\"><font size=1 color=black>"._QXZ("show only active campaigns")."</a>\n";
 			}
 	
 		$camp_group_SQL = $LOGadmin_viewable_groupsSQL;
@@ -45981,20 +45945,49 @@ if ($ADD==31)
 		$rslt=mysql_to_mysqli($stmt, $link);
 		$campaigns_to_print = mysqli_num_rows($rslt);
 	
-		echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
-		echo "<tr bgcolor=black>";
-		echo "<td NOWRAP><font size=1 color=white align=left><B>"._QXZ("CAMPAIGN ID")."</B></td>";
-		echo "<td NOWRAP><font size=1 color=white><CENTER><B>"._QXZ("NAME")."</B></CENTER></td>";
-		echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("ACTIVE")." &nbsp; </B></td>";
-		echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("GROUP")." &nbsp; </B></td>";
+		//echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
+		
+	
+		echo '<div class="row">';
+		echo '<div class="col-xl-12">';
+		echo '<div class="row">';
+		echo '<div class="col-xl-12">';
+		
+		
+		echo '<div class="card-body">';
+		echo '<div class="live-preview">';
+		echo '<div class="table-responsive table-card">';
+		echo '<table class="table align-middle table-nowrap mb-0">';
+		echo '<thead class="table-light">';
+		// echo "<tr bgcolor=black>";
+		// echo "<td NOWRAP><font size=1 color=white align=left><B>"._QXZ("CAMPAIGN ID")."</B></td>";
+		// echo "<td NOWRAP><font size=1 color=white><CENTER><B>"._QXZ("NAME")."</B></CENTER></td>";
+		// echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("ACTIVE")." &nbsp; </B></td>";
+		// echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("GROUP")." &nbsp; </B></td>";
+		echo '<tr>';
+		echo "<th scope=\"col\">"._QXZ("CAMPAIGN ID")."</th>";
+		echo "<th scope=\"col\">"._QXZ("NAME")."</th>";
+		echo "<th scope=\"col\">"._QXZ("ACTIVE")."</th>";
+		echo "<th scope=\"col\">"._QXZ("GROUP")."</th>";
+		
+		
+		
 		if ($SSoutbound_autodial_active > 0)
 			{
-			echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("DIAL METHOD")." &nbsp; </B></td>";
-			echo "<td NOWRAP><font size=1 color=white><B> "._QXZ("LEVEL")." &nbsp; </B></td>";
-			echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("LEAD ORDER")." &nbsp; </B></td>";
-			echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("DIAL STATUSES")." &nbsp; </B></td>";
+			// echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("DIAL METHOD")." &nbsp; </B></td>";
+			// echo "<td NOWRAP><font size=1 color=white><B> "._QXZ("LEVEL")." &nbsp; </B></td>";
+			// echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("LEAD ORDER")." &nbsp; </B></td>";
+			// echo "<td NOWRAP><font size=1 color=white><B>"._QXZ("DIAL STATUSES")." &nbsp; </B></td>";
+			echo "<th scope=\"col\">"._QXZ("DIAL METHOD")."</th>";
+			echo "<th scope=\"col\">"._QXZ("LEVEL")."</th>";
+			echo "<th scope=\"col\">"._QXZ("LEAD ORDER")."</th>";
+			echo "<th scope=\"col\">"._QXZ("DIAL STATUSES")."</th>";
 			}
-		echo "<td align=center NOWRAP><font size=1 color=white><B>"._QXZ("MODIFY")."</B></td></tr>\n";
+			echo "<th scope=\"col\" style=\"width: 150px;\">"._QXZ("MODIFY")."</th>";
+			echo '</tr>';
+			echo '</thead>';
+			echo '<tbody>';
+			echo '<tr>';
 	
 		$o=0; $p=0;
 		while ($campaigns_to_print > $o) 
@@ -46005,27 +45998,38 @@ if ($ADD==31)
 			else
 				{
 				if (preg_match('/1$|3$|5$|7$|9$/i', $p))
-					{$bgcolor='class="records_list_x"';} 
+					{$bgcolor='class="fw-medium"';} 
 				else
-					{$bgcolor='class="records_list_y"';}
-				echo "<tr $bgcolor"; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$PHP_SELF?ADD=34&campaign_id=$row[0]'\"";} echo "><td><a href=\"$PHP_SELF?ADD=34&campaign_id=$row[0]\"><font size=1 color=black>$row[0]</a> &nbsp; </td>";
-				echo "<td><font size=1>$row[1] &nbsp; </td>";
-				echo "<td><font size=1>"._QXZ("$row[2]")." &nbsp; </td>";
-				echo "<td><font size=1>".(preg_match('/\-\-ALL\-\-/', $row[7]) ? _QXZ("$row[7]") : $row[7])." &nbsp; </td>";
+					{$bgcolor='class="fw-medium"';}
+				echo "<tr $bgcolor"; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$PHP_SELF?ADD=34&campaign_id=$row[0]'\"";} echo "><td><a href=\"$PHP_SELF?ADD=34&campaign_id=$row[0]\">$row[0]</a> &nbsp; </td>";
+				echo "<td>$row[1] &nbsp; </td>";
+				echo "<td>"._QXZ("$row[2]")." &nbsp; </td>";
+				echo "<td>".(preg_match('/\-\-ALL\-\-/', $row[7]) ? _QXZ("$row[7]") : $row[7])." &nbsp; </td>";
 				if ($SSoutbound_autodial_active > 0)
 					{
-					echo "<td><font size=1>"._QXZ("$row[3]")." &nbsp; </td>";
-					echo "<td><font size=1>$row[4] &nbsp; </td>";
-					echo "<td><font size=1>"._QXZ("$row[5]")." &nbsp; </td>";
-					echo "<td><font size=1>$row[6]</td>";
+					echo "<td>"._QXZ("$row[3]")." &nbsp; </td>";
+					echo "<td>$row[4] &nbsp; </td>";
+					echo "<td>"._QXZ("$row[5]")." &nbsp; </td>";
+					echo "<td>$row[6]</td>";
 					}
-				echo "<td><font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$row[0]\">"._QXZ("MODIFY")."</a></td></tr>\n";
+				echo "<td><a href=\"$PHP_SELF?ADD=31&campaign_id=$row[0]\">"._QXZ("MODIFY")."</a></td></tr>\n";
 				$p++;
 				}
 			$o++;
 			}
 	
-		echo "</TABLE></center>\n";
+		//echo "</TABLE></center>\n";
+		echo '</tr>';
+		echo '</tbody>';
+		echo '</table>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card-body -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
+		echo '</div><!-- end row -->';
+		echo '</div><!-- end layout-width -->';
+		echo '</div><!-- end layout-width -->';
 		}
 	
 	
@@ -46036,10 +46040,12 @@ if ($ADD==31)
 		{
 			echo "<div class=\"main-content\">";
 			echo "<br>";
+			echo '<div class="page-content">';
+			echo '<div class="container-fluid">'; 
 			echo "<h2 >"._QXZ("LIST LISTINGS")."</h2>";
 			//echo '<div class="page-content">';
 		
-		echo '<div class="container-fluid">';
+		// echo '<div class="container-fluid">';
 		echo '<div class="row">';
 		echo '<div class="col-xl-12">';
 		echo '<div class="card">';
@@ -46150,7 +46156,7 @@ if ($ADD==31)
 		// echo '</div><!-- end layout-width -->';
 		// echo '</div><!-- end layout-width -->';
 		// echo "<TABLE><TR><TD>\n";
-		// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+		 echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=0>";
 		
 	
 		##### get list of campaign IDs for validation of list campaign
@@ -51649,10 +51655,8 @@ if ($ADD==31)
 					$agent_total = "$AAf$agent_total / $vla_set$AAb";
 					}
 				}
-	
 			// $section_width=700;
 			// echo "<BR><FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
-	
 			// echo "<center>";
 			// echo "<TABLE width=$section_width cellpadding=6 cellspacing=0>\n";
 			// echo "<tr"; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='realtime_report.php?report_display_type=HTML';\"";} echo ">";
@@ -51676,40 +51680,37 @@ if ($ADD==31)
 			// echo "</tr>";
 			// echo "</TABLE>";
 			// echo "<br><br>";
-			// 
-
 			echo '<div class="main-content">';
 			echo '<div class="page-content">';
 			echo '<div class="container-fluid">';
-			echo '<div class="row mb-3 pb-1">';
-
-			echo '<div class="row mb-3 pb-1">';
+			 echo '<div class="row mb-3 pb-1">';
+			 echo '<div class="row mb-3 pb-1">';
 echo '<div class="col-12">';
 echo '<div class="d-flex align-items-lg-center flex-lg-row flex-column">';
 echo '<div class="flex-grow-1">';
-echo '<h4 class="fs-16 mb-1">Good Morning, Anna!</h4>';
-echo '<p class="text-muted mb-0"> happening with your store today.</p>';
+echo '<h2>Good Morning, Admin!</h2>';
+echo '<p class="text-muted mb-0"> happening with your CRM today.</p>';
 echo '</div>';
 echo '<div class="mt-3 mt-lg-0">';
 echo '<form action="javascript:void(0);">';
 echo '<div class="row g-3 mb-0 align-items-center">';
-echo '<div class="col-sm-auto">';
-echo '<div class="input-group">';
-echo '<input type="text" class="form-control border-0 minimal-border dash-filter-picker shadow" data-provider="flatpickr" data-range-date="true" data-date-format="d M, Y" data-deafult-date="01 Jan 2022 to 31 Jan 2022">';
-echo '<div class="input-group-text bg-primary border-primary text-white">';
-echo '<i class="ri-calendar-2-line"></i>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '<!--end col-->';
+// echo '<div class="col-sm-auto">';
+// echo '<div class="input-group">';
+// echo '<input type="text" class="form-control border-0 minimal-border dash-filter-picker shadow" data-provider="flatpickr" data-range-date="true" data-date-format="d M, Y" data-deafult-date="01 Jan 2022 to 31 Jan 2022">';
+// echo '<div class="input-group-text bg-primary border-primary text-white">';
+// echo '<i class="ri-calendar-2-line"></i>';
+// echo '</div>';
+// echo '</div>';
+// echo '</div>';
+// echo '<!--end col-->';
 echo '<div class="col-auto">';
 //echo '<button type="button" class="btn btn-soft-success material-shadow-none"><i class="ri-add-circle-line align-middle me-1"></i> Add Product</button>';
-echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229" type="button" class="btn btn-primary btn-label waves-effect waves-light"><i class="mdi mdi-arrow-bottom-right-bold-box-outline label-icon align-middle fs-16 me-2"></i>OUTBOUND</a>';
+echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229" type="button" class="btn btn-info btn-label waves-effect waves-light"><i class="mdi mdi-arrow-bottom-right-bold-box-outline label-icon align-middle fs-16 me-2"></i><b>OUTBOUND</b></a>';
 echo '</div>';
 echo '<!--end col-->';
 echo '<div class="col-auto">';
 //echo '<button type="button" class="btn btn-soft-info btn-icon waves-effect material-shadow-none waves-light layout-rightside-btn"><i class="ri-pulse-line"></i></button>';
-echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229&closer_display=1" type="button" class="btn btn-primary btn-label waves-effect waves-light"><i class="mdi mdi-arrow-top-left-bold-box-outline label-icon align-middle fs-16 me-2"></i>INBOUND</a>';
+echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229&closer_display=1" type="button" class="btn btn-success btn-label waves-effect waves-light"><i class="mdi mdi-arrow-top-left-bold-box-outline label-icon align-middle fs-16 me-2"></i><b>INBOUND</b></a>';
 echo '</div>';
 echo '<!--end col-->';
 echo '</div>';
@@ -51894,7 +51895,7 @@ echo '<!--end row-->';
 			
 			
 echo '<div class="row">';
-echo '<div class="col-xl-8">';
+echo '<div class="col-xl-12">';
 echo '<div class="card">';
 echo '<div class="card-header align-items-center d-flex">';
 echo '<h4 class="card-title mb-0 flex-grow-1">System Summary</h4>';
@@ -52159,12 +52160,12 @@ echo '</div> <!-- .col-->';
 			
 
 			//echo "<TABLE >";
-			echo '<div class="col-xl-8">';
+			echo '<div class="col-xl-12">';
 echo '<div class="card">';
 echo '<div class="card-header align-items-center d-flex">';
 echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Total Stats for Today")."</h4>";
 echo '<div class="flex-shrink-0">';
-echo "<a href=\"$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL\" type=\"button\" class=\"btn btn-soft-info btn-sm material-shadow-none\"><i class=\"ri-file-list-3-line align-middle\">View max stats</i></a>";
+echo "<a href=\"$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL\" type=\"button\" class=\"btn btn-soft-info btn-sm material-shadow-none\"><i class=\"ri-file-list-3-line align-middle\"></i><b>View max stats</b></a>";
 echo '</div>';
 echo '</div><!-- end card header -->';
 
@@ -52257,12 +52258,12 @@ echo '</thead>';
 				}
 				
 			echo '<br><br>';				
-			echo '<div class="col-xl-8">';
+			echo '<div class="col-xl-12">';
 			echo '<div class="card">';
 			echo '<div class="card-header align-items-center d-flex">';
 			echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Total Stats for Yesterday")."</h4>";
 			echo '<div class="flex-shrink-0">';
-			echo "<a href=\"$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL\" type=\"button\" class=\"btn btn-soft-info btn-sm material-shadow-none\"><i class=\"ri-file-list-3-line align-middle\">View max stats</i></a>";
+			echo "<a href=\"$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL\" type=\"button\" class=\"btn btn-soft-info btn-sm material-shadow-none\"><i class=\"ri-file-list-3-line align-middle\"></i><b>View max stats</b></a>";
 			echo '</div>';
 			echo '</div><!-- end card header -->';
 			echo '<div class="card-body">';
