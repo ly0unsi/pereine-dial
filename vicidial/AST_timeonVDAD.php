@@ -249,8 +249,12 @@ echo "<TITLE>"._QXZ("Server-Specific Real-Time Report")."</TITLE></HEAD><BODY BG
 $short_header=1;
 
 require("admin_header.php");
+require_once('./pereine/velzon_header.php');
+echo '<div class="main-content">';
+echo '<div class="page-content">';
+echo '<div class="container-fluid">';
 
-echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
+//echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
 
 echo "<PRE><FONT SIZE=2>";
 
@@ -263,7 +267,10 @@ $rslt=mysql_to_mysqli($stmt, $link);
 $row=mysqli_fetch_row($rslt);
 $balanceSHORT = $row[0];
 
-echo _QXZ("SERVER").": $server_ip\n";
+//echo _QXZ("SERVER").": $server_ip\n";
+
+
+
 
 
 
@@ -273,8 +280,35 @@ echo _QXZ("SERVER").": $server_ip\n";
 
 if ($closer_display>0) {$closer_display_reverse=0;   $closer_reverse_link=_QXZ("DEFAULT");}
 else {$closer_display_reverse=1;   $closer_reverse_link=_QXZ("CLOSER");}
+echo '<div class="row h-100">';
+echo '<div class="col-xl-9">';
+echo '<div class="card">';
+echo '<div class="card-body p-0">';
+echo '<div class="alert border-0 alert-secondary material-shadow" role="alert">';
+echo '<i data-feather="alert-triangle" class="text-warning me-2 icon-sm"></i>';
+echo '<div class="flex-grow-1 text-truncate">';
+echo _QXZ("<h2>Statistiques des agents</h2>");
+echo '</div>';
+echo '</div>';
+echo '<div class="card overflow-hidden">';
+echo '<div class="card-body bg-marketplace d-flex">';
+echo '<div class="flex-grow-1">';
+echo '<h2><span class="text-primary">Agents Time On Calls </span> </h2>';
+echo _QXZ("SERVER").": $server_ip\n";
+echo '<div class="d-flex gap-3 mt-4">';
+echo "<a href=\"$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display_reverse\" class=\"btn btn-primary\">$closer_reverse_link</a>";
+//echo "<a href=\"./admin.php?ADD=999999\" class=\"btn btn-success\">"._QXZ("REPORTS")."</a>";
+echo '</div>';
+echo '</div>';
+echo '<img src="../agc/pereine/velzon/assets/images/bg-d.png" alt="" class="img-fluid" />';
+echo '</div>';
+echo '</div>';
 
-echo _QXZ("Agents Time On Calls")."           $NOW_TIME    <a href=\"$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display_reverse\">$closer_reverse_link</a> | <a href=\"./admin.php?ADD=999999\">"._QXZ("REPORTS")."</a>\n\n";
+
+
+
+
+//echo _QXZ("Agents Time On Calls")."           $NOW_TIME    <a href=\"$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display_reverse\">$closer_reverse_link</a> | <a href=\"./admin.php?ADD=999999\">"._QXZ("REPORTS")."</a>\n\n";
 
 if ($closer_display>0)
 {
@@ -287,6 +321,9 @@ else
 echo "+------------+------------+--------+-----------+---------------------+--------+----------+---------+\n";
 echo "| "._QXZ("STATION",10)." | "._QXZ("PHONE",10)." | "._QXZ("USER",6)." | "._QXZ("SESSIONID",9)." | "._QXZ("CHANNEL",19)." | "._QXZ("STATUS",6)." | "._QXZ("CALLTIME",8)." | "._QXZ("MINUTES",7)." |\n";
 echo "+------------+------------+--------+-----------+---------------------+--------+----------+---------+\n";
+
+
+
 }
 
 $stmt="select extension,user,conf_exten,channel,status,last_call_time,UNIX_TIMESTAMP(last_call_time),UNIX_TIMESTAMP(last_call_finish),uniqueid,lead_id from vicidial_live_agents where status NOT IN('PAUSED') and server_ip='" . mysqli_real_escape_string($link, $server_ip) . "' order by extension;";
@@ -485,8 +522,10 @@ $talking_to_print = mysqli_num_rows($rslt);
 	echo "**************************************************************************************\n";
 	echo "********************************* "._QXZ("NO AGENTS ON CALLS",18)." *********************************\n";
 	echo "**************************************************************************************\n";
-	echo "**************************************************************************************\n";
-	}
+	echo "**************************************************************************************\n"; 
+	
+	
+}
 
 
 ###################################################################################
@@ -565,7 +604,57 @@ $parked_to_print = mysqli_num_rows($rslt);
 	echo "******************************* "._QXZ("NO LIVE CALLS WAITING",21)." *********************************\n";
 	echo "***************************************************************************************\n";
 	echo "***************************************************************************************\n";
-	}
+	echo '</div><!--end col-->';
+	echo '</div> <!-- end card-body-->';
+	echo '</div>';	
+
+}
+
+// echo '<!-- Table Foot -->';
+// echo '<table class="table table-nowrap">';
+// echo '<thead class="table-light ">';
+// echo '<tr>';
+// echo "<th scope=\"col\">"._QXZ("STATION",10)."</th>";
+// echo "<th scope=\"col\">"._QXZ("PHONE",10)."</th>";
+// echo "<th scope=\"col\">"._QXZ("USER",6)."</th>";
+// echo "<th scope=\"col\">"._QXZ("SESSIONID",9)."</th>";
+// echo "<th scope=\"col\">"._QXZ("STATUS",6)."</th>";
+// echo "<th scope=\"col\">"._QXZ("CALLTIME",8)."</th>";
+// echo "<th scope=\"col\">"._QXZ("MINUTES",7)."</th>";
+// echo "<th scope=\"col\">"._QXZ("CAMPAIGN",12)."</th>";
+// echo "<th scope=\"col\">"._QXZ("FRONT",6)."</th>";
+// echo '</tr>';
+// echo '</thead>';
+// echo '<tbody>';
+// echo '<tr>';
+// echo '<th scope="row">1</th>';
+// echo '<td>Annette Black</td>';
+// echo '<td>Industrial Designer</td>';
+// echo '<td>10, Nov 2021</td>';
+// echo '<td>$450</td>';
+// echo '</tr>';
+// echo '<tr>';
+// echo '<th scope="row">2</th>';
+// echo '<td>Bessie Cooper</td>';
+// echo '<td>Graphic Designer</td>';
+// echo '<td>13, Nov 2021</td>';
+// echo '<td>$875</td>';
+// echo '</tr>';
+// echo '<tr>';
+// echo '<th scope="row">3</th>';
+// echo '<td>Leslie Alexander</td>';
+// echo '<td>Product Manager</td>';
+// echo '<td>17, Nov 2021</td>';
+// echo '<td>$410</td>';
+// echo '</tr>';
+// echo '</tbody>';
+// echo '<tfoot class="table-light">';
+// echo '<tr>';
+// echo '<td colspan="4">Total</td>';
+// echo '<td>$940</td>';
+// echo '</tr>';
+// echo '</tfoot>';
+// echo '</table>';
 
 
 ?>

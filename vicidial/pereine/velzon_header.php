@@ -37,18 +37,18 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="#" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                                <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="40">
                             </span>
                             <span class="logo-lg">
-                                <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                                <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="40">
                             </span>
                             </a>
                             <a href="#" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                                <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="40">
                             </span>
                             <span class="logo-lg">
-                                <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                                <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="40">
                             </span>
                             </a>
                         </div>
@@ -136,7 +136,7 @@
                         <div class="dropdown ms-sm-3 header-item topbar-user">
                             <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-flex align-items-center">
-                                <img class="rounded-circle header-profile-user" src="../abdellah/agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="../agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="Header Avatar">
                                 <span class="text-start ms-xl-2">
                                 <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Admin Screen</span>
                                 <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text"></span>
@@ -168,26 +168,27 @@
             <!-- ========== App Menu ========== -->
             <div class="app-menu navbar-menu">
                 <!-- LOGO -->
-                <br>  
+                 
                 <div class="app-menu navbar-menu">
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
                     <!-- Dark Logo-->
+                    <br>
                     <a href="http://167.86.107.229/anas/vicidial/admin.php" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="../agc/pereine/velzon/assets/images/pereine-recrute.png" alt="" height="50">
+                            <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="65">
                         </span>
-                        <span class="logo-lg">
-                            <img src="../agc/pereine/velzon/assets/images/pereine-recrute.png" alt="" height="40">
+                        <span class="logo-lg" >
+                            <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="55">
                         </span>
                     </a>
                     <!-- Light Logo-->
                     <a href="http://167.86.107.229/anas/vicidial/admin.php" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="../agc/pereine/velzon/assets/images/pereine-recrute.png" alt="" height="50">
+                        <span class="logo-sm ">
+                            <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="65">
                         </span>
                         <span class="logo-lg">
-                            <img src="../agc/pereine/velzon/assets/images/pereine-recrute.png" alt="" height="40">
+                            <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="55">
                         </span>
                     </a>
                     <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -426,6 +427,9 @@
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <ul class="nav nav-sm flex-column">
+                                                    <li class="nav-item">
+                                                            <a href="?ADD=11" class="nav-link" data-key="t-alerts">Add A New Campaign</a>
+                                                        </li>
                                                         <li class="nav-item">
                                                             <a href="?ADD=10" class="nav-link" data-key="t-alerts">Campaigns Main</a>
                                                         </li>
@@ -738,8 +742,6 @@
 
                                 </ul>
                             </div><!-- Sidebar -->
-                       
-                        
                     </div>
                 </div>
                 <div class="sidebar-background"></div>
@@ -748,9 +750,6 @@
             <!-- Left Sidebar End -->
             <!-- Vertical Overlay-->
             <div class="vertical-overlay"></div>
-            
-
-            
 
         </div>
         <!-- END layout-wrapper -->
