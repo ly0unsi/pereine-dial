@@ -1171,7 +1171,7 @@ $select_list .= "<TD NOWRAP align=right>";
 $select_list .= "<font class=\"top_settings_val\">"._QXZ("VERSION").": $version &nbsp; "._QXZ("BUILD").": $build</font>";
 $select_list .= "</TD></TR></TABLE>";
 
-$open_list = '<TABLE WIDTH=250 CELLPADDING=0 CELLSPACING=0 BGCOLOR=\'#D9E6FE\'><TR><TD ALIGN=CENTER><a href=\'#\' onclick=\\"openDiv(\'campaign_select_list\');\\"><font class=\'top_settings_val\'>'._QXZ("Choose Report Display Options").'</a></TD></TR></TABLE>';
+$open_list = '<a href=\'#\' onclick=\\"openDiv(\'campaign_select_list\');\\"><font class=\'top_settings_val\'>'._QXZ("Choose Report Display Options").'</a>';
 
 ?>
 
@@ -2281,6 +2281,87 @@ else
 
 	if ( ($report_display_type!='WALL_1') and ($report_display_type!='WALL_2') and ($report_display_type!='WALL_3') and ($report_display_type!='WALL_4') and ($report_display_type!='LIMITED') and (!$mobile_device))
 		{
+
+			echo '<div class="row">';
+			echo '<div class="col-xl-12">';
+			echo '<div class="card crm-widget">';
+			echo '<div class="card-body p-0">';
+			echo '<div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-0">';
+			echo '<div class="col">';
+			echo '<div class="py-4 px-3">';
+			echo "<h5 class=\"text-muted text-uppercase fs-13\">"._QXZ("DIAL LEVEL")."<i class=\"ri-arrow-up-circle-line text-success fs-18 float-end align-middle\"></i></h5>";
+			echo '<div class="d-flex align-items-center">';
+			echo '<div class="flex-shrink-0">';
+			echo '<i class="ri-space-ship-line display-6 text-muted cfs-22"></i>';
+			echo '</div>';
+			echo '<div class="flex-grow-1 ms-3">';
+			echo "<h2 class=\"mb-0 cfs-22\"><font class=\"top_settings_key\">"._QXZ("DIAL LEVEL").":<font class=\"top_settings_val\">&nbsp; $DIALlev</h2>";
+			echo "<font class=\"top_settings_key\">"._QXZ("DIALABLE LEADS").":</font><font class=\"top_settings_val\"> $DAleads <br>";
+			echo "<font class=\"top_settings_key\">"._QXZ("HOPPER")." <font class=\"top_settings_val\">( "._QXZ("min/auto")." )</font>:</font><font class=\"top_settings_val\"> $HOPlev / $AHOPlev ";
+			echo "<font class=\"top_settings_key\">"._QXZ("LEADS IN HOPPER").":</font><font class=\"top_settings_val\"> $VDhop ";
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '<div class="col">';
+			echo '<div class="mt-3 mt-md-0 py-4 px-3">';
+			echo "<h5 class=\"text-muted text-uppercase fs-13\">"._QXZ("TRUNK SHORT/FILL")."<i class=\"ri-arrow-up-circle-line text-success fs-18 float-end align-middle\"></i></h5>";
+			echo '<div class="d-flex align-items-center">';
+			echo '<div class="flex-shrink-0">';
+			echo '<i class="ri-exchange-dollar-line display-6 text-muted cfs-22"></i>';
+			echo '</div>';
+			echo '<div class="flex-grow-1 ms-3">';
+			echo "<h2 class=\"mb-0 cfs-22\"><span class=\"counter-value\" data-target=\"489.4\">$balanceSHORT / $balanceFILL</span></h2>";
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '<div class="col">';
+			echo '<div class="mt-3 mt-md-0 py-4 px-3">';
+			echo "<h5 class=\"text-muted text-uppercase fs-13\">"._QXZ("FILTER")."<i class=\"ri-arrow-up-circle-line text-success fs-18 float-end align-middle\"></i></h5>";
+			echo '<div class="d-flex align-items-center">';
+			echo '<div class="flex-shrink-0">';
+			echo '<i class="ri-pulse-line display-6 text-muted cfs-22"></i>';
+			echo '</div>';
+			echo '<div class="flex-grow-1 ms-3">';
+			echo "<h2 class=\"mb-0 cfs-22\">"._QXZ("$DIALfilter")."</h2>";
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '<div class="col">';
+			echo '<div class="mt-3 mt-lg-0 py-4 px-3">';
+			echo "<h5 class=\"text-muted text-uppercase fs-13\">"._QXZ("TIME")."<i class=\"ri-arrow-up-circle-line text-success fs-18 float-end align-middle\"></i></h5>";
+			echo '<div class="d-flex align-items-center">';
+			echo '<div class="flex-shrink-0">';
+			echo '<i class="ri-trophy-line display-6 text-muted cfs-22"></i>';
+			echo '</div>';
+			echo '<div class="flex-grow-1 ms-3">';
+			echo "<h3 class=\"mb-0 cfs-22\">$NOW_TIME</h3>";
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '<div class="col">';
+			echo '<div class="mt-3 mt-lg-0 py-4 px-3">';
+			echo '<h5 class="text-muted text-uppercase fs-13">Annual Deals <i class="ri-arrow-down-circle-line text-danger fs-18 float-end align-middle"></i></h5>';
+			echo '<div class="d-flex align-items-center">';
+			echo '<div class="flex-shrink-0">';
+			echo '<i class="ri-service-line display-6 text-muted cfs-22"></i>';
+			echo '</div>';
+			echo '<div class="flex-grow-1 ms-3">';
+			echo '<h2 class="mb-0 cfs-22"><span class="counter-value" data-target="2659">0</span></h2>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div><!-- end row -->';
+			echo '</div><!-- end card body -->';
+			echo '</div><!-- end card -->';
+			echo '</div><!-- end col -->';
+			echo '</div><!-- end row -->';
+			
+
 		echo "<BR><table cellpadding=0 cellspacing=0><TR>";
 		echo "<TD ALIGN=RIGHT><font class=\"top_settings_key\">"._QXZ("DIAL LEVEL").":</font></TD><TD ALIGN=LEFT><font class=\"top_settings_val\">&nbsp; $DIALlev&nbsp; &nbsp; </TD>";
 		echo "<TD ALIGN=RIGHT><font class=\"top_settings_key\">"._QXZ("TRUNK SHORT/FILL").":</font></TD><TD ALIGN=LEFT><font class=\"top_settings_val\">&nbsp; $balanceSHORT / $balanceFILL &nbsp; &nbsp; </TD>";
@@ -2351,6 +2432,7 @@ else
 		echo "<TD ALIGN=RIGHT><font class=\"top_settings_key\">"._QXZ("ORDER").":</font></TD><TD ALIGN=LEFT><font class=\"top_settings_val\">&nbsp; "._QXZ("$DIALorder")." &nbsp; &nbsp; </TD>";
 		echo "</TR>";
 
+		
 		$SLAinHTML='';
 		if ($SLAinSTATS>0)
 			{
@@ -3065,9 +3147,14 @@ if ($report_display_type=='TEXT')
 	{
 	$Aecho = '';
 	$Aecho .= ""._QXZ("Agents Time On Calls Campaign").": $group_string            $NOW_TIME\n";
-	}
+	
+
+
+
+}
 if ( ($report_display_type=='HTML') or ($report_display_type=='LIMITED') )
 	{
+		
 	$Aecho = '';
 	$Aecho .= "<table cellpadding=1 cellspacing=1 border=0 class='realtime_table'>";
 	$Aecho .= "<tr>";

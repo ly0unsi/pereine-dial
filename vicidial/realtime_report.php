@@ -1213,7 +1213,7 @@ $select_list .= "<TD NOWRAP align=right>";
 $select_list .= "<font class='top_settings_val'>"._QXZ("VERSION").": $version &nbsp; "._QXZ("BUILD").": $build</font>";
 $select_list .= "</TD></TR></TABLE>";
 
-$open_list = '<TABLE WIDTH=250 CELLPADDING=0 CELLSPACING=0 BGCOLOR=\'#D9E6FE\'><TR><TD ALIGN=CENTER><a href=\'#\' onclick=\\"showDiv(\'campaign_select_list\');\\"><font class=\'top_settings_val\'>'._QXZ("Choose Report Display Options").'</a></TD></TR></TABLE>';
+$open_list = '<a href=\'#\' onclick=\\"showDiv(\'campaign_select_list\');\\"><font class=\'top_settings_val\'>'._QXZ("Choose Report Display Options").'</a>';
 
 
 
@@ -2139,7 +2139,7 @@ else
 	echo '<div class="page-content">';
 	echo '<div class="container-fluid">';
 
-	echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
+	// echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
 
 	echo "<FORM ACTION=\"$PHP_SELF\" METHOD=GET NAME=REALTIMEform ID=REALTIMEform>\n";
 	echo "<INPUT TYPE=HIDDEN NAME=cursorX ID=cursorX>\n";
@@ -2163,12 +2163,18 @@ else
 	#echo "<INPUT TYPE=HIDDEN NAME=CARRIERstats ID=CARRIERstats VALUE=\"$CARRIERstats\">\n";
 	#echo "<INPUT TYPE=HIDDEN NAME=PRESETstats ID=PRESETstats VALUE=\"$PRESETstats\">\n";
 	#echo "<INPUT TYPE=HIDDEN NAME=AGENTtimeSTATS ID=AGENTtimeSTATS VALUE=\"$AGENTtimeSTATS\">\n";
+	// echo '<div class="main-content">';
+	
+	// echo "<font class='top_head_key'>"._QXZ("$report_name")." <br> <br> \n";
+	echo '<!-- Secondary Alert -->';
+	echo '<div class="alert alert-secondary material-shadow" role="alert">';
+	echo "<h2> "._QXZ("$report_name")."  </h2>";
+	echo '</div>';
 
-	echo "<font class='top_head_key'>"._QXZ("$report_name")." &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \n";
-	echo "<span style=\"position:absolute;left:160px;z-index:20;\" id=campaign_select_list_link>\n";
-	echo "<TABLE WIDTH=250 CELLPADDING=0 CELLSPACING=0 BGCOLOR=\"#D9E6FE\"><TR><TD ALIGN=CENTER>\n";
-	echo "<a href=\"#\" onclick=\"showDiv('campaign_select_list');\"><font class='top_head_key'>"._QXZ("Choose Report Display Options")."</a>";
-	echo "</TD></TR></TABLE>\n";
+	// echo "<span style=\"position:absolute;left:160px;z-index:20;\" id=campaign_select_list_link>\n";
+	// echo "<TABLE><TR><TD ALIGN=CENTER>\n";
+	echo "<a class=\"btn btn-soft-secondary waves-effect material-shadow-none\" href=\"#\" onclick=\"showDiv('campaign_select_list');\">"._QXZ("Choose Report Display Options")."</a><br>";
+	// echo "</TD></TR></TABLE>\n";
 	echo "</span>\n";
 	echo "<span style=\"position:absolute;left:0px;z-index:21;\" id=campaign_select_list>\n";
 	echo "<TABLE WIDTH=0 HEIGHT=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR=\"#D9E6FE\"><TR><TD ALIGN=CENTER>\n";
@@ -2216,48 +2222,48 @@ if (!preg_match("/WALL|LIMITED/",$report_display_type))
 
 
 	if ($adastats<2)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('adastats','');\"><font class=\"top_settings_val\"><span id=adastatsTXT>+ "._QXZ("VIEW MORE")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('adastats','');\"><span id=adastatsTXT>+ "._QXZ("VIEW MORE")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('adastats','');\"><font class=\"top_settings_val\"><span id=adastatsTXT>- "._QXZ("VIEW LESS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('adastats','');\"><span id=adastatsTXT>- "._QXZ("VIEW LESS")."</span></a>";}
 	if ($UGdisplay>0)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('UGdisplay','');\"><font class=\"top_settings_val\"><span id=UGdisplayTXT>"._QXZ("HIDE USER GROUP")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('UGdisplay','');\"><span id=UGdisplayTXT>"._QXZ("HIDE USER GROUP")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('UGdisplay','');\"><font class=\"top_settings_val\"><span id=UGdisplayTXT>"._QXZ("VIEW USER GROUP")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('UGdisplay','');\"><span id=UGdisplayTXT>"._QXZ("VIEW USER GROUP")."</span></a>";}
 	if ($SERVdisplay>0)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><font class=\"top_settings_val\"><span id=SERVdisplayTXT>"._QXZ("HIDE SERVER INFO")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><span id=SERVdisplayTXT>"._QXZ("HIDE SERVER INFO")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><font class=\"top_settings_val\"><span id=SERVdisplayTXT>"._QXZ("SHOW SERVER INFO")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><span id=SERVdisplayTXT>"._QXZ("SHOW SERVER INFO")."</span></a>";}
 	if ($CALLSdisplay>0)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><font class=\"top_settings_val\"><span id=CALLSdisplayTXT>"._QXZ("HIDE WAITING CALLS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><span id=CALLSdisplayTXT>"._QXZ("HIDE WAITING CALLS")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><font class=\"top_settings_val\"><span id=CALLSdisplayTXT>"._QXZ("SHOW WAITING CALLS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><span id=CALLSdisplayTXT>"._QXZ("SHOW WAITING CALLS")."</span></a>";}
 	if ($ALLINGROUPstats>0)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><font class=\"top_settings_val\"><span id=ALLINGROUPstatsTXT>"._QXZ("HIDE IN-GROUP STATS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><span id=ALLINGROUPstatsTXT>"._QXZ("HIDE IN-GROUP STATS")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><font class=\"top_settings_val\"><span id=ALLINGROUPstatsTXT>"._QXZ("SHOW IN-GROUP STATS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><span id=ALLINGROUPstatsTXT>"._QXZ("SHOW IN-GROUP STATS")."</span></a>";}
 	if ($PHONEdisplay>0)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><font class=\"top_settings_val\"><span id=PHONEdisplayTXT>"._QXZ("HIDE PHONES")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><span id=PHONEdisplayTXT>"._QXZ("HIDE PHONES")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><font class=\"top_settings_val\"><span id=PHONEdisplayTXT>"._QXZ("SHOW PHONES")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><span id=PHONEdisplayTXT>"._QXZ("SHOW PHONES")."</span></a>";}
 	if ($MONITORdisplay>0)
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><font class=\"top_settings_val\"><span id=MONITORdisplayTXT>"._QXZ("HIDE MONITORS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><span id=MONITORdisplayTXT>"._QXZ("HIDE MONITORS")."</span></a>";}
 	else
-		{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><font class=\"top_settings_val\"><span id=MONITORdisplayTXT>"._QXZ("SHOW MONITORS")."</span></font></a>";}
+		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><span id=MONITORdisplayTXT>"._QXZ("SHOW MONITORS")."</span></a>";}
 	if ($RS_hide_CUST_info < 1)
 		{
 		if ($CUSTPHONEdisplay>0)
-			{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><font class=\"top_settings_val\"><span id=CUSTPHONEdisplayTXT>"._QXZ("HIDE CUSTPHONES")."</span></font></a>";}
+			{echo "<a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><span id=CUSTPHONEdisplayTXT>"._QXZ("HIDE CUSTPHONES")."</span></a>";}
 		else
-			{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><font class=\"top_settings_val\"><span id=CUSTPHONEdisplayTXT>"._QXZ("SHOW CUSTPHONES")."</span></font></a>";}
+			{echo "<a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><span id=CUSTPHONEdisplayTXT>"._QXZ("SHOW CUSTPHONES")."</span></a>";}
 		}
 	if ($LOGuser_level >= $CUSTINFOminUL) 
 		{
 		if ($RS_hide_CUST_info < 1)
 			{
 			if ($CUSTINFOdisplay>0)
-				{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><font class=\"top_settings_val\"><span id=CUSTINFOdisplayTXT>"._QXZ("HIDE CUST INFO")."</span></font></a>";}
+				{echo " <a  class=\"btn rounded-pill btn-primary waves-effect waves-light\"href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><span id=CUSTINFOdisplayTXT>"._QXZ("HIDE CUST INFO")."</span></a>";}
 			else
-				{echo " &nbsp; &nbsp; &nbsp; <a href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><font class=\"top_settings_val\"><span id=CUSTINFOdisplayTXT>"._QXZ("SHOW CUST INFO")."</span></font></a>";}
+				{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><span id=CUSTINFOdisplayTXT>"._QXZ("SHOW CUST INFO")."</span></a>";}
 			}
 		}
 	}

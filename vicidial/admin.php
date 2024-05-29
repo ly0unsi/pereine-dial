@@ -6766,7 +6766,7 @@ echo "<script language=\"JavaScript\" src=\"help.js\"></script>\n";
 
 
 echo '<meta charset="utf-8" />';
-echo '<title>Starter | Velzon - Admin & Dashboard Template</title>';
+echo '<title> Pereine | CRM - Admin & Dashboard</title>';
 echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 echo '<meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />';
 echo '<meta content="Themesbrand" name="author" />';
@@ -8581,7 +8581,7 @@ if ($ADD==11)
 		// echo "<TABLE><TR><TD>\n";
 		// echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		echo '<div class="row g-3">';
-		echo '<div class="col-lg-9">';
+		echo '<div class="col-lg-12">';
 		echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
 		echo "<i class=\"ri-contacts-book-line label-icon\"></i><strong><h2>"._QXZ("ADD A NEW CAMPAIGN")."</h2></strong>";
 		echo '</div>';
@@ -8612,7 +8612,7 @@ if ($ADD==11)
 		else
 			{
 		//echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign ID").": </td><td align=left><input type=text name=campaign_id size=10 maxlength=8>$NWB#campaigns-campaign_id$NWE</td></tr>\n";
-			//echo '<div class="row">';
+			echo '<div class="row">';
 			echo '<div class="col-md-6">';
 			echo '<div class="mb-3">';
 			echo "<label for=\"lastNameinput\" class=\"form-label\">"._QXZ("Campaign ID")."</label>";
@@ -8987,7 +8987,7 @@ if ($ADD==111)
 		echo '<div class="container-fluid">'; 
 
 echo '<div class="row">';
-echo '<div class="col-lg-9">';
+echo '<div class="col-lg-12">';
 echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
 echo '<i class="ri-file-list-line label-icon"></i><strong><h2>ADD A NEW LIST</h2></strong>';
 echo '</div>';
@@ -21680,6 +21680,7 @@ if ($ADD==5)
 ######################
 if ($ADD==51)
 	{
+		
 	echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
 	if ( (strlen($campaign_id) < 2) or ($LOGdelete_campaigns < 1) )
@@ -21689,8 +21690,11 @@ if ($ADD==51)
 		}
 	else
 		{
+			echo '<div class="main-content">';
+echo '<div class="page-content">';
+// echo '<div class="container-fluid">';
 		echo "<br><B>"._QXZ("CAMPAIGN DELETION CONFIRMATION").": $campaign_id</B>\n";
-		echo "<br><br><a href=\"$PHP_SELF?ADD=61&campaign_id=$campaign_id&CoNfIrM=YES\">"._QXZ("Click here to delete campaign")." $campaign_id</a><br><br><br>\n";
+		echo "<a href=\"$PHP_SELF?ADD=61&campaign_id=$campaign_id&CoNfIrM=YES\">"._QXZ("Click here to delete campaign")." $campaign_id</a><br><br><br>\n";
 		}
 
 	$ADD='31';		# go to campaign modification below
@@ -30613,6 +30617,9 @@ if ($ADD==31)
 			else		{$camp_pause_color=$campaigns_color;}
 		if ($SUB==29)	{$camp_listmix_color=$subcamp_color;}
 			else		{$camp_listmix_color=$campaigns_color;}
+			echo '<div class="main-content">';
+			echo '<div class="page-content">';
+			echo '<div class="container-fluid">';
 		echo "<TABLE WIDTH=$page_width CELLPADDING=2 CELLSPACING=0><TR BGCOLOR=\"$campaigns_color\">\n";
 		echo "<TD><font size=2 color=$subcamp_font face=\"ARIAL,HELVETICA\"> <B>$campaign_id</B>: </font></TD>";
 	
@@ -51683,6 +51690,7 @@ if ($ADD==31)
 			echo '<div class="main-content">';
 			echo '<div class="page-content">';
 			echo '<div class="container-fluid">';
+			echo '<div class="row">';
 			 echo '<div class="row mb-3 pb-1">';
 			 echo '<div class="row mb-3 pb-1">';
 echo '<div class="col-12">';
@@ -51731,6 +51739,7 @@ echo '<!--end row-->';
 			 echo '</blockquote>';
 			 echo '</div>';
 			 
+			 
 			
 			echo '<div class="mt-3 mt-lg-0">';
 			echo '<form action="javascript:void(0);">';
@@ -51762,25 +51771,25 @@ echo '<!--end row-->';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
-			echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-0\">"._QXZ("Agents Logged In")."</p>";
+			echo "<h2 class=\"text-uppercase fw-medium text-muted\">"._QXZ("Agents Logged In")."</h2>";
 			echo '</div>';
 
 			
 			echo '<div class="flex-shrink-0">';
-			echo '<h5 class="text-success fs-14 mb-0">';
-			echo '<i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.24 %';
+			echo '<h5 class="text-success fs-1 mb-0">';
+			// echo '<i class="ri-arrow-right-up-line fs-13 align-middle"></i> +16.24 %';
 			echo '</h5>';
 			echo '</div>';
 			echo '</div>';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
-			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$agent_total</span></h4>";
+			echo "<h2 class=\"fs-1 fw-semibold ff-secondary \">$agent_total</h2>";
 			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
-			echo '<span class="avatar-title bg-success-subtle rounded fs-3">';
-			echo '<i class="bx bx-dollar-circle text-success"></i>';
-			echo '</span>';
+			// echo '<span class="avatar-title bg-success-subtle rounded fs-1">';
+			echo '<i class="ri-login-box-line display-4 text-muted"></i>';
+			// echo '</span>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div><!-- end card body -->';
@@ -51794,23 +51803,24 @@ echo '<!--end row-->';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
-			echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-0\">"._QXZ("Agents In Calls")."</p>";
+			echo "<h2 class=\"text-uppercase fw-medium text-muted\">"._QXZ("Agents In Calls")."</h2>";
 			echo '</div>';
 			echo '<div class="flex-shrink-0">';
 			echo '<h5 class="text-danger fs-14 mb-0">';
-			echo '<i class="ri-arrow-right-down-line fs-13 align-middle"></i> -3.57 %';
+			// echo '<i class="ri-arrow-right-down-line fs-13 align-middle"></i> -3.57 %';
 			echo '</h5>';
 			echo '</div>';
 			echo '</div>';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
-			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$agent_incall</span></h4>";
+			echo "<h2 class=\"fs-1 fw-semibold ff-secondary\">$agent_incall</h2>";
 			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
-			echo '<span class="avatar-title bg-info-subtle rounded fs-3">';
-			echo '<i class="bx bx-shopping-bag text-info"></i>';
-			echo '</span>';
+			// echo '<span class="avatar-title bg-info-subtle rounded fs-1">';
+			// echo '<i class="bx bx-shopping-bag text-info"></i>';
+			// echo '</span>';
+			echo '<i class="ri-phone-line display-4 text-muted"></i>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div><!-- end card body -->';
@@ -51823,23 +51833,24 @@ echo '<!--end row-->';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
-			echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-0\">"._QXZ("Active Calls")."</p>";
+			echo "<h2 class=\"text-uppercase fw-medium text-muted\">"._QXZ("Active Calls")."</h2>";
 			echo '</div>';
 			echo '<div class="flex-shrink-0">';
 			echo '<h5 class="text-success fs-14 mb-0">';
-			echo '<i class="ri-arrow-right-up-line fs-13 align-middle"></i> +29.08 %';
+			// echo '<i class="ri-arrow-right-up-line fs-13 align-middle"></i> +29.08 %';
 			echo '</h5>';
 			echo '</div>';
 			echo '</div>';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
-			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$agent_incall</span></h4>";
+			echo "<h4 class=\"fs-1 fw-semibold ff-secondary\">$agent_incall</h4>";
 			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
-			echo '<span class="avatar-title bg-warning-subtle rounded fs-3">';
-			echo '<i class="bx bx-user-circle text-warning"></i>';
-			echo '</span>';
+			// echo '<span class="avatar-title bg-warning-subtle rounded fs-1">';
+			// echo '<i class="bx bx-user-circle text-warning"></i>';
+			// echo '</span>';
+			echo '<i class="ri-checkbox-circle-line display-4 text-muted"></i>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div><!-- end card body -->';
@@ -51852,23 +51863,24 @@ echo '<!--end row-->';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
-			echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-0\">"._QXZ("Calls Ringing")."</p>";
+			echo "<h2 class=\"text-uppercase fw-medium text-muted\">"._QXZ("Calls Ringing")."</h2>";
 			echo '</div>';
 			echo '<div class="flex-shrink-0">';
 			echo '<h5 class="text-muted fs-14 mb-0">';
-			echo '+0.00 %';
+			// echo '+0.00 %';
 			echo '</h5>';
 			echo '</div>';
 			echo '</div>';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
-			echo "<h4 class=\"fs-22 fw-semibold ff-secondary mb-4\"><span class=\"counter-value\" data-target=\"559.25\">$ringing_calls</span></h4>";
+			echo "<h2 class=\"fs-1 fw-semibold ff-secondary\">$ringing_calls</h2>";
 			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
-			echo '<span class="avatar-title bg-primary-subtle rounded fs-3">';
-			echo '<i class="bx bx-wallet text-primary"></i>';
-			echo '</span>';
+			// echo '<span class="avatar-title bg-primary-subtle rounded fs-1">';
+			// echo '<i class="bx bx-wallet text-primary"></i>';
+			// echo '</span>';
+			echo '<i class="ri-file-music-line display-4 text-muted"></i>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div><!-- end card body -->';

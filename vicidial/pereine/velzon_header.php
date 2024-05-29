@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+ <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default"> 
 
 
 <!-- Mirrored from themesbrand.com/velzon/html/master/pages-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2024 12:59:51 GMT -->
 <head>
 
     <meta charset="utf-8" />
-    <title>Starter | Velzon - Admin & Dashboard Template</title>
+    <title>Pereine | CRM - Admin & Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -174,7 +174,7 @@
                 <div class="navbar-brand-box">
                     <!-- Dark Logo-->
                     <br>
-                    <a href="http://167.86.107.229/anas/vicidial/admin.php" class="logo logo-dark">
+                    <a href="http://167.86.107.229/vicidial/admin.php" class="logo logo-dark">
                         <span class="logo-sm">
                             <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="65">
                         </span>
@@ -183,7 +183,7 @@
                         </span>
                     </a>
                     <!-- Light Logo-->
-                    <a href="http://167.86.107.229/anas/vicidial/admin.php" class="logo logo-light">
+                    <a href="http://167.86.107.229/vicidial/admin.php" class="logo logo-light">
                         <span class="logo-sm ">
                             <img src="../agc/pereine/velzon/assets/images/pereine2white.png" alt="" height="65">
                         </span>

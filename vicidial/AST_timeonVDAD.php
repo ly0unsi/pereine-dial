@@ -208,6 +208,14 @@ if ($reset_counter > 7)
 
 <HTML>
 <HEAD>
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+<script type="text/javascript">
+var auto_refresh = setInterval(
+function ()
+{
+$('#load_tweets').fadeOut('fast').load('div.php').fadeIn("fast");
+}, 5000); //refresh div every 10000 milliseconds or 10 seconds
+</script>
 <?php
 echo "<STYLE type=\"text/css\">\n";
 echo "<!--\n";
@@ -240,11 +248,21 @@ if ($closer_display>0)
    .yellow {color: black; background-color: yellow}
 -->
  </STYLE>
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    function autoRefresh_div()
+    {
+      $("#employee_table").load("$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display");// a function which will load data from other file after x seconds
+    }
 
+    setInterval('autoRefresh_div()', 5000); // refresh div after 5 secs
+</script> -->
 <?php 
 echo "<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n";
-echo"<META HTTP-EQUIV=Refresh CONTENT=\"4; URL=$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display\">\n";
+//echo"<META HTTP-EQUIV=Refresh CONTENT=\"4; URL=$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display\">\n";
 echo "<TITLE>"._QXZ("Server-Specific Real-Time Report")."</TITLE></HEAD><BODY BGCOLOR=WHITE marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>\n";
+
+
 
 $short_header=1;
 
@@ -252,6 +270,8 @@ require("admin_header.php");
 require_once('./pereine/velzon_header.php');
 echo '<div class="main-content">';
 echo '<div class="page-content">';
+
+
 echo '<div class="container-fluid">';
 
 //echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
@@ -280,13 +300,13 @@ $balanceSHORT = $row[0];
 
 if ($closer_display>0) {$closer_display_reverse=0;   $closer_reverse_link=_QXZ("DEFAULT");}
 else {$closer_display_reverse=1;   $closer_reverse_link=_QXZ("CLOSER");}
-echo '<div class="row h-100">';
+echo '<div class="row h-100" >';
 echo '<div class="col-xl-9">';
 echo '<div class="card">';
 echo '<div class="card-body p-0">';
 echo '<div class="alert border-0 alert-secondary material-shadow" role="alert">';
 echo '<i data-feather="alert-triangle" class="text-warning me-2 icon-sm"></i>';
-echo '<div class="flex-grow-1 text-truncate">';
+echo '<div class="flex-grow-1 text-truncate" >';
 echo _QXZ("<h2>Statistiques des agents</h2>");
 echo '</div>';
 echo '</div>';
@@ -308,10 +328,11 @@ echo '</div>';
 
 
 
-//echo _QXZ("Agents Time On Calls")."           $NOW_TIME    <a href=\"$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display_reverse\">$closer_reverse_link</a> | <a href=\"./admin.php?ADD=999999\">"._QXZ("REPORTS")."</a>\n\n";
+echo _QXZ("Agents Time On Calls")."           $NOW_TIME    <a href=\"$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display_reverse\">$closer_reverse_link</a> | <a href=\"./admin.php?ADD=999999\">"._QXZ("REPORTS")."</a>\n\n";
 
 if ($closer_display>0)
 {
+
 echo "+------------+------------+--------+-----------+---------------------+--------+----------+---------+--------------+--------+\n";
 echo "| "._QXZ("STATION",10)." | "._QXZ("PHONE",10)." | "._QXZ("USER",6)." | "._QXZ("SESSIONID",9)." | "._QXZ("CHANNEL",19)." | "._QXZ("STATUS",6)." | "._QXZ("CALLTIME",8)." | "._QXZ("MINUTES",7)." | "._QXZ("CAMPAIGN",12)." | "._QXZ("FRONT",6)." |\n";
 echo "+------------+------------+--------+-----------+---------------------+--------+----------+---------+--------------+--------+\n";
@@ -321,7 +342,6 @@ else
 echo "+------------+------------+--------+-----------+---------------------+--------+----------+---------+\n";
 echo "| "._QXZ("STATION",10)." | "._QXZ("PHONE",10)." | "._QXZ("USER",6)." | "._QXZ("SESSIONID",9)." | "._QXZ("CHANNEL",19)." | "._QXZ("STATUS",6)." | "._QXZ("CALLTIME",8)." | "._QXZ("MINUTES",7)." |\n";
 echo "+------------+------------+--------+-----------+---------------------+--------+----------+---------+\n";
-
 
 
 }
@@ -518,13 +538,14 @@ $talking_to_print = mysqli_num_rows($rslt);
 	}
 	else
 	{
+		echo '<div id="load_tweets">';
 	echo "**************************************************************************************\n";
 	echo "**************************************************************************************\n";
 	echo "********************************* "._QXZ("NO AGENTS ON CALLS",18)." *********************************\n";
 	echo "**************************************************************************************\n";
 	echo "**************************************************************************************\n"; 
 	
-	
+	echo '</div>';
 }
 
 

@@ -18,7 +18,7 @@ echo '<div class="bg-overlay"></div>';
 echo '<div class="position-relative h-100 d-flex flex-column">';
 echo '<div class="mb-4">';
 echo '<a href="#" class="d-block">';
-echo '<img src="./pereine/velzon/assets/images/logo-light.png" alt="" height="18">';
+echo '<img src="./pereine/velzon/assets/images/pereine2white.png" alt="" height="50">';
 echo '</a>';
 echo '</div>';
 echo '<div class="mt-auto">';

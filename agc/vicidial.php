@@ -10340,6 +10340,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 // Populate lead information from search while on inbound call
 	function LeaDSearcHSelecT(LSSlead_id,LSStype)
 		{
+			alert("LeaDSearcHSelecT")
 		button_click_log = button_click_log + "" + SQLdate + "-----LeaDSearcHSelecT---" + LSSlead_id + " " + LSStype + "|";
 		var move_on=0;
 		if (VD_live_customer_call==1)
@@ -10480,6 +10481,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 										tmp_pn.innerHTML						= change_array[12];
 										}
 									}
+									alert(change_array[14])
 								document.vicidial_form.phone_number.value		= change_array[12];
 								document.vicidial_form.title.value				= change_array[13];
 								document.vicidial_form.first_name.value			= change_array[14];
@@ -11532,6 +11534,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 // Update Agent screen with values from vicidial_list record
 	function UpdateFieldsData()
 		{
+			alert("update filed data")
 		var fields_list = update_fields_data + ',';
 		update_fields=0;
 		update_fields_data='';
@@ -11872,14 +11875,14 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 							var regUDemailreload = new RegExp("emailreload,","ig");
 							if (fields_list.match(regUDemailreload))
 								{
-								EmailContentsLoad();
-								event_data = event_data + '--- emailreload ';
+									EmailContentsLoad();
+									event_data = event_data + '--- emailreload ';
 								}
 							var regUDchatreload = new RegExp("chatreload,","ig");
 							if (fields_list.match(regUDchatreload))
 								{
-								CustomerChatContentsLoad();
-								event_data = event_data + '--- chatreload ';
+									CustomerChatContentsLoad();
+									event_data = event_data + '--- chatreload ';
 								}
 							var regUDcallbacksreload = new RegExp("callbacksreload,","ig");
 							if (fields_list.match(regUDcallbacksreload))
@@ -18724,15 +18727,15 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						{
 						if (agent_logout_link == '1')
 							{
-							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a class=\"btn btn-success w-lg waves-effect waves-light\" href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + UnixTime + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&phone_pass=" + phone_pass + "&VD_pass=" + orig_pass + "&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a class=\"btn btn-success w-lg waves-effect waves-light\" href=\"" + agcPAGE +"\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 							}
 						else if (agent_logout_link == '2')
 							{
-							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE + "?relogin=YES&session_epoch=" + UnixTime + "&session_id=" + session_id + "&session_name=" + session_name + "&VD_login=" + user + "&VD_campaign=" + campaign + "&phone_login=" + original_phone_login + "&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE +"\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 							}
 						else
 							{
-							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE + "?relogin=YES&LOGINvarONE=" + LOGINvarONE + "&LOGINvarTWO=" + LOGINvarTWO + "&LOGINvarTHREE=" + LOGINvarTHREE + "&LOGINvarFOUR=" + LOGINvarFOUR + "&LOGINvarFIVE=" + LOGINvarFIVE + "&hide_relogin_fields=" + hide_relogin_fields + "\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
+							document.getElementById("LogouTBoxLink").innerHTML = logout_content + "<font class=\"fs-3\"><a href=\"" + agcPAGE +"\" onclick=\"needToConfirmExit = false;\"><?php echo _QXZ("CLICK HERE TO LOG IN AGAIN"); ?></a></font>\n";
 							}
 						}
 					else
@@ -19070,28 +19073,28 @@ else
 		{
 		web_form_varsX = 
 		"&lead_id=" + encodeURIComponent(document.vicidial_form.lead_id.value) + 
-		"&vendor_id=" + encodeURIComponent(document.vicidial_form.vendor_lead_code.value) + 
+		// "&vendor_id=" + encodeURIComponent(document.vicidial_form.vendor_lead_code.value) + 
 		"&list_id=" + encodeURIComponent(document.vicidial_form.list_id.value) + 
 		"&gmt_offset_now=" + encodeURIComponent(document.vicidial_form.gmt_offset_now.value) + 
 		"&phone_code=" + encodeURIComponent(document.vicidial_form.phone_code.value) + 
 		"&phone_number=" + encodeURIComponent(document.vicidial_form.phone_number.value) + 
 		"&title=" + encodeURIComponent(document.vicidial_form.title.value) + 
 		"&first_name=" + encodeURIComponent(document.vicidial_form.first_name.value) + 
-		"&middle_initial=" + encodeURIComponent(document.vicidial_form.middle_initial.value) + 
+		// "&middle_initial=" + encodeURIComponent(document.vicidial_form.middle_initial.value) + 
 		"&last_name=" + encodeURIComponent(document.vicidial_form.last_name.value) + 
 		"&address1=" + encodeURIComponent(document.vicidial_form.address1.value) + 
 		"&address2=" + encodeURIComponent(document.vicidial_form.address2.value) + 
-		"&address3=" + encodeURIComponent(document.vicidial_form.address3.value) + 
+		// "&address3=" + encodeURIComponent(document.vicidial_form.address3.value) + 
 		"&city=" + encodeURIComponent(document.vicidial_form.city.value) + 
 		"&state=" + encodeURIComponent(document.vicidial_form.state.value) + 
-		"&province=" + encodeURIComponent(document.vicidial_form.province.value) + 
+		// "&province=" + encodeURIComponent(document.vicidial_form.province.value) + 
 		"&postal_code=" + encodeURIComponent(document.vicidial_form.postal_code.value) + 
 		"&country_code=" + encodeURIComponent(document.vicidial_form.country_code.value) + 
 		"&gender=" + encodeURIComponent(document.vicidial_form.gender.value) + 
 		"&date_of_birth=" + encodeURIComponent(document.vicidial_form.date_of_birth.value) + 
-		"&alt_phone=" + encodeURIComponent(document.vicidial_form.alt_phone.value) + 
+		// "&alt_phone=" + encodeURIComponent(document.vicidial_form.alt_phone.value) + 
 		"&email=" + encodeURIComponent(document.vicidial_form.email.value) + 
-		"&security_phrase=" + encodeURIComponent(document.vicidial_form.security_phrase.value) + 
+		// "&security_phrase=" + encodeURIComponent(document.vicidial_form.security_phrase.value) + 
 		"&comments=" + encodeURIComponent(document.vicidial_form.comments.value) + 
 		"&user=" + UDCtemp_user + 
 		"&pass=" + UDCtemp_pass + 
@@ -21607,7 +21610,7 @@ function phone_number_format(formatphone) {
 				CustomerData_update('NO');
 				if (hide_gender < 1)
 					{
-					document.getElementById("GENDERhideFORie").innerHTML = '';
+					// document.getElementById("GENDERhideFORie").innerHTML = '';
 					document.getElementById("GENDERhideFORieALT").innerHTML = "<select size=\"1\" name=\"gender_list\" class=\"form-select\" id=\"gender_list\"><option value=\"U\"><?php echo _QXZ("U - Undefined"); ?></option><option value=\"M\"><?php echo _QXZ("M - Male"); ?></option><option value=\"F\"><?php echo _QXZ("F - Female"); ?></option></select>";
 					}
 				ViewComments('OFF','OFF');
@@ -23079,7 +23082,7 @@ function phone_number_format(formatphone) {
 			if (genderValue == 'M') {var gIndex = 1;}
 			if (genderValue == 'F') {var gIndex = 2;}
 			document.getElementById("GENDERhideFORieALT").innerHTML = "<select size=\"1\" name=\"gender_list\" class=\"form-select\" id=\"gender_list\"><option value=\"U\"><?php echo _QXZ("U - Undefined"); ?></option><option value=\"M\"><?php echo _QXZ("M - Male"); ?></option><option value=\"F\"><?php echo _QXZ("F - Female"); ?></option></select>";
-			document.getElementById("GENDERhideFORie").innerHTML = '';
+			// document.getElementById("GENDERhideFORie").innerHTML = '';
 			document.getElementById("gender_list").selectedIndex = gIndex;
 			}
 		}
@@ -23140,7 +23143,7 @@ $zi=2;
 			<a class="btn btn-success w-lg waves-effect waves-light" role="button" href="#" onclick="DispoSelect_submit('','','YES');return false;"><?php echo _QXZ("SUBMIT"); ?></a>
 			<a class="btn btn-warning w-md waves-effect waves-light" role="button" href="#" onclick="DispoSelectContent_create('','ReSET','YES');return false;"><?php echo _QXZ("CLEAR FORM"); ?></a>
 
-			<a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a>
+			<!-- <a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a> -->
 				
 			</div>
 			</div>
@@ -23318,7 +23321,7 @@ $zi=2;
                         <div class="row g-4 mt-4">
                             <div class="col-auto">
                                 <div class="avatar-lg">
-                                    <img src="/abdellah/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
+                                    <img src="/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
                                 </div>
                             </div>
                             
@@ -23329,75 +23332,75 @@ $zi=2;
 				<!-- ZZZZZZZZZZZZ  customer info -->
 				<span <?php $zi++; echo $zi ?> id="MainPanel">
 				
-										<div class="row pt-3 g-2">
-											<div class="col-xxl-12 p-2 g-2 " style="background-color:#FFFFFF; border-radius: 4px;">
-												<button type="button" class="btn btn-success btn-label waves-effect waves-light" id="call_manuel_butt" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Call Manuel"); ?></button>
+								<div class="row pt-3 g-2">
+									<div class="col-xxl-12 p-2 g-2 " style="background-color:#FFFFFF; border-radius: 4px;">
+										<button type="button" class="btn btn-success btn-label waves-effect waves-light" id="call_manuel_butt" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Call Manuel"); ?></button>
 
-												<div style="display:inline" id="HangupControl">
-													<button style="cursor:default;background: gray !important;color: white;border: gray;" disabled type="button" class="btn btn-secondary btn-label waves-effect waves-light" id="HangupControl" ><?php echo $agent_hide_hangup_ACTIVE_style ?>
-													<span class="mdi mdi-phone-hangup label-icon align-middle fs-16 me-2"></span>
-													Raccrocher
-													</button>
-												</div>
-												
-												<div style="display: none;"><button  type="button" class="btn btn-primary btn-label bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"><i class="ri-check-double-line label-icon align-middle fs-16 me-2"></i>Large Modal</button></div>
-												<div style="display:inline" id="XferControl">
-												<button  style="cursor:default;background: gray !important;color: white;border: gray;" disabled onclick="ShoWTransferMain('ON','','YES');" type="button" class="btn btn-info bg-gradient waves-effect waves-light btn-label" data-bs-toggle="modal" data-bs-target="#mModal"><i class=" ri-file-transfer-line label-icon align-middle fs-16 me-2"></i> Transfert - Conférence </button>
-												</div>
-												
-												<span    style="background-color: #CCFFCC" id="DiaLControl"><a class="btn btn-soft-success btn-label waves-effect waves-light" href="#" onclick="ManualDialNext('','','','','','0','','','YES');"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Dial Next Number") ?></a></span>
-																</button>
-																<span  id="RecorDControl"><a id="SpacerSpanA" class="btn btn-danger btn-border btn-label waves-effect waves-light" href="#" onclick="conf_send_recording('MonitorConf',session_id,'','','','YES');return false;"><i class=" ri-record-circle-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Start Recording") ?></a></span>
-    															<span  id="RecorDMute"></span>
-																
-																<?php
-																if (!preg_match("/NOGAP/",$SSrecording_buttons))
-																	//{echo "<span id=\"SpacerSpanA\"><img src=\"./images/"._QXZ("blank.gif")."\" width=\"145px\" height=\"16px\" border=\"0\" /></span>";}
-																if ($SSenable_first_webform > 0)
-																	{//echo "<span  class=\"btn btn-soft-success btn-label waves-effect waves-light\" id=\"WebFormSpan\"><img src=\"./images/"._QXZ("vdc_LB_webform_OFF.gif")."\" border=\"0\" alt=\"Web Form\" /></span><br /><br />\n";
-																		//echo "<span  class=\"btn btn-soft-success btn-label waves-effect waves-light\" id=\"WebFormSpan\"><a class="btn btn-soft-success btn-label waves-effect waves-light" href="#"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i></span><br /><br />\n";
-																		echo "<div style=\"display: none;\"> <span  id=\"WebFormSpan\" ><a  class=\"btn btn-primary btn-label waves-effect waves-light\" href=\"#\"><i class=\" ri-login-box-line label-icon align-middle fs-16 me-2\"></i> "._QXZ("Web Form")." </a></span></div>";
-																	}
-																if ($enable_second_webform > 0)
-																	{echo "<div style=\"display: none;\"> <span  id=\"WebFormSpanTwo\" ><a class=\"btn btn-primary btn-label waves-effect waves-light\" href=\"#\"><i class=\" ri-login-box-line label-icon align-middle fs-16 me-2\"></i> "._QXZ("Web Form 2")." </a></span></div>";}
-																if ($enable_third_webform > 0)
-																	{echo "<div style=\"display: none;\"> <span id=\"WebFormSpanThree\" ><a  class=\"btn btn-primary btn-label waves-effect waves-light\" href=\"#\"><i class=\" ri-login-box-line label-icon align-middle fs-16 me-2\"></i> "._QXZ("Web Form 3")." </a></span></div>";}
-																?>
-																 <font class="body_small_bold"><span id="ParkCounterSpan"> </span></font>
-																<span id="ParkControl">
-																<a style="cursor:default;background: gray !important;color: white;border: gray;" disabled class="btn btn-warning btn-label waves-effect waves-light" href="#"><i class=" ri-headphone-line label-icon align-middle fs-16 me-2"></i> <?php echo _QXZ("Park Call") ?> </a>
-																</span>
-																<?php
-																if ( ($ivr_park_call=='ENABLED') or ($ivr_park_call=='ENABLED_PARK_ONLY') )
-																	{echo "<div style=\"display: none;\"><span style=\"background-color: $MAIN_COLOR\" id=\"ivrParkControl\"><img src=\"./images/"._QXZ("vdc_LB_ivrparkcall_OFF.gif")."\" border=\"0\" alt=\"IVR Park Call\" /></span></div>";}
-																else
-																	{echo "<div style=\"display: none;\"><span style=\"background-color: $MAIN_COLOR\" id=\"ivrParkControl\"></span></div>\n";}
-																?>
-																
-																
-
-																<?php
-																if ($quick_transfer_button_enabled > 0)
-																	{echo "<span style=\"background-color: $MAIN_COLOR\" id=\"QuickXfer\"><img src=\"./images/"._QXZ("vdc_LB_quickxfer_OFF.gif")."\" border=\"0\" alt=\"Quick Transfer\" /></span>";}
-																if ($custom_3way_button_transfer_enabled > 0)
-																	{echo "<span style=\"background-color: $MAIN_COLOR\" id=\"CustomXfer\"><img src=\"./images/"._QXZ("vdc_LB_customxfer_OFF.gif")."\" border=\"0\" alt=\"Custom Transfer\" /></span>";}
-																?>
-
-																<span id="ReQueueCall"></span>
-
-																<?php
-																if ($call_requeue_button > 0)
-																	{echo "<br />\n";}
-																?>
-
-																<span id="SpacerSpanC"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
-																<span style="background-color: #FFCCFF<?php echo $agent_hide_hangup_ACTIVE_style ?>" id="HangupControl"></span>
-																<div style="display: none;"><span id="SpacerSpanD"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
-																<div class="text_input" id="SendDTMFdiv">
-																
-																<span id="SendDTMF"><a class="btn btn-soft-success btn-label waves-effect waves-light" onclick="SendConfDTMF(session_id,'YES');return false;" href="#"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i> <?php echo _QXZ("Send DTMF") ?> </a>  <input type="text" size="5" name="conf_dtmf" class="form_control" value="" maxlength="50" /></div></span></div>
-											</div>
+										<div style="display:inline" id="HangupControl">
+											<button style="cursor:default;background: gray !important;color: white;border: gray;" disabled type="button" class="btn btn-secondary btn-label waves-effect waves-light" id="HangupControl" ><?php echo $agent_hide_hangup_ACTIVE_style ?>
+											<span class="mdi mdi-phone-hangup label-icon align-middle fs-16 me-2"></span>
+											Raccrocher
+											</button>
 										</div>
+										
+										<div style="display: none;"><button  type="button" class="btn btn-primary btn-label bg-gradient waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg"><i class="ri-check-double-line label-icon align-middle fs-16 me-2"></i>Large Modal</button></div>
+										<div style="display:inline" id="XferControl">
+										<button  style="cursor:default;background: gray !important;color: white;border: gray;" disabled onclick="ShoWTransferMain('ON','','YES');" type="button" class="btn btn-info bg-gradient waves-effect waves-light btn-label" data-bs-toggle="modal" data-bs-target="#mModal"><i class=" ri-file-transfer-line label-icon align-middle fs-16 me-2"></i> Transfert - Conférence </button>
+										</div>
+										
+										<span    style="background-color: #CCFFCC" id="DiaLControl"><a class="btn btn-soft-success btn-label waves-effect waves-light" href="#" onclick="ManualDialNext('','','','','','0','','','YES');"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Dial Next Number") ?></a></span>
+														</button>
+														<span  id="RecorDControl"><a id="SpacerSpanA" class="btn btn-danger btn-border btn-label waves-effect waves-light" href="#" onclick="conf_send_recording('MonitorConf',session_id,'','','','YES');return false;"><i class=" ri-record-circle-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Start Recording") ?></a></span>
+														<span  id="RecorDMute"></span>
+														
+														<?php
+														if (!preg_match("/NOGAP/",$SSrecording_buttons))
+															//{echo "<span id=\"SpacerSpanA\"><img src=\"./images/"._QXZ("blank.gif")."\" width=\"145px\" height=\"16px\" border=\"0\" /></span>";}
+														if ($SSenable_first_webform > 0)
+															{//echo "<span  class=\"btn btn-soft-success btn-label waves-effect waves-light\" id=\"WebFormSpan\"><img src=\"./images/"._QXZ("vdc_LB_webform_OFF.gif")."\" border=\"0\" alt=\"Web Form\" /></span><br /><br />\n";
+																//echo "<span  class=\"btn btn-soft-success btn-label waves-effect waves-light\" id=\"WebFormSpan\"><a class="btn btn-soft-success btn-label waves-effect waves-light" href="#"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i></span><br /><br />\n";
+																echo "<div style=\"display: none;\"> <span  id=\"WebFormSpan\" ><a  class=\"btn btn-primary btn-label waves-effect waves-light\" href=\"#\"><i class=\" ri-login-box-line label-icon align-middle fs-16 me-2\"></i> "._QXZ("Web Form")." </a></span></div>";
+															}
+														if ($enable_second_webform > 0)
+															{echo "<div style=\"display: none;\"> <span  id=\"WebFormSpanTwo\" ><a class=\"btn btn-primary btn-label waves-effect waves-light\" href=\"#\"><i class=\" ri-login-box-line label-icon align-middle fs-16 me-2\"></i> "._QXZ("Web Form 2")." </a></span></div>";}
+														if ($enable_third_webform > 0)
+															{echo "<div style=\"display: none;\"> <span id=\"WebFormSpanThree\" ><a  class=\"btn btn-primary btn-label waves-effect waves-light\" href=\"#\"><i class=\" ri-login-box-line label-icon align-middle fs-16 me-2\"></i> "._QXZ("Web Form 3")." </a></span></div>";}
+														?>
+															<font class="body_small_bold"><span id="ParkCounterSpan"> </span></font>
+														<span id="ParkControl">
+														<a style="cursor:default;background: gray !important;color: white;border: gray;" disabled class="btn btn-warning btn-label waves-effect waves-light" href="#"><i class=" ri-headphone-line label-icon align-middle fs-16 me-2"></i> <?php echo _QXZ("Park Call") ?> </a>
+														</span>
+														<?php
+														if ( ($ivr_park_call=='ENABLED') or ($ivr_park_call=='ENABLED_PARK_ONLY') )
+															{echo "<div style=\"display: none;\"><span style=\"background-color: $MAIN_COLOR\" id=\"ivrParkControl\"><img src=\"./images/"._QXZ("vdc_LB_ivrparkcall_OFF.gif")."\" border=\"0\" alt=\"IVR Park Call\" /></span></div>";}
+														else
+															{echo "<div style=\"display: none;\"><span style=\"background-color: $MAIN_COLOR\" id=\"ivrParkControl\"></span></div>\n";}
+														?>
+														
+														
+
+														<?php
+														if ($quick_transfer_button_enabled > 0)
+															{echo "<span style=\"background-color: $MAIN_COLOR\" id=\"QuickXfer\"><img src=\"./images/"._QXZ("vdc_LB_quickxfer_OFF.gif")."\" border=\"0\" alt=\"Quick Transfer\" /></span>";}
+														if ($custom_3way_button_transfer_enabled > 0)
+															{echo "<span style=\"background-color: $MAIN_COLOR\" id=\"CustomXfer\"><img src=\"./images/"._QXZ("vdc_LB_customxfer_OFF.gif")."\" border=\"0\" alt=\"Custom Transfer\" /></span>";}
+														?>
+
+														<span id="ReQueueCall"></span>
+
+														<?php
+														if ($call_requeue_button > 0)
+															{echo "<br />\n";}
+														?>
+
+														<span id="SpacerSpanC"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
+														<span style="background-color: #FFCCFF<?php echo $agent_hide_hangup_ACTIVE_style ?>" id="HangupControl"></span>
+														<div style="display: none;"><span id="SpacerSpanD"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
+														<div class="text_input" id="SendDTMFdiv">
+														
+														<span id="SendDTMF"><a class="btn btn-soft-success btn-label waves-effect waves-light" onclick="SendConfDTMF(session_id,'YES');return false;" href="#"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i> <?php echo _QXZ("Send DTMF") ?> </a>  <input type="text" size="5" name="conf_dtmf" class="form_control" value="" maxlength="50" /></div></span></div>
+									</div>
+								</div>
 								<div class="row mt-5 g-2">
 									
 									<div class="col-md-9">
@@ -23448,29 +23451,29 @@ $zi=2;
 
 																									$required_fields = '|';
 
-																									if ($label_title == '---HIDE---')
-																										{echo "<input type=\"hidden\" name=\"title\" id=\"title\" value=\"\" />";}
-																									else {
-																										$title_readonly='';
-																										if (preg_match("/---READONLY---/",$label_title))
-																											{$title_readonly='readonly="readonly"';   $label_title = preg_replace("/---READONLY---/","",$label_title);}
-																										else
-																											{
-																											if (preg_match("/---REQUIRED---/",$label_title))
-																												{$required_fields .= "title|";   $label_title = preg_replace("/---REQUIRED---/","",$label_title);}
-																											}
+																									// if ($label_title == '---HIDE---')
+																									// 	{echo "<input type=\"hidden\" name=\"title\" id=\"title\" value=\"\" />";}
+																									// else {
+																									// 	$title_readonly='';
+																									// 	if (preg_match("/---READONLY---/",$label_title))
+																									// 		{$title_readonly='readonly="readonly"';   $label_title = preg_replace("/---READONLY---/","",$label_title);}
+																									// 	else
+																									// 		{
+																									// 		if (preg_match("/---REQUIRED---/",$label_title))
+																									// 			{$required_fields .= "title|";   $label_title = preg_replace("/---REQUIRED---/","",$label_title);}
+																									// 		}
 																											
-																											echo '<div class="col-lg-3">';
-																											echo '<div class="mb-3">';
-																											echo '<label for="firstnameInput" class="form-label">'.$label_title.'</label>';
-																											echo '<input type="text" class="form-control" name="title" id="title"  value="">';
-																											echo '</div>';
-																											echo '</div>';
-																										//echo "$label_title: </td><td align=\"left\" colspan=\"5\"><input type=\"text\" size=\"4\" name=\"title\" id=\"title\" maxlength=\"$MAXtitle\" class=\"form_control\" value=\"\" $title_readonly />";
-																									}
+																									// 		echo '<div class="col-lg-3">';
+																									// 		echo '<div class="mb-3">';
+																									// 		echo '<label for="firstnameInput" class="form-label">'.$label_title.'</label>';
+																									// 		echo '<input type="text" class="form-control" name="title" id="title"  value="">';
+																									// 		echo '</div>';
+																									// 		echo '</div>';
+																									// 	//echo "$label_title: </td><td align=\"left\" colspan=\"5\"><input type=\"text\" size=\"4\" name=\"title\" id=\"title\" maxlength=\"$MAXtitle\" class=\"form_control\" value=\"\" $title_readonly />";
+																									// }
 
 
-
+																									
 																									if ($label_first_name == '---HIDE---')
 																										{echo " <input type=\"hidden\" name=\"first_name\" id=\"first_name\" value=\"\" />";}
 																									else{
@@ -23494,7 +23497,7 @@ $zi=2;
 
 
 
-																									if ($label_middle_initial == '---HIDE---')
+																									if ($label_middle_initial != '---HIDE---')
 																										{echo " <input type=\"hidden\" name=\"middle_initial\" id=\"middle_initial\" value=\"\" />";}
 																									else
 																										{
@@ -23592,7 +23595,7 @@ $zi=2;
 
 
 
-																									if ($label_address3 == '---HIDE---')
+																									if ($label_address3 != '---HIDE---')
 																										{echo "<input type=\"hidden\" name=\"address3\" id=\"address3\" value=\"\" />";}
 																									else
 																										{
@@ -23688,7 +23691,7 @@ $zi=2;
 
 
 
-																									if ($label_province == '---HIDE---')
+																									if ($label_province != '---HIDE---')
 																										{echo " <input type=\"hidden\" name=\"province\" id=\"province\" value=\"\" />";}
 																									else
 																										{
@@ -23712,7 +23715,7 @@ $zi=2;
 
 
 
-																									if ($label_vendor_lead_code == '---HIDE---')
+																									if ($label_vendor_lead_code != '---HIDE---')
 																										{echo " <input type=\"hidden\" name=\"vendor_lead_code\" id=\"vendor_lead_code\" value=\"\" />";}
 																									else
 																										{
@@ -23754,7 +23757,7 @@ $zi=2;
 
 
 
-																									if ($label_phone_number == '---HIDE---')
+																									if ($label_phone_number != '---HIDE---')
 																										{
 																										echo " <input type=\"hidden\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
 																										echo "<span id=\"phone_numberDISP\"> </span>";
@@ -23806,7 +23809,7 @@ $zi=2;
 
 
 
-																									if ($label_alt_phone == '---HIDE---')
+																									if ($label_alt_phone != '---HIDE---')
 																										{echo "<input type=\"hidden\" name=\"alt_phone\" id=\"alt_phone\" value=\"\" />";}
 																									else
 																										{
@@ -23830,7 +23833,7 @@ $zi=2;
 
 
 
-																									if ($label_security_phrase == '---HIDE---')
+																									if ($label_security_phrase != '---HIDE---')
 																										{echo "<input type=\"hidden\" name=\"security_phrase\" id=\"security_phrase\" value=\"\" />";}
 																									else
 																										{
@@ -23918,27 +23921,31 @@ $zi=2;
 																										echo "<span id='viewcommentsdisplay'><input type='button' id='ViewCommentButton' onClick=\"ViewComments('ON','','','YES')\" value='-"._QXZ("History")."-'/></span>\n";
 																										echo "<span id='otherviewcommentsdisplay'><input type='button' id='OtherViewCommentButton' onClick=\"ViewComments('ON','','','YES')\" value='-"._QXZ("History")."-'/></span>\n";
 																										}
-																									else
+																										else
 																										{
-																										echo "$label_comments: <br><span id='viewcommentsdisplay'><input type='button' id='ViewCommentButton' onClick=\"ViewComments('ON','','','YES')\" value='-"._QXZ("History")."-'/></span>
-																										";
+
+																											echo '<div class="col-lg-12">';
+																											echo '<div class="mb-3 pb-2">';
+																											echo '<label for="exampleFormControlTextarea" class="form-label mr-e">' . $label_comments . '<span id="viewcommentsdisplay"><input type="button" id="ViewCommentButton" onClick="ViewComments(\'ON\',\'\',\'\',\'YES\')" value="' . _QXZ("History") . '"/></span></label>';
+
+																										
+																									
+																										
 																										if ( ($multi_line_comments) )
 																											{
 																											
 																											
-																											echo '<div class="col-lg-12">';
-																											echo '<div class="mb-3 pb-2">';
-																											echo "<textarea name=\"comments\" id=\"comments\" rows=\"3\" cols=\"85\" class=\"form-control\" value=\"\"></textarea>\n";
-																											echo '</div>';
-																											echo '</div>';
+																										
+																												echo '<textarea class="form-control" name="comments" id="comments" placeholder="Enter your description" rows="3"></textarea>';
+																												echo '</div>';
+																												echo '</div>';
+																										
 																											}
 																										else
 																										{
 																											
 																																							
-																											echo '<div class="col-lg-12">';
-																											echo '<div class="mb-3 pb-2">';
-																											echo '<label for="exampleFormControlTextarea" class="form-label">'.$label_comments.'</label>';
+																										
 																											echo '<textarea class="form-control" name="comments" id="comments" placeholder="Enter your description" rows="3"></textarea>';
 																											echo '</div>';
 																											echo '</div>';
@@ -24061,11 +24068,12 @@ $zi=2;
 								<?php echo _QXZ("Session ID"); ?> 
 								<span class="ms-auto " id="sessionIDspan"></span>
 							</li>
-							<li class="list-group-item d-flex align-items-center">
-								<?php echo _QXZ("Queu Notice"); ?> 
-								<span class="ms-auto " id="ManualQueueNotice"></span>
-							</li>
-
+							<!--
+								<li class="list-group-item d-flex align-items-center">
+									<?php echo _QXZ("Queu Notice"); ?> 
+									<span class="ms-auto " id="ManualQueueNotice"></span>
+								</li>
+							-->
 							<!--
 
 								<li class="list-group-item d-flex align-items-center">
@@ -25318,7 +25326,8 @@ if ($agent_display_dialable_leads > 0)
 	<a class="btn btn-success w-lg waves-effect waves-light" role="button" href="#" onclick="DispoSelect_submit('','','YES');return false;"><?php echo _QXZ("SUBMIT"); ?></a>
 	<a class="btn btn-warning w-md waves-effect waves-light" role="button" href="#" onclick="DispoSelectContent_create('','ReSET','YES');return false;"><?php echo _QXZ("CLEAR FORM"); ?></a>
 
-	<a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a>
+	<!-- <a class="btn btn-danger w-sm waves-effect waves-light" role="button" href="#" onclick="WeBForMDispoSelect_submit();return false;"><?php echo _QXZ("WEB FORM SUBMIT"); ?></a> -->
+
     <br /><br /> &nbsp;</font>
     </td></tr></table>
 </span>
@@ -25523,7 +25532,7 @@ if ($agent_display_dialable_leads > 0)
 					<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Phone Number:"); ?>  </label>
 					<input type="text" size="14" maxlength="18" name="MDPhonENumbeR" id="MDPhonENumbeR" class="form-control" value="" />
 					<div id="error-msg-MDPhonENumbeR" class="text-danger" style="display: none;">Veuillez saisir un numero valide</div>
-					<div class="form-text"><?php echo _QXZ("(digits only)"); ?> ?></div>
+					<!-- <div class="form-text"><?php echo _QXZ("(digits only)"); ?> </div> -->
 				</div>
 							
 						
@@ -25602,8 +25611,8 @@ if ($agent_display_dialable_leads > 0)
 					
 						<?php if ($manual_dial_preview > 0)
 							{
-							echo " <button onclick=\"NeWManuaLDiaLCalLSubmiT('PREVIEW','YES');return false;\"  type=\"button\" class=\"btn btn-primary\">Preview Call</button>
-							\n";
+							// echo " <button onclick=\"NeWManuaLDiaLCalLSubmiT('PREVIEW','YES');return false;\"  type=\"button\" class=\"btn btn-primary\">Preview Call</button>
+							// \n";
 							}
 						?>
 						<!-- <button onclick="ManualDialHide();return false;"  type="button" class="btn btn-primary ">Go Back</button>-->

@@ -6,18 +6,18 @@
               <div class="navbar-brand-box horizontal-logo">
                 <a href="#" class="logo logo-dark">
                   <span class="logo-sm">
-                    <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                    <img src="../agc/pereine/velzon/assets/images/pereine2black.png" alt="" height="40">
                   </span>
                   <span class="logo-lg">
-                    <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                    <img src="../agc/pereine/velzon/assets/images/pereine2black.png" alt="" height="40">
                   </span>
                 </a>
                 <a href="#" class="logo logo-light">
                   <span class="logo-sm">
-                    <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                    <img src="../agc/pereine/velzon/assets/images/pereine2black.png" alt="" height="40">
                   </span>
                   <span class="logo-lg">
-                    <img src="../agc/pereine/velzon/assets/images/pereine.png" alt="" height="40">
+                    <img src="../agc/pereine/velzon/assets/images/pereine2black.png" alt="" height="40">
                   </span>
                 </a>
               </div>
@@ -50,9 +50,9 @@
                 </div>
               </div>
               <div class="dropdown ms-1 topbar-head-dropdown header-item">
-                <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img id="header-lang-img" src="../agc/pereine/velzon/assets/images/flags/us.svg" alt="Header Language" height="20" class="rounded">
-                </button>
+                </button> -->
                 <div class="dropdown-menu dropdown-menu-end">
                   <!-- item-->
                   <a href="javascript:void(0);" class="dropdown-item notify-item language py-2" data-lang="en" title="English">
@@ -102,16 +102,16 @@
 				</a>
                 </div>
               </div>
-              <div class="ms-1 header-item d-none d-sm-flex">
+              <!-- <div class="ms-1 header-item d-none d-sm-flex">
                 <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode">
                   <i class='bx bx-moon fs-22'></i>
                 </button>
-              </div>
+              </div> -->
               
               <div class="dropdown ms-sm-3 header-item topbar-user">
                 <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="d-flex align-items-center">
-                    <img class="rounded-circle header-profile-user" src="/abdellah/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="Header Avatar">
+                    <img class="rounded-circle header-profile-user" src="/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="Header Avatar">
                     <span class="text-start ms-xl-2">
                       <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Agent Screen</span>
                       <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text"><?php echo "$VD_login" ?></span>
