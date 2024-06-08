@@ -1546,6 +1546,9 @@ else
 	$mute_column='';   $mute_column_csv='';
 	$agent_column='';   $agent_column_csv='';
 	$ANI_column='';   $ANI_column_csv='';
+
+	
+
 	if ($SSmute_recordings > 0)
 		{
 		$mute_column = "<td align=center><font size=2>"._QXZ("MUTE")." &nbsp; </td>";
@@ -1684,6 +1687,8 @@ else
 		$MAIN.="<td align=left><font size=2> $row[0] </td>\n";
 		$MAIN.="<td align=center><font size=2> $row[10] </td>\n";
 		$MAIN.="<td align=right><font size=2> $location &nbsp; </td>\n";
+		// $MAIN.="<td align=center><audio controls preload='none'><source src='$row[10]' type='audio/mpeg'><source src='$row[10]' type='audio/mp3'>Your browser does not support the audio elemet.</audio></td>\n";
+
 		if ($SSmute_recordings > 0)
 			{
 			if ($mute_events < 1) {$mute_events='';}
@@ -2006,7 +2011,8 @@ else
 	{
 	header ("Content-type: text/html; charset=utf-8");
 	echo $HEADER;
-	require("admin_header.php");
+	// require("admin_header1.php");
+	require("pereine/velzon_header.php");
 	echo $MAIN;
 	}
 

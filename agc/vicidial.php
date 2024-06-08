@@ -7117,6 +7117,7 @@ function holiday_display(holiday_name)
 		}
 
 // ################################################################################
+
 // Send volume control command for meetme participant
 	function volume_control(taskdirection,taskvolchannel,taskagentmute) 
 		{
@@ -11947,6 +11948,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					}
 				else
 					{
+						document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
 					document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 					}
 				document.getElementById("MainStatuSSpan").style.background = panel_bgcolor;
@@ -12222,6 +12224,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 									}
 								else
 									{
+										document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
 									document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 									}
 								document.getElementById("MainStatuSSpan").style.background = panel_bgcolor;
@@ -13372,6 +13375,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						}
 					else
 						{
+							document.getElementById("call-button").innerHTML = "<button disabled style='cursor:default;background: gray !important;color: white;border: gray;' type=\"button\" class=\"btn btn-secondary btn-label waves-effect waves-light\"  ><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
 						document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML_ready;
 						}
 					}
@@ -13403,6 +13407,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						}
 					else
 						{
+							document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
 						document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 						}
 
@@ -17006,7 +17011,8 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 		currently_in_email_or_chat=0;
 		customer_3way_hangup_counter=0;
 		customer_3way_hangup_counter_trigger=0;
-		waiting_on_dispo=1;
+		//waiting_on_dispo=1;
+		waiting_on_dispo=0;
 		recording_active=0;
 		APIskip=0;
 		UpdatESettingSChecK=1;
@@ -22287,44 +22293,44 @@ function phone_number_format(formatphone) {
 
 		var status_date = '';
 		var status_time = hours + ":" + min + ":" + sec;
-		if (vdc_header_date_format.match(regMSdate))
-			{
-			status_date = year + "-" + month + "-" + daym;
-			}
-		if (vdc_header_date_format.match(regUSdate))
-			{
-			status_date = month + "/" + daym + "/" + year;
-			}
-		if (vdc_header_date_format.match(regEUdate))
-			{
-			status_date = daym + "/" + month + "/" + year;
-			}
-		if (vdc_header_date_format.match(regALdate))
-			{
-			var statusmon='';
-			if (month == 1) {statusmon = "<?php echo _QXZ("JAN"); ?>";}
-			if (month == 2) {statusmon = "<?php echo _QXZ("FEB"); ?>";}
-			if (month == 3) {statusmon = "<?php echo _QXZ("MAR"); ?>";}
-			if (month == 4) {statusmon = "<?php echo _QXZ("APR"); ?>";}
-			if (month == 5) {statusmon = "<?php echo _QXZ("MAY"); ?>";}
-			if (month == 6) {statusmon = "<?php echo _QXZ("JUN"); ?>";}
-			if (month == 7) {statusmon = "<?php echo _QXZ("JLY"); ?>";}
-			if (month == 8) {statusmon = "<?php echo _QXZ("AUG"); ?>";}
-			if (month == 9) {statusmon = "<?php echo _QXZ("SEP"); ?>";}
-			if (month == 10) {statusmon = "<?php echo _QXZ("OCT"); ?>";}
-			if (month == 11) {statusmon = "<?php echo _QXZ("NOV"); ?>";}
-			if (month == 12) {statusmon = "<?php echo _QXZ("DEC"); ?>";}
+		// if (vdc_header_date_format.match(regMSdate))
+		// 	{
+		// 	status_date = year + "-" + month + "-" + daym;
+		// 	}
+		// if (vdc_header_date_format.match(regUSdate))
+		// 	{
+		// 	status_date = month + "/" + daym + "/" + year;
+		// 	}
+		// if (vdc_header_date_format.match(regEUdate))
+		// 	{
+				status_date = daym + "/" + month + "/" + year;
+			// }
+		// if (vdc_header_date_format.match(regALdate))
+		// 	{
+		// 	var statusmon='';
+		// 	if (month == 1) {statusmon = "<?php echo _QXZ("JAN"); ?>";}
+		// 	if (month == 2) {statusmon = "<?php echo _QXZ("FEB"); ?>";}
+		// 	if (month == 3) {statusmon = "<?php echo _QXZ("MAR"); ?>";}
+		// 	if (month == 4) {statusmon = "<?php echo _QXZ("APR"); ?>";}
+		// 	if (month == 5) {statusmon = "<?php echo _QXZ("MAY"); ?>";}
+		// 	if (month == 6) {statusmon = "<?php echo _QXZ("JUN"); ?>";}
+		// 	if (month == 7) {statusmon = "<?php echo _QXZ("JLY"); ?>";}
+		// 	if (month == 8) {statusmon = "<?php echo _QXZ("AUG"); ?>";}
+		// 	if (month == 9) {statusmon = "<?php echo _QXZ("SEP"); ?>";}
+		// 	if (month == 10) {statusmon = "<?php echo _QXZ("OCT"); ?>";}
+		// 	if (month == 11) {statusmon = "<?php echo _QXZ("NOV"); ?>";}
+		// 	if (month == 12) {statusmon = "<?php echo _QXZ("DEC"); ?>";}
 
-			status_date = statusmon + " " + daym;
-			}
-		if (vdc_header_date_format.match(regAMPMdate))
-			{
-			var AMPM = 'AM';
-			if (hours == 12) {AMPM = 'PM';}
-			if (hours == 0) {AMPM = 'AM'; hours = '12';}
-			if (hours > 12) {hours = (hours - 12);   AMPM = 'PM';}
-			status_time = hours + ":" + min + ":" + sec + " " + AMPM;
-			}
+		// 	status_date = statusmon + " " + daym;
+		// 	}
+		// if (vdc_header_date_format.match(regAMPMdate))
+		// 	{
+		// 	var AMPM = 'AM';
+		// 	if (hours == 12) {AMPM = 'PM';}
+		// 	if (hours == 0) {AMPM = 'AM'; hours = '12';}
+		// 	if (hours > 12) {hours = (hours - 12);   AMPM = 'PM';}
+		// 	status_time = hours + ":" + min + ":" + sec + " " + AMPM;
+		// 	}
 
 		document.getElementById("status").innerHTML = status_date + " " + status_time  + display_message;
 		agent_datetime = status_date + " " + status_time;
@@ -22873,6 +22879,7 @@ function phone_number_format(formatphone) {
 					}
 				else
 					{
+						document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
 					document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 					clearDiv('DiaLLeaDPrevieW');
 					}
@@ -23318,24 +23325,21 @@ $zi=2;
                         </div>
                     </div>
                     <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
-                        <div class="row g-4 mt-4">
-                            <div class="col-auto">
-                                <div class="avatar-lg">
+                        <div class="row g-4 mt-5" style="align-items:center;">
+                            <div class="col-md-1" style="margin-top: 0;width: 93px;">
+                                <div class="avatar-md">
                                     <img src="/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
                                 </div>
+
+								
                             </div>
-                            
 
-                        </div>
-                        <!--end row-->
-                    </div>
-				<!-- ZZZZZZZZZZZZ  customer info -->
-				<span <?php $zi++; echo $zi ?> id="MainPanel">
-				
-								<div class="row pt-3 g-2">
-									<div class="col-xxl-12 p-2 g-2 " style="background-color:#FFFFFF; border-radius: 4px;">
-										<button type="button" class="btn btn-success btn-label waves-effect waves-light" id="call_manuel_butt" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Call Manuel"); ?></button>
-
+							<div class="col-md-11" style="margin-top: 0;">
+							<div class="row  g-2">
+									<div class="col-xxl-12 p-2 g-2 " style="background-color:#FFFFFF; border-radius: 4px;gap: 8px;display: flex;">
+									<div style="display:inline" id="call-button">
+										<button type="button" class="btn btn-primary btn-label waves-effect waves-light" id="call_manuel_butt" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Call Manuel"); ?></button>
+									</div>
 										<div style="display:inline" id="HangupControl">
 											<button style="cursor:default;background: gray !important;color: white;border: gray;" disabled type="button" class="btn btn-secondary btn-label waves-effect waves-light" id="HangupControl" ><?php echo $agent_hide_hangup_ACTIVE_style ?>
 											<span class="mdi mdi-phone-hangup label-icon align-middle fs-16 me-2"></span>
@@ -23350,8 +23354,8 @@ $zi=2;
 										
 										<span    style="background-color: #CCFFCC" id="DiaLControl"><a class="btn btn-soft-success btn-label waves-effect waves-light" href="#" onclick="ManualDialNext('','','','','','0','','','YES');"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Dial Next Number") ?></a></span>
 														</button>
-														<span  id="RecorDControl"><a id="SpacerSpanA" class="btn btn-danger btn-border btn-label waves-effect waves-light" href="#" onclick="conf_send_recording('MonitorConf',session_id,'','','','YES');return false;"><i class=" ri-record-circle-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Start Recording") ?></a></span>
-														<span  id="RecorDMute"></span>
+														<span   id="RecorDControl"><a id="SpacerSpanA" class="btn btn-danger btn-border btn-label waves-effect waves-light" href="#" onclick="conf_send_recording('MonitorConf',session_id,'','','','YES');return false;"><i class=" ri-record-circle-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Start Recording") ?></a></span>
+														<span style="display:none;"  id="RecorDMute"></span>
 														
 														<?php
 														if (!preg_match("/NOGAP/",$SSrecording_buttons))
@@ -23393,7 +23397,7 @@ $zi=2;
 															{echo "<br />\n";}
 														?>
 
-														<span id="SpacerSpanC"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
+														<span style="display:none;" id="SpacerSpanC"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
 														<span style="background-color: #FFCCFF<?php echo $agent_hide_hangup_ACTIVE_style ?>" id="HangupControl"></span>
 														<div style="display: none;"><span id="SpacerSpanD"><img src="./images/<?php echo _QXZ("blank.gif"); ?>" width="145px" height="16px" border="0" /></span>
 														<div class="text_input" id="SendDTMFdiv">
@@ -23401,13 +23405,23 @@ $zi=2;
 														<span id="SendDTMF"><a class="btn btn-soft-success btn-label waves-effect waves-light" onclick="SendConfDTMF(session_id,'YES');return false;" href="#"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i> <?php echo _QXZ("Send DTMF") ?> </a>  <input type="text" size="5" name="conf_dtmf" class="form_control" value="" maxlength="50" /></div></span></div>
 									</div>
 								</div>
+							</div>
+                            
+
+                        </div>
+                        <!--end row-->
+                    </div>
+				<!-- ZZZZZZZZZZZZ  customer info -->
+				<span <?php $zi++; echo $zi ?> id="MainPanel">
+				
+								
 								<div class="row mt-5 g-2">
 									
 									<div class="col-md-9">
 										<div class="card mt-xxl-n4">
 											<div class="card-header">
 											
-												<ul class="nav nav-pills arrow-navtabs nav-success bg-light mb-3" role="tablist">
+												<ul class="nav nav-tabs nav-border-top nav-border-top-success mb-3" role="tablist">
 													<li class="nav-item">
 														<a class="nav-link active" data-bs-toggle="tab" href="#Fiche" role="tab">
 															<i class="fas fa-home"></i> Fiche 
@@ -23760,7 +23774,7 @@ $zi=2;
 																									if ($label_phone_number != '---HIDE---')
 																										{
 																										echo " <input type=\"hidden\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
-																										echo "<span id=\"phone_numberDISP\"> </span>";
+																										// echo "<span id=\"phone_numberDISP\"> </span>";
 																										}
 																									else
 																										{
@@ -23772,7 +23786,7 @@ $zi=2;
 																										if ( (preg_match('/Y/',$disable_alter_custphone)) or (preg_match('/HIDE/',$disable_alter_custphone)) )
 																											{
 																											
-																											echo "<span id=\"phone_numberDISP\">  </span>";
+																											// echo "<span id=\"phone_numberDISP\">  </span>";
 																											echo "<input type=\"text\" class=\"form-control\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
 																											echo '</div>';
 																											echo '</div>';
@@ -24009,8 +24023,6 @@ $zi=2;
 						<span style="background-color: #ececec !important;" id="MainStatuSSpan" class="ms-auto rounded-2 p-1 bg-gray">No status</span>
 					</li>
 				</ul>
-				
-				
 			</div>
 		</div>
 		<div class="card">
@@ -25522,18 +25534,57 @@ if ($agent_display_dialable_leads > 0)
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
 				</div>
 				<div class="modal-body">
-				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Dial Code:"); ?> </label>
-					<input type="text" size="7" maxlength="10" name="MDDiaLCodE" id="MDDiaLCodE" class="form-control" value="33" /> 
-					<div class="form-text"><?php echo _QXZ("(This is usually a 33 in the France)"); ?></div>
-				</div>
 				
-				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Phone Number:"); ?>  </label>
-					<input type="text" size="14" maxlength="18" name="MDPhonENumbeR" id="MDPhonENumbeR" class="form-control" value="" />
-					<div id="error-msg-MDPhonENumbeR" class="text-danger" style="display: none;">Veuillez saisir un numero valide</div>
-					<!-- <div class="form-text"><?php echo _QXZ("(digits only)"); ?> </div> -->
+
+				<div class="phone">
+					<!-- ## phone area -->
+					<div class="phone-container">
+						<div class="d-flex gap-2" >
+							<input  type="text" size="7" maxlength="10" name="MDDiaLCodE" id="MDDiaLCodE" style="width: 28%;height:55px;line-height:55px;text-align:center;padding:0 20px;border-radius:10px;border:0;-webkit-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);-moz-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);" value="33" /> 
+							<input type="text" maxlength="11"  name="MDPhonENumbeR" id="MDPhonENumbeR" class="number-input" value="" placeholder="<?php echo _QXZ("Phone number "); ?>"/>
+						</div>
+						
+						<!-- ## keyboard -->
+						<div class="keyboard">
+						<div class="number">
+							<span data-number="1"><i>1</i></span>
+							<span data-number="2"><i>2</i></span>
+							<span data-number="3"><i>3</i></span>
+							<span data-number="4"><i>4</i></span>
+							<span data-number="5"><i>5</i></span>
+							<span data-number="6"><i>6</i></span>
+							<span data-number="7"><i>7</i></span>
+							<span data-number="8"><i>8</i></span>
+							<span data-number="9"><i>9</i></span>
+							
+						</div>
+						<div class="number align-left">
+							<span><i class="delete ri-delete-back-2-line"></i></span>
+							<span data-number="0"><i>0</i></span>
+							<span onclick="NeWManuaLDiaLCalLSubmiT('NOW','YES');return false;" ><i class="call ri-phone-line"></i></span>
+							
+							
+						</div>
+						</div>
+					</div>
 				</div>
+
+				<!--
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Dial Code:"); ?> </label>
+						<input type="text" size="7" maxlength="10" name="MDDiaLCodE" id="MDDiaLCodE" class="form-control" value="33" /> 
+						<div class="form-text"><?php echo _QXZ("(This is usually a 33 in the France)"); ?></div>
+					</div>
+				-->
+			
+				<!--
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Phone Number:"); ?>  </label>
+						
+						<div id="error-msg-MDPhonENumbeR" class="text-danger" style="display: none;">Veuillez saisir un numero valide</div>
+						<!-- <div class="form-text"><?php echo _QXZ("(digits only)"); ?> </div> 
+					</div>
+				-->
 							
 						
 						
@@ -26098,6 +26149,42 @@ if ( ($SSbrowser_call_alerts > 0) or ($SSagent_hidden_sound_seconds > 0) )
 ?>
 <?php echo "$INSERT_before_body_close"; ?>
 
+
+<script>
+$(".number-input").keyup(function(e){
+  if($(this).val().length >= 11)
+       $(".call-button").addClass("show");  
+  if(e.which == 8)
+     $(".call-button").removeClass("show");
+})
+//called when key is pressed in textbox
+$(".number-input").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+               return false;
+    }
+});
+
+
+$("[data-number]").on('click',function(){
+  if($(".number-input").val().length < 11){
+    var phoneNumber = $(".number-input").val() + $(this).data("number");
+    $(".number-input").val(phoneNumber);
+  }
+  if($(".number-input").val().length == 11)
+     $(".call-button").addClass("show");  
+});
+
+$(".delete").on('click',function(){
+  var phoneNumber = $(".number-input").val().slice(0,-1);
+  $(".number-input").val("");
+  $(".number-input").val(phoneNumber);
+  $(".call-button").removeClass("show");
+});
+
+
+</script>
 
 </body>
 </html>

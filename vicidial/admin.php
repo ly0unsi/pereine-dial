@@ -33,21 +33,21 @@ $scripts_color =	'#99FFCC';
 $filters_color =	'#CCCCCC';
 $admin_color =		'#FF99FF';
 $reports_color =	'#99FF33';
-	$times_color =		'#FF33FF';
-	$shifts_color =		'#FF33FF';
-	$phones_color =		'#FF33FF';
-	$conference_color =	'#FF33FF';
-	$server_color =		'#FF33FF';
-	$templates_color =	'#FF33FF';
-	$carriers_color =	'#FF33FF';
-	$settings_color = 	'#FF33FF';
-	$label_color =		'#FF33FF';
-	$status_color = 	'#FF33FF';
-	$moh_color = 		'#FF33FF';
-	$vm_color = 		'#FF33FF';
-	$tts_color = 		'#FF33FF';
-	$cc_color = 		'#FF33FF';
-	$cts_color = 		'#FF33FF';
+$times_color =		'#FF33FF';
+$shifts_color =		'#FF33FF';
+$phones_color =		'#FF33FF';
+$conference_color =	'#FF33FF';
+$server_color =		'#FF33FF';
+$templates_color =	'#FF33FF';
+$carriers_color =	'#FF33FF';
+$settings_color = 	'#FF33FF';
+$label_color =		'#FF33FF';
+$status_color = 	'#FF33FF';
+$moh_color = 		'#FF33FF';
+$vm_color = 		'#FF33FF';
+$tts_color = 		'#FF33FF';
+$cc_color = 		'#FF33FF';
+$cts_color = 		'#FF33FF';
 $subcamp_color =	'#FF9933';
 $users_font =		'BLACK';
 $campaigns_font =	'BLACK';
@@ -6786,9 +6786,13 @@ echo '<link href="../agc/pereine/velzon/assets/css/custom.min.css" rel="styleshe
 
 
 
-
+echo '<div class="main-content">';
+// echo '<div class="page-content">';
+// echo '<div class="container-fluid">';
 echo "<div id='HelpDisplayDiv' class='help_info' style='display:none;'></div>";
-
+echo '</div>';
+echo '</div>';
+echo '</div>';
 //echo "<link rel=\"stylesheet\" href=\"calendar.css\">\n";
 //echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"vicidial_stylesheet.php\">\n";
 
@@ -8146,7 +8150,29 @@ if ($ADD==73)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -8235,7 +8261,8 @@ if ($ADD==7111111)
 
 	echo "</head>\n";
 	echo "<BODY BGCOLOR=white marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>\n";
-	
+	echo '<div class="main-content">';
+	echo '<div class="container-fluid">';
 	echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
 	$stmt="SELECT script_id,script_name,script_comments,script_text,active,script_color from vicidial_scripts where script_id='$script_id' $LOGadmin_viewable_groupsSQL;";
@@ -8443,7 +8470,9 @@ if ($ADD=="1")
 			$voi_count = "$row[0]";
 			}
 		##### END ID override optional section #####
-
+		echo '<div class="main-content">';
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<img src=\"images/icon_black_users.png\" alt=\"Users\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
@@ -8484,7 +8513,30 @@ if ($ADD=="1")
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+echo '<div class="auth-page-content overflow-hidden p-0">';
+echo '<div class="container">';
+echo '<div class="row justify-content-center">';
+echo '<div class="col-xl-7 col-lg-8">';
+echo '<div class="text-center">';
+echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+echo '<div class="mt-3">';
+echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+echo '</div>';
+echo '</div>';
+echo '</div><!-- end col -->';
+echo '</div>';
+echo '<!-- end row -->';
+echo '</div>';
+echo '<!-- end container -->';
+echo '</div>';
+echo '<!-- end auth-page content -->';
+
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		
 		exit;
 		}
 	}
@@ -8552,7 +8604,29 @@ if ($ADD=="1A")
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -8885,7 +8959,29 @@ if ($ADD==11)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -8958,7 +9054,28 @@ if ($ADD==12)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -8982,7 +9099,7 @@ if ($ADD==111)
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>"; 
+		// echo "<br>"; 
 		echo '<div class="page-content">';
 		echo '<div class="container-fluid">'; 
 
@@ -9089,7 +9206,29 @@ echo '<form action="#">';
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+
+		
 		exit;
 		}
 	}
@@ -9532,7 +9671,29 @@ if ($ADD==131)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+
+		
 		exit;
 		}
 	}
@@ -9786,7 +9947,28 @@ if ($ADD==3211)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -9876,7 +10058,29 @@ if ($ADD==1111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+
+		
 		exit;
 		}
 	}
@@ -9956,7 +10160,29 @@ if ($ADD==1811)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+
+		
 		exit;
 		}
 	}
@@ -10037,7 +10263,29 @@ if ($ADD==18111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+
+		
 		exit;
 		}
 	}
@@ -10099,7 +10347,29 @@ if ($ADD==1211)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+
+		
 		exit;
 		}
 	}
@@ -10161,7 +10431,9 @@ if ($ADD==1911)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		
 		exit;
 		}
 	}
@@ -10223,7 +10495,9 @@ if ($ADD==19111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		
 		exit;
 		}
 	}
@@ -10253,7 +10527,28 @@ if ($ADD==1311)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -10297,7 +10592,28 @@ if ($ADD==1411)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10345,7 +10661,28 @@ if ($ADD==1511)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10407,7 +10744,28 @@ if ($ADD==1611)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10438,7 +10796,28 @@ if ($ADD==1711)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10476,7 +10855,28 @@ if ($ADD==11111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10515,7 +10915,28 @@ if ($ADD==12111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10559,7 +10980,28 @@ if ($ADD==111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10582,7 +11024,9 @@ if ($ADD==1111111)
 			$voi_count = "$row[0]";
 			}
 		##### END ID override optional section #####
-
+		echo '<div class="main-content">';
+		// echo '<div class="page-content">';
+		
 		echo "<TABLE><TR><TD>\n";
 		echo "<img src=\"images/icon_black_scripts.png\" alt=\"Scripts\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
@@ -10693,7 +11137,28 @@ if ($ADD==1111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10743,7 +11208,28 @@ if ($ADD==11111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10776,7 +11262,28 @@ if ($ADD==111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10810,7 +11317,28 @@ if ($ADD==1111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10856,7 +11384,28 @@ if ($ADD==1211111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -10900,7 +11449,28 @@ if ($ADD==131111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11052,7 +11622,28 @@ if ($ADD==11111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -11230,7 +11821,28 @@ if ($ADD==12222222222)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11263,7 +11875,28 @@ if ($ADD==12111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11299,7 +11932,28 @@ if ($ADD==13111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11332,7 +11986,28 @@ if ($ADD==111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11364,7 +12039,28 @@ if ($ADD==131111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11429,7 +12125,28 @@ if ($ADD==141111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11478,7 +12195,28 @@ if ($ADD==140111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11511,7 +12249,28 @@ if ($ADD==151111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11544,7 +12303,28 @@ if ($ADD==161111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11579,7 +12359,28 @@ if ($ADD==171111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11611,7 +12412,28 @@ if ($ADD==181111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -11643,7 +12465,28 @@ if ($ADD==182111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11680,7 +12523,28 @@ if ($ADD==191111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11741,7 +12605,28 @@ if ($ADD==192111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11773,7 +12658,28 @@ if ($ADD==193111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11804,7 +12710,28 @@ if ($ADD==194111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -11835,7 +12762,28 @@ if ($ADD==195111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11872,7 +12820,28 @@ if ($ADD==196111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11908,7 +12877,28 @@ if ($ADD==197111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11944,7 +12934,28 @@ if ($ADD==198111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -11972,7 +12983,28 @@ if ($ADD==1111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -12000,7 +13032,28 @@ if ($ADD==11111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -12028,7 +13081,28 @@ if ($ADD==12111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -12690,8 +13764,9 @@ if ($ADD=="2A")
 
 
 ######################
-# ADD=21 adds the new campaign to the system
+# ADD = 21 adds the new campaign to the system
 ######################
+
 if ($ADD==21)
 	{
 	$campaign_id = preg_replace("/\-/",'',$campaign_id);
@@ -12715,15 +13790,21 @@ if ($ADD==21)
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
-		echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		echo '<div class="container-fluid mt-4">'; 
+		// echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_campaigns where campaign_id='$campaign_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
 		$row=mysqli_fetch_row($rslt);
 		if ($row[0] > 0)
-			{echo "<br>"._QXZ("CAMPAIGN NOT ADDED - there is already a campaign in the system with this ID")."\n";}
+		{
+			echo '<div class="alert alert-danger mb-3 alert-border-left alert-dismissible fade show  material-shadow" role="alert">';
+			echo '<i class="ri-error-warning-line me-3 align-middle fs-16"></i>';
+			echo '<strong>' . _QXZ("Error") . '</strong> - ' . _QXZ("CAMPAIGN NOT ADDED - there is already a campaign in the system with this ID");
+			echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+			echo '</div>';
+		}
 		else
 			{
 			$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$campaign_id';";
@@ -12748,7 +13829,12 @@ if ($ADD==21)
 						}
 					else
 						{
-						echo "<br><B>"._QXZ("CAMPAIGN ADDED").": $campaign_id</B>\n";
+							echo '<div class="alert alert-success mb-3 alert-border-left alert-dismissible fade show  material-shadow" role="alert">';
+							echo '<i class="ri-error-warning-line me-3 align-middle fs-16"></i>';
+							echo '<strong>' . _QXZ("Success") . '</strong> - ' . _QXZ("CAMPAIGN ADDED");
+							echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+							echo '</div>';
+					
 
 						# if admin user's user group does not have -ALL-CAMPAIGNS- then add this new campaign to their user group's allowable campaigns
 						if ( (!preg_match('/\-ALL/i', $LOGallowed_campaigns)) )
@@ -12786,12 +13872,12 @@ if ($ADD==21)
 				}
 			}
 		}
-	$ADD=31;
+	$ADD=34;
 	}
 
 
 ######################
-# ADD=20 adds copied new campaign to the system
+# ADD = 20 adds copied new campaign to the system
 ######################
 if ($ADD==20)
 	{
@@ -12816,8 +13902,8 @@ if ($ADD==20)
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
+		// echo "<br>";
+		// echo '<div class="page-content">';
 		echo '<div class="container-fluid">'; 
 		echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_campaigns where campaign_id='$campaign_id';";
@@ -13460,9 +14546,9 @@ if ($ADD==211)
 	else
 		{
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		##### BEGIN ID override optional section, if enabled it increments user by 1 ignoring entered value #####
 		$stmt = "SELECT value FROM vicidial_override_ids where id_table='vicidial_lists' and active='1';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -13600,9 +14686,9 @@ if ($ADD==2111)
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -13684,9 +14770,9 @@ if ( ($ADD==2811) and ($SSallow_emails>0) )
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -13768,9 +14854,9 @@ if ( ($ADD==28111) and ($SSallow_chats>0) )
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -13852,9 +14938,9 @@ if ($ADD==2011)
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -13955,9 +15041,9 @@ if ( ($ADD==2911) and ($SSallow_emails>0) )
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -14058,9 +15144,9 @@ if ( ($ADD==29111) and ($SSallow_chats>0) )
 			}
 		##### END ID override optional section #####
 		echo "<div class=\"main-content\">";
-		echo "<br>";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo "<br>";
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_inbound_groups where group_id='$group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -15885,17 +16971,17 @@ if ($ADD==293111111111)
 	if ( ($LOGmodify_statuses!=1) or ($add_copy_disabled > 0) )
 		{
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">';
 		echo "<br>"._QXZ("You do not have permission to add records on this system")." -system_settings-\n";
 		}
 	else
 		{
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">';
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_status_groups where status_group_id='$status_group_id';";
 		$rslt=mysql_to_mysqli($stmt, $link);
@@ -16029,16 +17115,16 @@ if ($ADD==296111111111)
 	if ( ($LOGmodify_statuses!=1) or ($add_copy_disabled > 0) )
 		{
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
 		echo '<div class="container-fluid">';
 		echo "<br>"._QXZ("You do not have permission to add records on this system")." -system_settings-\n";
 		}
 	else
 		{
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
 		echo '<div class="container-fluid">';
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		$stmt="SELECT count(*) from vicidial_cid_groups where cid_group_id='$cid_group_id';";
@@ -16710,7 +17796,28 @@ if ($ADD=="4A")
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	$ADD=3;		# go to user modification below
@@ -17009,7 +18116,28 @@ if ($ADD=="4B")
 		}
 		else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3;		# go to user modification below
@@ -17277,7 +18405,28 @@ if ($ADD==4)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3;		# go to user modification below
@@ -17707,7 +18856,28 @@ if ($ADD==41)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=31;	# go to campaign modification form below
@@ -17768,7 +18938,28 @@ if ($ADD==42)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=22;
@@ -17810,7 +19001,28 @@ if ($ADD==43)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=23;
@@ -17963,10 +19175,31 @@ if ($ADD==44)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
-	$ADD=34;	# go to campaign modification form below
+	$ADD=10;	# go to campaign modification form below
 	}
 
 
@@ -18004,7 +19237,28 @@ if ($ADD==45)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=25;
@@ -18047,7 +19301,28 @@ if ($ADD==47)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=27;
@@ -18108,7 +19383,28 @@ if ($ADD==48)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=28;
@@ -18147,7 +19443,28 @@ if ($ADD=='40A')
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB='20A';
@@ -18421,7 +19738,28 @@ if ($ADD==49)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=29;
@@ -18462,7 +19800,28 @@ if ($ADD==401)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=201;
@@ -18585,7 +19944,28 @@ if ($ADD==411)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311;	# go to list modification form below
@@ -18657,7 +20037,28 @@ if ($ADD==4111 || $ADD==4811 || $ADD==4911)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -18863,7 +20264,28 @@ if ($ADD==4111 || $ADD==4811 || $ADD==4911)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -18908,7 +20330,28 @@ if ($ADD==4311)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3311;	# go to did modification form below
@@ -19072,7 +20515,28 @@ if ($ADD==4511)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3511;	# go to call menu modification form below
@@ -19111,7 +20575,28 @@ if ($ADD==4711)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3711;	# go to filter phone group modification form below
@@ -19173,7 +20658,28 @@ if ($ADD==41111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=31111;	# go to remote agents modification form below
@@ -19212,7 +20718,28 @@ if ($ADD==42111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	$ADD=32111;	# go to extension group modification form below
@@ -19497,7 +21024,28 @@ if ($ADD==411111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311111;	# go to user group modification form below
@@ -19544,7 +21092,28 @@ if ($ADD==4111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3111111;	# go to script modification form below
@@ -19585,7 +21154,28 @@ if ($ADD==41111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=31111111;	# go to filter modification form below
@@ -19640,7 +21230,28 @@ if ($ADD==411111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311111111;	# go to call time modification form below
@@ -19695,7 +21306,28 @@ if ($ADD==4111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	$ADD=3111111111;	# go to state call time modification form below
@@ -19736,7 +21368,28 @@ if ($ADD==4211111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3211111111;	# go to holiday modification form below
@@ -19787,7 +21440,28 @@ if ($ADD==431111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=331111111;	# go to shift modification form below
@@ -19860,7 +21534,28 @@ if ($ADD==41111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=31111111111;	# go to phone modification form below
@@ -19899,7 +21594,28 @@ if ($ADD==42111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=32111111111;	# go to phone alias modification form below
@@ -19938,7 +21654,28 @@ if ($ADD==43111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=33111111111;	# go to group alias modification form below
@@ -20030,7 +21767,28 @@ if ($ADD==411111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311111111111;	# go to server modification form below
@@ -20087,7 +21845,28 @@ if ($ADD==421111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311111111111;	# go to server modification form below
@@ -20127,7 +21906,28 @@ if ($ADD==431111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=331111111111;	# go to conf template modification form below
@@ -20168,7 +21968,28 @@ if ($ADD==441111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=341111111111;	# go to carrier modification form below
@@ -20204,7 +22025,28 @@ if ($ADD==451111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=351111111111;	# go to tts entry modification form below
@@ -20308,7 +22150,28 @@ if ($ADD==461111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=361111111111;	# go to music on hold entry modification form below
@@ -20439,7 +22302,28 @@ if ($ADD==497111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=397111111111;	# go to VM Message Group entry modification form below
@@ -20479,7 +22363,28 @@ if ($ADD==498111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=398111111111;	# go to Queue Group entry modification form below
@@ -20528,7 +22433,28 @@ if ($ADD==471111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	$ADD=371111111111;	# go to voicemail entry modification form below
@@ -20564,7 +22490,28 @@ if ($ADD==481111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=381111111111;	# go to screen label entry modification form below
@@ -20656,7 +22603,28 @@ if ($ADD==482111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=382111111111;	# go to screen colors entry modification form below
@@ -20702,7 +22670,28 @@ if ($ADD==491111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=391111111111;	# go to contact entry modification form below
@@ -20741,7 +22730,28 @@ if ($ADD==492111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=392111111111;	# go to settings container entry modification form below
@@ -20863,7 +22873,28 @@ if ($ADD==493111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=393111111111;	# go to status group entry modification form below
@@ -20910,7 +22941,28 @@ if ($ADD==494111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=394111111111;	# go to automated report entry modification form below
@@ -21171,7 +23223,28 @@ if ($ADD==496111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=396111111111;	# go to CID group entry modification form below
@@ -21215,7 +23288,28 @@ if ($ADD==4111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=3111111111111;	# go to conference modification form below
@@ -21259,7 +23353,28 @@ if ($ADD==41111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=31111111111111;	# go to vicidial conference modification form below
@@ -21303,7 +23418,28 @@ if ($ADD==42111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=32111111111111;	# go to vicidial confbridge modification form below
@@ -21432,7 +23568,28 @@ if ($ADD==411111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311111111111111;	# go to vicidial system settings form below
@@ -21502,7 +23659,28 @@ if ($ADD==421111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=321111111111111;	# go to system settings modification form below
@@ -21569,7 +23747,28 @@ if ($ADD==431111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=331111111111111;	# go to system settings modification form below
@@ -21636,7 +23835,28 @@ if ($ADD==441111111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=341111111111111;	# go to qc status code modification form below
@@ -21691,7 +23911,7 @@ if ($ADD==51)
 	else
 		{
 			echo '<div class="main-content">';
-echo '<div class="page-content">';
+// echo '<div class="page-content">';
 // echo '<div class="container-fluid">';
 		echo "<br><B>"._QXZ("CAMPAIGN DELETION CONFIRMATION").": $campaign_id</B>\n";
 		echo "<a href=\"$PHP_SELF?ADD=61&campaign_id=$campaign_id&CoNfIrM=YES\">"._QXZ("Click here to delete campaign")." $campaign_id</a><br><br><br>\n";
@@ -23094,7 +25314,28 @@ if ($ADD==62)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD='31';		# go to campaign modification below
@@ -23144,7 +25385,28 @@ if ($ADD==63)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	# go to campaign modification below
@@ -23197,7 +25459,28 @@ if ($ADD==65)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=25;
@@ -23257,7 +25540,28 @@ if ($ADD==66)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=26;
@@ -23305,7 +25609,28 @@ if ($ADD==67)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=27;
@@ -23365,7 +25690,28 @@ if ($ADD==68)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	#$SUB=28;
@@ -23416,7 +25762,28 @@ if ($ADD==601)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$SUB=201;
@@ -24463,7 +26830,28 @@ if ($ADD==621111111111)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	$ADD=311111111111;	# go to server modification form below
@@ -25235,7 +27623,11 @@ if ($ADD==3)
 			$modify_url = "$PHP_SELF?ADD=3&user=$user";
 			$modify_footer_refresh=1;
 			}
-
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+			
+			
+			// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
@@ -26330,7 +28722,28 @@ if ($ADD==3)
 		}
 	else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -26348,8 +28761,8 @@ if ( ($ADD==31) and ( (!preg_match("/$campaign_id/i", $LOGallowed_campaigns)) an
 if ($ADD==31)
 	{
 		echo "<div class=\"main-content\">";
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
 	if ($LOGmodify_campaigns==1)
 		{
 		if ( ($SSadmin_modify_refresh > 1) and ($modify_refresh_set < 1) )
@@ -30407,13 +32820,34 @@ if ($ADD==31)
 	
 			if ($LOGdelete_campaigns > 0)
 				{
-				echo "<br><br><a href=\"$PHP_SELF?ADD=51&campaign_id=$campaign_id\">"._QXZ("DELETE THIS CAMPAIGN")."</a>\n";
+				echo "<br><br><a href=\"$PHP_SELF?ADD=51&campaign_id=$campaign_id\">"._QXZ("DELETE THI CAMPAIGN")."</a>\n";
 				}
 			}
 		}
 		else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 		exit;
 		}
 	}
@@ -30617,50 +33051,100 @@ if ($ADD==31)
 			else		{$camp_pause_color=$campaigns_color;}
 		if ($SUB==29)	{$camp_listmix_color=$subcamp_color;}
 			else		{$camp_listmix_color=$campaigns_color;}
-			echo '<div class="main-content">';
-			echo '<div class="page-content">';
 			echo '<div class="container-fluid">';
-		echo "<TABLE WIDTH=$page_width CELLPADDING=2 CELLSPACING=0><TR BGCOLOR=\"$campaigns_color\">\n";
-		echo "<TD><font size=2 color=$subcamp_font face=\"ARIAL,HELVETICA\"> <B>$campaign_id</B>: </font></TD>";
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
+		// echo "<TABLE WIDTH=$page_width CELLPADDING=2 CELLSPACING=0><TR BGCOLOR=\"$campaigns_color\">\n";
+		// echo "<TD><font size=2 color=$subcamp_font face=\"ARIAL,HELVETICA\"> <B>$campaign_id</B>: </font></TD>";
 	
 	
-		echo "<TD ALIGN=CENTER BGCOLOR=\"$camp_detail_color\"> &nbsp; <a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("Basic View")."</font></a></TD>";
-		echo "<TD ALIGN=CENTER> <a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("Detail View")." </font></a> </TD>";
+		// echo "<TD ALIGN=CENTER BGCOLOR=\"$camp_detail_color\"> &nbsp; <a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("Basic View")."</font></a></TD>";
+		// // echo "<TD ALIGN=CENTER> <a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("Detail View")." </font></a> </TD>";
 	
-		if ($SSoutbound_autodial_active > 0)
-			{
-			echo "<TD ALIGN=CENTER BGCOLOR=\"$camp_listmix_color\"> <a href=\"$PHP_SELF?ADD=34&SUB=29&campaign_id=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("List Mix")."</font></a> </TD>";
-			}
-		echo "<TD ALIGN=CENTER> <a href=\"./realtime_report.php?RR=4&DB=0&group=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("Real-Time Screen")."</font></a></TD>\n";
-		echo "<TD WIDTH=300><font class=\"sub_sub_head_links\"> &nbsp; </font></TD>\n";
-		if ($SSoutbound_autodial_active < 1)
-			{
-			echo "<TD></TD>";
-			}
-		echo "</TR></TABLE>\n";
-	
+		// if ($SSoutbound_autodial_active > 0)
+		// 	{
+		// 	// echo "<TD ALIGN=CENTER BGCOLOR=\"$camp_listmix_color\"> <a href=\"$PHP_SELF?ADD=34&SUB=29&campaign_id=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("List Mix")."</font></a> </TD>";
+		// 	}
+		// // echo "<TD ALIGN=CENTER> <a href=\"./realtime_report.php?RR=4&DB=0&group=$campaign_id\" STYLE=\"text-decoration:none;\"><font class=\"sub_sub_head_links\">"._QXZ("Real-Time Screen")."</font></a></TD>\n";
+		// // echo "<TD WIDTH=300><font class=\"sub_sub_head_links\"> &nbsp; </font></TD>\n";
+		// if ($SSoutbound_autodial_active < 1)
+		// 	{
+		// 	echo "<TD></TD>";
+		// 	}
+		// echo "</TR></TABLE>\n";
+		echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow d-flex justify-content-between align-items-center" role="alert">';
+		echo '<div>';
+		echo '<i class="ri-contacts-book-line label-icon"></i>';
+		echo '<strong><h2 class="d-inline">ADD A NEW CAMPAIGN</h2></strong>';
+		echo '</div>';
+		echo '<div class="btn-group">';
+		echo '    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">';
+		echo '        <i class="ri-more-line"></i>';
+		echo '    </button>';
+		echo '    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">';
+		
+		echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=52&campaign_id=' . $campaign_id . '&DB=' . $DB . '">';
+		echo '      <i class="ri-logout-box-line"></i> ' . _QXZ("LOG ALL AGENTS OUT OF THIS CAMPAIGN") . '</a>';
+
+		// Conditional link to delete the campaign with trash icon
+		if ($LOGdelete_campaigns > 0) {
+			echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=51&campaign_id=' . $campaign_id . '">';
+			echo '      <i class="ri-delete-bin-line"></i> ' . _QXZ("DELETE THIS CAMPAIGN") . '</a>';
+		}
+		echo '    </ul>';
+		echo '</div>';
+		echo '</div>';
+		
 		if ($SUB < 1)
 			{
-			echo "<TABLE><TR><TD>\n";
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+
+		
+			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=3>";
 			echo "<form action=$PHP_SELF method=POST>\n";
 			echo "<input type=hidden name=ADD value=44>\n";
 			echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
 			echo "<input type=hidden name=old_campaign_allow_inbound value=\"$campaign_allow_inbound\">\n";
-			echo "<center><TABLE width=$section_width cellspacing=3>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign ID").": </td><td align=left><b>$campaign_id</b>$NWB#campaigns-campaign_id$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Name").": </td><td align=left><input type=text name=campaign_name size=40 maxlength=40 value=\"$row[1]\">$NWB#campaigns-campaign_name$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Description").": </td><td align=left>$row[57]$NWB#campaigns-campaign_description$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Change Date").": </td><td align=left>$campaign_changedate &nbsp; $NWB#campaigns-campaign_changedate$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Login Date").": </td><td align=left>$campaign_logindate &nbsp; $NWB#campaigns-campaign_logindate$NWE</td></tr>\n";
+			// echo "<center>\n";
+			// echo "<tr bgcolor=
+			echo "<div class='card col-md-12'>";
+			echo "<div class='card-body'>";
+			echo "<div class=' row'>\n";#$SSstd_row4_background><td align=right>"._QXZ("Campaign ID").": </td><td align=left><b>$campaign_id</b>$NWB#campaigns-campaign_id$NWE</td></tr>\n";
+			echo "<div class='form-group col-md-6'>\n";
+			echo "<label for='campaign_id' class=' col-form-label fw-bold'>" . _QXZ("Campaign ID") . ":</label>\n";
+			echo "<div class=''><p class='form-control-plaintext'><b>$campaign_id</b></p></div>\n";
+			echo "</div>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Name").": </td><td align=left><input type=text name=campaign_name size=40 maxlength=40 value=\"$row[1]\">$NWB#campaigns-campaign_name$NWE</td></tr>\n";
+			echo "<div class='form-group col-md-6'>\n";
+			echo "<label for='campaign_name' class=' col-form-label fw-bold'>" . _QXZ("Campaign Name") . ":</label>\n";
+			echo "<div class=''><input type='text' class='form-control' id='campaign_name' name='campaign_name' size='40' maxlength='40' value='$row[1]'>
+			
+			</div>\n";
+			echo "</div>\n";
+
+			echo "</div>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Description").": </td><td align=left>$row[57]$NWB#campaigns-campaign_description$NWE</td></tr>\n";
+			
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Change Date").": </td><td align=left>$campaign_changedate &nbsp; $NWB#campaigns-campaign_changedate$NWE</td></tr>\n";
+			
+
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Campaign Login Date").": </td><td align=left>$campaign_logindate &nbsp; $NWB#campaigns-campaign_logindate$NWE</td></tr>\n";
 	
-			echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Active").": </td><td align=left><select size=1 name=active><option value='Y'>"._QXZ("Y")."</option><option value='N'>"._QXZ("N")."</option><option value='$row[2]' SELECTED>"._QXZ("$row[2]")."</option></select>$NWB#campaigns-active$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Admin User Group").": </td><td align=left>"._QXZ("$user_group")." $NWB#campaigns-user_group$NWE</td></tr>\n";
+		
+			
+
+			// echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Active").": </td><td align=left><select size=1 name=active><option value='Y'>"._QXZ("Y")."</option><option value='N'>"._QXZ("N")."</option><option value='$row[2]' SELECTED>"._QXZ("$row[2]")."</option></select>$NWB#campaigns-active$NWE</td></tr>\n";
+			echo "<div class=' row'>\n";
+			echo "<div class='form-group col-md-6'>\n";
+			echo "<label for='active' class='col-sm-2 col-form-label fw-bold'>" . _QXZ("Active") . ":</label>\n";
+			echo "<div class=''><select class='form-control' id='active' name='active'><option value='Y'>" . _QXZ("Y") . "</option><option value='N'>" . _QXZ("N") . "</option><option value='$row[2]' SELECTED>" . _QXZ("$row[2]") . "</option></select></div>\n";
+			echo "</div>\n";
+
+			// echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Admin User Group").": </td><td align=left>"._QXZ("$user_group")." $NWB#campaigns-user_group$NWE</td></tr>\n";
 	
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Park Music-on-Hold").": </td><td align=left>$row[10] $NWB#campaigns-park_ext$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Web Form").": </td><td align=left>$row[11]$NWB#campaigns-web_form_address$NWE"; if ($SSenable_first_webform < 1) {echo " <font color=red><b>"._QXZ("DISABLED")."</b></font>";} echo "</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Allow Closers").": </td><td align=left>"._QXZ("$row[12]")." $NWB#campaigns-allow_closers$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Default Transfer Group").": </td><td align=left>"._QXZ("$default_xfer_group")." $NWB#campaigns-default_xfer_group$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Park Music-on-Hold").": </td><td align=left>$row[10] $NWB#campaigns-park_ext$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Web Form").": </td><td align=left>$row[11]$NWB#campaigns-web_form_address$NWE"; if ($SSenable_first_webform < 1) {echo " <font color=red><b>"._QXZ("DISABLED")."</b></font>";} echo "</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Allow Closers").": </td><td align=left>"._QXZ("$row[12]")." $NWB#campaigns-allow_closers$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Default Transfer Group").": </td><td align=left>"._QXZ("$default_xfer_group")." $NWB#campaigns-default_xfer_group$NWE</td></tr>\n";
 			if ($SSallow_emails > 0) 
 				{
 				echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Allow Emails").": </td><td align=left>"._QXZ("$allow_emails")." $NWB#campaigns-allow_emails$NWE</td></tr>\n";
@@ -30672,341 +33156,376 @@ if ($ADD==31)
 	
 			if ($SSoutbound_autodial_active > 0)
 				{
-				echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Allow Inbound and Blended").": </td><td align=left>"._QXZ("$campaign_allow_inbound")." $NWB#campaigns-campaign_allow_inbound$NWE</td></tr>\n";
+				// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Allow Inbound and Blended").": </td><td align=left>"._QXZ("$campaign_allow_inbound")." $NWB#campaigns-campaign_allow_inbound$NWE</td></tr>\n";
 	
 				$o=0;
 				while ($Ds_to_print > $o) 
 					{
 					$o++;
 					$Dstatus = $Dstatuses[$o];
-	
-					echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Dial Status")." $o: </td><td align=left> \n";
+					echo "<div class='form-group col-md-6' >\n";
+					echo "<label class='col-form-label text-right fw-bold'>" . _QXZ("Dial Status") . " $o:</label>\n";
+					echo "<div class=''>\n";
 					if ($DEFstatusDISABLED > 0)
-						{
-						echo "<font color=grey><DEL><b>$Dstatus</b> - $statname_list[$Dstatus] &nbsp; &nbsp; &nbsp; &nbsp; <font size=2>\n";
-						echo _QXZ("REMOVE")."</DEL></td></tr>\n";
-						}
+					{
+						echo "<span class='text-muted'><del><b>$Dstatus</b> - $statname_list[$Dstatus]</del> &nbsp; &nbsp; &nbsp; &nbsp;\n";
+						echo "<small>" . _QXZ("REMOVE") . "</small></span></div></div>\n";
+					}
 					else
-						{
-						echo "<b>$Dstatus</b> - $statname_list[$Dstatus] &nbsp; &nbsp; &nbsp; &nbsp; <font size=2>\n";
-						echo "<a href=\"$PHP_SELF?ADD=68&campaign_id=$campaign_id&status=$Dstatuses[$o]\">"._QXZ("REMOVE")."</a></td></tr>\n";
-						}
-					}
-	
-				echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Add A Dial Status to Call").": </td><td align=left><select size=1 name=dial_status $DEFlistDISABLE>\n";
-				echo "<option value=\"\"> - "._QXZ("NONE")." - </option>\n";
-	
-				echo "$dial_statuses_list";
-				echo "</select> &nbsp; \n";
-				echo "<input style='background-color:#$SSbutton_color' type=submit name=submit value='"._QXZ("ADD")."'> &nbsp; &nbsp; $NWB#campaigns-dial_status$NWE</td></tr>\n";
-	
-				echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("List Order").": </td><td align=left>";
-				if ($ALTmultiDISABLE > 0)
 					{
-					echo "<input type=hidden name=lead_order value=\"$lead_order\"> $ALTmultiLINK";
+						echo "<b>$Dstatus</b> - $statname_list[$Dstatus] &nbsp; &nbsp; &nbsp; &nbsp;\n";
+						echo "<small><a href=\"$PHP_SELF?ADD=68&campaign_id=$campaign_id&status=$Dstatuses[$o]\">" . _QXZ("REMOVE") . "</a></small></div></div>\n";
 					}
-				else
-					{
-					if (file_exists('options.php'))
-						{require('options.php');}
-					if ($camp_lead_order_random > 0)
-						{
-						echo "<select size=1 name=lead_order>
-						<option value='$lead_order' SELECTED>"._QXZ("$lead_order")."</option>
-						<option value='DOWN'>"._QXZ("DOWN")."</option>
-						<option value='UP'>"._QXZ("UP")."</option>
-						<option value='DOWN PHONE'>"._QXZ("DOWN PHONE")."</option>
-						<option value='UP PHONE'>"._QXZ("UP PHONE")."</option>
-						<option value='DOWN LAST NAME'>"._QXZ("DOWN LAST NAME")."</option>
-						<option value='UP LAST NAME'>"._QXZ("UP LAST NAME")."</option>
-						<option value='DOWN COUNT'>"._QXZ("DOWN COUNT")."</option>
-						<option value='UP COUNT'>"._QXZ("UP COUNT")."</option>
-						<option value='RANDOM'>"._QXZ("RANDOM")."</option>
-						<option value='DOWN LAST CALL TIME'>"._QXZ("DOWN LAST CALL TIME")."</option>
-						<option value='UP LAST CALL TIME'>"._QXZ("UP LAST CALL TIME")."</option>
-						<option value='DOWN RANK'>"._QXZ("DOWN RANK")."</option>
-						<option value='UP RANK'>"._QXZ("UP RANK")."</option>
-						<option value='DOWN OWNER'>"._QXZ("DOWN OWNER")."</option>
-						<option value='UP OWNER'>"._QXZ("UP OWNER")."</option>
-						<option value='DOWN TIMEZONE'>"._QXZ("DOWN TIMEZONE")."</option>
-						<option value='UP TIMEZONE'>"._QXZ("UP TIMEZONE")."</option>
-						<option value='DOWN 2nd NEW'>"._QXZ("DOWN 2nd NEW")."</option>
-						<option value='DOWN 3rd NEW'>"._QXZ("DOWN 3rd NEW")."</option>
-						<option value='DOWN 4th NEW'>"._QXZ("DOWN 4th NEW")."</option>
-						<option value='DOWN 5th NEW'>"._QXZ("DOWN 5th NEW")."</option>
-						<option value='DOWN 6th NEW'>"._QXZ("DOWN 6th NEW")."</option>
-						<option value='UP 2nd NEW'>"._QXZ("UP 2nd NEW")."</option>
-						<option value='UP 3rd NEW'>"._QXZ("UP 3rd NEW")."</option>
-						<option value='UP 4th NEW'>"._QXZ("UP 4th NEW")."</option>
-						<option value='UP 5th NEW'>"._QXZ("UP 5th NEW")."</option>
-						<option value='UP 6th NEW'>"._QXZ("UP 6th NEW")."</option>
-						<option value='DOWN PHONE 2nd NEW'>"._QXZ("DOWN PHONE 2nd NEW")."</option>
-						<option value='DOWN PHONE 3rd NEW'>"._QXZ("DOWN PHONE 3rd NEW")."</option>
-						<option value='DOWN PHONE 4th NEW'>"._QXZ("DOWN PHONE 4th NEW")."</option>
-						<option value='DOWN PHONE 5th NEW'>"._QXZ("DOWN PHONE 5th NEW")."</option>
-						<option value='DOWN PHONE 6th NEW'>"._QXZ("DOWN PHONE 6th NEW")."</option>
-						<option value='UP PHONE 2nd NEW'>"._QXZ("UP PHONE 2nd NEW")."</option>
-						<option value='UP PHONE 3rd NEW'>"._QXZ("UP PHONE 3rd NEW")."</option>
-						<option value='UP PHONE 4th NEW'>"._QXZ("UP PHONE 4th NEW")."</option>
-						<option value='UP PHONE 5th NEW'>"._QXZ("UP PHONE 5th NEW")."</option>
-						<option value='UP PHONE 6th NEW'>"._QXZ("UP PHONE 6th NEW")."</option>
-						<option value='DOWN LAST NAME 2nd NEW'>"._QXZ("DOWN LAST NAME 2nd NEW")."</option>
-						<option value='DOWN LAST NAME 3rd NEW'>"._QXZ("DOWN LAST NAME 3rd NEW")."</option>
-						<option value='DOWN LAST NAME 4th NEW'>"._QXZ("DOWN LAST NAME 4th NEW")."</option>
-						<option value='DOWN LAST NAME 5th NEW'>"._QXZ("DOWN LAST NAME 5th NEW")."</option>
-						<option value='DOWN LAST NAME 6th NEW'>"._QXZ("DOWN LAST NAME 6th NEW")."</option>
-						<option value='UP LAST NAME 2nd NEW'>"._QXZ("UP LAST NAME 2nd NEW")."</option>
-						<option value='UP LAST NAME 3rd NEW'>"._QXZ("UP LAST NAME 3rd NEW")."</option>
-						<option value='UP LAST NAME 4th NEW'>"._QXZ("UP LAST NAME 4th NEW")."</option>
-						<option value='UP LAST NAME 5th NEW'>"._QXZ("UP LAST NAME 5th NEW")."</option>
-						<option value='UP LAST NAME 6th NEW'>"._QXZ("UP LAST NAME 6th NEW")."</option>
-						<option value='DOWN COUNT 2nd NEW'>"._QXZ("DOWN COUNT 2nd NEW")."</option>
-						<option value='DOWN COUNT 3rd NEW'>"._QXZ("DOWN COUNT 3rd NEW")."</option>
-						<option value='DOWN COUNT 4th NEW'>"._QXZ("DOWN COUNT 4th NEW")."</option>
-						<option value='DOWN COUNT 5th NEW'>"._QXZ("DOWN COUNT 5th NEW")."</option>
-						<option value='DOWN COUNT 6th NEW'>"._QXZ("DOWN COUNT 6th NEW")."</option>
-						<option value='UP COUNT 2nd NEW'>"._QXZ("UP COUNT 2nd NEW")."</option>
-						<option value='UP COUNT 3rd NEW'>"._QXZ("UP COUNT 3rd NEW")."</option>
-						<option value='UP COUNT 4th NEW'>"._QXZ("UP COUNT 4th NEW")."</option>
-						<option value='UP COUNT 5th NEW'>"._QXZ("UP COUNT 5th NEW")."</option>
-						<option value='UP COUNT 6th NEW'>"._QXZ("UP COUNT 6th NEW")."</option>
-						<option value='RANDOM 2nd NEW'>"._QXZ("RANDOM 2nd NEW")."</option>
-						<option value='RANDOM 3rd NEW'>"._QXZ("RANDOM 3rd NEW")."</option>
-						<option value='RANDOM 4th NEW'>"._QXZ("RANDOM 4th NEW")."</option>
-						<option value='RANDOM 5th NEW'>"._QXZ("RANDOM 5th NEW")."</option>
-						<option value='RANDOM 6th NEW'>"._QXZ("RANDOM 6th NEW")."</option>
-						<option value='DOWN LAST CALL TIME 2nd NEW'>"._QXZ("DOWN LAST CALL TIME 2nd NEW")."</option>
-						<option value='DOWN LAST CALL TIME 3rd NEW'>"._QXZ("DOWN LAST CALL TIME 3rd NEW")."</option>
-						<option value='DOWN LAST CALL TIME 4th NEW'>"._QXZ("DOWN LAST CALL TIME 4th NEW")."</option>
-						<option value='DOWN LAST CALL TIME 5th NEW'>"._QXZ("DOWN LAST CALL TIME 5th NEW")."</option>
-						<option value='DOWN LAST CALL TIME 6th NEW'>"._QXZ("DOWN LAST CALL TIME 6th NEW")."</option>
-						<option value='UP LAST CALL TIME 2nd NEW'>"._QXZ("UP LAST CALL TIME 2nd NEW")."</option>
-						<option value='UP LAST CALL TIME 3rd NEW'>"._QXZ("UP LAST CALL TIME 3rd NEW")."</option>
-						<option value='UP LAST CALL TIME 4th NEW'>"._QXZ("UP LAST CALL TIME 4th NEW")."</option>
-						<option value='UP LAST CALL TIME 5th NEW'>"._QXZ("UP LAST CALL TIME 5th NEW")."</option>
-						<option value='UP LAST CALL TIME 6th NEW'>"._QXZ("UP LAST CALL TIME 6th NEW")."</option>
-						<option value='DOWN RANK 2nd NEW'>"._QXZ("DOWN RANK 2nd NEW")."</option>
-						<option value='DOWN RANK 3rd NEW'>"._QXZ("DOWN RANK 3rd NEW")."</option>
-						<option value='DOWN RANK 4th NEW'>"._QXZ("DOWN RANK 4th NEW")."</option>
-						<option value='DOWN RANK 5th NEW'>"._QXZ("DOWN RANK 5th NEW")."</option>
-						<option value='DOWN RANK 6th NEW'>"._QXZ("DOWN RANK 6th NEW")."</option>
-						<option value='UP RANK 2nd NEW'>"._QXZ("UP RANK 2nd NEW")."</option>
-						<option value='UP RANK 3rd NEW'>"._QXZ("UP RANK 3rd NEW")."</option>
-						<option value='UP RANK 4th NEW'>"._QXZ("UP RANK 4th NEW")."</option>
-						<option value='UP RANK 5th NEW'>"._QXZ("UP RANK 5th NEW")."</option>
-						<option value='UP RANK 6th NEW'>"._QXZ("UP RANK 6th NEW")."</option>
-						<option value='DOWN OWNER 2nd NEW'>"._QXZ("DOWN OWNER 2nd NEW")."</option>
-						<option value='DOWN OWNER 3rd NEW'>"._QXZ("DOWN OWNER 3rd NEW")."</option>
-						<option value='DOWN OWNER 4th NEW'>"._QXZ("DOWN OWNER 4th NEW")."</option>
-						<option value='DOWN OWNER 5th NEW'>"._QXZ("DOWN OWNER 5th NEW")."</option>
-						<option value='DOWN OWNER 6th NEW'>"._QXZ("DOWN OWNER 6th NEW")."</option>
-						<option value='UP OWNER 2nd NEW'>"._QXZ("UP OWNER 2nd NEW")."</option>
-						<option value='UP OWNER 3rd NEW'>"._QXZ("UP OWNER 3rd NEW")."</option>
-						<option value='UP OWNER 4th NEW'>"._QXZ("UP OWNER 4th NEW")."</option>
-						<option value='UP OWNER 5th NEW'>"._QXZ("UP OWNER 5th NEW")."</option>
-						<option value='UP OWNER 6th NEW'>"._QXZ("UP OWNER 6th NEW")."</option>
-						<option value='DOWN TIMEZONE 2nd NEW'>"._QXZ("DOWN TIMEZONE 2nd NEW")."</option>
-						<option value='DOWN TIMEZONE 3rd NEW'>"._QXZ("DOWN TIMEZONE 3rd NEW")."</option>
-						<option value='DOWN TIMEZONE 4th NEW'>"._QXZ("DOWN TIMEZONE 4th NEW")."</option>
-						<option value='DOWN TIMEZONE 5th NEW'>"._QXZ("DOWN TIMEZONE 5th NEW")."</option>
-						<option value='DOWN TIMEZONE 6th NEW'>"._QXZ("DOWN TIMEZONE 6th NEW")."</option>
-						<option value='UP TIMEZONE 2nd NEW'>"._QXZ("UP TIMEZONE 2nd NEW")."</option>
-						<option value='UP TIMEZONE 3rd NEW'>"._QXZ("UP TIMEZONE 3rd NEW")."</option>
-						<option value='UP TIMEZONE 4th NEW'>"._QXZ("UP TIMEZONE 4th NEW")."</option>
-						<option value='UP TIMEZONE 5th NEW'>"._QXZ("UP TIMEZONE 5th NEW")."</option>
-						<option value='UP TIMEZONE 6th NEW'>"._QXZ("UP TIMEZONE 6th NEW")."</option>
-						</select>$NWB#campaigns-lead_order$NWE";
-						}
-					else
-						{
-						echo "<select size=1 name=lead_order>
-						<option value='$lead_order' SELECTED>"._QXZ("$lead_order")."</option>
-						<option value='DOWN'>"._QXZ("DOWN")."</option>
-						<option value='UP'>"._QXZ("UP")."</option>
-						<option value='DOWN PHONE'>"._QXZ("DOWN PHONE")."</option>
-						<option value='UP PHONE'>"._QXZ("UP PHONE")."</option>
-						<option value='DOWN LAST NAME'>"._QXZ("DOWN LAST NAME")."</option>
-						<option value='UP LAST NAME'>"._QXZ("UP LAST NAME")."</option>
-						<option value='DOWN COUNT'>"._QXZ("DOWN COUNT")."</option>
-						<option value='UP COUNT'>"._QXZ("UP COUNT")."</option>
-						<option value='DOWN LAST CALL TIME'>"._QXZ("DOWN LAST CALL TIME")."</option>
-						<option value='UP LAST CALL TIME'>"._QXZ("UP LAST CALL TIME")."</option>
-						<option value='DOWN RANK'>"._QXZ("DOWN RANK")."</option>
-						<option value='UP RANK'>"._QXZ("UP RANK")."</option>
-						<option value='DOWN OWNER'>"._QXZ("DOWN OWNER")."</option>
-						<option value='UP OWNER'>"._QXZ("UP OWNER")."</option>
-						<option value='DOWN TIMEZONE'>"._QXZ("DOWN TIMEZONE")."</option>
-						<option value='UP TIMEZONE'>"._QXZ("UP TIMEZONE")."</option>
-						<option value='DOWN 2nd NEW'>"._QXZ("DOWN 2nd NEW")."</option>
-						<option value='DOWN 3rd NEW'>"._QXZ("DOWN 3rd NEW")."</option>
-						<option value='DOWN 4th NEW'>"._QXZ("DOWN 4th NEW")."</option>
-						<option value='DOWN 5th NEW'>"._QXZ("DOWN 5th NEW")."</option>
-						<option value='DOWN 6th NEW'>"._QXZ("DOWN 6th NEW")."</option>
-						<option value='UP 2nd NEW'>"._QXZ("UP 2nd NEW")."</option>
-						<option value='UP 3rd NEW'>"._QXZ("UP 3rd NEW")."</option>
-						<option value='UP 4th NEW'>"._QXZ("UP 4th NEW")."</option>
-						<option value='UP 5th NEW'>"._QXZ("UP 5th NEW")."</option>
-						<option value='UP 6th NEW'>"._QXZ("UP 6th NEW")."</option>
-						<option value='DOWN PHONE 2nd NEW'>"._QXZ("DOWN PHONE 2nd NEW")."</option>
-						<option value='DOWN PHONE 3rd NEW'>"._QXZ("DOWN PHONE 3rd NEW")."</option>
-						<option value='DOWN PHONE 4th NEW'>"._QXZ("DOWN PHONE 4th NEW")."</option>
-						<option value='DOWN PHONE 5th NEW'>"._QXZ("DOWN PHONE 5th NEW")."</option>
-						<option value='DOWN PHONE 6th NEW'>"._QXZ("DOWN PHONE 6th NEW")."</option>
-						<option value='UP PHONE 2nd NEW'>"._QXZ("UP PHONE 2nd NEW")."</option>
-						<option value='UP PHONE 3rd NEW'>"._QXZ("UP PHONE 3rd NEW")."</option>
-						<option value='UP PHONE 4th NEW'>"._QXZ("UP PHONE 4th NEW")."</option>
-						<option value='UP PHONE 5th NEW'>"._QXZ("UP PHONE 5th NEW")."</option>
-						<option value='UP PHONE 6th NEW'>"._QXZ("UP PHONE 6th NEW")."</option>
-						<option value='DOWN LAST NAME 2nd NEW'>"._QXZ("DOWN LAST NAME 2nd NEW")."</option>
-						<option value='DOWN LAST NAME 3rd NEW'>"._QXZ("DOWN LAST NAME 3rd NEW")."</option>
-						<option value='DOWN LAST NAME 4th NEW'>"._QXZ("DOWN LAST NAME 4th NEW")."</option>
-						<option value='DOWN LAST NAME 5th NEW'>"._QXZ("DOWN LAST NAME 5th NEW")."</option>
-						<option value='DOWN LAST NAME 6th NEW'>"._QXZ("DOWN LAST NAME 6th NEW")."</option>
-						<option value='UP LAST NAME 2nd NEW'>"._QXZ("UP LAST NAME 2nd NEW")."</option>
-						<option value='UP LAST NAME 3rd NEW'>"._QXZ("UP LAST NAME 3rd NEW")."</option>
-						<option value='UP LAST NAME 4th NEW'>"._QXZ("UP LAST NAME 4th NEW")."</option>
-						<option value='UP LAST NAME 5th NEW'>"._QXZ("UP LAST NAME 5th NEW")."</option>
-						<option value='UP LAST NAME 6th NEW'>"._QXZ("UP LAST NAME 6th NEW")."</option>
-						<option value='DOWN COUNT 2nd NEW'>"._QXZ("DOWN COUNT 2nd NEW")."</option>
-						<option value='DOWN COUNT 3rd NEW'>"._QXZ("DOWN COUNT 3rd NEW")."</option>
-						<option value='DOWN COUNT 4th NEW'>"._QXZ("DOWN COUNT 4th NEW")."</option>
-						<option value='DOWN COUNT 5th NEW'>"._QXZ("DOWN COUNT 5th NEW")."</option>
-						<option value='DOWN COUNT 6th NEW'>"._QXZ("DOWN COUNT 6th NEW")."</option>
-						<option value='UP COUNT 2nd NEW'>"._QXZ("UP COUNT 2nd NEW")."</option>
-						<option value='UP COUNT 3rd NEW'>"._QXZ("UP COUNT 3rd NEW")."</option>
-						<option value='UP COUNT 4th NEW'>"._QXZ("UP COUNT 4th NEW")."</option>
-						<option value='UP COUNT 5th NEW'>"._QXZ("UP COUNT 5th NEW")."</option>
-						<option value='UP COUNT 6th NEW'>"._QXZ("UP COUNT 6th NEW")."</option>
-						<option value='DOWN LAST CALL TIME 2nd NEW'>"._QXZ("DOWN LAST CALL TIME 2nd NEW")."</option>
-						<option value='DOWN LAST CALL TIME 3rd NEW'>"._QXZ("DOWN LAST CALL TIME 3rd NEW")."</option>
-						<option value='DOWN LAST CALL TIME 4th NEW'>"._QXZ("DOWN LAST CALL TIME 4th NEW")."</option>
-						<option value='DOWN LAST CALL TIME 5th NEW'>"._QXZ("DOWN LAST CALL TIME 5th NEW")."</option>
-						<option value='DOWN LAST CALL TIME 6th NEW'>"._QXZ("DOWN LAST CALL TIME 6th NEW")."</option>
-						<option value='UP LAST CALL TIME 2nd NEW'>"._QXZ("UP LAST CALL TIME 2nd NEW")."</option>
-						<option value='UP LAST CALL TIME 3rd NEW'>"._QXZ("UP LAST CALL TIME 3rd NEW")."</option>
-						<option value='UP LAST CALL TIME 4th NEW'>"._QXZ("UP LAST CALL TIME 4th NEW")."</option>
-						<option value='UP LAST CALL TIME 5th NEW'>"._QXZ("UP LAST CALL TIME 5th NEW")."</option>
-						<option value='UP LAST CALL TIME 6th NEW'>"._QXZ("UP LAST CALL TIME 6th NEW")."</option>
-						<option value='DOWN RANK 2nd NEW'>"._QXZ("DOWN RANK 2nd NEW")."</option>
-						<option value='DOWN RANK 3rd NEW'>"._QXZ("DOWN RANK 3rd NEW")."</option>
-						<option value='DOWN RANK 4th NEW'>"._QXZ("DOWN RANK 4th NEW")."</option>
-						<option value='DOWN RANK 5th NEW'>"._QXZ("DOWN RANK 5th NEW")."</option>
-						<option value='DOWN RANK 6th NEW'>"._QXZ("DOWN RANK 6th NEW")."</option>
-						<option value='UP RANK 2nd NEW'>"._QXZ("UP RANK 2nd NEW")."</option>
-						<option value='UP RANK 3rd NEW'>"._QXZ("UP RANK 3rd NEW")."</option>
-						<option value='UP RANK 4th NEW'>"._QXZ("UP RANK 4th NEW")."</option>
-						<option value='UP RANK 5th NEW'>"._QXZ("UP RANK 5th NEW")."</option>
-						<option value='UP RANK 6th NEW'>"._QXZ("UP RANK 6th NEW")."</option>
-						<option value='DOWN OWNER 2nd NEW'>"._QXZ("DOWN OWNER 2nd NEW")."</option>
-						<option value='DOWN OWNER 3rd NEW'>"._QXZ("DOWN OWNER 3rd NEW")."</option>
-						<option value='DOWN OWNER 4th NEW'>"._QXZ("DOWN OWNER 4th NEW")."</option>
-						<option value='DOWN OWNER 5th NEW'>"._QXZ("DOWN OWNER 5th NEW")."</option>
-						<option value='DOWN OWNER 6th NEW'>"._QXZ("DOWN OWNER 6th NEW")."</option>
-						<option value='UP OWNER 2nd NEW'>"._QXZ("UP OWNER 2nd NEW")."</option>
-						<option value='UP OWNER 3rd NEW'>"._QXZ("UP OWNER 3rd NEW")."</option>
-						<option value='UP OWNER 4th NEW'>"._QXZ("UP OWNER 4th NEW")."</option>
-						<option value='UP OWNER 5th NEW'>"._QXZ("UP OWNER 5th NEW")."</option>
-						<option value='UP OWNER 6th NEW'>"._QXZ("UP OWNER 6th NEW")."</option>
-						<option value='DOWN TIMEZONE 2nd NEW'>"._QXZ("DOWN TIMEZONE 2nd NEW")."</option>
-						<option value='DOWN TIMEZONE 3rd NEW'>"._QXZ("DOWN TIMEZONE 3rd NEW")."</option>
-						<option value='DOWN TIMEZONE 4th NEW'>"._QXZ("DOWN TIMEZONE 4th NEW")."</option>
-						<option value='DOWN TIMEZONE 5th NEW'>"._QXZ("DOWN TIMEZONE 5th NEW")."</option>
-						<option value='DOWN TIMEZONE 6th NEW'>"._QXZ("DOWN TIMEZONE 6th NEW")."</option>
-						<option value='UP TIMEZONE 2nd NEW'>"._QXZ("UP TIMEZONE 2nd NEW")."</option>
-						<option value='UP TIMEZONE 3rd NEW'>"._QXZ("UP TIMEZONE 3rd NEW")."</option>
-						<option value='UP TIMEZONE 4th NEW'>"._QXZ("UP TIMEZONE 4th NEW")."</option>
-						<option value='UP TIMEZONE 5th NEW'>"._QXZ("UP TIMEZONE 5th NEW")."</option>
-						<option value='UP TIMEZONE 6th NEW'>"._QXZ("UP TIMEZONE 6th NEW")."</option>
-						</select>$NWB#campaigns-lead_order$NWE";
-						}
+					echo "<div/>";
+					echo "</div>\n";
+					// echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Dial Status")." $o: </td><td align=left> \n";
+					// if ($DEFstatusDISABLED > 0)
+					// 	{
+					// 	echo "<font color=grey><DEL><b>$Dstatus</b> - $statname_list[$Dstatus] &nbsp; &nbsp; &nbsp; &nbsp; <font size=2>\n";
+					// 	echo _QXZ("REMOVE")."</DEL></td></tr>\n";
+					// 	}
+					// else
+					// 	{
+					// 	echo "<b>$Dstatus</b> - $statname_list[$Dstatus] &nbsp; &nbsp; &nbsp; &nbsp; <font size=2>\n";
+					// 	echo "<a href=\"$PHP_SELF?ADD=68&campaign_id=$campaign_id&status=$Dstatuses[$o]\">"._QXZ("REMOVE")."</a></td></tr>\n";
+					// 	}
 					}
-				echo "</td></tr>\n";
+					echo "<div class='row mt-2' >\n";
+					echo "<div class='form-group col-md-6' >\n";
+					echo "<label class='col-form-label text-right fw-bold'>" . _QXZ("Add A Dial Status to Call") . ":</label>\n";
+					echo "<div class='d-flex'>\n";
+					echo "<select class='form-control' name='dial_status' $DEFlistDISABLE>\n";
+					echo "<option value=''> - " . _QXZ("NONE") . " - </option>\n";
+					echo "$dial_statuses_list";
+					echo "</select>\n";
+					
+					echo "<div class=''>\n";
+					echo "<input class='btn btn-primary'  type='submit' name='submit' value='" . _QXZ("ADD") . "'>\n";
+					// echo "$NWB#campaigns-dial_status$NWE";
+					echo "</div>\n";
+					echo "</div>\n";
+					echo "</div>\n";
 	
-				echo "<tr bgcolor=#$SSstd_row4_background><td align=right><a href=\"$PHP_SELF?ADD=31&SUB=29&campaign_id=$campaign_id&vcl_id=$list_order_mix\">"._QXZ("List Mix")."</a>: </td><td align=left>";
-				if ($ALTmultiDISABLE > 0)
-					{
-					echo "<input type=hidden name=list_order_mix value=\"$list_order_mix\"> $ALTmultiLINK";
-					}
-				else
-					{
-					echo "<select size=1 name=list_order_mix>\n";
-					echo "$mixes_list";
-					if (preg_match('/DISABLED/', $list_order_mix))
-						{echo "<option selected value=\"$list_order_mix\">"._QXZ("$list_order_mix")." - "._QXZ("$mixname_list[$list_order_mix]")."</option>\n";}
-					else
-						{echo "<option selected value=\"ACTIVE\">"._QXZ("ACTIVE")." ($mixname_list[ACTIVE])</option>\n";}
-					echo "</select>$NWB#campaigns-list_order_mix$NWE";
-					}
-				echo "</td></tr>\n";
+				// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("List Order").": </td><td align=left>";
+				// if ($ALTmultiDISABLE > 0)
+				// 	{
+				// 	echo "<input type=hidden name=lead_order value=\"$lead_order\"> $ALTmultiLINK";
+				// 	}
+				// else
+				// 	{
+				// 	if (file_exists('options.php'))
+				// 		{require('options.php');}
+				// 	if ($camp_lead_order_random > 0)
+				// 		{
+				// 		echo "<select size=1 name=lead_order>
+				// 		<option value='$lead_order' SELECTED>"._QXZ("$lead_order")."</option>
+				// 		<option value='DOWN'>"._QXZ("DOWN")."</option>
+				// 		<option value='UP'>"._QXZ("UP")."</option>
+				// 		<option value='DOWN PHONE'>"._QXZ("DOWN PHONE")."</option>
+				// 		<option value='UP PHONE'>"._QXZ("UP PHONE")."</option>
+				// 		<option value='DOWN LAST NAME'>"._QXZ("DOWN LAST NAME")."</option>
+				// 		<option value='UP LAST NAME'>"._QXZ("UP LAST NAME")."</option>
+				// 		<option value='DOWN COUNT'>"._QXZ("DOWN COUNT")."</option>
+				// 		<option value='UP COUNT'>"._QXZ("UP COUNT")."</option>
+				// 		<option value='RANDOM'>"._QXZ("RANDOM")."</option>
+				// 		<option value='DOWN LAST CALL TIME'>"._QXZ("DOWN LAST CALL TIME")."</option>
+				// 		<option value='UP LAST CALL TIME'>"._QXZ("UP LAST CALL TIME")."</option>
+				// 		<option value='DOWN RANK'>"._QXZ("DOWN RANK")."</option>
+				// 		<option value='UP RANK'>"._QXZ("UP RANK")."</option>
+				// 		<option value='DOWN OWNER'>"._QXZ("DOWN OWNER")."</option>
+				// 		<option value='UP OWNER'>"._QXZ("UP OWNER")."</option>
+				// 		<option value='DOWN TIMEZONE'>"._QXZ("DOWN TIMEZONE")."</option>
+				// 		<option value='UP TIMEZONE'>"._QXZ("UP TIMEZONE")."</option>
+				// 		<option value='DOWN 2nd NEW'>"._QXZ("DOWN 2nd NEW")."</option>
+				// 		<option value='DOWN 3rd NEW'>"._QXZ("DOWN 3rd NEW")."</option>
+				// 		<option value='DOWN 4th NEW'>"._QXZ("DOWN 4th NEW")."</option>
+				// 		<option value='DOWN 5th NEW'>"._QXZ("DOWN 5th NEW")."</option>
+				// 		<option value='DOWN 6th NEW'>"._QXZ("DOWN 6th NEW")."</option>
+				// 		<option value='UP 2nd NEW'>"._QXZ("UP 2nd NEW")."</option>
+				// 		<option value='UP 3rd NEW'>"._QXZ("UP 3rd NEW")."</option>
+				// 		<option value='UP 4th NEW'>"._QXZ("UP 4th NEW")."</option>
+				// 		<option value='UP 5th NEW'>"._QXZ("UP 5th NEW")."</option>
+				// 		<option value='UP 6th NEW'>"._QXZ("UP 6th NEW")."</option>
+				// 		<option value='DOWN PHONE 2nd NEW'>"._QXZ("DOWN PHONE 2nd NEW")."</option>
+				// 		<option value='DOWN PHONE 3rd NEW'>"._QXZ("DOWN PHONE 3rd NEW")."</option>
+				// 		<option value='DOWN PHONE 4th NEW'>"._QXZ("DOWN PHONE 4th NEW")."</option>
+				// 		<option value='DOWN PHONE 5th NEW'>"._QXZ("DOWN PHONE 5th NEW")."</option>
+				// 		<option value='DOWN PHONE 6th NEW'>"._QXZ("DOWN PHONE 6th NEW")."</option>
+				// 		<option value='UP PHONE 2nd NEW'>"._QXZ("UP PHONE 2nd NEW")."</option>
+				// 		<option value='UP PHONE 3rd NEW'>"._QXZ("UP PHONE 3rd NEW")."</option>
+				// 		<option value='UP PHONE 4th NEW'>"._QXZ("UP PHONE 4th NEW")."</option>
+				// 		<option value='UP PHONE 5th NEW'>"._QXZ("UP PHONE 5th NEW")."</option>
+				// 		<option value='UP PHONE 6th NEW'>"._QXZ("UP PHONE 6th NEW")."</option>
+				// 		<option value='DOWN LAST NAME 2nd NEW'>"._QXZ("DOWN LAST NAME 2nd NEW")."</option>
+				// 		<option value='DOWN LAST NAME 3rd NEW'>"._QXZ("DOWN LAST NAME 3rd NEW")."</option>
+				// 		<option value='DOWN LAST NAME 4th NEW'>"._QXZ("DOWN LAST NAME 4th NEW")."</option>
+				// 		<option value='DOWN LAST NAME 5th NEW'>"._QXZ("DOWN LAST NAME 5th NEW")."</option>
+				// 		<option value='DOWN LAST NAME 6th NEW'>"._QXZ("DOWN LAST NAME 6th NEW")."</option>
+				// 		<option value='UP LAST NAME 2nd NEW'>"._QXZ("UP LAST NAME 2nd NEW")."</option>
+				// 		<option value='UP LAST NAME 3rd NEW'>"._QXZ("UP LAST NAME 3rd NEW")."</option>
+				// 		<option value='UP LAST NAME 4th NEW'>"._QXZ("UP LAST NAME 4th NEW")."</option>
+				// 		<option value='UP LAST NAME 5th NEW'>"._QXZ("UP LAST NAME 5th NEW")."</option>
+				// 		<option value='UP LAST NAME 6th NEW'>"._QXZ("UP LAST NAME 6th NEW")."</option>
+				// 		<option value='DOWN COUNT 2nd NEW'>"._QXZ("DOWN COUNT 2nd NEW")."</option>
+				// 		<option value='DOWN COUNT 3rd NEW'>"._QXZ("DOWN COUNT 3rd NEW")."</option>
+				// 		<option value='DOWN COUNT 4th NEW'>"._QXZ("DOWN COUNT 4th NEW")."</option>
+				// 		<option value='DOWN COUNT 5th NEW'>"._QXZ("DOWN COUNT 5th NEW")."</option>
+				// 		<option value='DOWN COUNT 6th NEW'>"._QXZ("DOWN COUNT 6th NEW")."</option>
+				// 		<option value='UP COUNT 2nd NEW'>"._QXZ("UP COUNT 2nd NEW")."</option>
+				// 		<option value='UP COUNT 3rd NEW'>"._QXZ("UP COUNT 3rd NEW")."</option>
+				// 		<option value='UP COUNT 4th NEW'>"._QXZ("UP COUNT 4th NEW")."</option>
+				// 		<option value='UP COUNT 5th NEW'>"._QXZ("UP COUNT 5th NEW")."</option>
+				// 		<option value='UP COUNT 6th NEW'>"._QXZ("UP COUNT 6th NEW")."</option>
+				// 		<option value='RANDOM 2nd NEW'>"._QXZ("RANDOM 2nd NEW")."</option>
+				// 		<option value='RANDOM 3rd NEW'>"._QXZ("RANDOM 3rd NEW")."</option>
+				// 		<option value='RANDOM 4th NEW'>"._QXZ("RANDOM 4th NEW")."</option>
+				// 		<option value='RANDOM 5th NEW'>"._QXZ("RANDOM 5th NEW")."</option>
+				// 		<option value='RANDOM 6th NEW'>"._QXZ("RANDOM 6th NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 2nd NEW'>"._QXZ("DOWN LAST CALL TIME 2nd NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 3rd NEW'>"._QXZ("DOWN LAST CALL TIME 3rd NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 4th NEW'>"._QXZ("DOWN LAST CALL TIME 4th NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 5th NEW'>"._QXZ("DOWN LAST CALL TIME 5th NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 6th NEW'>"._QXZ("DOWN LAST CALL TIME 6th NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 2nd NEW'>"._QXZ("UP LAST CALL TIME 2nd NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 3rd NEW'>"._QXZ("UP LAST CALL TIME 3rd NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 4th NEW'>"._QXZ("UP LAST CALL TIME 4th NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 5th NEW'>"._QXZ("UP LAST CALL TIME 5th NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 6th NEW'>"._QXZ("UP LAST CALL TIME 6th NEW")."</option>
+				// 		<option value='DOWN RANK 2nd NEW'>"._QXZ("DOWN RANK 2nd NEW")."</option>
+				// 		<option value='DOWN RANK 3rd NEW'>"._QXZ("DOWN RANK 3rd NEW")."</option>
+				// 		<option value='DOWN RANK 4th NEW'>"._QXZ("DOWN RANK 4th NEW")."</option>
+				// 		<option value='DOWN RANK 5th NEW'>"._QXZ("DOWN RANK 5th NEW")."</option>
+				// 		<option value='DOWN RANK 6th NEW'>"._QXZ("DOWN RANK 6th NEW")."</option>
+				// 		<option value='UP RANK 2nd NEW'>"._QXZ("UP RANK 2nd NEW")."</option>
+				// 		<option value='UP RANK 3rd NEW'>"._QXZ("UP RANK 3rd NEW")."</option>
+				// 		<option value='UP RANK 4th NEW'>"._QXZ("UP RANK 4th NEW")."</option>
+				// 		<option value='UP RANK 5th NEW'>"._QXZ("UP RANK 5th NEW")."</option>
+				// 		<option value='UP RANK 6th NEW'>"._QXZ("UP RANK 6th NEW")."</option>
+				// 		<option value='DOWN OWNER 2nd NEW'>"._QXZ("DOWN OWNER 2nd NEW")."</option>
+				// 		<option value='DOWN OWNER 3rd NEW'>"._QXZ("DOWN OWNER 3rd NEW")."</option>
+				// 		<option value='DOWN OWNER 4th NEW'>"._QXZ("DOWN OWNER 4th NEW")."</option>
+				// 		<option value='DOWN OWNER 5th NEW'>"._QXZ("DOWN OWNER 5th NEW")."</option>
+				// 		<option value='DOWN OWNER 6th NEW'>"._QXZ("DOWN OWNER 6th NEW")."</option>
+				// 		<option value='UP OWNER 2nd NEW'>"._QXZ("UP OWNER 2nd NEW")."</option>
+				// 		<option value='UP OWNER 3rd NEW'>"._QXZ("UP OWNER 3rd NEW")."</option>
+				// 		<option value='UP OWNER 4th NEW'>"._QXZ("UP OWNER 4th NEW")."</option>
+				// 		<option value='UP OWNER 5th NEW'>"._QXZ("UP OWNER 5th NEW")."</option>
+				// 		<option value='UP OWNER 6th NEW'>"._QXZ("UP OWNER 6th NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 2nd NEW'>"._QXZ("DOWN TIMEZONE 2nd NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 3rd NEW'>"._QXZ("DOWN TIMEZONE 3rd NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 4th NEW'>"._QXZ("DOWN TIMEZONE 4th NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 5th NEW'>"._QXZ("DOWN TIMEZONE 5th NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 6th NEW'>"._QXZ("DOWN TIMEZONE 6th NEW")."</option>
+				// 		<option value='UP TIMEZONE 2nd NEW'>"._QXZ("UP TIMEZONE 2nd NEW")."</option>
+				// 		<option value='UP TIMEZONE 3rd NEW'>"._QXZ("UP TIMEZONE 3rd NEW")."</option>
+				// 		<option value='UP TIMEZONE 4th NEW'>"._QXZ("UP TIMEZONE 4th NEW")."</option>
+				// 		<option value='UP TIMEZONE 5th NEW'>"._QXZ("UP TIMEZONE 5th NEW")."</option>
+				// 		<option value='UP TIMEZONE 6th NEW'>"._QXZ("UP TIMEZONE 6th NEW")."</option>
+				// 		</select>$NWB#campaigns-lead_order$NWE";
+				// 		}
+				// 	else
+				// 		{
+				// 		echo "<select size=1 name=lead_order>
+				// 		<option value='$lead_order' SELECTED>"._QXZ("$lead_order")."</option>
+				// 		<option value='DOWN'>"._QXZ("DOWN")."</option>
+				// 		<option value='UP'>"._QXZ("UP")."</option>
+				// 		<option value='DOWN PHONE'>"._QXZ("DOWN PHONE")."</option>
+				// 		<option value='UP PHONE'>"._QXZ("UP PHONE")."</option>
+				// 		<option value='DOWN LAST NAME'>"._QXZ("DOWN LAST NAME")."</option>
+				// 		<option value='UP LAST NAME'>"._QXZ("UP LAST NAME")."</option>
+				// 		<option value='DOWN COUNT'>"._QXZ("DOWN COUNT")."</option>
+				// 		<option value='UP COUNT'>"._QXZ("UP COUNT")."</option>
+				// 		<option value='DOWN LAST CALL TIME'>"._QXZ("DOWN LAST CALL TIME")."</option>
+				// 		<option value='UP LAST CALL TIME'>"._QXZ("UP LAST CALL TIME")."</option>
+				// 		<option value='DOWN RANK'>"._QXZ("DOWN RANK")."</option>
+				// 		<option value='UP RANK'>"._QXZ("UP RANK")."</option>
+				// 		<option value='DOWN OWNER'>"._QXZ("DOWN OWNER")."</option>
+				// 		<option value='UP OWNER'>"._QXZ("UP OWNER")."</option>
+				// 		<option value='DOWN TIMEZONE'>"._QXZ("DOWN TIMEZONE")."</option>
+				// 		<option value='UP TIMEZONE'>"._QXZ("UP TIMEZONE")."</option>
+				// 		<option value='DOWN 2nd NEW'>"._QXZ("DOWN 2nd NEW")."</option>
+				// 		<option value='DOWN 3rd NEW'>"._QXZ("DOWN 3rd NEW")."</option>
+				// 		<option value='DOWN 4th NEW'>"._QXZ("DOWN 4th NEW")."</option>
+				// 		<option value='DOWN 5th NEW'>"._QXZ("DOWN 5th NEW")."</option>
+				// 		<option value='DOWN 6th NEW'>"._QXZ("DOWN 6th NEW")."</option>
+				// 		<option value='UP 2nd NEW'>"._QXZ("UP 2nd NEW")."</option>
+				// 		<option value='UP 3rd NEW'>"._QXZ("UP 3rd NEW")."</option>
+				// 		<option value='UP 4th NEW'>"._QXZ("UP 4th NEW")."</option>
+				// 		<option value='UP 5th NEW'>"._QXZ("UP 5th NEW")."</option>
+				// 		<option value='UP 6th NEW'>"._QXZ("UP 6th NEW")."</option>
+				// 		<option value='DOWN PHONE 2nd NEW'>"._QXZ("DOWN PHONE 2nd NEW")."</option>
+				// 		<option value='DOWN PHONE 3rd NEW'>"._QXZ("DOWN PHONE 3rd NEW")."</option>
+				// 		<option value='DOWN PHONE 4th NEW'>"._QXZ("DOWN PHONE 4th NEW")."</option>
+				// 		<option value='DOWN PHONE 5th NEW'>"._QXZ("DOWN PHONE 5th NEW")."</option>
+				// 		<option value='DOWN PHONE 6th NEW'>"._QXZ("DOWN PHONE 6th NEW")."</option>
+				// 		<option value='UP PHONE 2nd NEW'>"._QXZ("UP PHONE 2nd NEW")."</option>
+				// 		<option value='UP PHONE 3rd NEW'>"._QXZ("UP PHONE 3rd NEW")."</option>
+				// 		<option value='UP PHONE 4th NEW'>"._QXZ("UP PHONE 4th NEW")."</option>
+				// 		<option value='UP PHONE 5th NEW'>"._QXZ("UP PHONE 5th NEW")."</option>
+				// 		<option value='UP PHONE 6th NEW'>"._QXZ("UP PHONE 6th NEW")."</option>
+				// 		<option value='DOWN LAST NAME 2nd NEW'>"._QXZ("DOWN LAST NAME 2nd NEW")."</option>
+				// 		<option value='DOWN LAST NAME 3rd NEW'>"._QXZ("DOWN LAST NAME 3rd NEW")."</option>
+				// 		<option value='DOWN LAST NAME 4th NEW'>"._QXZ("DOWN LAST NAME 4th NEW")."</option>
+				// 		<option value='DOWN LAST NAME 5th NEW'>"._QXZ("DOWN LAST NAME 5th NEW")."</option>
+				// 		<option value='DOWN LAST NAME 6th NEW'>"._QXZ("DOWN LAST NAME 6th NEW")."</option>
+				// 		<option value='UP LAST NAME 2nd NEW'>"._QXZ("UP LAST NAME 2nd NEW")."</option>
+				// 		<option value='UP LAST NAME 3rd NEW'>"._QXZ("UP LAST NAME 3rd NEW")."</option>
+				// 		<option value='UP LAST NAME 4th NEW'>"._QXZ("UP LAST NAME 4th NEW")."</option>
+				// 		<option value='UP LAST NAME 5th NEW'>"._QXZ("UP LAST NAME 5th NEW")."</option>
+				// 		<option value='UP LAST NAME 6th NEW'>"._QXZ("UP LAST NAME 6th NEW")."</option>
+				// 		<option value='DOWN COUNT 2nd NEW'>"._QXZ("DOWN COUNT 2nd NEW")."</option>
+				// 		<option value='DOWN COUNT 3rd NEW'>"._QXZ("DOWN COUNT 3rd NEW")."</option>
+				// 		<option value='DOWN COUNT 4th NEW'>"._QXZ("DOWN COUNT 4th NEW")."</option>
+				// 		<option value='DOWN COUNT 5th NEW'>"._QXZ("DOWN COUNT 5th NEW")."</option>
+				// 		<option value='DOWN COUNT 6th NEW'>"._QXZ("DOWN COUNT 6th NEW")."</option>
+				// 		<option value='UP COUNT 2nd NEW'>"._QXZ("UP COUNT 2nd NEW")."</option>
+				// 		<option value='UP COUNT 3rd NEW'>"._QXZ("UP COUNT 3rd NEW")."</option>
+				// 		<option value='UP COUNT 4th NEW'>"._QXZ("UP COUNT 4th NEW")."</option>
+				// 		<option value='UP COUNT 5th NEW'>"._QXZ("UP COUNT 5th NEW")."</option>
+				// 		<option value='UP COUNT 6th NEW'>"._QXZ("UP COUNT 6th NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 2nd NEW'>"._QXZ("DOWN LAST CALL TIME 2nd NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 3rd NEW'>"._QXZ("DOWN LAST CALL TIME 3rd NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 4th NEW'>"._QXZ("DOWN LAST CALL TIME 4th NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 5th NEW'>"._QXZ("DOWN LAST CALL TIME 5th NEW")."</option>
+				// 		<option value='DOWN LAST CALL TIME 6th NEW'>"._QXZ("DOWN LAST CALL TIME 6th NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 2nd NEW'>"._QXZ("UP LAST CALL TIME 2nd NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 3rd NEW'>"._QXZ("UP LAST CALL TIME 3rd NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 4th NEW'>"._QXZ("UP LAST CALL TIME 4th NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 5th NEW'>"._QXZ("UP LAST CALL TIME 5th NEW")."</option>
+				// 		<option value='UP LAST CALL TIME 6th NEW'>"._QXZ("UP LAST CALL TIME 6th NEW")."</option>
+				// 		<option value='DOWN RANK 2nd NEW'>"._QXZ("DOWN RANK 2nd NEW")."</option>
+				// 		<option value='DOWN RANK 3rd NEW'>"._QXZ("DOWN RANK 3rd NEW")."</option>
+				// 		<option value='DOWN RANK 4th NEW'>"._QXZ("DOWN RANK 4th NEW")."</option>
+				// 		<option value='DOWN RANK 5th NEW'>"._QXZ("DOWN RANK 5th NEW")."</option>
+				// 		<option value='DOWN RANK 6th NEW'>"._QXZ("DOWN RANK 6th NEW")."</option>
+				// 		<option value='UP RANK 2nd NEW'>"._QXZ("UP RANK 2nd NEW")."</option>
+				// 		<option value='UP RANK 3rd NEW'>"._QXZ("UP RANK 3rd NEW")."</option>
+				// 		<option value='UP RANK 4th NEW'>"._QXZ("UP RANK 4th NEW")."</option>
+				// 		<option value='UP RANK 5th NEW'>"._QXZ("UP RANK 5th NEW")."</option>
+				// 		<option value='UP RANK 6th NEW'>"._QXZ("UP RANK 6th NEW")."</option>
+				// 		<option value='DOWN OWNER 2nd NEW'>"._QXZ("DOWN OWNER 2nd NEW")."</option>
+				// 		<option value='DOWN OWNER 3rd NEW'>"._QXZ("DOWN OWNER 3rd NEW")."</option>
+				// 		<option value='DOWN OWNER 4th NEW'>"._QXZ("DOWN OWNER 4th NEW")."</option>
+				// 		<option value='DOWN OWNER 5th NEW'>"._QXZ("DOWN OWNER 5th NEW")."</option>
+				// 		<option value='DOWN OWNER 6th NEW'>"._QXZ("DOWN OWNER 6th NEW")."</option>
+				// 		<option value='UP OWNER 2nd NEW'>"._QXZ("UP OWNER 2nd NEW")."</option>
+				// 		<option value='UP OWNER 3rd NEW'>"._QXZ("UP OWNER 3rd NEW")."</option>
+				// 		<option value='UP OWNER 4th NEW'>"._QXZ("UP OWNER 4th NEW")."</option>
+				// 		<option value='UP OWNER 5th NEW'>"._QXZ("UP OWNER 5th NEW")."</option>
+				// 		<option value='UP OWNER 6th NEW'>"._QXZ("UP OWNER 6th NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 2nd NEW'>"._QXZ("DOWN TIMEZONE 2nd NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 3rd NEW'>"._QXZ("DOWN TIMEZONE 3rd NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 4th NEW'>"._QXZ("DOWN TIMEZONE 4th NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 5th NEW'>"._QXZ("DOWN TIMEZONE 5th NEW")."</option>
+				// 		<option value='DOWN TIMEZONE 6th NEW'>"._QXZ("DOWN TIMEZONE 6th NEW")."</option>
+				// 		<option value='UP TIMEZONE 2nd NEW'>"._QXZ("UP TIMEZONE 2nd NEW")."</option>
+				// 		<option value='UP TIMEZONE 3rd NEW'>"._QXZ("UP TIMEZONE 3rd NEW")."</option>
+				// 		<option value='UP TIMEZONE 4th NEW'>"._QXZ("UP TIMEZONE 4th NEW")."</option>
+				// 		<option value='UP TIMEZONE 5th NEW'>"._QXZ("UP TIMEZONE 5th NEW")."</option>
+				// 		<option value='UP TIMEZONE 6th NEW'>"._QXZ("UP TIMEZONE 6th NEW")."</option>
+				// 		</select>$NWB#campaigns-lead_order$NWE";
+				// 		}
+				// 	}
+				// echo "</td></tr>\n";
 	
-				echo "<tr bgcolor=#$SSstd_row4_background><td align=right><a href=\"$PHP_SELF?ADD=31111111&lead_filter_id=$lead_filter_id\">"._QXZ("Lead Filter")."</a>: </td><td align=left>";
-				if ($ALTmultiDISABLE > 0)
-					{
-					echo "<input type=hidden name=lead_filter_id value=\"$lead_filter_id\"> $ALTmultiLINK";
-					}
-				else
-					{
-					echo "<select size=1 name=lead_filter_id>\n";
-					echo "$filters_list";
-					echo "<option selected value=\"$lead_filter_id\">"._QXZ("$lead_filter_id")." - $filtername_list[$lead_filter_id]</option>\n";
-					echo "</select>$NWB#campaigns-lead_filter_id$NWE";
-					}
-				echo "</td></tr>\n";
+				// echo "<tr bgcolor=#$SSstd_row4_background><td align=right><a href=\"$PHP_SELF?ADD=31&SUB=29&campaign_id=$campaign_id&vcl_id=$list_order_mix\">"._QXZ("List Mix")."</a>: </td><td align=left>";
+				// if ($ALTmultiDISABLE > 0)
+				// 	{
+				// 	echo "<input type=hidden name=list_order_mix value=\"$list_order_mix\"> $ALTmultiLINK";
+				// 	}
+				// else
+				// 	{
+				// 	echo "<select size=1 name=list_order_mix>\n";
+				// 	echo "$mixes_list";
+				// 	if (preg_match('/DISABLED/', $list_order_mix))
+				// 		{echo "<option selected value=\"$list_order_mix\">"._QXZ("$list_order_mix")." - "._QXZ("$mixname_list[$list_order_mix]")."</option>\n";}
+				// 	else
+				// 		{echo "<option selected value=\"ACTIVE\">"._QXZ("ACTIVE")." ($mixname_list[ACTIVE])</option>\n";}
+				// 	echo "</select>$NWB#campaigns-list_order_mix$NWE";
+				// 	}
+				// echo "</td></tr>\n";
 	
-				echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Minimum Hopper Level").": </td><td align=left><select size=1 name=hopper_level><option>1</option><option>5</option><option>10</option><option>20</option><option>50</option><option>100</option><option>200</option><option>500</option><option>700</option><option>1000</option><option>2000</option><option>3000</option><option>4000</option><option>5000</option><option SELECTED>$hopper_level</option></select>$NWB#campaigns-hopper_level$NWE</td></tr>\n";
+				// echo "<tr bgcolor=#$SSstd_row4_background><td align=right><a href=\"$PHP_SELF?ADD=31111111&lead_filter_id=$lead_filter_id\">"._QXZ("Lead Filter")."</a>: </td><td align=left>";
+				// if ($ALTmultiDISABLE > 0)
+				// 	{
+				// 	echo "<input type=hidden name=lead_filter_id value=\"$lead_filter_id\"> $ALTmultiLINK";
+				// 	}
+				// else
+				// 	{
+				// 	echo "<select size=1 name=lead_filter_id>\n";
+				// 	echo "$filters_list";
+				// 	echo "<option selected value=\"$lead_filter_id\">"._QXZ("$lead_filter_id")." - $filtername_list[$lead_filter_id]</option>\n";
+				// 	echo "</select>$NWB#campaigns-lead_filter_id$NWE";
+				// 	}
+				// echo "</td></tr>\n";
 	
-				echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Force Reset of Hopper").": </td><td align=left><select size=1 name=reset_hopper><option value='Y'>"._QXZ("Y")."</option><option value=\"N\" SELECTED>"._QXZ("N")."</option></select>$NWB#campaigns-force_reset_hopper$NWE</td></tr>\n";
+				// echo "<tr bgcolor=#$SSstd_row3_background><td align=right>"._QXZ("Minimum Hopper Level").": </td><td align=left><select size=1 name=hopper_level><option>1</option><option>5</option><option>10</option><option>20</option><option>50</option><option>100</option><option>200</option><option>500</option><option>700</option><option>1000</option><option>2000</option><option>3000</option><option>4000</option><option>5000</option><option SELECTED>$hopper_level</option></select>$NWB#campaigns-hopper_level$NWE</td></tr>\n";
+	
+				// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Force Reset of Hopper").": </td><td align=left><select size=1 name=reset_hopper><option value='Y'>"._QXZ("Y")."</option><option value=\"N\" SELECTED>"._QXZ("N")."</option></select>$NWB#campaigns-force_reset_hopper$NWE</td></tr>\n";
 	
 				if ( (preg_match("/RATIO|ADAPT/",$dial_method)) and ($SSdisable_auto_dial > 0) )
 					{
 					echo "<tr bgcolor=#$SSalt_row1_background><td align=center colspan=2><b>"._QXZ("Auto-dialing has been disabled on this system")."</b></td></tr>\n";
 					}
-				echo "<tr bgcolor=#$SSalt_row1_background><td align=right>"._QXZ("Dial Method").": </td><td align=left><select size=1 name=dial_method><option value='MANUAL'>"._QXZ("MANUAL")."</option><option value='RATIO'>"._QXZ("RATIO")."</option><option value='ADAPT_HARD_LIMIT'>"._QXZ("ADAPT_HARD_LIMIT")."</option><option value='ADAPT_TAPERED'>"._QXZ("ADAPT_TAPERED")."</option><option value='ADAPT_AVERAGE'>"._QXZ("ADAPT_AVERAGE")."</option><option value='INBOUND_MAN'>"._QXZ("INBOUND_MAN")."</option><option value='$dial_method' SELECTED>"._QXZ("$dial_method")."</option></select>$NWB#campaigns-dial_method$NWE</td></tr>\n";
+					echo "<div class='form-group col-md-6' >\n";
+					echo "<label class='col-form-label text-right fw-bold'>" . _QXZ("Dial Method") . ":</label>\n";
+					echo "<div class='col-sm-8'>\n";
+					echo "<select class='form-control' name='dial_method'>\n";
+					echo "<option value='MANUAL'>" . _QXZ("MANUAL") . "</option>\n";
+					echo "<option value='RATIO'>" . _QXZ("RATIO") . "</option>\n";
+					echo "<option value='ADAPT_HARD_LIMIT'>" . _QXZ("ADAPT_HARD_LIMIT") . "</option>\n";
+					echo "<option value='ADAPT_TAPERED'>" . _QXZ("ADAPT_TAPERED") . "</option>\n";
+					echo "<option value='ADAPT_AVERAGE'>" . _QXZ("ADAPT_AVERAGE") . "</option>\n";
+					echo "<option value='INBOUND_MAN'>" . _QXZ("INBOUND_MAN") . "</option>\n";
+					echo "<option value='$dial_method' selected>" . _QXZ("$dial_method") . "</option>\n";
+					echo "</select>\n";
+					// echo "$NWB#campaigns-dial_method$NWE\n";
+					echo "</div>\n";
+					echo "</div>\n";
+					echo "</div>\n";
+					
 	
-				echo "<tr bgcolor=#$SSalt_row1_background><td align=right>"._QXZ("Auto Dial Level").": </td><td align=left><select size=1 name=auto_dial_level><option selected>$auto_dial_level</option><option>0</option>\n";
-				$adl=0;
-				while($adl <= $SSauto_dial_limit)
-					{
-					if ($adl < 1)
-						{$adl = ($adl + 1);}
-					else
-						{
-						if ($adl < 3)
-							{$adl = ($adl + 0.1);}
-						else
-							{
-							if ($adl < 4)
-								{$adl = ($adl + 0.25);}
-							else
-								{
-								if ($adl < 5)
-									{$adl = ($adl + 0.5);}
-								else
-									{
-									if ($adl < 20)
-										{$adl = ($adl + 1);}
-									else
-										{
-										if ($adl < 40)
-											{$adl = ($adl + 2);}
-										else
-											{
-											if ($adl < 100)
-												{$adl = ($adl + 5);}
-											else
-												{
-												if ($adl < 200)
-													{$adl = ($adl + 10);}
-												else
-													{
-													if ($adl < 400)
-														{$adl = ($adl + 50);}
-													else
-														{
-														if ($adl < 1000)
-															{$adl = ($adl + 100);}
-														else
-														{$adl = ($adl + 1);}
+					echo "<div class='form-group mt-3 col-md-6' >\n";
+					echo "<label class=' col-form-label text-right fw-bold'>" . _QXZ("Auto Dial Level") . ":</label>\n";
+					echo "<div class=''>\n";
+					echo "<select class='form-control' name='auto_dial_level'>\n";
+					echo "<option selected>$auto_dial_level</option>\n";
+					echo "<option>0</option>\n";
+					
+					$adl = 0;
+					while ($adl <= $SSauto_dial_limit) {
+						if ($adl < 1) {
+							$adl = ($adl + 1);
+						} else {
+							if ($adl < 3) {
+								$adl = ($adl + 0.1);
+							} else {
+								if ($adl < 4) {
+									$adl = ($adl + 0.25);
+								} else {
+									if ($adl < 5) {
+										$adl = ($adl + 0.5);
+									} else {
+										if ($adl < 20) {
+											$adl = ($adl + 1);
+										} else {
+											if ($adl < 40) {
+												$adl = ($adl + 2);
+											} else {
+												if ($adl < 100) {
+													$adl = ($adl + 5);
+												} else {
+													if ($adl < 200) {
+														$adl = ($adl + 10);
+													} else {
+														if ($adl < 400) {
+															$adl = ($adl + 50);
+														} else {
+															if ($adl < 1000) {
+																$adl = ($adl + 100);
+															} else {
+																$adl = ($adl + 1);
+															}
 														}
 													}
 												}
@@ -31016,34 +33535,47 @@ if ($ADD==31)
 								}
 							}
 						}
-					if ($adl > $SSauto_dial_limit) {$hmm=1;}
-					else {echo "<option>$adl</option>\n";}
+						if ($adl > $SSauto_dial_limit) {
+							$hmm = 1;
+						} else {
+							echo "<option>$adl</option>\n";
+						}
 					}
-				echo "</select>(0 = "._QXZ("off").")$NWB#campaigns-auto_dial_level$NWE</td></tr>\n";
+					
+					echo "</select>\n";
+					echo "<small>(0 = " . _QXZ("off") . ")</small>\n";
+					// $NWB#campaigns-auto_dial_level$NWE
+					echo "</div>\n";
+					echo "</div>\n";
+					
 	
-				echo "<tr bgcolor=#$SSalt_row1_background><td align=right>"._QXZ("Adapt Intensity Modifier").": </td><td align=left><select size=1 name=adaptive_intensity>\n";
-				$n=40;
-				while ($n>=-40)
-					{
-					$dtl = _QXZ("Balanced");
-					if ($n<0) {$dtl = _QXZ("Less Intense");}
-					if ($n>0) {$dtl = _QXZ("More Intense");}
-					if ($n == $adaptive_intensity) 
-						{echo "<option SELECTED value=\"$n\">$n - $dtl</option>\n";}
-					else
-						{echo "<option value=\"$n\">$n - $dtl</option>\n";}
-					$n--;
-					}
-				echo "</select> $NWB#campaigns-adaptive_intensity$NWE</td></tr>\n";
+				// echo "<tr bgcolor=#$SSalt_row1_background><td align=right>"._QXZ("Adapt Intensity Modifier").": </td><td align=left><select size=1 name=adaptive_intensity>\n";
+				// $n=40;
+				// while ($n>=-40)
+				// 	{
+				// 	$dtl = _QXZ("Balanced");
+				// 	if ($n<0) {$dtl = _QXZ("Less Intense");}
+				// 	if ($n>0) {$dtl = _QXZ("More Intense");}
+				// 	if ($n == $adaptive_intensity) 
+				// 		{echo "<option SELECTED value=\"$n\">$n - $dtl</option>\n";}
+				// 	else
+				// 		{echo "<option value=\"$n\">$n - $dtl</option>\n";}
+				// 	$n--;
+				// 	}
+				// echo "</select> $NWB#campaigns-adaptive_intensity$NWE</td></tr>\n";
 				}
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right><a href=\"$PHP_SELF?ADD=3111111&script_id=$script_id\">"._QXZ("Script")."</a>: </td><td align=left>"._QXZ("$script_id")."</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right><a href=\"$PHP_SELF?ADD=3111111&script_id=$script_id\">"._QXZ("Script")."</a>: </td><td align=left>"._QXZ("$script_id")."</td></tr>\n";
 	
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Get Call Launch").": </td><td align=left>"._QXZ("$get_call_launch")."</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Get Call Launch").": </td><td align=left>"._QXZ("$get_call_launch")."</td></tr>\n";
 	
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'></td></tr>\n";
-			echo "</TABLE></center></FORM>\n";
-	
-			echo "<center>\n";
+			echo '<div class="form-group mt-3">';
+			echo '<button type="submit" class="btn btn-primary">' . _QXZ("Submit") . '</button>';
+			echo '</div>';
+
+			echo "</center></FORM>\n";
+			echo "</div>";
+			echo "</div >";
+			// echo "<center>\n";
 	
 		if ($SSoutbound_autodial_active > 0)
 			{
@@ -31054,7 +33586,7 @@ if ($ADD==31)
 			echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
 			echo "<br><b>"._QXZ("LISTS WITHIN THIS CAMPAIGN").": &nbsp; $NWB#campaign_lists$NWE</b>\n";
 	
-			echo "<TABLE><TR><TD>\n";
+			
 				echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
 			$LISTlink='stage=LISTIDDOWN';
@@ -31085,17 +33617,19 @@ if ($ADD==31)
 			$rslt=mysql_to_mysqli($stmt, $link);
 			$lists_to_print = mysqli_num_rows($rslt);
 	
-			echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
-			echo "<TR BGCOLOR=BLACK>";
-			echo "<TD><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&$LISTlink\"><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("LIST ID")."</B></a></TD>";
-			echo "<TD><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&$NAMElink\"><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("LIST NAME")."</B></a></TD>";
-			echo "<TD><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("DESCRIPTION")."</B></TD>\n";
-			echo "<TD><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&$TALLYlink\"><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("LEADS COUNT")."</B></a></TD>\n";
-			echo "<TD><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&$CALLTIMElink\"><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("Call Time")."</B></a></TD>";
-			echo "<TD COLSPAN=3><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&$ACTIVElink\"><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("ACTIVE")."</B></a></TD>";
-			echo "<TD><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&$CALLDATElink\"><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("LAST CALL DATE")."</B></a></TD>";
-			echo "<TD><B><FONT FACE=\"Arial,Helvetica\" size=1 color=white>"._QXZ("MODIFY")."</TD>\n";
-			echo "</TR>\n";
+			echo '<center><table class="table table-bordered table-hover" style="width:'.$section_width.';">';
+			echo '<thead style="background:#364574" class="text-white">';
+			echo '<tr>';
+			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$LISTlink.'" class="text-white">'._QXZ("LIST ID").'</a></th>';
+			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$NAMElink.'" class="text-white">'._QXZ("LIST NAME").'</a></th>';
+			echo '<th>'._QXZ("DESCRIPTION").'</th>';
+			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$TALLYlink.'" class="text-white">'._QXZ("LEADS COUNT").'</a></th>';
+			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$CALLTIMElink.'" class="text-white">'._QXZ("Call Time").'</a></th>';
+			echo '<th colspan="3"><a href="'.$PHP_SELF.'?ADD=31&campaign_id='.$campaign_id.'&'.$ACTIVElink.'" class="text-white">'._QXZ("ACTIVE").'</a></th>';
+			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$CALLDATElink.'" class="text-white">'._QXZ("LAST CALL DATE").'</a></th>';
+			echo '<th>'._QXZ("MODIFY").'</th>';
+			echo '</tr>';
+			echo '</thead>';
 	
 			$o=0;
 			$last_list_statuses="";
@@ -31142,7 +33676,7 @@ if ($ADD==31)
 				$o++;
 				}
 	
-			echo "<TR><TD COLSPAN=9 ALIGN=CENTER><input style='background-color:#$SSbutton_color' type=button onClick='return ConfirmListStatusChange($SSlist_status_modification_confirmation, this.form)' value=\""._QXZ("SUBMIT ACTIVE LIST CHANGES")."\"></TD></TR>\n";
+			echo "<TR><TD COLSPAN=9 ALIGN=LEFT><input  type=button class='btn btn-primary' onClick='return ConfirmListStatusChange($SSlist_status_modification_confirmation, this.form)' value=\""._QXZ("SUBMIT ACTIVE LIST CHANGES")."\"></TD></TR>\n";
 			echo "</TABLE>";
 			echo "<input type='hidden' name='last_list_statuses' id='last_list_statuses' value='$last_list_statuses'>";
 			echo "</center><BR></FORM>\n";
@@ -31330,18 +33864,39 @@ if ($ADD==31)
 			echo "</table></center><br>\n";
 	
 	
-			echo "<a href=\"$PHP_SELF?ADD=52&campaign_id=$campaign_id&DB=$DB\">"._QXZ("LOG ALL AGENTS OUT OF THIS CAMPAIGN")."</a><BR><BR>\n";
+			// echo "<a href=\"$PHP_SELF?ADD=52&campaign_id=$campaign_id&DB=$DB\">"._QXZ("LOG ALL AGENTS OUT OF THIS CAMPAIGN")."</a><BR><BR>\n";
 	
 	
-			if ($LOGdelete_campaigns > 0)
-				{
-				echo "<br><br><a href=\"$PHP_SELF?ADD=51&campaign_id=$campaign_id\">"._QXZ("DELETE THIS CAMPAIGN")."</a>\n";
-				}
+			// if ($LOGdelete_campaigns > 0)
+			// 	{
+			// 	echo "<br><br><a href=\"$PHP_SELF?ADD=51&campaign_id=$campaign_id\">"._QXZ("DELETE THIS CAMPAIGN")."</a>\n";
+			// 	}
 			}
 		}
 		else
 		{
-		echo _QXZ("You do not have permission to view this page")."\n";
+		// echo _QXZ("You do not have permission to view this page")."\n";
+		echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
+		
 		exit;
 		}
 	}
@@ -31599,6 +34154,9 @@ if ($ADD==31)
 	######################
 	if ($ADD==32)
 		{
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -32113,6 +34671,9 @@ if ($ADD==31)
 				$modify_url = "$PHP_SELF?ADD=311&list_id=$list_id";
 				$modify_footer_refresh=1;
 				}
+				echo '<div class="main-content">';
+				// echo '<div class="page-content">';
+				// echo '<div class="container-fluid">';
 			echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -33377,7 +35938,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -33532,7 +36114,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		$ADD=331;	# go to drop list modification form below
@@ -33754,7 +36357,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -35641,7 +38265,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 	
@@ -36510,7 +39155,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 	
@@ -37361,7 +40027,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 	
@@ -38134,7 +40821,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -38441,7 +41149,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -38887,7 +41616,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -39047,7 +41797,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -39110,7 +41881,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -39184,7 +41976,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -39209,6 +42022,8 @@ if ($ADD==31)
 					$modify_url = "$PHP_SELF?ADD=311111&user_group=$user_group";
 					$modify_footer_refresh=1;
 					}
+					echo '<div class="main-content">';
+				// echo '<div class="page-content">';
 				echo "<TABLE><TR><TD>\n";
 				echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -39759,7 +42574,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+
+			echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 			exit;
 			}
 		}
@@ -39777,8 +42613,11 @@ if ($ADD==31)
 				$modify_url = "$PHP_SELF?ADD=3111111&script_id=$script_id";
 				$modify_footer_refresh=1;
 				}
-			echo "<TABLE><TR><TD>\n";
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+				echo '<div class="main-content">';
+				
+				echo '<div class="container-fluid">';
+			// echo "<TABLE><TR><TD>\n";
+			// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
 			$stmt="SELECT script_id,script_name,script_comments,script_text,active,user_group,script_color from vicidial_scripts where script_id='$script_id' $LOGadmin_viewable_groupsSQL;";
 			$rslt=mysql_to_mysqli($stmt, $link);
@@ -39790,25 +42629,88 @@ if ($ADD==31)
 			$user_group =		$row[5];
 			$script_color =		$row[6];
 	
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+
+
+
+
+
+			// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
-			echo "<br>"._QXZ("MODIFY A SCRIPT")."<form name=scriptForm action=$PHP_SELF method=POST>\n";
+			echo "<form name=scriptForm action=$PHP_SELF method=POST>\n";
 			echo "<input type=hidden name=ADD value=4111111>\n";
 			echo "<input type=hidden name=DB value=\"$DB\">\n";
 			echo "<input type=hidden name=script_id value=\"$script_id\">\n";
-			echo "<center><TABLE width=$section_width cellspacing=3>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left><B>$script_id</B>$NWB#scripts-script_name$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Name").": </td><td align=left><input type=text name=script_name size=40 maxlength=50 value=\"$script_name\"> ("._QXZ("title of the script").")$NWB#scripts-script_name$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Comments").": </td><td align=left><input type=text name=script_comments size=50 maxlength=255 value=\"$script_comments\"> $NWB#scripts-script_comments$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Admin User Group").": </td><td align=left><select size=1 name=user_group>\n";
+
+			echo '<div class="row">';
+			echo '<div class="col-xxl-12">';
+			echo '<div class="card">';
+			echo '<div class="card-header align-items-center d-flex">';
+			echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("MODIFY A SCRIPT")."</h4>";
+			echo '<div class="flex-shrink-0">';
+			
+			echo '</div>';
+			echo '</div><!-- end card header -->';
+			echo '';
+			echo '<div class="card-body">';
+			// echo '<p class="text-muted">More complex forms can be built using our grid classes. Use these for form layouts that require multiple columns, varied widths, and additional alignment options. <span class="fw-medium">Requires the <code>$enable-grid-classes</code> Sass variable to be enabled</span> (on by default).</p>';
+			echo '<div class="live-preview">';
+			echo '<form action="javascript:void(0);">';
+			echo '<div class="row">';
+			echo '<div class="col-md-12">';
+			echo '<div class="mb-3">';
+			echo "<label for=\"firstNameinput\" class=\"form-label\">"._QXZ("Script ID").": <B>$script_id</B></label><br>";
+			// echo "<B>$script_id</B>";
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+			echo '<div class="col-md-6">';
+			echo '<div class="mb-3">';
+			echo "<label for=\"lastNameinput\" class=\"form-label\">"._QXZ("Script Name")."</label>";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Name").": </td><td align=left><input type=text name=script_name size=40 maxlength=50 value=\"$script_name\"> ("._QXZ("title of the script").")$NWB#scripts-script_name$NWE</td></tr>\n";
+			echo "<input value=\"$script_name\" name=script_name type=\"text\" class=\"form-control\">";
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+			echo '<div class="col-md-6">';
+			echo '<div class="mb-3">';
+			echo "<label for=\"compnayNameinput\" class=\"form-label\">"._QXZ("Script Comments")."</label>";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Comments").": </td><td align=left><input type=text name=script_comments size=50 maxlength=255 value=\"$script_comments\"> $NWB#scripts-script_comments$NWE</td></tr>\n";
+			echo "<input type=\"text\" class=\"form-control\" name=\"script_comments\" value=\"$script_comments\" >";
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+			echo '<div class="col-md-6">';
+			echo '<div class="mb-3">';
+			echo "<label for=\"ForminputState\" class=\"form-label\">"._QXZ("Admin User Group")."</label>";
+			echo '<select name="user_group" class="form-select">';
 			echo "$UUgroups_list";
-			echo "<option SELECTED value=\"$user_group\">".(preg_match('/\-\-ALL\-\-/', $user_group) ? _QXZ("$user_group") : $user_group)."</option>\n";
-			echo "</select>$NWB#scripts-user_group$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Active").": </td><td align=left><select size=1 name=active><option value='Y' SELECTED>"._QXZ("Y")."</option><option value='N'>"._QXZ("N")."</option><option value='$active' selected>"._QXZ("$active")."</option></select>$NWB#scripts-active$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Color")." <font size=2>(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)</font>: </td><td align=left bgcolor=\"$script_color\" id=\"script_color_td\"><input type=text name=script_color id=script_color size=7 maxlength=20 value=\"$script_color\"> $NWB#scripts-script_color$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Text").": <BR><BR><B><a href=\"javascript:openNewWindow('$PHP_SELF?ADD=7111111&script_id=$script_id')\">"._QXZ("Preview Script")."</a></B> </td><td align=left>";
-			# BEGIN Insert Field
-			echo "<select id=\"selectedField\" name=\"selectedField\">";
+			echo "<option SELECTED value=\"$user_group\">".(preg_match('/\-\-ALL\-\-/', $user_group) ? _QXZ("$user_group") : $user_group)."</option>";
+			echo '</select>';
+			echo '</div>';
+			echo '</div>';
+
+			echo '<!--end col-->';
+			echo '<div class="col-md-6">';
+			echo '<div class="mb-3">';
+			
+			echo "<label for=\"ForminputState\" class=\"form-label\">"._QXZ("Active")."</label>";
+			echo '<select name="active" class="form-select" >';
+			echo "<option value='Y' SELECTED>"._QXZ("Y")."</option>";
+			echo "<option value='N'>"._QXZ("N")."</option>";
+			echo "<option value='$active' selected>"._QXZ("$active")."</option>";
+			echo '</select>';
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+			echo '<div class="col-md-6">';
+			echo '<div class="mb-3">';
+
+			
+			
+			echo "<label for=\"ForminputState\" class=\"form-label\">"._QXZ("Script Text").":<b><a href=\"javascript:openNewWindow('$PHP_SELF?ADD=7111111&script_id=$script_id')\">"._QXZ("Preview Script")."</a></B></label>";
+			 //echo ""._QXZ("Script Text").": <BR><BR><B><a href=\"javascript:openNewWindow('$PHP_SELF?ADD=7111111&script_id=$script_id')\">"._QXZ("Preview Script")."</a></B> ";
+			 echo '<div class="input-group">';
+			 echo "<select class=\"form-select\" id=\"selectedField\" name=\"selectedField\">";
 			echo "<option value=\"fullname\">"._QXZ("Agent Name")."(fullname)</option>";
 			echo "<option>vendor_lead_code</option>";
 			echo "<option>source_id</option>";
@@ -39886,17 +42788,149 @@ if ($ADD==31)
 			echo "<option>TABLEper_call_notes</option>";
 			echo "<option>agent_email</option>";
 			echo "</select>";
-			echo "<input type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\"><BR>";
+			echo "<input class=\"btn btn-primary\" type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\">";
+			// echo "<input type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\"><BR>";
+			// echo "<TEXTAREA class=\"ckeditor-classic\" NAME=script_text ROWS=20 COLS=50>$script_text</TEXTAREA> $NWB#scripts-script_text$NWE\n";
+			echo '</div>';
+			echo '</div>';
+
+			echo '</div>';
 			# END Insert Field
-			echo "<TEXTAREA NAME=script_text ROWS=20 COLS=50>$script_text</TEXTAREA> $NWB#scripts-script_text$NWE</td></tr>\n";
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'></td></tr>\n";
-			echo "</TABLE></center>\n";
+			// echo "<TEXTAREA NAME=script_text ROWS=20 COLS=50>$script_text</TEXTAREA> $NWB#scripts-script_text$NWE\n";
+			//echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'></td></tr>\n";
+
+
+			echo '<!--end col-->';
+
+
+			echo '<div class="col-md-6">';
+			echo "<div class=\"mb-3\" >";
+		//    echo ""._QXZ("Script Color")." <font size=2>(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)<td align=left bgcolor=\"$script_color\" id=\"script_color_td\"><input type=text name=script_color id=script_color size=7 maxlength=20 value=\"$script_color\"> $NWB#scripts-script_color$NWE</td></tr>\n";
+			echo "<label for=\"emailidInput\" class=\"form-label\">"._QXZ("Script Color")."(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)</label>";
+			echo "<font id=\"script_color\" ><input id=\"script_color_td\" bgcolor=\"$script_color\"  type=text name=\"script_color\" class=\"form-control\" value=\"$script_color\" ></font>";
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+			
+			echo '<div class="col-md-6">';
+			echo '<div class="mb-6">';
+			
+			// echo "<input class=\"btn btn-primary\" type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\">";
+			echo "<TEXTAREA class=\"form-control\" NAME=script_text ROWS=10 COLS=90>$script_text</TEXTAREA><br>";
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+			echo '<div class="col-lg-12">';
+			echo '<div class="text-end">';
+			// echo "<input name=\"SUBMIT\" type=\"submit\" class=\"btn btn-primary\" value='"._QXZ("SUBMIT").">";
+			echo "<input class=\"btn btn-primary\" type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'>";
+			
+			echo '</div>';
+			echo '</div>';
+			echo '<!--end col-->';
+	
+
+
+			// echo "<center><TABLE width=$section_width cellspacing=3>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left><B>$script_id</B>$NWB#scripts-script_name$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Name").": </td><td align=left><input type=text name=script_name size=40 maxlength=50 value=\"$script_name\"> ("._QXZ("title of the script").")$NWB#scripts-script_name$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Comments").": </td><td align=left><input type=text name=script_comments size=50 maxlength=255 value=\"$script_comments\"> $NWB#scripts-script_comments$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Admin User Group").": </td><td align=left><select size=1 name=user_group>\n";
+			// echo "$UUgroups_list";
+			// echo "<option SELECTED value=\"$user_group\">".(preg_match('/\-\-ALL\-\-/', $user_group) ? _QXZ("$user_group") : $user_group)."</option>\n";
+			// echo "</select>$NWB#scripts-user_group$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Active").": </td><td align=left><select size=1 name=active><option value='Y' SELECTED>"._QXZ("Y")."</option><option value='N'>"._QXZ("N")."</option><option value='$active' selected>"._QXZ("$active")."</option></select>$NWB#scripts-active$NWE</td></tr>\n";
+			//  echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Text").": <BR><BR><B><a href=\"javascript:openNewWindow('$PHP_SELF?ADD=7111111&script_id=$script_id')\">"._QXZ("Preview Script")."</a></B> </td><td align=left>";
+			// # BEGIN Insert Field
+			// echo "<select id=\"selectedField\" name=\"selectedField\">";
+			// echo "<option value=\"fullname\">"._QXZ("Agent Name")."(fullname)</option>";
+			// echo "<option>vendor_lead_code</option>";
+			// echo "<option>source_id</option>";
+			// echo "<option>list_id</option>";
+			// echo "<option>list_name</option>";
+			// echo "<option>list_description</option>";
+			// echo "<option>gmt_offset_now</option>";
+			// echo "<option>called_since_last_reset</option>";
+			// echo "<option>phone_code</option>";
+			// echo "<option>phone_number</option>";
+			// echo "<option>title</option>";
+			// echo "<option>first_name</option>";
+			// echo "<option>middle_initial</option>";
+			// echo "<option>last_name</option>";
+			// echo "<option>address1</option>";
+			// echo "<option>address2</option>";
+			// echo "<option>address3</option>";
+			// echo "<option>city</option>";
+			// echo "<option>state</option>";
+			// echo "<option>province</option>";
+			// echo "<option>postal_code</option>";
+			// echo "<option>country_code</option>";
+			// echo "<option>gender</option>";
+			// echo "<option>date_of_birth</option>";
+			// echo "<option>alt_phone</option>";
+			// echo "<option>email</option>";
+			// echo "<option>security_phrase</option>";
+			// echo "<option>comments</option>";
+			// echo "<option>lead_id</option>";
+			// echo "<option>campaign</option>";
+			// echo "<option>phone_login</option>";
+			// echo "<option>group</option>";
+			// echo "<option>channel_group</option>";
+			// echo "<option>SQLdate</option>";
+			// echo "<option>epoch</option>";
+			// echo "<option>uniqueid</option>";
+			// echo "<option>customer_zap_channel</option>";
+			// echo "<option>server_ip</option>";
+			// echo "<option>SIPexten</option>";
+			// echo "<option>session_id</option>";
+			// echo "<option>dialed_number</option>";
+			// echo "<option>dialed_label</option>";
+			// echo "<option>rank</option>";
+			// echo "<option>owner</option>";
+			// echo "<option>camp_script</option>";
+			// echo "<option>in_script</option>";
+			// echo "<option>script_width</option>";
+			// echo "<option>script_height</option>";
+			// echo "<option>recording_filename</option>";
+			// echo "<option>recording_id</option>";
+			// echo "<option>user_custom_one</option>";
+			// echo "<option>user_custom_two</option>";
+			// echo "<option>user_custom_three</option>";
+			// echo "<option>user_custom_four</option>";
+			// echo "<option>user_custom_five</option>";
+			// echo "<option>preset_number_a</option>";
+			// echo "<option>preset_number_b</option>";
+			// echo "<option>preset_number_c</option>";
+			// echo "<option>preset_number_d</option>";
+			// echo "<option>preset_number_e</option>";
+			// echo "<option>preset_number_f</option>";
+			// echo "<option>preset_dtmf_a</option>";
+			// echo "<option>preset_dtmf_b</option>";
+			// echo "<option>did_id</option>";
+			// echo "<option>did_extension</option>";
+			// echo "<option>did_pattern</option>";
+			// echo "<option>did_description</option>";
+			// echo "<option>closecallid</option>";
+			// echo "<option>xfercallid</option>";
+			// echo "<option>agent_log_id</option>";
+			// echo "<option>entry_list_id</option>";
+			// echo "<option>call_id</option>";
+			// echo "<option>user_group</option>";
+			// echo "<option>called_count</option>";
+			// echo "<option>TABLEper_call_notes</option>";
+			// echo "<option>agent_email</option>";
+			// echo "</select>";
+			// echo "<input type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\"><BR>";
+			// # END Insert Field
+			// echo "<TEXTAREA NAME=script_text ROWS=20 COLS=50>$script_text</TEXTAREA> $NWB#scripts-script_text$NWE</td></tr>\n";
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'></td></tr>\n";
+			// echo "</TABLE></center>\n";
 	
 	
 	
-			echo "</TABLE><BR><BR>\n";
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("CAMPAIGNS USING THIS SCRIPT").":</B><BR>\n";
-			echo "<TABLE>\n";
+			// echo "</TABLE><BR><BR>\n";
+			// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("CAMPAIGNS USING THIS SCRIPT").":</B><BR>\n";
+			// echo "<TABLE>\n";
 	
 			$stmt="SELECT campaign_id,campaign_name from vicidial_campaigns where ( (campaign_script='$script_id') or (campaign_script_two='$script_id') ) $LOGallowed_campaignsSQL;";
 			$rslt=mysql_to_mysqli($stmt, $link);
@@ -39905,13 +42939,13 @@ if ($ADD==31)
 			while ($camps_to_print > $o) 
 				{
 				$row=mysqli_fetch_row($rslt);
-				echo "<TR><TD><FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><a href=\"$PHP_SELF?ADD=31&campaign_id=$row[0]\">$row[0] </a></TD><TD><FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2> $row[1]<BR></TD></TR>\n";
+				echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><a href=\"$PHP_SELF?ADD=31&campaign_id=$row[0]\">$row[0] </a><FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2> $row[1]<BR>\n";
 				$o++;
 				}
 	
-			echo "</TABLE><BR><BR>\n";
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("IN-GROUPS USING THIS SCRIPT").":</B><BR>\n";
-			echo "<TABLE>\n";
+			// echo "</TABLE><BR><BR>\n";
+			// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("IN-GROUPS USING THIS SCRIPT").":</B><BR>\n";
+			// echo "<TABLE>\n";
 	
 			$stmt="SELECT group_id,group_name from vicidial_inbound_groups where ( (ingroup_script='$script_id') or (ingroup_script_two='$script_id') ) $LOGadmin_viewable_groupsSQL;";
 			$rslt=mysql_to_mysqli($stmt, $link);
@@ -39924,9 +42958,9 @@ if ($ADD==31)
 				$o++;
 				}
 	
-			echo "</TABLE><BR><BR>\n";
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("LIST OVERRIDES USING THIS SCRIPT").":</B><BR>\n";
-			echo "<TABLE>\n";
+			// echo "</TABLE><BR><BR>\n";
+			// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("LIST OVERRIDES USING THIS SCRIPT").":</B><BR>\n";
+			// echo "<TABLE>\n";
 	
 			$stmt="SELECT list_id,list_name from vicidial_lists where agent_script_override='$script_id' $LOGallowed_campaignsSQL;";
 			$rslt=mysql_to_mysqli($stmt, $link);
@@ -39939,9 +42973,9 @@ if ($ADD==31)
 				$o++;
 				}
 	
-			echo "</TABLE><BR><BR>\n";
-			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("USER GROUP OVERRIDES USING THIS SCRIPT").":</B><BR>\n";
-			echo "<TABLE>\n";
+			// echo "</TABLE><BR><BR>\n";
+			// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2><B> "._QXZ("USER GROUP OVERRIDES USING THIS SCRIPT").":</B><BR>\n";
+			// echo "<TABLE>\n";
 	
 			$stmt="SELECT user_group,group_name from vicidial_user_groups where script_id='$script_id' $LOGadmin_viewable_groupsSQL;";
 			$rslt=mysql_to_mysqli($stmt, $link);
@@ -39983,17 +43017,49 @@ if ($ADD==31)
 	
 			if ($LOGdelete_scripts > 0)
 				{
-				echo "<br><br><a href=\"$PHP_SELF?ADD=5111111&script_id=$script_id\">"._QXZ("DELETE THIS SCRIPT")."</a>\n";
+				echo "<a class=\"btn btn-danger\" href=\"$PHP_SELF?ADD=5111111&script_id=$script_id\">"._QXZ("DELETE THIS SCRIPT")."</a>\n";
 				}
 			if ( ($LOGuser_level >= 9) and ( (preg_match("/Administration Change Log/",$LOGallowed_reports)) or (preg_match("/ALL REPORTS/",$LOGallowed_reports)) ) )
 				{
-				echo "<br><br><a href=\"$PHP_SELF?ADD=720000000000000&category=SCRIPTS&stage=$script_id\">"._QXZ("Click here to see Admin changes to this script")."</FONT>\n";
+				// echo "<br><br><a href=\"$PHP_SELF?ADD=720000000000000&category=SCRIPTS&stage=$script_id\">"._QXZ("Click here to see Admin changes to this script")."</FONT>\n";
 				}
-	
+				echo '</div>';
+				echo '<!--end row-->';
+				echo '</form>';
+				echo '</div>';
+				
+				echo '</div>';
+				echo '</div>';
+				echo '</div> <!-- end col -->';
+				echo '';
+			
+				echo '</div>';
+				echo '<!--end row-->';
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -40011,6 +43077,9 @@ if ($ADD==31)
 				$modify_url = "$PHP_SELF?ADD=31111111&lead_filter_id=$lead_filter_id";
 				$modify_footer_refresh=1;
 				}
+				echo '<div class="main-content">';
+				// echo '<div class="page-content">';
+				
 			echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -40108,7 +43177,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -40971,6 +44061,11 @@ if ($ADD==31)
 				$modify_url = "$PHP_SELF?ADD=31111111111&extension=$extension&server_ip=$server_ip";
 				$modify_footer_refresh=1;
 				}
+
+				echo '<div class="main-content">';
+
+// echo '<div class="page-content">';
+// echo '<div class="container-fluid">';
 			echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -41191,7 +44286,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -41271,7 +44387,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -41324,7 +44461,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -41342,6 +44500,9 @@ if ($ADD==31)
 				$modify_url = "$PHP_SELF?ADD=311111111111&server_id=$server_id&server_ip=$server_ip";
 				$modify_footer_refresh=1;
 				}
+				echo '<div class="main-content">';
+				// echo '<div class="page-content">';
+				// echo '<div class="container-fluid">';
 			echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -41730,7 +44891,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+
+			echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 			exit;
 			}
 		}
@@ -41851,7 +45033,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -41862,6 +45065,9 @@ if ($ADD==31)
 	######################
 	if ($ADD==341111111111)
 		{
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 		if ( ( ($LOGast_admin_access==1) or ($LOGmodify_carriers==1) ) and ($x_ra_carrier < 1) )
 			{
 			if ( ($SSadmin_modify_refresh > 1) and ($modify_refresh_set < 1) )
@@ -41951,7 +45157,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42014,7 +45241,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42103,7 +45351,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42224,7 +45493,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42294,7 +45584,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42404,7 +45715,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42588,7 +45920,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+
+			echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 			exit;
 			}
 		}
@@ -42730,7 +46083,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -42808,7 +46182,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+
+			echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 			exit;
 			}
 		}
@@ -43024,7 +46419,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -43235,7 +46651,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+
+			echo '<!-- auth-page content -->';
+		echo '<div class="auth-page-content overflow-hidden p-0">';
+		echo '<div class="container">';
+		echo '<div class="row justify-content-center">';
+		echo '<div class="col-xl-7 col-lg-8">';
+		echo '<div class="text-center">';
+		echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+		echo '<div class="mt-3">';
+		echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+		echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+		echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '</div>';
+		echo '<!-- end row -->';
+		echo '</div>';
+		echo '<!-- end container -->';
+		echo '</div>';
+		echo '<!-- end auth-page content -->';
 			exit;
 			}
 		}
@@ -43587,7 +47024,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -43823,7 +47281,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -43874,7 +47353,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -43924,7 +47424,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -43974,7 +47495,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -43992,6 +47534,9 @@ if ($ADD==31)
 				$modify_url = "$PHP_SELF?ADD=311111111111111";
 				$modify_footer_refresh=1;
 				}
+				echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 			echo "<TABLE><TR><TD>\n";
 			echo "<img src=\"images/icon_settings.png\" width=42 height=42 align=left> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -45175,7 +48720,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -45314,7 +48880,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -45421,7 +49008,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -45541,7 +49149,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -45830,11 +49459,11 @@ if ($ADD==31)
 		{
 			
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">'; 
-			echo '<div class="page-content">';
-			echo '<div class="container-fluid">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">'; 
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 		echo "<img src=\"images/icon_black_users.png\" alt=\"Users\" width=42 height=42> "._QXZ("USER LISTINGS").": ";
@@ -45914,16 +49543,24 @@ if ($ADD==31)
 	if ($ADD==10)
 		{
 		echo "<div class=\"main-content\">";
-		echo "<br>"; 
+		
 		echo '<div class="page-content">';
 		echo '<div class="container-fluid">'; 
 		// 	echo '<div class="page-content">';
 		// 	echo '<div class="container-fluid">';
+		echo '<div class="row g-3">';
+		echo '<div class="col-lg-12">';
+		echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
+		echo "<i class=\"ri-contacts-book-line label-icon\"></i><strong><h2>"._QXZ("CAMPAIGN LISTINGS")."</h2></strong>";
+		echo '</div>';
 
-			echo "<h2 >"._QXZ("CAMPAIGN LISTINGS")."</h2>";		
-		 echo '<div class="container-fluid">';	
+		echo '<div class="col-lg-12">';
 		echo '<div class="card">';
 		echo '<div class="card-header align-items-center d-flex">';
+		//echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW CAMPAIGN")."</h4>";
+		echo '<div class="flex-shrink-0">';
+
+		echo '</div>';
 		echo '</div><!-- end card header -->';
 
 
@@ -46046,18 +49683,27 @@ if ($ADD==31)
 	if ($ADD==100)
 		{
 			echo "<div class=\"main-content\">";
-			echo "<br>";
+			// echo "<br>";
 			echo '<div class="page-content">';
 			echo '<div class="container-fluid">'; 
-			echo "<h2 >"._QXZ("LIST LISTINGS")."</h2>";
+			// echo "<h2 >"._QXZ("LIST LISTINGS")."</h2>";
 			//echo '<div class="page-content">';
 		
 		// echo '<div class="container-fluid">';
 		echo '<div class="row">';
 		echo '<div class="col-xl-12">';
+		echo '<div class="row g-3">';
+		echo '<div class="col-lg-12">';
+		echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
+		echo "<i class=\"ri-contacts-book-line label-icon\"></i><strong><h2>"._QXZ("LIST LISTINGS")."</h2></strong>";
+		echo '</div>';
+		echo '<div class="col-lg-12">';
 		echo '<div class="card">';
 		echo '<div class="card-header align-items-center d-flex">';
-		
+		//echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW CAMPAIGN")."</h4>";
+		echo '<div class="flex-shrink-0">';
+
+		echo '</div>';
 		echo '</div><!-- end card header -->';
 			
 		// echo "<div class=\"main-content\">";
@@ -47211,6 +50857,8 @@ if ($ADD==31)
 	######################
 	if ($ADD==100000)
 		{
+			echo '<div class="main-content">';
+				// echo '<div class="page-content">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -47284,23 +50932,120 @@ if ($ADD==31)
 	######################
 	if ($ADD==1000000)
 		{
-		echo "<TABLE><TR><TD>\n";
-		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+
+		// echo "<TABLE><TR><TD>\n";
+		// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
 		$stmt="SELECT script_id,script_name,active,user_group,script_color from vicidial_scripts $whereLOGadmin_viewable_groupsSQL order by script_id;";
 		$rslt=mysql_to_mysqli($stmt, $link);
 		$scripts_to_print = mysqli_num_rows($rslt);
 	
-		echo "<img src=\"images/icon_black_scripts.png\" alt=\"Scripts\" width=42 height=42> "._QXZ("SCRIPTS LISTINGS").":\n";
-		echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
-		echo "<tr bgcolor=black>";
-		echo "<td><font size=1 color=white align=left><B>"._QXZ("SCRIPT ID")."</B></td>";
-		echo "<td><font size=1 color=white><B>"._QXZ("SCRIPT NAME")."</B></td>";
-		echo "<td><font size=1 color=white><B>"._QXZ("ACTIVE")." &nbsp; </B></td>";
-		echo "<td><font size=1 color=white><B>"._QXZ("ADMIN GROUP")." &nbsp; </B></td>";
-		echo "<td><font size=1 color=white><B>"._QXZ("COLOR")." &nbsp; </B></td>";
-		echo "<td align=center><font size=1 color=white><B>"._QXZ("MODIFY")."</B></td></tr>\n";
-	
+		echo '<div class="row">';
+		echo '<div class="col-xl-12">';
+		echo '<div class="card">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("SCRIPTS LISTINGS")."</h4>";
+		// echo '<div class="row g-3">';
+		// echo '<div class="col-lg-12">';
+		// echo '<div class="alert alert-secondary alert-dismissible alert-label-icon rounded-label fade show material-shadow" role="alert">';
+		// echo "<i class=\"ri-contacts-book-line label-icon\"></i><strong><h2>"._QXZ("ADD A NEW CAMPAIGN")."</h2></strong>";
+		// echo '</div>';
+		echo '<div class="flex-shrink-0">';
+		// echo '<div class="form-check form-switch form-switch-right form-switch-md">';
+		// echo '<label for="card-tables-showcode" class="form-label text-muted">Show Code</label>';
+		// echo '<input class="form-check-input code-switcher" type="checkbox" id="card-tables-showcode">';
+		// echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card header -->';
+		echo '';
+		echo '<div class="card-body">';
+		// echo '<p class="text-muted mb-4">Use <code>table-card</code> class to show card-based table within a &lt;tbody&gt;.</p>';
+		echo '';
+		echo '<div class="live-preview">';
+		echo '<div class="table-responsive table-card">';
+		echo '<table class="table align-middle table-nowrap mb-0">';
+		echo '<thead class="table-light">';
+		echo '<tr>';
+		// echo '<th scope="col" style="width: 46px;">';
+		// // echo '<div class="form-check">';
+		// // echo '<input class="form-check-input" type="checkbox" value="" id="cardtableCheck">';
+		// // echo '<label class="form-check-label" for="cardtableCheck"></label>';
+		// // echo '</div>';
+		// echo '</th>';
+		echo "<th scope=\"col\">"._QXZ("SCRIPT ID")."</th>";
+		echo "<th scope=\"col\">"._QXZ("SCRIPT NAME")."</th>";
+		echo "<th scope=\"col\">"._QXZ("ACTIVE")."</th>";
+		echo "<th scope=\"col\">"._QXZ("ADMIN GROUP")."</th>";
+		echo "<th scope=\"col\">"._QXZ("COLOR")."</th>";
+		echo "<th scope=\"col\" style=\"width: 150px;\">"._QXZ("MODIFY")."</th>";
+		echo '</tr>';
+		echo '</thead>';
+		echo '<tbody>';
+		// echo '<tr>';
+		// echo '<td>';
+		// echo '<div class="form-check">';
+		// echo '<input class="form-check-input" type="checkbox" value="" id="cardtableCheck01">';
+		// echo '<label class="form-check-label" for="cardtableCheck01"></label>';
+		// echo '</div>';
+		// echo '</td>';
+		// echo '<td><a href="#" class="fw-medium">#VL2110</a></td>';
+		// echo '<td>William Elmore</td>';
+		// echo '<td>07 Oct, 2021</td>';
+		// echo '<td>$24.05</td>';
+		// echo '<td><span class="badge bg-success">Paid</span></td>';
+		// echo '<td>';
+		// echo '<button type="button" class="btn btn-sm btn-light">Details</button>';
+		// echo '</td>';
+		// echo '</tr>';
+		// echo '<tr>';
+		// echo '<td>';
+		// echo '<div class="form-check">';
+		// echo '<input class="form-check-input" type="checkbox" value="" id="cardtableCheck02">';
+		// echo '<label class="form-check-label" for="cardtableCheck02"></label>';
+		// echo '</div>';
+		// echo '</td>';
+		// echo '<td><a href="#" class="fw-medium">#VL2109</a></td>';
+		// echo '<td>Georgie Winters</td>';
+		// echo '<td>07 Oct, 2021</td>';
+		// echo '<td>$26.15</td>';
+		// echo '<td><span class="badge bg-success">Paid</span></td>';
+		// echo '<td>';
+		// echo '<button type="button" class="btn btn-sm btn-light">Details</button>';
+		// echo '</td>';
+		// echo '</tr>';
+		// echo '<tr>';
+		// echo '<td>';
+		// echo '<div class="form-check">';
+		// echo '<input class="form-check-input" type="checkbox" value="" id="cardtableCheck03">';
+		// echo '<label class="form-check-label" for="cardtableCheck03"></label>';
+		// echo '</div>';
+		// echo '</td>';
+		// echo '<td><a href="#" class="fw-medium">#VL2108</a></td>';
+		// echo '<td>Whitney Meier</td>';
+		// echo '<td>06 Oct, 2021</td>';
+		// echo '<td>$21.25</td>';
+		// echo '<td><span class="badge bg-danger">Refund</span></td>';
+		// echo '<td>';
+		// echo '<button type="button" class="btn btn-sm btn-light">Details</button>';
+		// echo '</td>';
+		// echo '</tr>';
+		// echo '<tr>';
+		// echo '<td>';
+		// echo '<div class="form-check">';
+		// echo '<input class="form-check-input" type="checkbox" value="" id="cardtableCheck04">';
+		// echo '<label class="form-check-label" for="cardtableCheck04"></label>';
+		// echo '</div>';
+		// echo '</td>';
+		// echo '<td><a href="#" class="fw-medium">#VL2107</a></td>';
+		// echo '<td>Justin Maier</td>';
+		// echo '<td>05 Oct, 2021</td>';
+		// echo '<td>$25.03</td>';
+		// echo '<td><span class="badge bg-success">Paid</span></td>';
+		// echo '<td>';
+		// echo '<button type="button" class="btn btn-sm btn-light">Details</button>';
+		// echo '</td>';
 		$o=0;
 		while ($scripts_to_print > $o) 
 			{
@@ -47309,16 +51054,54 @@ if ($ADD==31)
 				{$bgcolor='class="records_list_x"';} 
 			else
 				{$bgcolor='class="records_list_y"';}
-			echo "<tr $bgcolor"; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$PHP_SELF?ADD=3111111&script_id=$row[0]'\"";} echo "><td><a href=\"$PHP_SELF?ADD=3111111&script_id=$row[0]\"><font size=1 color=black>$row[0]</a></td>";
-			echo "<td><font size=1> $row[1]</td>";
-			echo "<td><font size=1> "._QXZ("$row[2]")."</td>";
-			echo "<td><font size=1> ".(preg_match('/\-\-ALL\-\-/', $row[3]) ? _QXZ("$row[3]") : $row[3])."</td>";
-			echo "<td bgcolor=\"$row[4]\"><font size=1> &nbsp;</td>";
-			echo "<td align=center><font size=1><a href=\"$PHP_SELF?ADD=3111111&script_id=$row[0]\">"._QXZ("MODIFY")."</a></td></tr>\n";
+			echo "<tr "; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$PHP_SELF?ADD=3111111&script_id=$row[0]'\"";} echo "><td><a href=\"$PHP_SELF?ADD=3111111&script_id=$row[0]\"><font size=1 color=black>$row[0]</a></td>";
+			echo "<td>$row[1]</td>";
+			echo "<td> "._QXZ("$row[2]")."</td>";
+			echo "<td> ".(preg_match('/\-\-ALL\-\-/', $row[3]) ? _QXZ("$row[3]") : $row[3])."</td>";
+			echo "<td></td>";
+			echo "<td ><a href=\"$PHP_SELF?ADD=3111111&script_id=$row[0]\">"._QXZ("MODIFY")."</a></td></tr>\n";
 			$o++;
 			}
+		echo '</tr>';
+		echo '</tbody>';
+		echo '</table>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card-body -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
+		echo '</div><!-- end row -->';
+
+
+
+		// echo "<img src=\"images/icon_black_scripts.png\" alt=\"Scripts\" width=42 height=42> "._QXZ("SCRIPTS LISTINGS").":\n";
+		// echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";
+		// echo "<tr bgcolor=black>";
+		// echo "<td><font size=1 color=white align=left><B>"._QXZ("SCRIPT ID")."</B></td>";
+		// echo "<td><font size=1 color=white><B>"._QXZ("SCRIPT NAME")."</B></td>";
+		// echo "<td><font size=1 color=white><B>"._QXZ("ACTIVE")." &nbsp; </B></td>";
+		// echo "<td><font size=1 color=white><B>"._QXZ("ADMIN GROUP")." &nbsp; </B></td>";
+		// echo "<td><font size=1 color=white><B>"._QXZ("COLOR")." &nbsp; </B></td>";
+		// echo "<td align=center><font size=1 color=white><B>"._QXZ("MODIFY")."</B></td></tr>\n";
 	
-		echo "</TABLE></center>\n";
+		// $o=0;
+		// while ($scripts_to_print > $o) 
+		// 	{
+		// 	$row=mysqli_fetch_row($rslt);
+		// 	if (preg_match('/1$|3$|5$|7$|9$/i', $o))
+		// 		{$bgcolor='class="records_list_x"';} 
+		// 	else
+		// 		{$bgcolor='class="records_list_y"';}
+		// 	echo "<tr $bgcolor"; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$PHP_SELF?ADD=3111111&script_id=$row[0]'\"";} echo "><td><a href=\"$PHP_SELF?ADD=3111111&script_id=$row[0]\"><font size=1 color=black>$row[0]</a></td>";
+		// 	echo "<td><font size=1> $row[1]</td>";
+		// 	echo "<td><font size=1> "._QXZ("$row[2]")."</td>";
+		// 	echo "<td><font size=1> ".(preg_match('/\-\-ALL\-\-/', $row[3]) ? _QXZ("$row[3]") : $row[3])."</td>";
+		// 	echo "<td bgcolor=\"$row[4]\"><font size=1> &nbsp;</td>";
+		// 	echo "<td align=center><font size=1><a href=\"$PHP_SELF?ADD=3111111&script_id=$row[0]\">"._QXZ("MODIFY")."</a></td></tr>\n";
+		// 	$o++;
+		// 	}
+	
+		// echo "</TABLE></center>\n";
 		}
 	
 	
@@ -47327,6 +51110,9 @@ if ($ADD==31)
 	######################
 	if ($ADD==10000000)
 		{
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+
 		echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -47549,6 +51335,10 @@ if ($ADD==31)
 	######################
 	if ($ADD==10000000000)
 		{
+			echo '<div class="main-content">';
+			
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<img src=\"images/icon_phones.png\" width=42 height=42 align=left> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -47750,6 +51540,9 @@ if ($ADD==31)
 	######################
 	if ($ADD==100000000000)
 		{
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<img src=\"images/icon_servers.png\" width=42 height=42 align=left> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -47838,6 +51631,9 @@ if ($ADD==31)
 	######################
 	if ($ADD==140000000000)
 		{
+			echo '<div class="main-content">';
+			// echo '<div class="page-content">';
+			// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<img src=\"images/icon_carriers.png\" width=42 height=42 align=left> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -49438,7 +53234,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -49588,7 +53405,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -49795,7 +53633,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -49810,9 +53669,9 @@ if ($ADD==31)
 			{
 			$server_id=$MT; $server_description=$MT; $server_ip=$MT; $active=$MT; $sysload=$MT; $channels_total=$MT; $cpu_idle_percent=$MT; $disk_usage=$MT; $active_agent_login_server=$MT; $active_asterisk_server=$MT;
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">';
 			echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -50255,7 +54114,28 @@ if ($ADD==31)
 			}
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -50272,10 +54152,14 @@ if ($ADD==31)
 	
 		</head><BODY BGCOLOR=WHITE>
 		<img src="images/icon_black_admin.png" alt="Admin" width=42 height=42> <FONT FACE="ARIAL,HELVETICA" SIZE=4><B> <?php echo _QXZ("Administration"); ?></B></FONT><BR><CENTER>
-		<TABLE BORDER=0 CELLPADDING=5 CELLSPACING=0 WIDTH=800>
+		<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=900>
 		<?php
+		// echo '<div class="main-content">';
+		// // echo '<div class="page-content">';
+		// echo '<div class="container-fluid">';
+
 		echo "<TR>\n";
-		echo "<TD ALIGN=LEFT VALIGN=TOP WIDTH=100>&nbsp;\n";
+		echo "<TD ALIGN=LEFT VALIGN=TOP WIDTH=300>&nbsp;\n";
 		echo "</TD>\n";
 		echo "<TD ALIGN=LEFT VALIGN=TOP WIDTH=220>\n";
 		echo "<TABLE BORDER=0 CELLPADDING=5 CELLSPACING=5 WIDTH=100%>\n";
@@ -51281,9 +55165,9 @@ if ($ADD==31)
 			$KHOMP_enabled = $rowx[0];
 			}
 			echo "<div class=\"main-content\">";
-		echo "<br>"; 
-		echo '<div class="page-content">';
-		echo '<div class="container-fluid">';
+		// echo "<br>"; 
+		// echo '<div class="page-content">';
+		// echo '<div class="container-fluid">';
 		echo "<TABLE><TR><TD>\n";
 		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -51454,7 +55338,32 @@ if ($ADD==31)
 				}
 			}
 		else
-			{echo "You do not have permission to view this page";}
+			{
+				// echo "You do not have permission to view this page";
+				echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
+			
+			
+			}
 	
 		echo "</TABLE></center>\n";
 		}
@@ -51495,7 +55404,9 @@ if ($ADD==31)
 		echo "</script>\n";
 	
 		echo " "._QXZ("to")." <INPUT TYPE=TEXT NAME=end_date SIZE=10 MAXLENGTH=10 VALUE=\"$end_date\">";
-	
+	echo '<div class="main-content">';
+			
+			echo '<div class="container-fluid">';
 		echo "<script language=\"JavaScript\">\n";
 		echo "var o_cal = new tcal ({\n";
 		echo "	// form name\n";
@@ -51505,8 +55416,20 @@ if ($ADD==31)
 		echo "});\n";
 		echo "o_cal.a_tpl.yearscroll = false;\n";
 		echo "// o_cal.a_tpl.weekstart = 1; // Monday week start\n";
-		echo "</script>&nbsp;&nbsp;&nbsp;&nbsp;<input style='background-color:#$SSbutton_color' type='submit' name='max_system_stats_submit' VALUE='"._QXZ("ADJUST DATE RANGE")."'><input type='hidden' name='ADD' value='$ADD'><input type='hidden' name='stage' value='$stage'></form><BR>\n";
-		echo "<center><a href='$PHP_SELF?query_date=$query_date&end_date=$end_date&max_system_stats_submit=$max_system_stats_submit&ADD=$ADD&stage=$stage&download_max_system_stats_metric_name=ALL'>["._QXZ("DOWNLOAD ALL")."]</a><TABLE width=$section_width cellspacing=5 cellpadding=2>\n";
+		echo "</script>
+		<input type='hidden' name='ADD' value='$ADD'><input type='hidden' name='stage' value='$stage'></form><BR>\n";
+		
+				echo '<div class="input-group">';
+				
+				echo '<button class="btn btn-success dropdown-toggle" name="max_system_stats_submit" type="button" data-bs-toggle="dropdown" aria-expanded="false">ADJUST DATE RANGE</button>';
+				echo '<ul class="dropdown-menu dropdown-menu-end">';
+				echo "<li><a class=\"dropdown-item\" href='$PHP_SELF?query_date=$query_date&end_date=$end_date&max_system_stats_submit=$max_system_stats_submit&ADD=$ADD&stage=$stage&download_max_system_stats_metric_name=ALL'>DOWNLOAD ALL</a></li>";
+				echo '</ul>';
+				echo '</div>';
+				echo '<br>';
+		
+		
+		echo "<center><TABLE width=$section_width >\n";
 	
 		if ( (preg_match("/Maximum System Stats/",$LOGallowed_reports)) or (preg_match("/ALL REPORTS/",$LOGallowed_reports)) )
 			{
@@ -51565,7 +55488,32 @@ if ($ADD==31)
 			echo "</td></tr>\n";
 			}
 		else
-			{echo "You do not have permission to view this page";}
+			{
+				// echo "You do not have permission to view this page";
+			
+				echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
+			
+			}
 		echo "</TABLE></center>\n";
 		}
 	##### END max system stats report #####
@@ -51696,7 +55644,7 @@ if ($ADD==31)
 echo '<div class="col-12">';
 echo '<div class="d-flex align-items-lg-center flex-lg-row flex-column">';
 echo '<div class="flex-grow-1">';
-echo '<h2>Good Morning, Admin!</h2>';
+echo '<h1>You welcome, Admin!</h1>';
 echo '<p class="text-muted mb-0"> happening with your CRM today.</p>';
 echo '</div>';
 echo '<div class="mt-3 mt-lg-0">';
@@ -51713,12 +55661,12 @@ echo '<div class="row g-3 mb-0 align-items-center">';
 // echo '<!--end col-->';
 echo '<div class="col-auto">';
 //echo '<button type="button" class="btn btn-soft-success material-shadow-none"><i class="ri-add-circle-line align-middle me-1"></i> Add Product</button>';
-echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229" type="button" class="btn btn-info btn-label waves-effect waves-light"><i class="mdi mdi-arrow-bottom-right-bold-box-outline label-icon align-middle fs-16 me-2"></i><b>OUTBOUND</b></a>';
+echo '<a href="realtime_report.php?report_display_type=HTML" type="button" class="btn btn-success btn-label waves-effect waves-light rounded-pill"><i class="ri-bar-chart-2-line label-icon align-middle fs-20 me-2"></i><b>Real-Time Report</b></a>';
 echo '</div>';
 echo '<!--end col-->';
 echo '<div class="col-auto">';
 //echo '<button type="button" class="btn btn-soft-info btn-icon waves-effect material-shadow-none waves-light layout-rightside-btn"><i class="ri-pulse-line"></i></button>';
-echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229&closer_display=1" type="button" class="btn btn-success btn-label waves-effect waves-light"><i class="mdi mdi-arrow-top-left-bold-box-outline label-icon align-middle fs-16 me-2"></i><b>INBOUND</b></a>';
+// echo '<a href="AST_timeonVDAD.php?server_ip=167.86.107.229&closer_display=1" type="button" class="btn btn-success btn-label waves-effect waves-light"><i class="mdi mdi-arrow-top-left-bold-box-outline label-icon align-middle fs-16 me-2"></i><b>INBOUND</b></a>';
 echo '</div>';
 echo '<!--end col-->';
 echo '</div>';
@@ -51767,7 +55715,7 @@ echo '<!--end row-->';
 			echo '<div class="row">';
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
-			echo '<div class="card card-animate">';
+			echo '<div class="card card-animate bg-info-subtle">';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
@@ -51784,7 +55732,7 @@ echo '<!--end row-->';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h2 class=\"fs-1 fw-semibold ff-secondary \">$agent_total</h2>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
+			// echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			// echo '<span class="avatar-title bg-success-subtle rounded fs-1">';
@@ -51799,7 +55747,7 @@ echo '<!--end row-->';
 		
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
-			echo '<div class="card card-animate">';
+			echo '<div class="card card-animate bg-success-subtle">';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
@@ -51814,7 +55762,7 @@ echo '<!--end row-->';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h2 class=\"fs-1 fw-semibold ff-secondary\">$agent_incall</h2>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
+			// echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			// echo '<span class="avatar-title bg-info-subtle rounded fs-1">';
@@ -51829,7 +55777,7 @@ echo '<!--end row-->';
 			
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
-			echo '<div class="card card-animate">';
+			echo '<div class="card card-animate bg-warning-subtle">';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
@@ -51844,7 +55792,7 @@ echo '<!--end row-->';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h4 class=\"fs-1 fw-semibold ff-secondary\">$agent_incall</h4>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
+			// echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			// echo '<span class="avatar-title bg-warning-subtle rounded fs-1">';
@@ -51859,7 +55807,7 @@ echo '<!--end row-->';
 			
 			echo '<div class="col-xl-3 col-md-6">';
 			echo '<!-- card -->';
-			echo '<div class="card card-animate">';
+			echo '<div class="card card-animate bg-danger-subtle">';
 			echo '<div class="card-body">';
 			echo '<div class="d-flex align-items-center">';
 			echo '<div class="flex-grow-1 overflow-hidden">';
@@ -51874,7 +55822,7 @@ echo '<!--end row-->';
 			echo '<div class="d-flex align-items-end justify-content-between mt-4">';
 			echo '<div>';
 			echo "<h2 class=\"fs-1 fw-semibold ff-secondary\">$ringing_calls</h2>";
-			echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
+			// echo '<a href="realtime_report.php?report_display_type=HTML" class="text-decoration-underline">View details</a>';
 			echo '</div>';
 			echo '<div class="avatar-sm flex-shrink-0">';
 			// echo '<span class="avatar-title bg-primary-subtle rounded fs-1">';
@@ -51918,9 +55866,9 @@ echo '</div><!-- end card header -->';
 
 echo '<div class="card-body">';
 echo '<div class="table-responsive table-card">';
-echo '<table class="table table-borderless table-centered align-middle table-nowrap mb-0">';
-echo '<thead class="text-muted table-light">';
-echo '<tr>';
+echo '<table class="table table-borderless table-centered align-middle table-nowrap mb-0 ">';
+echo '<thead class="text-muted bg-secondary-subtle">';
+echo '<tr >';
 
 echo "<th scope=\"col\">"._QXZ("Records")."</th>";
 echo "<th scope=\"col\">"._QXZ("Active")."</th>";
@@ -52172,7 +56120,8 @@ echo '</div> <!-- .col-->';
 			
 
 			//echo "<TABLE >";
-			echo '<div class="col-xl-12">';
+			echo '<div class="row">';	
+			echo '<div class="col-xl-6">';
 echo '<div class="card">';
 echo '<div class="card-header align-items-center d-flex">';
 echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Total Stats for Today")."</h4>";
@@ -52180,19 +56129,15 @@ echo '<div class="flex-shrink-0">';
 echo "<a href=\"$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL\" type=\"button\" class=\"btn btn-soft-info btn-sm material-shadow-none\"><i class=\"ri-file-list-3-line align-middle\"></i><b>View max stats</b></a>";
 echo '</div>';
 echo '</div><!-- end card header -->';
-
 echo '<div class="card-body">';
-echo '<div class="table-responsive table-card">';
+echo '<div class="table-responsive table-card"><br><br>';
 echo '<table class="table table-borderless table-centered align-middle table-nowrap mb-0">';
-echo '<thead class="text-muted table-light">';
+echo '<thead class="text-muted bg-secondary-subtle">';
 echo '<tr>';
-
 echo '<th scope="col">Total Calls</th>';
 echo '<th scope="col">Total Inbound Calls</th>';
 echo '<th scope="col">Total Outbound Calls</th>';
 echo '<th scope="col">Maximum Agents</th>';
-
-
 echo '</tr>';
 echo '</thead>';
 			//echo '<tbody>';
@@ -52269,19 +56214,19 @@ echo '</thead>';
 					}
 				}
 				
-			echo '<br><br>';				
-			echo '<div class="col-xl-12">';
+			// echo '<br><br>';				
+			echo '<div class="col-xl-6">';
 			echo '<div class="card">';
-			echo '<div class="card-header align-items-center d-flex">';
+			echo '<div class="card-header align-items-center d-flex">';		
 			echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Total Stats for Yesterday")."</h4>";
 			echo '<div class="flex-shrink-0">';
 			echo "<a href=\"$PHP_SELF?query_date=$thirtydays&end_date=$today&max_system_stats_submit=ADJUST+DATE+RANGE&ADD=999992&stage=TOTAL\" type=\"button\" class=\"btn btn-soft-info btn-sm material-shadow-none\"><i class=\"ri-file-list-3-line align-middle\"></i><b>View max stats</b></a>";
 			echo '</div>';
 			echo '</div><!-- end card header -->';
 			echo '<div class="card-body">';
-			echo '<div class="table-responsive table-card">';			
+			echo '<div class="table-responsive table-card">';
 			echo '<table class="table table-borderless table-centered align-middle table-nowrap mb-0">';
-			echo '<thead class="text-muted table-light">';			
+			echo '<thead class="text-muted bg-secondary-subtle">';
 			echo '<tr>';
 			echo '<th scope="col">Total Calls</th>';
 			echo '<th scope="col">Total Inbound Calls</th>';
@@ -52293,7 +56238,7 @@ echo '</thead>';
 			//echo '<tbody>';
 			echo '</div>';
 			echo '</div>';
-			
+			echo '</div>';
 			
 		// 	echo "<tr>";
 		// 	echo "<td align='left' colspan='3'><font style=\"font-family:HELVETICA;font-size:12;color:black;font-weight:bold;\">"._QXZ("Total Stats for Yesterday").":</font></td>";
@@ -52497,7 +56442,28 @@ echo '</thead>';
 			
 		else
 			{
-			echo _QXZ("You do not have permission to view this page")."\n";
+			// echo _QXZ("You do not have permission to view this page")."\n";
+			echo '<!-- auth-page content -->';
+			echo '<div class="auth-page-content overflow-hidden p-0">';
+			echo '<div class="container">';
+			echo '<div class="row justify-content-center">';
+			echo '<div class="col-xl-7 col-lg-8">';
+			echo '<div class="text-center">';
+			echo '<img src="../agc/pereine/velzon/assets/images/error400-cover.png" alt="error img" class="img-fluid">';
+			echo '<div class="mt-3">';
+			echo '<h3 class="text-uppercase">Sorry, You do not have permission to view this page</h3>';
+			echo '<p class="text-muted mb-4">The page you are looking for not available!</p>';
+			echo '<a href="admin.php" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to home</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end col -->';
+			echo '</div>';
+			echo '<!-- end row -->';
+			echo '</div>';
+			echo '<!-- end container -->';
+			echo '</div>';
+			echo '<!-- end auth-page content -->';
+			
 			exit;
 			}
 		}
@@ -53082,6 +57048,8 @@ echo '</thead>';
 		echo _QXZ("no active lists selected for this campaign")."\n";
 		}
 	}
+
+
 	
 	?>
 	

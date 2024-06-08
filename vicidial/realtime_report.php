@@ -898,7 +898,7 @@ $NFB = '<b><font size=6 face="courier">';
 $NFE = '</font></b>';
 $F=''; $FG=''; $B=''; $BG='';
 
-$select_list = "<TABLE class='realtime_settings_table' CELLPADDING=5 BGCOLOR='#D9E6FE'><TR><TD VALIGN=TOP>"._QXZ("Select Campaigns").": <BR>";
+$select_list = "<TABLE class='realtime_settings_table' CELLPADDING=5 BGCOLOR='#e1ebfd'><TR><TD VALIGN=TOP>"._QXZ("Select Campaigns").": <BR>";
 $select_list .= "<SELECT SIZE=8 NAME=groups[] ID=groups[] multiple>";
 $o=0;
 while ($groups_to_print > $o)
@@ -946,11 +946,11 @@ while ($o < $ingroups_to_print)
 		}
 	$o++;
 	}
-$select_list .= "</SELECT>";
+$select_list .= "</SELECT >";
 
-$select_list .= "</TD><TD VALIGN=TOP ALIGN=CENTER>";
-$select_list .= "<a href='#' onclick=\\\"hideDiv('campaign_select_list');\\\">"._QXZ("Close Panel")."</a><BR><BR>";
-$select_list .= "<TABLE CELLPADDING=2 CELLSPACING=2 BORDER=0>";
+$select_list .= "</TD><TD VALIGN=TOP ALIGN=right >";
+$select_list .= "<a class='btn btn-info' href='#' onclick=\\\"hideDiv('campaign_select_list');\\\">"._QXZ("Close Panel")."</a><BR><BR>";
+$select_list .= "<TABLE  CELLPADDING=2 CELLSPACING=2 BORDER=0 >";
 
 $select_list .= "<TR><TD align=right>";
 $select_list .= _QXZ("Screen Refresh Rate").":  </TD><TD align=left><SELECT SIZE=1 NAME=RR ID=RR>";
@@ -2077,7 +2077,7 @@ if ($RS_hide_CUST_info < 1)
 	.realtime_table {width: 960px; max-width: 960px; }
 	.realtime_calls_table {width: 860px; max-width: 860px; }
 	.realtime_settings_table {width: 780px; max-width: 780px; }
-
+	.table_table-nowrap {color: #405189;}
 <?php
 	$stmt="select group_id,group_color from vicidial_inbound_groups;";
 	$rslt=mysql_to_mysqli($stmt, $link);
@@ -2141,6 +2141,62 @@ else
 
 	// echo "<TABLE CELLPADDING=4 CELLSPACING=0><TR><TD>";
 
+	echo '<div class="row mb-3 pb-1">';
+	echo '<div class="col-12">';
+	echo '<div class="d-flex align-items-lg-center flex-lg-row flex-column">';
+	echo '<div class="flex-grow-1">';
+	echo "<h2 class=\"link-Success\"><b> "._QXZ("$report_name")." </b> </h2>";
+	echo '<p class="text-muted mb-0">Heres whats happening with your CRM today.</p>';
+	echo '</div>';
+	echo '<div class="mt-3 mt-lg-0">';
+	echo '<form action="javascript:void(0);">';
+	echo '<div class="row g-3 mb-0 align-items-center">';
+	echo '<div class="col-sm-auto">';
+	echo '<div class="input-group">';
+	// echo '<input type="text" class="form-control border-0 minimal-border dash-filter-picker shadow" data-provider="flatpickr" data-range-date="true" data-date-format="d M, Y" data-deafult-date="01 Jan 2022 to 31 Jan 2022">';
+	echo "<button onclick=\"showDiv('campaign_select_list');\" type=\"button\" class=\"btn btn-soft-secondary material-shadow-none\"><i class=\"ri-add-circle-line align-middle me-1\"></i>"._QXZ("Choose Report Display Options")."</button>";
+	// echo '<div class="input-group-text bg-primary border-primary text-white">';
+	// echo '<i class="ri-calendar-2-line"></i>';
+	// echo '</div>';
+	
+	echo '</div>';
+	echo '</div>';
+	echo '<!--end col-->';
+	echo '<div class="col-auto">';
+	echo "<button onclick=\"update_variables('form_submit','','YES')\" type=\"button\" class=\"btn btn-soft-success material-shadow-none\"><i class=\"ri-add-circle-line align-middle me-1\"></i>"._QXZ("RELOAD NOW")."</button>&nbsp;&nbsp;";
+	if ($SUMMARYauth > 0)
+		{//echo "<a class=\"btn btn-soft-success material-shadow-none\" href=\"./AST_timeonVDADallSUMMARY.php?RR=$RR&DB=$DB&adastats=$adastats\">"._QXZ("SUMMARY")."</a><br> \n";
+		
+			echo '<button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">SAMMARY</button>';
+			echo '<ul class="dropdown-menu dropdown-menu-end">';
+			echo "<li><a class=\"dropdown-item\" href=\"./AST_timeonVDADallSUMMARY.php?RR=$RR&DB=$DB&adastats=$adastats\">REPORTS</a></li>";
+			echo '<li><hr class="dropdown-divider"></li>';
+			echo '<li><a class="dropdown-item" href="http://167.86.107.229/vicidial/AST_timeonVDADallSUMMARY.php?group=&RR=40&DB=0&adastats=&types=SHOW%20ALL%20CAMPAIGNS&file_download=1">DOWNLOAD</a></li>';
+			echo '</ul>';
+		}
+
+	if ($RS_logoutLINK > 0)
+		{echo " | <a href=\"./admin.php?force_logout=1\"><font class='top_settings_val'>"._QXZ("LOGOUT")."</font></a> \n";}
+
+	echo "</FONT>\n";
+	}
+	echo '</div>';
+	echo '<!--end col-->';
+	echo '<div class="col-auto">';
+	echo '<button type="button" class="btn btn-soft-info btn-icon waves-effect material-shadow-none waves-light layout-rightside-btn"><i class="ri-timer-line"></i><span  id=refresh_countdown ></span></button>';
+	echo '</div>';
+	echo '<!--end col-->';
+	echo '</div>';
+	echo '<!--end row-->';
+	echo '</form>';
+	echo '</div>';
+	echo '</div><!-- end card header -->';
+	echo '</div>';
+	echo '<!--end col-->';
+	echo '</div>';
+	echo '<!--end row-->';
+
+	
 	echo "<FORM ACTION=\"$PHP_SELF\" METHOD=GET NAME=REALTIMEform ID=REALTIMEform>\n";
 	echo "<INPUT TYPE=HIDDEN NAME=cursorX ID=cursorX>\n";
 	echo "<INPUT TYPE=HIDDEN NAME=cursorY ID=cursorY>\n";
@@ -2166,107 +2222,110 @@ else
 	// echo '<div class="main-content">';
 	
 	// echo "<font class='top_head_key'>"._QXZ("$report_name")." <br> <br> \n";
-	echo '<!-- Secondary Alert -->';
-	echo '<div class="alert alert-secondary material-shadow" role="alert">';
-	echo "<h2> "._QXZ("$report_name")."  </h2>";
-	echo '</div>';
+
 
 	// echo "<span style=\"position:absolute;left:160px;z-index:20;\" id=campaign_select_list_link>\n";
 	// echo "<TABLE><TR><TD ALIGN=CENTER>\n";
-	echo "<a class=\"btn btn-soft-secondary waves-effect material-shadow-none\" href=\"#\" onclick=\"showDiv('campaign_select_list');\">"._QXZ("Choose Report Display Options")."</a><br>";
+	// echo "<a class=\"btn btn-soft-secondary waves-effect material-shadow-none\" href=\"#\" onclick=\"showDiv('campaign_select_list');\">"._QXZ("Choose Report Display Options")."</a><br>";
+	// echo "</TD></TR></TABLE>\n";
+	// echo "</span>\n";
+	echo "<span style=\"position:absolute;left:550px;\" id=campaign_select_list>\n";
+	// echo "<TABLE WIDTH=0 HEIGHT=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR=\"#D9E6FE\"><TR><TD ALIGN=CENTER>\n";
+	// echo "";
 	// echo "</TD></TR></TABLE>\n";
 	echo "</span>\n";
-	echo "<span style=\"position:absolute;left:0px;z-index:21;\" id=campaign_select_list>\n";
-	echo "<TABLE WIDTH=0 HEIGHT=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR=\"#D9E6FE\"><TR><TD ALIGN=CENTER>\n";
-	echo "";
-	echo "</TD></TR></TABLE>\n";
-	echo "</span>\n";
-	echo "<span style=\"position:absolute;left:" . $webphone_left . "px;top:" . $webphone_top . "px;z-index:18;\" id=webphone_content>\n";
-	echo "<TABLE WIDTH=" . $webphone_bufw . " CELLPADDING=" . $webphone_pad . " CELLSPACING=0 BGCOLOR=\"white\"><TR><TD ALIGN=LEFT>\n";
-	echo "$webphone_content\n$webphone_clpos\n";
-	echo "</TD></TR></TABLE>\n";
+	// echo "<span style=\"position:absolute;left:" . $webphone_left . "px;top:" . $webphone_top . "px;z-index:18;\" id=webphone_content>\n";
+	// echo "<TABLE WIDTH=" . $webphone_bufw . " CELLPADDING=" . $webphone_pad . " CELLSPACING=0 BGCOLOR=\"white\"><TR><TD ALIGN=LEFT>\n";
+	// // echo "$webphone_content\n$webphone_clpos\n";
+	// echo "</TD></TR></TABLE>\n";
 	echo "</span>\n";
 	echo "<span style=\"position:absolute;left:10px;top:120px;z-index:14;\" id=agent_ingroup_display>\n";
 	echo " &nbsp; ";
 	echo "</span>\n";
-	echo "<a href=\"#\" onclick=\"update_variables('form_submit','','YES')\"><font class='top_settings_val'>"._QXZ("RELOAD NOW")."</font></a>";
+	// echo "<a href=\"#\" onclick=\"update_variables('form_submit','','YES')\"><font class='top_settings_val'>"._QXZ("RELOAD NOW")."</font></a>";
+	
 	if ($LOGuser_level > 7)
 		{
 		if (preg_match('/ALL\-ACTIVE/i',$group_string))
-			{echo " &nbsp; &nbsp; &nbsp; <a href=\"./admin.php?ADD=10\"><font class='top_settings_val'>"._QXZ("MODIFY")."</font></a> | \n";}
-		else
-			{echo " &nbsp; &nbsp; &nbsp; <a href=\"./admin.php?ADD=34&campaign_id=$group\"><font class='top_settings_val'>"._QXZ("MODIFY")."</font></a> | \n";}
-		}
-
-	if ($SUMMARYauth > 0)
-		{echo "<a href=\"./AST_timeonVDADallSUMMARY.php?RR=$RR&DB=$DB&adastats=$adastats\"><font class='top_settings_val'>"._QXZ("SUMMARY")."</font></a> \n";}
-
-	if ($RS_logoutLINK > 0)
-		{echo " | <a href=\"./admin.php?force_logout=1\"><font class='top_settings_val'>"._QXZ("LOGOUT")."</font></a> \n";}
-
-	echo "</FONT>\n";
-	}
-
-echo " &nbsp; &nbsp; &nbsp; <font class='top_settings_val'>"._QXZ("refresh").": <span id=refresh_countdown name=refresh_countdown></span></font>\n\n";
-
-if (!preg_match("/WALL|LIMITED/",$report_display_type))
-	{
-	if ($is_webphone == 'Y')
-		{echo " &nbsp; &nbsp; &nbsp; <span id=webphone_visibility name=webphone_visibility><a href=\"#\" onclick=\"ShowWebphone('show');\"><font class='top_settings_val'>"._QXZ("webphone")." +</font></a></span>\n\n";}
-	else
-		{echo " &nbsp; &nbsp; &nbsp; <span id=webphone_visibility name=webphone_visibility></span>\n\n";}
-
-	if ($webphone_bufh > 10)
-		{echo "<BR><img src=\"images/pixel.gif\" width=1 height=$webphone_bufh>\n";}
-	echo "<BR>\n\n";
-
-
-	if ($adastats<2)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('adastats','');\"><span id=adastatsTXT>+ "._QXZ("VIEW MORE")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('adastats','');\"><span id=adastatsTXT>- "._QXZ("VIEW LESS")."</span></a>";}
-	if ($UGdisplay>0)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('UGdisplay','');\"><span id=UGdisplayTXT>"._QXZ("HIDE USER GROUP")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('UGdisplay','');\"><span id=UGdisplayTXT>"._QXZ("VIEW USER GROUP")."</span></a>";}
-	if ($SERVdisplay>0)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><span id=SERVdisplayTXT>"._QXZ("HIDE SERVER INFO")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><span id=SERVdisplayTXT>"._QXZ("SHOW SERVER INFO")."</span></a>";}
-	if ($CALLSdisplay>0)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><span id=CALLSdisplayTXT>"._QXZ("HIDE WAITING CALLS")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><span id=CALLSdisplayTXT>"._QXZ("SHOW WAITING CALLS")."</span></a>";}
-	if ($ALLINGROUPstats>0)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><span id=ALLINGROUPstatsTXT>"._QXZ("HIDE IN-GROUP STATS")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><span id=ALLINGROUPstatsTXT>"._QXZ("SHOW IN-GROUP STATS")."</span></a>";}
-	if ($PHONEdisplay>0)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><span id=PHONEdisplayTXT>"._QXZ("HIDE PHONES")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><span id=PHONEdisplayTXT>"._QXZ("SHOW PHONES")."</span></a>";}
-	if ($MONITORdisplay>0)
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><span id=MONITORdisplayTXT>"._QXZ("HIDE MONITORS")."</span></a>";}
-	else
-		{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><span id=MONITORdisplayTXT>"._QXZ("SHOW MONITORS")."</span></a>";}
-	if ($RS_hide_CUST_info < 1)
-		{
-		if ($CUSTPHONEdisplay>0)
-			{echo "<a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><span id=CUSTPHONEdisplayTXT>"._QXZ("HIDE CUSTPHONES")."</span></a>";}
-		else
-			{echo "<a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><span id=CUSTPHONEdisplayTXT>"._QXZ("SHOW CUSTPHONES")."</span></a>";}
-		}
-	if ($LOGuser_level >= $CUSTINFOminUL) 
-		{
-		if ($RS_hide_CUST_info < 1)
 			{
-			if ($CUSTINFOdisplay>0)
-				{echo " <a  class=\"btn rounded-pill btn-primary waves-effect waves-light\"href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><span id=CUSTINFOdisplayTXT>"._QXZ("HIDE CUST INFO")."</span></a>";}
-			else
-				{echo " <a class=\"btn rounded-pill btn-primary waves-effect waves-light\" href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><span id=CUSTINFOdisplayTXT>"._QXZ("SHOW CUST INFO")."</span></a>";}
+				//echo " &nbsp; &nbsp; &nbsp; <a href=\"./admin.php?ADD=10\"><font class='top_settings_val'>"._QXZ("MODIFY")."</font></a> | \n";
+			}
+		else
+			{
+				//echo " &nbsp; &nbsp; &nbsp; <a href=\"./admin.php?ADD=34&campaign_id=$group\"><font class='top_settings_val'>"._QXZ("MODIFY")."</font></a> | \n";
 			}
 		}
-	}
+
+	// if ($SUMMARYauth > 0)
+	// 	{echo "<a class=\"btn btn-soft-success material-shadow-none\" href=\"./AST_timeonVDADallSUMMARY.php?RR=$RR&DB=$DB&adastats=$adastats\">"._QXZ("SUMMARY")."</a><br> \n";}
+
+	// if ($RS_logoutLINK > 0)
+	// 	{echo " | <a href=\"./admin.php?force_logout=1\"><font class='top_settings_val'>"._QXZ("LOGOUT")."</font></a> \n";}
+
+	// echo "</FONT>\n";
+	// }
+
+//echo " &nbsp; &nbsp; &nbsp; <font class='top_settings_val'>"._QXZ("refresh").": <span id=refresh_countdown name=refresh_countdown></span></font>\n\n";
+
+// if (!preg_match("/WALL|LIMITED/",$report_display_type))
+// 	{
+// 	if ($is_webphone == 'Y')
+// 		{echo " &nbsp; &nbsp; &nbsp; <span id=webphone_visibility name=webphone_visibility><a href=\"#\" onclick=\"ShowWebphone('show');\"><font class='top_settings_val'>"._QXZ("webphone")." +</font></a></span>\n\n";}
+// 	else
+// 		{echo " &nbsp; &nbsp; &nbsp; <span id=webphone_visibility name=webphone_visibility></span>\n\n";}
+
+// 	if ($webphone_bufh > 10)
+// 		{echo "<BR><img src=\"images/pixel.gif\" width=1 height=$webphone_bufh>\n";}
+// 	echo "<BR>\n\n";
+
+
+	// if ($adastats<2)
+	
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('adastats','');\"><span id=adastatsTXT><i class=\"ri-add-line align-middle me-1\"></i> "._QXZ("VIEW MORE")."</span></a>";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('adastats','');\"><span id=adastatsTXT><i class=\"ri-add-line align-middle me-1\"></i> "._QXZ("VIEW LESS")."</span></a>";}
+	// if ($UGdisplay>0)
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('UGdisplay','');\"><span id=UGdisplayTXT>"._QXZ("HIDE USER GROUP")."</span></a>";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('UGdisplay','');\"><span id=UGdisplayTXT>"._QXZ("VIEW USER GROUP")."</span></a>";}
+	// if ($SERVdisplay>0)
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><span id=SERVdisplayTXT>"._QXZ("HIDE SERVER INFO")."</span></a>";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('SERVdisplay','');\"><span id=SERVdisplayTXT>"._QXZ("SHOW SERVER INFO")."</span></a>";}
+	// if ($CALLSdisplay>0)
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><span id=CALLSdisplayTXT>"._QXZ("HIDE WAITING CALLS")."</span></a>";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('CALLSdisplay','');\"><span id=CALLSdisplayTXT>"._QXZ("SHOW WAITING CALLS")."</span></a>";}
+	// if ($ALLINGROUPstats>0)
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><span id=ALLINGROUPstatsTXT>"._QXZ("HIDE IN-GROUP STATS")."</span></a>";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('ALLINGROUPstats','');\"><span id=ALLINGROUPstatsTXT>"._QXZ("SHOW IN-GROUP STATS")."</span></a>";}
+	// if ($PHONEdisplay>0)
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><span id=PHONEdisplayTXT>"._QXZ("HIDE PHONES")."</span></a>";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('PHONEdisplay','');\"><span id=PHONEdisplayTXT>"._QXZ("SHOW PHONES")."</span></a>";}
+	// if ($MONITORdisplay>0)
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><span id=MONITORdisplayTXT>"._QXZ("HIDE MONITORS")."</span></a> &nbsp;";}
+	// else
+	// 	{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('MONITORdisplay','');\"><span id=MONITORdisplayTXT>"._QXZ("SHOW MONITORS")."</span></a> &nbsp;";}
+	// if ($RS_hide_CUST_info < 1)
+	// 	{
+	// 	if ($CUSTPHONEdisplay>0)
+	// 		{echo "<a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><span id=CUSTPHONEdisplayTXT>"._QXZ("HIDE CUSTPHONES")."</span></a>";}
+	// 	else
+	// 		{echo "<a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('CUSTPHONEdisplay','');\"><span id=CUSTPHONEdisplayTXT>"._QXZ("SHOW CUSTPHONES")."</span></a>";}
+	// 	}
+	// if ($LOGuser_level >= $CUSTINFOminUL) 
+	// 	{
+	// 	if ($RS_hide_CUST_info < 1)
+	// 		{
+	// 		if ($CUSTINFOdisplay>0)
+	// 			{echo " <a  class=\"btn btn-sm btn-success\"href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><span id=CUSTINFOdisplayTXT>"._QXZ("HIDE CUST INFO")."</span></a>";}
+	// 		else
+	// 			{echo " <a class=\"btn btn-sm btn-success\" href=\"#\" onclick=\"update_variables('CUSTINFOdisplay','');\"><span id=CUSTINFOdisplayTXT>"._QXZ("SHOW CUST INFO")."</span></a>";}
+	// 		}
+	// 	}
+	// }
 
 #echo "</TD></TR></TABLE>";
 ##### END header formatting #####

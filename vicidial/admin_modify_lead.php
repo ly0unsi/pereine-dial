@@ -605,6 +605,7 @@ if ($SSadmin_screen_colors != 'default')
 #############################################
 if ($modify_log_submit>0)
 	{
+		
 	if ( ($LOGmodify_leads == '3') or ($LOGmodify_leads == '4') )
 		{
 		if (strlen($modify_log_status)>0)
@@ -686,6 +687,7 @@ if ($modify_log_submit>0)
 ################################
 if ($enable_gdpr_download_deletion>0) 
 	{
+		
 	$stmt="SELECT export_gdpr_leads from vicidial_users where user='$PHP_AUTH_USER' and export_gdpr_leads >= 1;";
 	$rslt=mysql_to_mysqli($stmt, $link);
 	$row=mysqli_fetch_row($rslt);
@@ -693,6 +695,7 @@ if ($enable_gdpr_download_deletion>0)
 
 	if ($gdpr_display>=1 && $gdpr_action && $lead_id)
 		{
+			
 		$table_array=array("vicidial_list", "recording_log", "vicidial_log", "vicidial_xfer_log", "vicidial_closer_log", "vicidial_carrier_log", "vicidial_agent_log");
 		$date_field_array=array("entry_date", "start_time", "call_date", "call_date", "call_date", "call_date", "event_time");
 		$purge_field_array=array(
@@ -772,7 +775,7 @@ if ($enable_gdpr_download_deletion>0)
 			if ($DB) {echo "|$stmt|\n";}
 			$rslt=mysql_to_mysqli($stmt, $link);
 			}
-
+			
 		$HTML_text.="<BR><BR>";
 		$HTML_text.="<TABLE width=1000 cellspacing=1 cellpadding=5>\n";
 		$HTML_text.="<tr>\n";
@@ -1139,7 +1142,9 @@ echo "<html>\n";
 echo "<head>\n";
 echo "<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n";
 echo "<TITLE>"._QXZ("Modify Lead")."</TITLE>\n";
+
 ?>
+
 <STYLE type="text/css">
 <!--
 body 
@@ -1217,6 +1222,7 @@ if (!IE) document.captureEvents(Event.MOUSEMOVE);
 ##############################################
 if ( ($LOGmodify_leads == '3') or ($LOGmodify_leads == '4') )
 	{
+		
 	echo "vicidial_log_mod = new Array('');\n";
 	echo "vicidial_closer_log_mod = new Array('');\n";
 	echo "vicidial_agent_log_mod = new Array('');\n";
@@ -1539,6 +1545,7 @@ else
 		echo "</script>\n";
 		echo "<link rel=\"stylesheet\" href=\"calendar.css\">\n";
 		echo "</head><BODY BGCOLOR=white marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>\n";
+		
 		echo "<span style=\"position:absolute;left:0px;top:0px;z-index:20;\" id=admin_header>";
 
 		$short_header=1;

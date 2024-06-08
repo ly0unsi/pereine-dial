@@ -259,7 +259,7 @@ if ($closer_display>0)
 </script> -->
 <?php 
 echo "<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n";
-//echo"<META HTTP-EQUIV=Refresh CONTENT=\"4; URL=$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display\">\n";
+echo"<META HTTP-EQUIV=Refresh CONTENT=\"4; URL=$PHP_SELF?server_ip=$server_ip&DB=$DB&reset_counter=$reset_counter&closer_display=$closer_display\">\n";
 echo "<TITLE>"._QXZ("Server-Specific Real-Time Report")."</TITLE></HEAD><BODY BGCOLOR=WHITE marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>\n";
 
 
@@ -302,7 +302,7 @@ if ($closer_display>0) {$closer_display_reverse=0;   $closer_reverse_link=_QXZ("
 else {$closer_display_reverse=1;   $closer_reverse_link=_QXZ("CLOSER");}
 echo '<div class="row h-100" >';
 echo '<div class="col-xl-9">';
-echo '<div class="card">';
+echo '<div class="card" id="load_tweets">';
 echo '<div class="card-body p-0">';
 echo '<div class="alert border-0 alert-secondary material-shadow" role="alert">';
 echo '<i data-feather="alert-triangle" class="text-warning me-2 icon-sm"></i>';
@@ -538,7 +538,7 @@ $talking_to_print = mysqli_num_rows($rslt);
 	}
 	else
 	{
-		echo '<div id="load_tweets">';
+		echo '<div >';
 	echo "**************************************************************************************\n";
 	echo "**************************************************************************************\n";
 	echo "********************************* "._QXZ("NO AGENTS ON CALLS",18)." *********************************\n";

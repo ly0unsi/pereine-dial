@@ -765,7 +765,9 @@ while ($UUgroups_to_print > $o)
 
 
 
-require("admin_header.php");
+// require("admin_header.php");
+ require("pereine/velzon_header.php");
+
 
 if ( ($modify_languages < 1) or ($LOGuser_level < 8) )
 	{
@@ -1381,8 +1383,12 @@ if ($ADD==363111111111)
 			$modify_url = "$PHP_SELF?ADD=363111111111&language_id=$language_id";
 			$modify_footer_refresh=1;
 			}
+
+			echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
 		echo "<TABLE WIDTH=850><TR><TD>\n";
-		echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+		// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
 		$stmt="SELECT language_id,language_description,language_code,user_group,modify_date,active from vicidial_languages where language_id='$language_id' $LOGadmin_viewable_groupsSQL;";
 		if ($DB) {echo "$stmt\n";}
@@ -1478,6 +1484,8 @@ if ($ADD==363111111111)
 ######################
 if ($ADD==163000000000)
 	{
+
+		
 	echo "<TABLE><TR><TD>\n";
 	echo "<img src=\"images/icon_languages.png\" width=42 height=42 align=left> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
@@ -1485,6 +1493,10 @@ if ($ADD==163000000000)
 	if ($DB) {echo "$stmt\n";}
 	$rslt=mysql_to_mysqli($stmt, $link);
 	$lang_to_print = mysqli_num_rows($rslt);
+
+	echo '<div class="main-content">';
+	echo '<div class="page-content">';
+	echo '<div class="container-fluid">';
 
 	echo "<br>"._QXZ("LANGUAGE LISTINGS").":\n";
 	echo "<center><TABLE width=$section_width cellspacing=0 cellpadding=1>\n";

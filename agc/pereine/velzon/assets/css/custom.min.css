@@ -63,4 +63,166 @@ body {
 }
 
 
+
+
+/* phone css  */
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+input {
+    font-size: 20px;
+    color: #424242;
+    font-weight: 400;
+}
+
+input.number-input {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 0;
+    -webkit-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+    -moz-box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+    box-shadow: 0px 0px 17px -1px rgba(132, 132, 132, 0.15);
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.phone {
+    width: 350px;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
+.phone span.title {
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+}
+
+.phone .phone-container {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.phone .phone-container .keyboard {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.phone .phone-container .keyboard .number {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+}
+
+.phone .phone-container .keyboard .number.aling-right {
+    text-align: right;
+    width: 100%;
+}
+
+.phone .phone-container .keyboard .number span {
+    font-size: 24px;
+    color: white;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.phone .phone-container .keyboard .number span.call-button {
+    opacity: 0;
+    transition: 250ms;
+}
+
+.phone .phone-container .keyboard .number span.call-button.show {
+    opacity: 1;
+}
+
+.phone .phone-container .keyboard .number span.call-button img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.phone .phone-container .keyboard .number span i {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    background: #293355;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: 250ms;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+    box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+}
+
+.phone .phone-container .keyboard .number span i.delete,
+i.call {
+    background: #ebebeb !important;
+    box-shadow: 0 0 0 0 !important;
+    -webkit-box-shadow: 0 0 0 0 !important;
+    -moz-box-shadow: 0 0 0 0 !important;
+    -ms-box-shadow: 0 0 0 0 !important;
+    color: #232c49 !important;
+}
+
+.phone .phone-container .keyboard .number span i.delete img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.phone .phone-container .keyboard .number span:hover i {
+    color: rgb(210, 210, 210);
+    background-color: #212943;
+}
+
+
+
+.phone .phone-container .keyboard .number span:active i {
+    transform: translateY(1px);
+    -webkit-box-shadow: 5px 5px 24px 0px rgba(132, 132, 132, 0.18);
+    -moz-box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+    box-shadow: 5px 5px 16px 0px rgba(132, 132, 132, 0.18);
+}
+
+.phone .phone-container .keyboard .number span:active i.delete {
+    box-shadow: 0 0 0 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    -ms-box-shadow: 0 0 0 0;
+    transform: translateY(0px);
+}
+
+.phone .phone-container .keyboard .number span:active i.delete img {
+    transtiion: 250ms;
+}
+
+.phone .phone-container .keyboard .number span:active i.delete:active img {
+    transform: translateY(2px);
+}
+
 /*# sourceMappingURL=custom.min.css.map */

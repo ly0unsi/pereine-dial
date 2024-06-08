@@ -292,7 +292,8 @@ $regexLOGallowed_campaigns = " $LOGallowed_campaigns ";
 
 
 ?>
-<html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+
 <head>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <title>
@@ -318,7 +319,8 @@ $lists_color =		'#E6E6E6';
 $subcamp_color =	'#C6C6C6';
 ##### END Set variables to make header show properly #####
 
-require("admin_header.php");
+// require("admin_header1.php");
+require("pereine/velzon_header.php");
 
 $label_title =				_QXZ("Title");
 $label_first_name =			_QXZ("First");
@@ -372,108 +374,515 @@ echo "<BR>\n";
 if ( (!$vendor_id) and (!$phone)  and (!$lead_id) and (!$log_phone)  and (!$log_lead_id) and (!$log_phone_archive)  and (!$log_lead_id_archive) and ( (strlen($status)<1) and (strlen($list_id)<1) and (strlen($user)<1) and (strlen($owner)<1) ) and ( (strlen($first_name)<1) and (strlen($last_name)<1) and (strlen($email)<1) ))
 	{
 	### Lead search
-	echo "<br><center>\n";
+	
+	// echo "<br><center>\n";
+	
 	echo "<form method=post name=search action=\"$PHP_SELF\">\n";
 	echo "<input type=hidden name=DB value=\"$DB\">\n";
-	echo "<TABLE CELLPADDING=3 CELLSPACING=3>";
-	echo "<TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center><font color=#FFFFFF><b>"._QXZ("Lead Search Options").":</b></font></TD>";
-	echo "</TR>";
+	echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
+
+
+
+		// echo '<div class="row">';
+		// echo '<div class="col-lg-12">';
+		// echo '<div class="card">';
+		// echo '<div class="card-header align-items-center d-flex">';
+		// echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Lead Search Options").":</h4>";
+		// echo '<div class="flex-shrink-0">';
+		// // echo '<div class="form-check form-switch form-switch-right form-switch-md">';
+		// // echo '<label for="input-group-btncheck-showcode" class="form-label text-muted">Show Code</label>';
+		// // echo '<input class="form-check-input code-switcher" type="checkbox" id="input-group-btncheck-showcode">';
+		// // echo '</div>';
+		// echo '</div>';
+		// echo '</div><!-- end card header -->';
+		// echo '<div class="card-body">';
+		// echo '<div class="live-preview">';
+		// echo '<div>';
+		// // echo '<p class="text-muted">Use any checkbox, radio, or button option within an input group’s addon instead of text. We recommend adding <code>mt-0</code> class to the <code>form-check-input</code> when there’s no visible text next to the input.</p>';
+		// echo '<div class="row g-3">';
+		// echo '<div class="col-lg-3">';
+		// echo '<div class="input-group">';
+		// // echo '<div class="input-group-text">';
+		// // echo '<input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">';
+		// // echo '</div>';
+		// // echo '<input type="text" class="form-control" aria-label="Text input with checkbox">';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-12">';
+		// // echo '<div class="input-group">';
+		// // echo '<div class="input-group-text">';
+		// // echo '<input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">';
+		// // echo '</div>';
+		// // echo '<input type="text" class="form-control" aria-label="Text input with radio button">';
+		// // echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_vendor_lead_code("._QXZ("vendor lead code")."):</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="vendor_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_phone_number:</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="phone" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo "<p class=\"text-muted\">$label_alt_phone "._QXZ("search").":</p>";
+		// echo '<select name="alt_phone_search" class="form-select mb-3" aria-label=".form-select-lg example">';
+		// echo "<option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option SELECTED value='$alt_phone_search'>"._QXZ("$alt_phone_search")."</option></select>";
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("Lead ID").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="lead_id"  type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("Status").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="status" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("List ID").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="list_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("User").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="user" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("Owner").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="owner" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_first_name:</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="first_name" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_email:</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="email" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_vendor_lead_code("._QXZ("vendor lead code")."):</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="vendor_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<!--end col-->';
+		// echo '</div>';
+		// echo '<!--end row-->';
+		
+
+
+
+
+
+
+
+
+	// echo "<TABLE color=#$SSstd_row2_background CELLPADDING=3 CELLSPACING=3>";
+	// echo "<TR >";
+	// echo "<TD colspan=3 align=center><font color=#$SSstd_row2_background><b>"._QXZ("Lead Search Options").":</b></font></TD>";
+	// echo "</TR>";
 
 	$archive_stmt="SHOW TABLES LIKE '%vicidial_list_archive%'";
 	$archive_rslt=mysql_to_mysqli($archive_stmt, $link);
 	if (mysqli_num_rows($archive_rslt)>0) 
 		{
-		echo "<TR bgcolor=#$SSstd_row2_background>";
-		echo "<TD ALIGN=right>"._QXZ("Archive search").": &nbsp; </TD><TD ALIGN=left><select size=1 name=archive_search><option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option	SELECTED value='$archive_search'>"._QXZ("$archive_search")."</option></select></TD>";
-		echo "<TD> &nbsp; </TD>\n";
-		echo "</TR><TR bgcolor=#$SSmenu_background>";
-		echo "<TD colspan=3 align=center height=1></TD></TR>";
+
+
+			echo '<div class="row">';
+			echo '<div class="col-lg-12">';
+			echo '<div class="card">';
+			echo '<div class="card-header align-items-center d-flex">';
+			echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Lead Search Options").":</h4>";
+			echo '<div class="flex-shrink-0">';
+			// echo '<div class="form-check form-switch form-switch-right form-switch-md">';
+			// echo '<label for="input-group-btncheck-showcode" class="form-label text-muted">Show Code</label>';
+			// echo '<input class="form-check-input code-switcher" type="checkbox" id="input-group-btncheck-showcode">';
+			// echo '</div>';
+			echo '</div>';
+			echo '</div><!-- end card header -->';
+			echo '<div class="card-body">';
+			echo '<div class="live-preview">';
+			echo '<div>';
+			// echo '<p class="text-muted">Use any checkbox, radio, or button option within an input group’s addon instead of text. We recommend adding <code>mt-0</code> class to the <code>form-check-input</code> when there’s no visible text next to the input.</p>';
+			echo '<div class="row g-3">';
+			echo '<div class="col-lg-3">';
+			echo '<div class="input-group">';
+			// echo '<div class="input-group-text">';
+			// echo '<input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">';
+			// echo '</div>';
+			// echo '<input type="text" class="form-control" aria-label="Text input with checkbox">';
+			echo '</div>';
+			echo '</div>';
+			echo '<div class="col-lg-12">';
+			// echo '<div class="input-group">';
+			// echo '<div class="input-group-text">';
+			// echo '<input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">';
+			// echo '</div>';
+			// echo '<input type="text" class="form-control" aria-label="Text input with radio button">';
+			// echo '</div>';
+			echo '</div>';
+			echo '<div class="col-lg-3">';
+			echo "<p class=\"text-muted\">$label_vendor_lead_code("._QXZ("vendor lead code")."):</p>";
+			echo '<div class="input-group">';
+			echo '<input name="vendor_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+			echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+			// echo '<button class="btn btn-success" type="button">Button</button>';
+			echo '</div>';
+			echo '</div>';
+			echo '<div class="col-lg-3">';
+			echo "<p class=\"text-muted\">$label_phone_number:</p>";
+			echo '<div class="input-group">';
+			echo '<input name="phone" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+			echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+			// echo '<button class="btn btn-success" type="button">Button</button>';
+			echo '</div>';
+			echo "<p class=\"text-muted\">$label_alt_phone "._QXZ("search").":</p>";
+			echo '<select name="alt_phone_search" class="form-select mb-3" aria-label=".form-select-lg example">';
+			echo "<option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option SELECTED value='$alt_phone_search'>"._QXZ("$alt_phone_search")."</option></select>";
+			echo '</div>';
+
+		// echo "<TR bgcolor=#$SSstd_row2_background>";
+		// echo "<TD ALIGN=right>"._QXZ("Archive search").": &nbsp; </TD><TD ALIGN=left><select size=1 name=archive_search><option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option	SELECTED value='$archive_search'>"._QXZ("$archive_search")."</option></select></TD>";
+		// echo "<TD> &nbsp; </TD>\n";
+		// echo "</TR><TR bgcolor=#$SSmenu_background>";
+		// echo "<TD colspan=3 align=center height=1></TD></TR>";
+
+
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("Lead ID").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="lead_id"  type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("Status").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="status" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("List ID").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="list_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("User").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="user" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">"._QXZ("Owner").":</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="owner" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_first_name:</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="first_name" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_email:</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="email" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<div class="col-lg-3">';
+		// echo "<p class=\"text-muted\">$label_vendor_lead_code("._QXZ("vendor lead code")."):</p>";
+		// echo '<div class="input-group">';
+		// echo '<input name="vendor_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		// echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// // echo '<button class="btn btn-success" type="button">Button</button>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '</div>';
+		// echo '<!--end col-->';
+		// echo '</div>';
+		// echo '<!--end row-->';
+
 		}
+		echo '<div class="row">';
+		echo '<div class="col-lg-12">';
+		echo '<div class="card">';
 
-	echo "<TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>$label_vendor_lead_code("._QXZ("vendor lead code")."): &nbsp; </TD><TD ALIGN=left><input type=text name=vendor_id size=10 maxlength=20></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center height=1></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+		echo '<div class="alert alert-secondary alert-border-left alert-dismissible fade show material-shadow" role="alert">';
+		
+		// echo '<div class="card-header align-items-center d-flex">';
+		
+		echo "<h2 >"._QXZ("Lead Search Options").":</h2>";
+		
+		echo '<div class="flex-shrink-0">';
+		// echo '<div class="form-check form-switch form-switch-right form-switch-md">';
+		// echo '<label for="input-group-btncheck-showcode" class="form-label text-muted">Show Code</label>';
+		// echo '<input class="form-check-input code-switcher" type="checkbox" id="input-group-btncheck-showcode">';
+		// echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		// echo '</div><!-- end card header -->';
+		echo '<div class="card-body">';
+		echo '<div class="live-preview">';
+		echo '<div>';
+		// echo '<p class="text-muted">Use any checkbox, radio, or button option within an input group’s addon instead of text. We recommend adding <code>mt-0</code> class to the <code>form-check-input</code> when there’s no visible text next to the input.</p>';
+		echo '<div class="row g-3">';
+		echo '<div class="col-lg-3">';
+		echo '<div class="input-group">';
+		// echo '<div class="input-group-text">';
+		// echo '<input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">';
+		// echo '</div>';
+		// echo '<input type="text" class="form-control" aria-label="Text input with checkbox">';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-9">';
+		// echo '<div class="input-group">';
+		// echo '<div class="input-group-text">';
+		// echo '<input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input">';
+		// echo '</div>';
+		// echo '<input type="text" class="form-control" aria-label="Text input with radio button">';
+		// echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">$label_vendor_lead_code("._QXZ("vendor lead code")."):</p>";
+		echo '<div class="input-group">';
+		echo '<input name="vendor_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">$label_phone_number:</p>";
+		echo '<div class="input-group">';
+		echo '<input name="phone" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		// echo "<p class=\"text-muted\">$label_alt_phone "._QXZ("search").":</p>";
+		// echo '<select name="alt_phone_search" class="form-select mb-3" aria-label=".form-select-lg example">';
+		// echo "<option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option SELECTED value='$alt_phone_search'>"._QXZ("$alt_phone_search")."</option></select>";
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">"._QXZ("Lead ID").":</p>";
+		echo '<div class="input-group">';
+		echo '<input name="lead_id"  type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">"._QXZ("Status").":</p>";
+		echo '<div class="input-group">';
+		echo '<input name="status" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">"._QXZ("List ID").":</p>";
+		echo '<div class="input-group">';
+		echo '<input name="list_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">"._QXZ("User").":</p>";
+		echo '<div class="input-group">';
+		echo '<input name="user" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">"._QXZ("Owner").":</p>";
+		echo '<div class="input-group">';
+		echo '<input name="owner" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">$label_first_name:</p>";
+		echo '<div class="input-group">';
+		echo '<input name="first_name" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">$label_email:</p>";
+		echo '<div class="input-group">';
+		echo '<input name="email" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="col-lg-3">';
+		echo "<p class=\"text-muted\">$label_vendor_lead_code("._QXZ("vendor lead code")."):</p>";
+		echo '<div class="input-group">';
+		echo '<input name="vendor_id" type="text" class="form-control" aria-label="Recipients username with two button addons">';
+		echo "<input class=\"btn btn-primary\" TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'>";
+		// echo '<button class="btn btn-success" type="button">Button</button>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '<!--end col-->';
+		echo '</div>';
+		echo '<!--end row-->';
+		
+	// echo "<TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>$label_vendor_lead_code("._QXZ("vendor lead code")."): &nbsp; </TD><TD ALIGN=left><input type=text name=vendor_id size=10 maxlength=20></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center height=1></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>$label_phone_number: &nbsp; </TD><TD ALIGN=left><input type=text name=phone size=14 maxlength=18></TD>";
-	echo "<TD rowspan=2><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>$label_alt_phone "._QXZ("search").": &nbsp; </TD><TD ALIGN=left><select size=1 name=alt_phone_search><option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option SELECTED value='$alt_phone_search'>"._QXZ("$alt_phone_search")."</option></select></TD>";
+	// echo "<TD ALIGN=right>$label_phone_number: &nbsp; </TD><TD ALIGN=left><input type=text name=phone size=14 maxlength=18></TD>";
+	// echo "<TD rowspan=2><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>$label_alt_phone "._QXZ("search").": &nbsp; </TD><TD ALIGN=left><select size=1 name=alt_phone_search><option value='No'>"._QXZ("No")."</option><option value='Yes'>"._QXZ("Yes")."</option><option SELECTED value='$alt_phone_search'>"._QXZ("$alt_phone_search")."</option></select></TD>";
 
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center height=1></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center height=1></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>"._QXZ("Lead ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=lead_id size=10 maxlength=10></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center height=3></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("Lead ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=lead_id size=10 maxlength=10></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center height=3></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>"._QXZ("Status").": &nbsp; </TD><TD ALIGN=left><input type=text name=status size=7 maxlength=6></TD>";
-	echo "<TD rowspan=4><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>"._QXZ("List ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=list_id size=15 maxlength=14></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>"._QXZ("User").": &nbsp; </TD><TD ALIGN=left><input type=text name=user size=15 maxlength=20></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>"._QXZ("Owner").": &nbsp; </TD><TD ALIGN=left><input type=text name=owner size=15 maxlength=50></TD>";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center height=1></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("Status").": &nbsp; </TD><TD ALIGN=left><input type=text name=status size=7 maxlength=6></TD>";
+	// echo "<TD rowspan=4><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("List ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=list_id size=15 maxlength=14></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("User").": &nbsp; </TD><TD ALIGN=left><input type=text name=user size=15 maxlength=20></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("Owner").": &nbsp; </TD><TD ALIGN=left><input type=text name=owner size=15 maxlength=50></TD>";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center height=1></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>$label_first_name: &nbsp; </TD><TD ALIGN=left><input type=text name=first_name size=15 maxlength=30></TD>";
-	echo "<TD rowspan=2><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>$label_last_name: &nbsp; </TD><TD ALIGN=left><input type=text name=last_name size=15 maxlength=30></TD>";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center height=1></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "<TD ALIGN=right>$label_email: &nbsp; </TD><TD ALIGN=left><input type=text name=email size=15 maxlength=30></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
-	echo "</TR>";
+	// echo "<TD ALIGN=right>$label_first_name: &nbsp; </TD><TD ALIGN=left><input type=text name=first_name size=15 maxlength=30></TD>";
+	// echo "<TD rowspan=2><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>$label_last_name: &nbsp; </TD><TD ALIGN=left><input type=text name=last_name size=15 maxlength=30></TD>";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center height=1></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>$label_email: &nbsp; </TD><TD ALIGN=left><input type=text name=email size=15 maxlength=30></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "</TR>";
 
 
 	### Log search
-	echo "<br><center>\n";
-	echo "<TD colspan=3 align=center> &nbsp; </TD>";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center><font color=#FFFFFF><b>"._QXZ("Log Search Options").":</b></font></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<br><center>\n";
+	// echo "<TD colspan=3 align=center> &nbsp; </TD>";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center><font color=#FFFFFF><b>"._QXZ("Log Search Options").":</b></font></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>"._QXZ("Lead ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_lead_id size=10 maxlength=10></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=cente height=1></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("Lead ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_lead_id size=10 maxlength=10></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=cente height=1></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>$label_phone_number "._QXZ("Dialed").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_phone size=18 maxlength=18></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR>";
-	echo "<TD colspan=3 align=center> &nbsp; </TD>";
-	echo "</TR>";
-	echo "<TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center><font color=#FFFFFF><b>"._QXZ("Archived Log Search Options").":</b></font></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>$label_phone_number "._QXZ("Dialed").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_phone size=18 maxlength=18></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR>";
+	// echo "<TD colspan=3 align=center> &nbsp; </TD>";
+	// echo "</TR>";
+	// echo "<TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center><font color=#FFFFFF><b>"._QXZ("Archived Log Search Options").":</b></font></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>"._QXZ("Lead ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_lead_id_archive size=10 maxlength=10></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR bgcolor=#$SSmenu_background>";
-	echo "<TD colspan=3 align=center height=1></TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>"._QXZ("Lead ID").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_lead_id_archive size=10 maxlength=10></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR bgcolor=#$SSmenu_background>";
+	// echo "<TD colspan=3 align=center height=1></TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
-	echo "<TD ALIGN=right>$label_phone_number "._QXZ("Dialed").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_phone_archive size=18 maxlength=18></TD>";
-	echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
-	echo "</TR><TR>";
-	echo "<TD colspan=3 align=center> &nbsp; </TD>";
-	echo "</TR><TR bgcolor=#$SSstd_row2_background>";
+	// echo "<TD ALIGN=right>$label_phone_number "._QXZ("Dialed").": &nbsp; </TD><TD ALIGN=left><input type=text name=log_phone_archive size=18 maxlength=18></TD>";
+	// echo "<TD><INPUT TYPE=SUBMIT NAME=SUBMIT VALUE='"._QXZ("SUBMIT")."'></TD>\n";
+	// echo "</TR><TR>";
+	// echo "<TD colspan=3 align=center> &nbsp; </TD>";
+	// echo "</TR><TR bgcolor=#$SSstd_row2_background>";
 
 
-	echo "</TABLE>\n";
+	// echo "</TABLE>\n";
 	echo "</form>\n</center>\n";
 	echo "</body></html>\n";
 	exit;
@@ -515,8 +924,13 @@ else
 			}
 		else
 			{
+				
 			echo "<BR><b>"._QXZ("OUTBOUND LOG RESULTS").": $results_to_print</b><BR>\n";
-			echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
+			echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
+			echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=970>\n";
+			
 			echo "<TR BGCOLOR=BLACK>\n";
 			echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
 			echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LEAD ID")."</B> &nbsp;</FONT></TD>\n";
@@ -555,6 +969,9 @@ else
 					{$bgcolor='bgcolor="#'. $SSstd_row2_background .'"';} 
 				else
 					{$bgcolor='bgcolor="#'. $SSstd_row1_background .'"';}
+					echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
 				echo "<TR $bgcolor>\n";
 				echo "<TD ALIGN=LEFT><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$o</FONT></TD>\n";
 				echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1><A HREF=\"admin_modify_lead.php?lead_id=$row[0]&archive_search=$archive_search\" onclick=\"javascript:window.open('admin_modify_lead.php?lead_id=$row[0]&archive_search=$archive_search', '_blank');return false;\">$row[0]</A></FONT></TD>\n";
@@ -581,7 +998,11 @@ else
 			}
 		else
 			{
+				
 			echo "<BR><b>INBOUND LOG RESULTS: $results_to_print</b><BR>\n";
+			echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
 			echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
 			echo "<TR BGCOLOR=BLACK>\n";
 			echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
@@ -648,6 +1069,7 @@ else
 			else
 				{
 				echo "<BR><b>"._QXZ("INBOUND DID LOG RESULTS").": $results_to_print</b><BR>\n";
+				
 				echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
 				echo "<TR BGCOLOR=BLACK>\n";
 				echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
@@ -730,6 +1152,7 @@ else
 	##### BEGIN Log archive search #####
 	if ( (strlen($log_lead_id_archive)>0) or (strlen($log_phone_archive)>0) )
 		{
+			
 		if (strlen($log_lead_id_archive)>0)
 			{
 			$stmtA="SELECT lead_id,phone_number,campaign_id,call_date,status,user,list_id,length_in_sec,alt_dial from vicidial_log_archive where lead_id='" . mysqli_real_escape_string($link, $log_lead_id_archive) . "' $LOGallowed_listsSQL";
@@ -760,10 +1183,13 @@ else
 			echo "\n<br><br><center>\n";
 			echo "<b>"._QXZ("There are no outbound calls matching your search criteria")."</b><br><br>\n";
 			echo "</center>\n";
+			
 			}
 		else
 			{
+					
 			echo "<BR><b>"._QXZ("OUTBOUND LOG RESULTS").": $results_to_print</b><BR>\n";
+			
 			echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
 			echo "<TR BGCOLOR=BLACK>\n";
 			echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
@@ -829,7 +1255,11 @@ else
 			}
 		else
 			{
+				
 			echo "<BR><b>"._QXZ("INBOUND LOG RESULTS").": $results_to_print</b><BR>\n";
+			echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
 			echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
 			echo "<TR BGCOLOR=BLACK>\n";
 			echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
@@ -896,6 +1326,9 @@ else
 			else
 				{
 				echo "<BR><b>"._QXZ("INBOUND DID LOG RESULTS").": $results_to_print</b><BR>\n";
+				echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
 				echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
 				echo "<TR BGCOLOR=BLACK>\n";
 				echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
@@ -1147,21 +1580,63 @@ else
 		}
 	else
 		{
-		echo "<b>"._QXZ("RESULTS").": $results_to_print</b><BR><BR>\n";
-		echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
-		echo "<TR BGCOLOR=BLACK>\n";
-		echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LEAD ID")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("STATUS")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("VENDOR ID")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LAST AGENT")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LIST ID")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("PHONE")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("NAME")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("CITY")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("SECURITY")."</B> &nbsp;</FONT></TD>\n";
-		echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LAST CALL")."</B></FONT></TD>\n";
-		echo "</TR>\n";
+			echo '<div class="main-content">';
+		echo '<div class="page-content">';
+		echo '<div class="container-fluid">';
+		// echo "<b>"._QXZ("RESULTS").": $results_to_print</b><BR><BR>\n";
+		// echo "<TABLE BGCOLOR=WHITE CELLPADDING=1 CELLSPACING=0 WIDTH=770>\n";
+		// echo "<TR BGCOLOR=BLACK>\n";
+		// echo "<TD ALIGN=LEFT VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>#</B></FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LEAD ID")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("STATUS")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("VENDOR ID")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LAST AGENT")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LIST ID")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("PHONE")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("NAME")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("CITY")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("SECURITY")."</B> &nbsp;</FONT></TD>\n";
+		// echo "<TD ALIGN=CENTER VALIGN=TOP><FONT FACE=\"ARIAL,HELVETICA\" COLOR=WHITE><B>"._QXZ("LAST CALL")."</B></FONT></TD>\n";
+		// echo "</TR>\n";
+
+
+
+		echo '<div class="row">';
+		echo '<div class="col-xl-12">';
+		echo '<div class="card">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo "<h4 class=\"card-title mb-0 flex-grow-1\"><b>"._QXZ("RESULTS").": $results_to_print</b></h4>";
+		echo '<div class="flex-shrink-0">';
+		echo '</div>';
+		echo '</div><!-- end card header -->';
+		echo '';
+		echo '<div class="card-body">';
+		// echo '<p class="text-muted mb-4">Use .<code>table-striped-columns</code> to add zebra-striping to any table column.</p>';
+		// echo '';
+		echo '<div class="live-preview">';
+		echo '<div class="table-responsive table-card">';
+		echo '<table class="table align-middle table-nowrap table-striped-columns mb-0">';
+		echo '<thead class="table-light">';
+		echo '<tr>';
+		echo "<th scope=\"col\">"._QXZ("LEAD ID")."</th>";
+		echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
+		echo "<th scope=\"col\">"._QXZ("VENDOR ID")."</th>";
+		echo "<th scope=\"col\">"._QXZ("LAST AGENT")."</th>";
+		echo "<th scope=\"col\">"._QXZ("LIST ID")."</th>";
+		echo "<th scope=\"col\">"._QXZ("PHONE")."</th>";
+		echo "<th scope=\"col\">"._QXZ("NAME")."</th>";
+		echo "<th scope=\"col\">"._QXZ("CITY")."</th>";
+		echo "<th scope=\"col\">"._QXZ("SECURITY")."</th>";
+		echo "<th scope=\"col\">"._QXZ("LAST CALL")."</th>";
+		echo '</tr>';
+		echo '</thead>';
+		echo '<tbody>';
+		
+		
+		
+
+
+
 		$o=0;
 		while ($results_to_print > $o)
 			{
@@ -1225,21 +1700,34 @@ else
 				{$bgcolor='bgcolor="#'. $SSstd_row2_background .'"';} 
 			else
 				{$bgcolor='bgcolor="#'. $SSstd_row1_background .'"';}
-			echo "<TR $bgcolor>\n";
-			echo "<TD ALIGN=LEFT><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$o</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1><A HREF=\"admin_modify_lead.php?lead_id=$row[0]&archive_search=$archive_search&archive_log=$log_archive_link\" onclick=\"javascript:window.open('admin_modify_lead.php?lead_id=$row[0]&archive_search=$archive_search&archive_log=$log_archive_link', '_blank');return false;\">$row[0]</A></FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[3]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[5]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[4]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[7]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[11]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[13] $row[15]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[19]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[28]</FONT></TD>\n";
-			echo "<TD ALIGN=CENTER><FONT FACE=\"ARIAL,HELVETICA\" SIZE=1>$row[31]</FONT></TD>\n";
-			echo "</TR>\n";
+				
+			echo '<tr>';
+			// echo "<TD>$o</TD>";
+			echo "<TD ><A HREF=\"admin_modify_lead.php?lead_id=$row[0]&archive_search=$archive_search&archive_log=$log_archive_link\" onclick=\"javascript:window.open('admin_modify_lead.php?lead_id=$row[0]&archive_search=$archive_search&archive_log=$log_archive_link', '_blank');return false;\">$row[0]</A></TD>";
+			echo "<TD >$row[3]</TD>";
+			echo "<TD >$row[5]</TD>";
+			echo "<TD >$row[4]</TD>";
+			echo "<TD >$row[7]</TD>";
+			echo "<TD >$row[11]</TD>";
+			echo "<TD >$row[13] $row[15]</TD>";
+			echo "<TD >$row[19]</TD>";
+			echo "<TD >$row[28]</TD>";
+			echo "<TD >$row[31]</TD>";
+			echo '</tr>';
 			}
-		echo "</TABLE>\n";
+			
+		echo '</tbody>';
+		echo '</table>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card-body -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
+		echo '</div><!-- end row -->';
+		// echo "</TABLE>\n";
+
+
+
 		}
 	
 	if ($db_source == 'S')
