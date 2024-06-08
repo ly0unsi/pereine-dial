@@ -19273,7 +19273,7 @@ if ($ADD==44)
 		
 		exit;
 		}
-	$ADD=34;	# go to campaign modification form below
+		$ADD=10;	# go to campaign modification form below
 	}
 
 
