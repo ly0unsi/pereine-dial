@@ -2986,7 +2986,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 		// echo '</div>';
 		// echo '<div>';
 		// echo '<div class="avatar-sm flex-shrink-0">';
-		// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2">';
+		// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2">';
 		// echo '<i data-feather="users" class="text-info material-shadow"></i>';
 		// echo '</span>';
 		// echo '</div>';
@@ -3007,7 +3007,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 		// echo '</div>';
 		// echo '<div>';
 		// echo '<div class="avatar-sm flex-shrink-0">';
-		// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+		// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 		// echo '<i data-feather="activity" class="text-info"></i>';
 		// echo '</span>';
 		// echo '</div>';
@@ -3049,7 +3049,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 		// echo '</div>';
 		// echo '<div>';
 		// echo '<div class="avatar-sm flex-shrink-0">';
-		// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+		// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 		// echo '<i data-feather="external-link" class="text-info"></i>';
 		// echo '</span>';
 		// echo '</div>';
@@ -3072,7 +3072,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 // echo '</div>';
 // echo '<div>';
 // echo '<div class="avatar-sm flex-shrink-0">';
-// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2">';
+// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2">';
 // echo '<i data-feather="users" class="text-info material-shadow"></i>';
 // echo '</span>';
 // echo '</div>';
@@ -3093,7 +3093,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 // echo '</div>';
 // echo '<div>';
 // echo '<div class="avatar-sm flex-shrink-0">';
-// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 // echo '<i data-feather="activity" class="text-info"></i>';
 // echo '</span>';
 // echo '</div>';
@@ -3135,7 +3135,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 // echo '</div>';
 // echo '<div>';
 // echo '<div class="avatar-sm flex-shrink-0">';
-// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 // echo '<i data-feather="external-link" class="text-info"></i>';
 // echo '</span>';
 // echo '</div>';
@@ -3158,7 +3158,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 // echo '</div>';
 // echo '<div>';
 // echo '<div class="avatar-sm flex-shrink-0">';
-// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2">';
+// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2">';
 // echo '<i data-feather="users" class="text-info material-shadow"></i>';
 // echo '</span>';
 // echo '</div>';
@@ -3179,7 +3179,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 // echo '</div>';
 // echo '<div>';
 // echo '<div class="avatar-sm flex-shrink-0">';
-// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 // echo '<i data-feather="activity" class="text-info"></i>';
 // echo '</span>';
 // echo '</div>';
@@ -3221,7 +3221,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 // echo '</div>';
 // echo '<div>';
 // echo '<div class="avatar-sm flex-shrink-0">';
-// echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+// echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 // echo '<i data-feather="external-link" class="text-info"></i>';
 // echo '</span>';
 // echo '</div>';
@@ -3259,7 +3259,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 		echo '</div>';
 		echo '<div>';
 		echo '<div class="avatar-sm flex-shrink-0">';
-		echo '<span class="avatar-title bg-info-subtle rounded-circle fs-4">';
+		echo '<span  style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-4">';
 		echo '<i data-feather="users" class="ri-arrow-up-line align-middle"></i>';
 		echo '</span>';
 		echo '</div>';
@@ -3285,7 +3285,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 	echo '</div>';
 	echo '<div>';
 	echo '<div class="avatar-sm flex-shrink-0">';
-	echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+	echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 	echo '<i data-feather="activity" class="ri-arrow-up-line align-middle"></i>';
 	echo '</span>';
 	echo '</div>';
@@ -3303,9 +3303,9 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 		echo '<div class="card-body">';
 		echo '<div class="d-flex justify-content-between">';
 		echo '<div>';
-		echo '<h4 class="fw-medium text-white-50 mb-0">calls waiting for agents</h4>';
+		echo '<h4 class="fw-medium text-white mb-0">calls waiting for agents</h4>';
 		echo "<h2 class=\"mt-4 ff-secondary fw-semibold text-white\"><span class=\"counter-value\" data-target=\"3\">$out_live</span></h2>";
-		echo "<p class=\"mb-0 text-muted\">"._QXZ("Your agents today")."</p>";
+		echo "<p class=\"mb-0  text-white\">"._QXZ("Your agents today")."</p>";
 		echo '</div>';
 		echo '<div>';
 		echo '<div class="avatar-sm flex-shrink-0">';
@@ -3333,7 +3333,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 		echo '</div>';
 		echo '<div>';
 		echo '<div class="avatar-sm flex-shrink-0">';
-		echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+		echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 		echo '<i data-feather="external-link" class="ri-arrow-up-line align-middle"></i>';
 		echo '</span>';
 		echo '</div>';
@@ -3372,7 +3372,7 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='WALL_2') or ($rep
 	echo '</div>';
 	echo '<div>';
 	echo '<div class="avatar-sm flex-shrink-0">';
-	echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2">';
+	echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2">';
 	echo '<i data-feather="users" class="ri-arrow-up-line align-middle"></i>';
 	echo '</span>';
 	echo '</div>';
@@ -3567,21 +3567,23 @@ if ( ($report_display_type=='HTML') or ($report_display_type=='LIMITED') )
 
 
 	// $Aecho .= '<table class="table table-nowrap">';
+	$Aecho .=  '<div class="relative">';
 		$Aecho .=  '<div class="col-xl-8">';
-		$Aecho .=  '<div class="card">';
+	
 		$Aecho .= '<div class="card-header align-items-center d-flex">';
-		$Aecho .=  "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Agents Time On Calls Campaign").":</h4>";
+		$Aecho .=  "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("Agents Time On Calls   Campaign").":</h4>";
 		$Aecho .=  '<div class="flex-shrink-0">';
 		$Aecho .=  '</div>';
 		$Aecho .=  '</div><!-- end card header -->';
-		$Aecho .=  '</div> <!-- .card-->';
+		
 		$Aecho .= '</div> <!-- .col-->';
+
 		$Aecho .= '<table class="table table-nowrap">';
-		$Aecho .= "<tr>";
+		// $Aecho .= "<tr>";
 	// $Aecho .= "<td><h4 class=\"card-title mb-0 flex-grow-1\">&nbsp;"._QXZ("Agents Time On Calls Campaign").":<h4/></td>";
 	// $Aecho .= "<td colspan=3><font class='top_settings_val'>&nbsp;</font></td>";
 	//  $Aecho .= "<td colspan=4><font class='top_head_val'>$NOW_TIME\n</font></td>";
-		$Aecho .= "</tr>\n";
+		// $Aecho .= "</tr>\n";
 #	$Aecho .= "<tr bgcolor='#C6C6C6'>";
 #	$Aecho .= "<td><font class='top_head_key'>"._QXZ("STATUS")."</font></td>";
 #	$Aecho .= "<td><font class='top_head_key'>"._QXZ("CAMPAIGN")."</font></td>";
@@ -4573,8 +4575,8 @@ if ($talking_to_print > 0)
 				$G = '<SPAN class="blank">'; $EG = '</SPAN>'; $tr_class='';
 				if ($call_time_S >= $rt_report_times["paused_short_time"]) {$G='<SPAN class="khaki"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $rt_report_times["paused_medium_time"]) {$G='<SPAN class="yellow"><B>'; $EG='</B></SPAN>'; $tr_class='';}
-				if ($call_time_S >= $rt_report_times["paused_long_time"]) {$G='<SPAN class="olive"><B>'; $EG='</B></SPAN>'; $tr_class='';}
-				if ($call_time_S >= $rt_report_times["paused_long_time10"]) {$G='<SPAN class="darkolivegreen"><B>'; $EG='</B></SPAN>'; $tr_class='';}
+				if ($call_time_S >= $rt_report_times["paused_long_time"]) {$G='<SPAN class="red"><B>'; $EG='</B></SPAN>'; $tr_class='';}
+				if ($call_time_S >= $rt_report_times["paused_long_time10"]) {$G='<SPAN class="red"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $rt_report_times["paused_long_time15"]) {$G='<SPAN class="saddlebrown"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $rt_report_times["pause_limit"]) {$G='<SPAN class="darkred"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				}
@@ -4618,7 +4620,7 @@ if ($talking_to_print > 0)
 				if ($call_time_S >= $rt_report_times["paused_short_time"]) {$G='<SPAN class="khaki"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $rt_report_times["paused_medium_time"]) {$G='<SPAN class="yellow"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $rt_report_times["paused_long_time"]) {$G='<SPAN class="olive"><B>'; $EG='</B></SPAN>'; $tr_class='';}
-				if ($call_time_S >= $rt_report_times["paused_long_time10"]) {$G='<SPAN class="darkolivegreen"><B>'; $EG='</B></SPAN>'; $tr_class='';}
+				if ($call_time_S >= $rt_report_times["paused_long_time10"]) {$G='<SPAN class="red"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $rt_report_times["paused_long_time15"]) {$G='<SPAN class="badge text-warning"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				if ($call_time_S >= $pause_limit) {$G='<SPAN class="darkred"><B>'; $EG='</B></SPAN>'; $tr_class='';}
 				}
@@ -5058,7 +5060,11 @@ if ($talking_to_print > 0)
 
 	
 	if ( ($report_display_type=='HTML') or ($report_display_type=='LIMITED') )
-		{$Aecho .= "</table>\n";}
+		{
+			$Aecho .= "</table>\n";
+			$Aecho .=  '</div>';
+		}
+
 		// $Aecho .= '<div class="col-xxl-4 col-lg-6">';
 		// $Aecho .= '<div class="card ">';
 		// $Aecho .= '<div class="card-header align-items-center d-flex">';
@@ -5070,7 +5076,7 @@ if ($talking_to_print > 0)
 		// $Aecho .='</div><!-- end card header -->';
 		// $Aecho .='<div class="card-body">';
 
-		$Aecho .= '<div class="col-xl-6">';
+		$Aecho .= '<div class="col-xl-12">';
 		$Aecho .='<div class="card card-height-30">';
 		$Aecho .= '<div class="card-header align-items-center d-flex">';
 		$Aecho .= "<h4 class=\"card-title mb-0 flex-grow-1\">System Load Average</h4> : $load_ave  &nbsp; $db_source";
@@ -5091,8 +5097,8 @@ if ($talking_to_print > 0)
 	$Aecho .= '<div class="card-body">';
 	// $Aecho .= "  <h4 class='fs-15 fw-semibold'>"._QXZ("System Load Average").": $load_ave  &nbsp; $db_source";
 	// $Aecho .= '<p class="text-muted">Graphics Work</p>';
-	$Aecho .= '<div class="d-flex flex-wrap justify-content-evenly">';
-	$Aecho .= "<h2 class=\"text-muted\">  $agentcount "._QXZ("agents logged in on all servers")."</h2>\n";
+	$Aecho .= '<div class="d-flex flex-wrap ">';
+	$Aecho .= "<h3 class=\"\">  $agentcount "._QXZ("agents logged in on all servers")."</h2>\n";
 	$Aecho .='</div>';
 	$Aecho .= '</div>';
 
@@ -5119,10 +5125,10 @@ if ($talking_to_print > 0)
 	$Aecho .= '<tbody class="border-0">';
 	$Aecho .='<tr>';
 	$Aecho .= '<td>';
-	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-danger align-middle me-2"></i>Agent chatting</h4>';
+	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill  align-middle me-2" style="color: red;"></i>Agent chatting</h4>';
 	$Aecho .= '</td>';
 	$Aecho .= '<td>';
-	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-Primary align-middle me-2"></i>Agent in email</h4>';
+	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill  align-middle me-2" style="color: orange;"></i>Agent in email</h4>';
 	$Aecho .= '</td>';
 	
 
@@ -5147,13 +5153,13 @@ if ($talking_to_print > 0)
 		
 	$Aecho .= '<tr>';
 	$Aecho .= '<td>';
-	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-stop-fill align-middle fs-18 text-primary me-2"></i>Agent waiting for call</h4>';
+	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-stop-fill align-middle fs-18 text-primary me-2" style="color: lightblue"></i>Agent waiting for call</h4>';
 	$Aecho .= '</td>';
 	$Aecho .= '<td>';
-	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-stop-fill align-middle fs-18 text-primary me-2"></i>Agent waiting for call > 1 minute</h4>';
+	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-stop-fill align-middle fs-18 text-primary me-2" style="color: rust"></i>Agent waiting for call > 1 minute</h4>';
 	$Aecho .= '</td>';
 	$Aecho .= '<td>';
-	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-stop-fill align-middle fs-18 text-primary me-2"></i>Agent waiting for call > 5 minutes</h4>';
+	$Aecho .= '<h4 class="text-truncate fs-14 fs-medium mb-0"><i class="ri-stop-fill align-middle fs-18 text-primary me-2" style="color: midnightblue;"></i>Agent waiting for call > 5 minutes</h4>';
 	$Aecho .= '</td>';
 	$Aecho .= '</tr>';
 	
@@ -5177,14 +5183,14 @@ if ($talking_to_print > 0)
 
 		
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-Primary align-middle me-2"></i>Agent waiting for call</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: lightblue;"></i>Agent waiting for call</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '<tr>';
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-Primary align-middle me-2"></i>Agent waiting for call > 1 minute</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: blue;"></i>Agent waiting for call > 1 minute</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-Primary align-middle me-2"></i>Agent waiting for call > 5 minutes</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: midnightblue;"></i>Agent waiting for call > 5 minutes</p>';
 		$Aecho .= '</td>';
 		
 		
@@ -5232,40 +5238,40 @@ if ($talking_to_print > 0)
 
 		
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i>Agent on call > 10 seconds</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: violet;"></i>Agent on call > 10 seconds</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '</tr>';
 		$Aecho .= '<tr>';
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-warning align-middle me-2"></i>Agent on call > 1 minute</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-warning align-middle me-2" style="color: purple;"></i>Agent on call > 1 minute</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '<td >';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-danger align-middle me-2"></i>Agent on call > 5 minutes</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-danger align-middle me-2" style="color: khaki;"></i>Agent on call > 5 minutes</p>';
 		$Aecho .= '</td>';
 		
 
 		
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i>Agent Paused > 10 seconds</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: yellow;"></i>Agent Paused > 10 seconds</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '</tr>';
 		$Aecho .= '<tr>';
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-danger align-middle me-2"></i>Agent Paused > 1 minute</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-danger align-middle me-2" style="color: olive;"></i>Agent Paused > 1 minute</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '<td >';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i>Agent Paused > 5 minutes</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: darkolivegreen;"></i>Agent Paused > 5 minutes</p>';
 		$Aecho .= '</td>';
 		
 
 		
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i>Agent Paused > 10 minutes</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: saddlebrown;"></i>Agent Paused > 10 minutes</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '</tr>';
 		
 		$Aecho .= '<td>';
-		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i>Agent Paused > 15 minutes</p>';
+		$Aecho .= '<p class="text-truncate fs-14 fs-medium mb-0"><i class="ri-checkbox-blank-circle-fill align-middle me-2" style="color: lime;"></i>Agent Paused > 15 minutes</p>';
 		$Aecho .= '</td>';
 		$Aecho .= '</tr>';
 
@@ -5352,7 +5358,7 @@ echo "<p class=\"mb-0 text-muted\">"._QXZ("Your agents today")."</p>";
 echo '</div>';
 echo '<div>';
 echo '<div class="avatar-sm flex-shrink-0">';
-echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 echo '<i data-feather="activity" class="ri-arrow-up-line align-middle"></i>';
 echo '</span>';
 echo '</div>';
@@ -5370,9 +5376,9 @@ echo '<div class="card bg-success card-height-100">';
 echo '<div class="card-body">';
 echo '<div class="d-flex justify-content-between">';
 echo '<div>';
-echo '<h4 class="fw-medium text-white-50 mb-0">agents in calls</h4>';
+echo '<h4 class="fw-medium text-white mb-0">agents in calls</h4>';
 echo "<h2 class=\"mt-4 ff-secondary fw-semibold text-white\"><span class=\"counter-value\" >$agent_incall$AIDct</h2>";
-echo '<p class="mb-0 text-white-50"><span class="badge bg-white bg-opacity-25 text-white mb-0"></span>&nbsp;Your agents today</p>';
+echo '<p class="mb-0 text-white"><span class="badge bg-white bg-opacity-25 text-white mb-0"></span>&nbsp;Your agents today</p>';
 echo '</div>';
 echo '<div>';
 echo '<div class="avatar-sm flex-shrink-0">';
@@ -5400,7 +5406,7 @@ echo "<p class=\"mb-0 text-muted\">"._QXZ("Your agents today")."</p>";
 echo '</div>';
 echo '<div>';
 echo '<div class="avatar-sm flex-shrink-0">';
-echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 echo '<i data-feather="external-link" class="ri-arrow-up-line align-middle"></i>';
 echo '</span>';
 echo '</div>';
@@ -5419,13 +5425,13 @@ echo '<div class="card card-animate bg-warning">';
 echo '<div class="card-body">';
 echo '<div class="d-flex justify-content-between">';
 echo '<div>';
-echo '<h4 class="fw-medium text-muted mb-0">paused agents</h4>';
+echo '<h4 class="fw-medium text-dark mb-0">paused agents</h4>';
 echo "<h2 class=\"mt-4 ff-secondary fw-semibold\"><span class=\"counter-value\">$agent_dead</span></h2>";
-echo "<p class=\"mb-0 text-muted\">"._QXZ("Your agents today")."</p>";
+echo "<p class=\"mb-0 text-dark\">"._QXZ("Your agents today")."</p>";
 echo '</div>';
 echo '<div>';
 echo '<div class="avatar-sm flex-shrink-0">';
-echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2">';
+echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2">';
 echo '<i data-feather="users" class="ri-arrow-up-line align-middle"></i>';
 echo '</span>';
 echo '</div>';
@@ -5443,13 +5449,13 @@ echo '<div class="card card-animate bg-Dark">';
 echo '<div class="card-body">';
 echo '<div class="d-flex justify-content-between">';
 echo '<div>';
-echo '<h4 class="fw-medium text-muted mb-0">agents in dead calls</h4>';
+echo '<h4 class="fw-medium text-white mb-0">agents in dead calls</h4>';
 echo "<h2 class=\"mt-4 ff-secondary text-white fw-semibold\"><span class=\"counter-value\">$agent_dispo</span></h2>";
-echo "<p class=\"mb-0 text-muted\">"._QXZ("Your agents today")."</p>";
+echo "<p class=\"mb-0 text-white\">"._QXZ("Your agents today")."</p>";
 echo '</div>';
 echo '<div>';
 echo '<div class="avatar-sm flex-shrink-0">';
-echo '<span class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
+echo '<span style="background-color:#0000001a !important;" class="avatar-title bg-info-subtle rounded-circle fs-2 material-shadow">';
 echo '<i data-feather="activity" class="ri-arrow-up-line align-middle"></i>';
 echo '</span>';
 echo '</div>';
@@ -5466,9 +5472,9 @@ echo '<div class="card card-animate bg-Secondary">';
 echo '<div class="card-body">';
 echo '<div class="d-flex justify-content-between">';
 echo '<div>';
-echo '<h4 class="fw-medium text-white-50 mb-0">agents in dispo</h4>';
+echo '<h4 class="fw-medium text-white mb-0">agents in dispo</h4>';
 echo "<h2 class=\"mt-4 ff-secondary fw-semibold text-white\">$agent_incall$AIDct</h2>";
-echo "<p class=\"mb-0 text-muted\">"._QXZ("Your agents today")."</p>";
+echo "<p class=\"mb-0 text-white\">"._QXZ("Your agents today")."</p>";
 echo '</div>';
 echo '<div>';
 echo '<div class="avatar-sm flex-shrink-0">';

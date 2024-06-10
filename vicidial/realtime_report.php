@@ -1988,6 +1988,68 @@ if ($RS_hide_CUST_info < 1)
 </script>
 
 <STYLE type="text/css">
+	#realtime_content > font.top_settings_val{
+		display:none;
+
+	}
+	#realtime_content > div:nth-child(6) > pre > font > div.col-xl-12 > div > div.card > div.flex-grow-1 > div > div > div{
+		display:none;
+	}
+	#realtime_content > font.top_settings_key{
+		display:none;
+	}
+	#realtime_content > div:nth-child(6) > pre > font > div.relative{
+		margin-top:20px;
+		min-height:136px;
+		max-height:400px;
+	}
+	#realtime_content > div:nth-child(6) > pre{
+		overflow-x:hidden;
+	}
+	#realtime_content > div:nth-child(6) > pre > font > div.relative > table{
+		position:absolute;
+		top:55px
+	}
+	#realtime_content > div:nth-child(6) > pre > font > div.relative > div > div > h4{
+		font-size:19px;
+		padding-bottom:15px;
+	}
+
+	#realtime_content > div:nth-child(6) > pre > font > div.relative > table tbody{
+		max-height:50px;
+		overflow-y:scroll;
+	}
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table font{
+		font-size:14px;
+	}
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:nth-child(1) {
+		background-color:#405189;
+		font-weight: 400;
+
+	}
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:nth-child(1) font{
+		
+		font-weight: 400;
+
+	}
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr font{
+	
+		color:white !important;
+	}
+
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:not(:first-child) td span{
+		padding:5px;
+		border-radius:5px;
+		font-size :14px;
+	}
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:not(:first-child){
+		background-color: #d3d3ff;
+	}
+
+		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody   td {
+		text-align:left;
+	}
+	
 <!--
 	.blank {color: black; background-color: white;}
 	.green {color: white; background-color: green;}
