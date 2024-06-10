@@ -11948,7 +11948,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					}
 				else
 					{
-						document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
+						document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i><?php echo _QXZ("Call Manuel"); ?></button>"
 					document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 					}
 				document.getElementById("MainStatuSSpan").style.background = panel_bgcolor;
@@ -12224,7 +12224,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 									}
 								else
 									{
-										document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
+										document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i><?php echo _QXZ("Call Manuel"); ?></button>"
 									document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 									}
 								document.getElementById("MainStatuSSpan").style.background = panel_bgcolor;
@@ -13375,7 +13375,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						}
 					else
 						{
-							document.getElementById("call-button").innerHTML = "<button disabled style='cursor:default;background: gray !important;color: white;border: gray;' type=\"button\" class=\"btn btn-secondary btn-label waves-effect waves-light\"  ><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
+							document.getElementById("call-button").innerHTML = "<button disabled style='cursor:default;background: gray !important;color: white;border: gray;' type=\"button\" class=\"btn btn-secondary btn-label waves-effect waves-light\"  ><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i><?php echo _QXZ("Call Manuel"); ?></button>"
 						document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML_ready;
 						}
 					}
@@ -13407,7 +13407,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 						}
 					else
 						{
-							document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
+							document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i><?php echo _QXZ("Call Manuel"); ?></button>"
 						document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 						}
 
@@ -22879,7 +22879,7 @@ function phone_number_format(formatphone) {
 					}
 				else
 					{
-						document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i>Call Manuel</button>"
+						document.getElementById("call-button").innerHTML = "<button type=\"button\" class=\"btn btn-primary btn-label waves-effect waves-light\" id=\"call_manuel_butt\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\"><i class=\"ri-phone-line label-icon align-middle fs-16 me-2\"></i><?php echo _QXZ("Call Manuel"); ?></button>"
 					document.getElementById("DiaLControl").innerHTML = DiaLControl_auto_HTML;
 					clearDiv('DiaLLeaDPrevieW');
 					}
@@ -23424,22 +23424,22 @@ $zi=2;
 												<ul class="nav nav-tabs nav-border-top nav-border-top-success mb-3" role="tablist">
 													<li class="nav-item">
 														<a class="nav-link active" data-bs-toggle="tab" href="#Fiche" role="tab">
-															<i class="fas fa-home"></i> Fiche 
+															<i class="fas fa-home"></i><?php echo _QXZ("Fiche"); ?> 
 														</a>
 													</li>
 													<li class="nav-item">
 														<a class="nav-link"  onclick="ScriptPanelToFront('YES');" data-bs-toggle="tab" href="#Script" role="tab">
-															<i class="far fa-user"></i> Script
+															<i class="far fa-user"></i><?php echo _QXZ("Script"); ?> 
 														</a>
 													</li>
 													<li class="nav-item">
 														<a class="nav-link" data-bs-toggle="tab" href="#Objection" role="tab">
-															<i class="far fa-envelope"></i> Objection
+															<i class="far fa-envelope"></i><?php echo _QXZ("Objection"); ?> 
 														</a>
 													</li>
 													<li class="nav-item">
 														<a class="nav-link" data-bs-toggle="tab" href="#Rappels" role="tab">
-															<i class="far fa-envelope"></i> Rappels
+															<i class="far fa-envelope"></i><?php echo _QXZ("Rappels"); ?> 
 														</a>
 													</li>
 												</ul>
@@ -24014,13 +24014,13 @@ $zi=2;
 		<div class="card mb-2">
 			<div class="card-body">
 				<div class="text-center" id="CallState">
-				<div  style ="font-size: 21px;" class="badge bg-danger-subtle text-danger">No Live call</div>
+				<div  style ="font-size: 21px;" class="badge bg-danger-subtle text-danger"><?php echo _QXZ("Pas d'appel en direct"); ?> </div>
 				<img src="" id="InternalChatImg" alt="">
 				</div>
 				<ul class="list-group list-group-flush mt-2">
 					<li class="list-group-item d-flex flex-wrap  align-items-center">
 					<?php echo _QXZ("Status"); ?>
-						<span style="background-color: #ececec !important;" id="MainStatuSSpan" class="ms-auto rounded-2 p-1 bg-gray">No status</span>
+						<span style="background-color: #ececec !important;" id="MainStatuSSpan" class="ms-auto rounded-2 p-1 bg-gray"><?php echo _QXZ("Pas de statut"); ?> </span>
 					</li>
 				</ul>
 			</div>
@@ -24031,7 +24031,7 @@ $zi=2;
 					
 						<ul class="list-group  ">
 							<li class="list-group-item d-flex align-items-center">
-								Phone
+								<?php echo _QXZ("Phone"); ?> 
 								<span class="ms-auto"><?php echo "$SIP_user" ?></span>
 							</li>
 							<li class="list-group-item d-flex align-items-center">
@@ -24052,10 +24052,10 @@ $zi=2;
 								<input type="checkbox" name="DiaLAltPhonE" size="1" value="0" <?php echo $alt_phone_selected ?>/><?php echo _QXZ(" ALT PHONE DIAL"); ?><br /></font></span>
 							</li>
 							<li class="list-group-item d-flex align-items-center">
-								<span  class="text-black-50 text-18" style="font-size:20px" >Production </span>
+								<span  class="text-black-50 text-18" style="font-size:20px" ><?php echo _QXZ("Production"); ?>  </span>
 							</li>
 							<li class="list-group-item d-flex align-items-center">
-								<?php echo _QXZ("Seconds"); ?>
+								<?php echo _QXZ("Secondes"); ?>
 								<span <?php $zi++; echo $zi ?> class="badge ms-auto bg-primary" id="SecondSspan"><span id="SecondSDISP"> 0</span></span>
 								
 							</li>
@@ -24068,7 +24068,7 @@ $zi=2;
 
 							<li class="list-group-item d-flex align-items-center">
 								<?php echo _QXZ("Channel"); ?> 
-								<span class=" ms-auto " name="callchannel" id="callchannel" class="cust_form">No Channel </span>
+								<span class=" ms-auto " name="callchannel" id="callchannel" class="cust_form"><?php echo _QXZ("No Channel"); ?>  </span>
 							</li>
 
 							<li class="list-group-item d-flex align-items-center">
@@ -24108,7 +24108,7 @@ $zi=2;
 			<div class="card-body">
 				<div class="d-flex align-items-center mb-5">
 					<div class="flex-grow-1">
-						<h5 class="card-title mb-0">Complete Your Profile</h5>
+						<h5 class="card-title mb-0"> <?php echo _QXZ("Complete Your Profile"); ?> </h5>
 					</div>
 					<div class="flex-shrink-0">
 						<a href="javascript:void(0);" class="badge bg-light text-primary fs-12"><i class="ri-edit-box-line align-bottom me-1"></i> Edit</a>
@@ -25571,7 +25571,7 @@ if ($agent_display_dialable_leads > 0)
 
 				<!--
 					<div class="mb-3">
-						<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Dial Code:"); ?> </label>
+						<label for="exampleFormControlInput1" class="form-label"><?php echo _QXZ("Dial Code"); ?> </label>
 						<input type="text" size="7" maxlength="10" name="MDDiaLCodE" id="MDDiaLCodE" class="form-control" value="33" /> 
 						<div class="form-text"><?php echo _QXZ("(This is usually a 33 in the France)"); ?></div>
 					</div>

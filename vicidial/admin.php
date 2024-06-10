@@ -11026,74 +11026,152 @@ if ($ADD==1111111)
 		##### END ID override optional section #####
 		echo '<div class="main-content">';
 		echo '<div class="page-content">';
-
 		echo '<div class="col-xxl-12">';
 		echo '<div class="card">';
 		echo '<div class="card-header align-items-center d-flex">';
 		echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD NEW SCRIPT")."</h4>";
 		echo '<div class="flex-shrink-0">';
-		
 		echo '</div>';
 		echo '</div><!-- end card header -->';
-		echo '';
 		echo '<div class="card-body">';
 		// echo '<p class="text-muted">By adding <a href="https://themesbrand.com/docs/5.1/layout/gutters/" class="text-decoration-underline">gutter modifier classes</a>, you can have control over the gutter width in as well the inline as block direction. <span class="fw-medium">Also requires the <code>$enable-grid-classes</code> Sass variable to be enabled</span> (on by default).</p>';
 		echo '<div class="live-preview">';
-		echo '<form action="javascript:void(0);" class="row g-3">';
-		echo '<div class="col-md-12">';
-		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script ID")."</label>";
+		echo "<form class=\"row g-3\" name=\"scriptForm\" action=$PHP_SELF method=POST>";
+		echo "<input type=hidden name=ADD value=2111111>\n";
+		echo "<input type=hidden name=DB value=\"$DB\">\n";
+		
+		if ($voi_count > 0)
+			{
+			echo ""._QXZ("Script ID").":"._QXZ("Auto-Generated")." $NWB#scripts-script_id$NWE";
+			}
+		else
+			{
+			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left><input type=text name=script_id size=22 maxlength=20> ("._QXZ("no spaces or punctuation").")$NWB#scripts-script_id$NWE</td></tr>\n";
+			echo '<div class="col-md-12">';
+			echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script ID")."</label>";
 		echo '<input name="script_id" type="text" class="form-control" id="fullnameInput" placeholder="Script ID">';
 		echo '</div>';
+		}
+		
 		echo '<div class="col-md-6">';
 		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Name")."</label>";
-		echo '<input name="script_name" type="email" class="form-control" id="inputEmail4" placeholder="Script Name">';
+		echo '<input name="script_name" type="text" class="form-control" id="inputEmail4" placeholder="Script Name">';
 		echo '</div>';
 		echo '<div class="col-md-6">';
 		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Comments")."</label>";
 		echo '<input name="script_comments" type="text" class="form-control" id="inputPassword4" placeholder=Script Comments">';
 		echo '</div>';
-		echo '<div class="col-md-6">';
-		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Name")."</label>";
-		echo '<select id="inputState" class="form-select" data-choices data-choices-sorting="true">';
-		echo '<option selected>Choose...</option>';
-		echo '<option>...</option>';
-		echo '</select>';
-		echo '</div>';
-		echo '<div class="col-md-6">';
-		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Name")."</label>";
-		echo '<select id="inputState" class="form-select" data-choices data-choices-sorting="true">';
-		echo '<option selected>Choose...</option>';
-		echo '<option>...</option>';
-		echo '</select>';
-		echo '</div>';
-		echo '<div class="col-md-6">';
-		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Name")."</label>";
-		echo '<select id="inputState" class="form-select" data-choices data-choices-sorting="true">';
-		echo '<option selected>Choose...</option>';
-		echo '<option>...</option>';
-		echo '</select>';
-		echo '</div>';
 		
-		echo '<div class="col-md-2">';
-		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Name")."</label>";
-		echo '<input type="text" class="form-control" id="inputZip" placeholder="Zin code">';
+		echo '<div class="col-md-6">';
+		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Active")."</label>";
+		echo '<select "name=active" id="inputState" class="form-select" data-choices data-choices-sorting="true">';
+		echo "<option value=\'Y\' SELECTED>"._QXZ("Y")."</option>";
+		echo "<option value=\'N\'>"._QXZ("N")."</option>";
+		echo '</select>';
 		echo '</div>';
-		echo '<div class="col-12">';
-		echo '<div class="form-check">';
-		echo '<input class="form-check-input" type="checkbox" id="gridCheck">';
-		echo '<label class="form-check-label" for="gridCheck">';
-		echo 'Check me out';
-		echo '</label>';
+		echo '<div class="col-md-6">';
+		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Admin User Group")."</label>";
+		echo '<select name="user_group" id="inputState" class="form-select" data-choices data-choices-sorting="true">';
+		echo "$UUgroups_list";
+		echo "<option SELECTED value=\"---ALL---\">"._QXZ("All Admin User Groups")."</option>";
+		echo '</select>';
 		echo '</div>';
+		// echo '<div class="col-md-6">';
+		// echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Text")."</label>";
+		// echo '<div class="input-group">';
+		// echo '<select class="form-select"  id=\"selectedField\" name=\"selectedField\" aria-label="Example select with button addon">';
+		// echo "<option value=\"fullname\">"._QXZ("Agent Name")."(fullname)</option>";
+		// echo "<option>vendor_lead_code</option>";
+		// echo "<option>source_id</option>";
+		// echo "<option>list_id</option>";
+		// echo "<option>list_name</option>";
+		// echo "<option>list_description</option>";
+		// echo "<option>gmt_offset_now</option>";
+		// echo "<option>called_since_last_reset</option>";
+		// echo "<option>phone_code</option>";
+		// echo "<option>phone_number</option>";
+		// echo "<option>title</option>";
+		// echo "<option>first_name</option>";
+		// echo "<option>middle_initial</option>";
+		// echo "<option>last_name</option>";
+		// echo "<option>address1</option>";
+		// echo "<option>address2</option>";
+		// echo "<option>address3</option>";
+		// echo "<option>city</option>";
+		// echo "<option>state</option>";
+		// echo "<option>province</option>";
+		// echo "<option>postal_code</option>";
+		// echo "<option>country_code</option>";
+		// echo "<option>gender</option>";
+		// echo "<option>date_of_birth</option>";
+		// echo "<option>alt_phone</option>";
+		// echo "<option>email</option>";
+		// echo "<option>security_phrase</option>";
+		// echo "<option>comments</option>";
+		// echo "<option>lead_id</option>";
+		// echo "<option>campaign</option>";
+		// echo "<option>phone_login</option>";
+		// echo "<option>group</option>";
+		// echo "<option>channel_group</option>";
+		// echo "<option>SQLdate</option>";
+		// echo "<option>epoch</option>";
+		// echo "<option>uniqueid</option>";
+		// echo "<option>customer_zap_channel</option>";
+		// echo "<option>server_ip</option>";
+		// echo "<option>SIPexten</option>";
+		// echo "<option>session_id</option>";
+		// echo "<option>dialed_number</option>";
+		// echo "<option>dialed_label</option>";
+		// echo "<option>rank</option>";
+		// echo "<option>owner</option>";
+		// echo "<option>camp_script</option>";
+		// echo "<option>in_script</option>";
+		// echo "<option>script_width</option>";
+		// echo "<option>script_height</option>";
+		// echo "<option>recording_filename</option>";
+		// echo "<option>recording_id</option>";
+		// echo "<option>user_custom_one</option>";
+		// echo "<option>user_custom_two</option>";
+		// echo "<option>user_custom_three</option>";
+		// echo "<option>user_custom_four</option>";
+		// echo "<option>user_custom_five</option>";
+		// echo "<option>preset_number_a</option>";
+		// echo "<option>preset_number_b</option>";
+		// echo "<option>preset_number_c</option>";
+		// echo "<option>preset_number_d</option>";
+		// echo "<option>preset_number_e</option>";
+		// echo "<option>preset_number_f</option>";
+		// echo "<option>preset_dtmf_a</option>";
+		// echo "<option>preset_dtmf_b</option>";
+		// echo "<option>did_id</option>";
+		// echo "<option>did_extension</option>";
+		// echo "<option>did_pattern</option>";
+		// echo "<option>did_description</option>";
+		// echo "<option>closecallid</option>";
+		// echo "<option>xfercallid</option>";
+		// echo "<option>agent_log_id</option>";
+		// echo "<option>entry_list_id</option>";
+		// echo "<option>call_id</option>";
+		// echo "<option>user_group</option>";
+		// echo "<option>called_count</option>";
+		// echo "<option>TABLEper_call_notes</option>";
+		// echo "<option>agent_email</option>";
+		// echo '</select>';
+		// echo "<input name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\" class=\"btn btn-outline-secondary\" type=\"button\">";
+		// echo '</div>';
+		// echo '</div>';
+		echo '<div class="col-md-6">';
+		echo "<label for=\"fullnameInput\" class=\"form-label\">"._QXZ("Script Text")."</label>";
+	
+		echo "<TEXTAREA class=\"form-control\" NAME=script_text ROWS=5 COLS=50 value=\"\"></TEXTAREA>";
 		echo '</div>';
 		echo '<div class="col-12">';
 		echo '<div class="text-end">';
-		echo '<button type="submit" class="btn btn-primary">Sign in</button>';
+		echo "<input class=\"btn btn-primary\" type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'>";
 		echo '</div>';
 		echo '</div>';
 		echo '</form>';
 		echo '</div>';
-		echo '';
 		echo '</div>';
 		echo '</div>';
 		echo '</div> <!-- end col -->';
@@ -11101,113 +11179,112 @@ if ($ADD==1111111)
 
 
 		
-		echo "<TABLE><TR><TD>\n";
-		echo "<img src=\"images/icon_black_scripts.png\" alt=\"Scripts\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+		// echo "<TABLE><TR><TD>\n";
+		// echo "<img src=\"images/icon_black_scripts.png\" alt=\"Scripts\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
-		echo "<br>"._QXZ("ADD NEW SCRIPT")."<form name=scriptForm action=$PHP_SELF method=POST>\n";
-		echo "<input type=hidden name=ADD value=2111111>\n";
-		echo "<input type=hidden name=DB value=\"$DB\">\n";
-		echo "<center><TABLE width=$section_width cellspacing=3>\n";
-		if ($voi_count > 0)
-			{
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left>"._QXZ("Auto-Generated")." $NWB#scripts-script_id$NWE</td></tr>\n";
-			}
-		else
-			{
-			// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left><input type=text name=script_id size=22 maxlength=20> ("._QXZ("no spaces or punctuation").")$NWB#scripts-script_id$NWE</td></tr>\n";
-			}
+		// echo "<form name=scriptForm action=$PHP_SELF method=POST>";
+		
+		// echo "<center><TABLE width=$section_width cellspacing=3>\n";
+		// if ($voi_count > 0)
+		// 	{
+		// 	echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left>"._QXZ("Auto-Generated")." $NWB#scripts-script_id$NWE</td></tr>\n";
+		// 	}
+		// else
+		// 	{
+		// 	// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script ID").": </td><td align=left><input type=text name=script_id size=22 maxlength=20> ("._QXZ("no spaces or punctuation").")$NWB#scripts-script_id$NWE</td></tr>\n";
+		// 	}
 		// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Name").": </td><td align=left><input type=text name=script_name size=40 maxlength=50> ("._QXZ("title of the script").")$NWB#scripts-script_name$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Comments").": </td><td align=left><input type=text name=script_comments size=50 maxlength=255> $NWB#scripts-script_comments$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Active").": </td><td align=left><select size=1 name=active><option value='Y' SELECTED>"._QXZ("Y")."</option><option value='N'>"._QXZ("N")."</option></select>$NWB#scripts-active$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Admin User Group").": </td><td align=left><select size=1 name=user_group>\n";
-		echo "$UUgroups_list";
-		echo "<option SELECTED value=\"---ALL---\">"._QXZ("All Admin User Groups")."</option>\n";
-		echo "</select>$NWB#scripts-user_group$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Text").": </td><td align=left>";
-		# BEGIN Insert Field
-		echo "<select id=\"selectedField\" name=\"selectedField\">";
-		echo "<option value=\"fullname\">"._QXZ("Agent Name")."(fullname)</option>";
-		echo "<option>vendor_lead_code</option>";
-		echo "<option>source_id</option>";
-		echo "<option>list_id</option>";
-		echo "<option>list_name</option>";
-		echo "<option>list_description</option>";
-		echo "<option>gmt_offset_now</option>";
-		echo "<option>called_since_last_reset</option>";
-		echo "<option>phone_code</option>";
-		echo "<option>phone_number</option>";
-		echo "<option>title</option>";
-		echo "<option>first_name</option>";
-		echo "<option>middle_initial</option>";
-		echo "<option>last_name</option>";
-		echo "<option>address1</option>";
-		echo "<option>address2</option>";
-		echo "<option>address3</option>";
-		echo "<option>city</option>";
-		echo "<option>state</option>";
-		echo "<option>province</option>";
-		echo "<option>postal_code</option>";
-		echo "<option>country_code</option>";
-		echo "<option>gender</option>";
-		echo "<option>date_of_birth</option>";
-		echo "<option>alt_phone</option>";
-		echo "<option>email</option>";
-		echo "<option>security_phrase</option>";
-		echo "<option>comments</option>";
-		echo "<option>lead_id</option>";
-		echo "<option>campaign</option>";
-		echo "<option>phone_login</option>";
-		echo "<option>group</option>";
-		echo "<option>channel_group</option>";
-		echo "<option>SQLdate</option>";
-		echo "<option>epoch</option>";
-		echo "<option>uniqueid</option>";
-		echo "<option>customer_zap_channel</option>";
-		echo "<option>server_ip</option>";
-		echo "<option>SIPexten</option>";
-		echo "<option>session_id</option>";
-		echo "<option>dialed_number</option>";
-		echo "<option>dialed_label</option>";
-		echo "<option>rank</option>";
-		echo "<option>owner</option>";
-		echo "<option>camp_script</option>";
-		echo "<option>in_script</option>";
-		echo "<option>script_width</option>";
-		echo "<option>script_height</option>";
-		echo "<option>recording_filename</option>";
-		echo "<option>recording_id</option>";
-		echo "<option>user_custom_one</option>";
-		echo "<option>user_custom_two</option>";
-		echo "<option>user_custom_three</option>";
-		echo "<option>user_custom_four</option>";
-		echo "<option>user_custom_five</option>";
-		echo "<option>preset_number_a</option>";
-		echo "<option>preset_number_b</option>";
-		echo "<option>preset_number_c</option>";
-		echo "<option>preset_number_d</option>";
-		echo "<option>preset_number_e</option>";
-		echo "<option>preset_number_f</option>";
-		echo "<option>preset_dtmf_a</option>";
-		echo "<option>preset_dtmf_b</option>";
-		echo "<option>did_id</option>";
-		echo "<option>did_extension</option>";
-		echo "<option>did_pattern</option>";
-		echo "<option>did_description</option>";
-		echo "<option>closecallid</option>";
-		echo "<option>xfercallid</option>";
-		echo "<option>agent_log_id</option>";
-		echo "<option>entry_list_id</option>";
-		echo "<option>call_id</option>";
-		echo "<option>user_group</option>";
-		echo "<option>called_count</option>";
-		echo "<option>TABLEper_call_notes</option>";
-		echo "<option>agent_email</option>";
-		echo "</select>";
-		echo "<input type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\"><BR>";
-		# END Insert Field
-		echo "<TEXTAREA NAME=script_text ROWS=20 COLS=50 value=\"\"></TEXTAREA> $NWB#scripts-script_text$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'></td></tr>\n";
-		echo "</TABLE></center>\n";
+		// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Comments").": </td><td align=left><input type=text name=script_comments size=50 maxlength=255> $NWB#scripts-script_comments$NWE</td></tr>\n";
+		// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Active").": </td><td align=left><select size=1 name=active><option value='Y' SELECTED>"._QXZ("Y")."</option><option value='N'>"._QXZ("N")."</option></select>$NWB#scripts-active$NWE</td></tr>\n";
+		// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Admin User Group").": </td><td align=left><select size=1 name=user_group>\n";
+		// echo "$UUgroups_list";
+		// echo "<option SELECTED value=\"---ALL---\">"._QXZ("All Admin User Groups")."</option>\n";
+		// echo "</select>$NWB#scripts-user_group$NWE</td></tr>\n";
+		// echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Script Text").": </td><td align=left>";
+		// // # BEGIN Insert Field
+		// echo "<select id=\"selectedField\" name=\"selectedField\">";
+		// echo "<option value=\"fullname\">"._QXZ("Agent Name")."(fullname)</option>";
+		// echo "<option>vendor_lead_code</option>";
+		// echo "<option>source_id</option>";
+		// echo "<option>list_id</option>";
+		// echo "<option>list_name</option>";
+		// echo "<option>list_description</option>";
+		// echo "<option>gmt_offset_now</option>";
+		// echo "<option>called_since_last_reset</option>";
+		// echo "<option>phone_code</option>";
+		// echo "<option>phone_number</option>";
+		// echo "<option>title</option>";
+		// echo "<option>first_name</option>";
+		// echo "<option>middle_initial</option>";
+		// echo "<option>last_name</option>";
+		// echo "<option>address1</option>";
+		// echo "<option>address2</option>";
+		// echo "<option>address3</option>";
+		// echo "<option>city</option>";
+		// echo "<option>state</option>";
+		// echo "<option>province</option>";
+		// echo "<option>postal_code</option>";
+		// echo "<option>country_code</option>";
+		// echo "<option>gender</option>";
+		// echo "<option>date_of_birth</option>";
+		// echo "<option>alt_phone</option>";
+		// echo "<option>email</option>";
+		// echo "<option>security_phrase</option>";
+		// echo "<option>comments</option>";
+		// echo "<option>lead_id</option>";
+		// echo "<option>campaign</option>";
+		// echo "<option>phone_login</option>";
+		// echo "<option>group</option>";
+		// echo "<option>channel_group</option>";
+		// echo "<option>SQLdate</option>";
+		// echo "<option>epoch</option>";
+		// echo "<option>uniqueid</option>";
+		// echo "<option>customer_zap_channel</option>";
+		// echo "<option>server_ip</option>";
+		// echo "<option>SIPexten</option>";
+		// echo "<option>session_id</option>";
+		// echo "<option>dialed_number</option>";
+		// echo "<option>dialed_label</option>";
+		// echo "<option>rank</option>";
+		// echo "<option>owner</option>";
+		// echo "<option>camp_script</option>";
+		// echo "<option>in_script</option>";
+		// echo "<option>script_width</option>";
+		// echo "<option>script_height</option>";
+		// echo "<option>recording_filename</option>";
+		// echo "<option>recording_id</option>";
+		// echo "<option>user_custom_one</option>";
+		// echo "<option>user_custom_two</option>";
+		// echo "<option>user_custom_three</option>";
+		// echo "<option>user_custom_four</option>";
+		// echo "<option>user_custom_five</option>";
+		// echo "<option>preset_number_a</option>";
+		// echo "<option>preset_number_b</option>";
+		// echo "<option>preset_number_c</option>";
+		// echo "<option>preset_number_d</option>";
+		// echo "<option>preset_number_e</option>";
+		// echo "<option>preset_number_f</option>";
+		// echo "<option>preset_dtmf_a</option>";
+		// echo "<option>preset_dtmf_b</option>";
+		// echo "<option>did_id</option>";
+		// echo "<option>did_extension</option>";
+		// echo "<option>did_pattern</option>";
+		// echo "<option>did_description</option>";
+		// echo "<option>closecallid</option>";
+		// echo "<option>xfercallid</option>";
+		// echo "<option>agent_log_id</option>";
+		// echo "<option>entry_list_id</option>";
+		// echo "<option>call_id</option>";
+		// echo "<option>user_group</option>";
+		// echo "<option>called_count</option>";
+		// echo "<option>TABLEper_call_notes</option>";
+		// echo "<option>agent_email</option>";
+		// echo "</select>";
+		// echo "<input type=\"button\" name=\"insertField\" value=\""._QXZ("Insert")."\" onClick=\"scriptInsertField();\"><BR>";
+		// # END Insert Field
+		// echo "<TEXTAREA NAME=script_text ROWS=20 COLS=50 value=\"\"></TEXTAREA> $NWB#scripts-script_text$NWE</td></tr>\n";
+		// echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=submit name=SUBMIT value='"._QXZ("SUBMIT")."'></td></tr>\n";
+		// echo "</TABLE></center>\n";
 		}
 	else
 		{
@@ -24268,6 +24345,7 @@ if ($ADD==511111)
 ######################
 if ($ADD==5111111)
 	{
+		
 	echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
 	if ( (strlen($script_id) < 2) or ($LOGdelete_scripts < 1) )
@@ -24277,8 +24355,9 @@ if ($ADD==5111111)
 		}
 	else
 		{
-		echo "<br><B>"._QXZ("SCRIPT DELETION CONFIRMATION").": $script_id</B>\n";
-		echo "<br><br><a href=\"$PHP_SELF?ADD=6111111&script_id=$script_id&CoNfIrM=YES\">"._QXZ("Click here to delete script")." $script_id</a><br><br><br>\n";
+			echo '<div class="main-content">';
+		echo "<B>"._QXZ("SCRIPT DELETION CONFIRMATION").": $script_id</B>\n";
+		echo "<a href=\"$PHP_SELF?ADD=6111111&script_id=$script_id&CoNfIrM=YES\">"._QXZ("Click here to delete script")." $script_id</a>";
 		}
 
 	$ADD='3111111';		# go to script modification below
