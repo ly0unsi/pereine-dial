@@ -801,8 +801,8 @@ else
 		chooser_type = type;
 	<?php
 	$color_chooser_output .= " &nbsp; <a href=\\\"javascript:close_chooser();\\\"><font size=1 face='Arial,Helvetica'>"._QXZ("close frame")."</font></a> &nbsp; <BR>";
-	$color_chooser_output .= "<div id='select_color_frame' style=\\\"height:400px;width:400px;overflow:scroll;background-color:white;\\\">";
-	$color_chooser_output .= '<table border=0 cellpadding=2 cellspacing=2 width=400 bgcolor=white>';
+	$color_chooser_output .= "<div id='select_color_frame' style=\\\"height:400px;width:100%;overflow:scroll;background-color:white;\\\">";
+	$color_chooser_output .= '<table style=\"width:100%\" border=0 cellpadding=2 cellspacing=2  bgcolor=white>';
 	$HTMLcolorsARY = explode('|',$HTMLcolors);
 	$HTMLcolorsARYcount = count($HTMLcolorsARY);
 	$HTMLct=0;
@@ -821,12 +821,13 @@ else
 	$color_chooser_output .= '</table></div>';
 	?>
 
-		var span_content = '<span id="color_chooser_frame' + epoch + '" name="color_chooser_frame" style="width:740;height:440;background-color:white;overflow:scroll;z-index:2;">' + "<?php  echo $color_chooser_output ?></span>";
+		var span_content = '<span id="color_chooser_frame' + epoch + '" name="color_chooser_frame" style="width:100%;height:440;background-color:white;overflow:scroll;z-index:2;">' + "<?php  echo $color_chooser_output ?></span>";
 
 		document.getElementById("audio_chooser_span").style.position = "absolute";
-		document.getElementById("audio_chooser_span").style.left = "220px";
-		document.getElementById("audio_chooser_span").style.top = vposition + "px";
+		document.getElementById("audio_chooser_span").style.left = "10px";
+		document.getElementById("audio_chooser_span").style.top = 72 + "px";
 		document.getElementById("audio_chooser_span").style.visibility = 'visible';
+		document.getElementById("audio_chooser_span").style.width = '100%';
 		document.getElementById("audio_chooser_span").style.backgroundcolor = 'white';
 		document.getElementById("audio_chooser_span").innerHTML = span_content;
 		}
@@ -1782,9 +1783,9 @@ if ($subcamp_font_size < 4) {$subcamp_font_size='11';}
 
 
 
-<span style="position:absolute;left:300px;top:30px;z-index:1;visibility:hidden;" id="audio_chooser_span">
+<!-- <span style="position:absolute;left:300px;top:30px;z-index:1;visibility:hidden;" id="audio_chooser_span">
 
-</span>
+</span> -->
 
 <!-- <TABLE  cellpadding=2 cellspacing=0 WIDTH=<?php echo $page_width ?> HEIGHT=15>
 <TR BGCOLOR=#<?php echo "$SSmenu_background" ?>><TD ALIGN=LEFT BGCOLOR=#<?php echo "$SSmenu_background" ?>><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=2><B><a href="<?php echo $admin_home_url_LU ?>" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1><?php echo _QXZ("HOME"); ?></a> | <A HREF="../agc/timeclock.php?referrer=admin" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1> <?php echo _QXZ("Timeclock"); ?></A> | <a href="manager_chat_interface.php" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1> <?php echo _QXZ("Chat"); ?></a> | <a href="<?php echo $ADMIN ?>?force_logout=1" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1><?php echo _QXZ("Logout"); ?></a> <FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1>(<?php echo $PHP_AUTH_USER ?>)</FONT>
