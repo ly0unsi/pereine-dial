@@ -8649,8 +8649,11 @@ if ($ADD==11)
 			$voi_count = "$row[0]";
 			}
 		##### END ID override optional section #####
+		
+
 		echo "<div class=\"main-content\">";	
-		echo '<div class="page-content">';
+		echo '<div class="mt-4">';
+		
 		echo '<div class="container-fluid">';
 		// echo "<TABLE><TR><TD>\n";
 		// echo "<img src=\"images/icon_black_campaigns.png\" alt=\"Campaigns\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
@@ -13897,15 +13900,20 @@ if ($ADD==21)
 					{
 					if ( (strlen($campaign_id) < 2) or (mb_strlen($campaign_id,'utf-8') > 8) or (strlen($campaign_name) < 6)  or (mb_strlen($campaign_name,'utf-8') > 40) )
 						{
-						echo "<br>"._QXZ("CAMPAIGN NOT ADDED - Please go back and look at the data you entered")."\n";
-						echo "<br>"._QXZ("campaign ID must be between 2 and 8 characters in length")."\n";
-						echo "<br>"._QXZ("campaign name must be between 6 and 40 characters in length")."\n";
+							echo '<div class="alert alert-danger mb-3 alert-border-left alert-dismissible fade show material-shadow" role="alert">
+							<i class="ri-error-warning-line me-3 align-middle fs-16"></i>
+							<strong>Error</strong> - ' . _QXZ("CAMPAIGN NOT ADDED - Please go back and look at the data you entered") . '<br>
+							' . _QXZ("campaign ID must be between 2 and 8 characters in length") . '<br>
+							' . _QXZ("campaign name must be between 6 and 40 characters in length") . '
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>';
+						
 						}
 					else
 						{
 							echo '<div class="alert alert-success mb-3 alert-border-left alert-dismissible fade show  material-shadow" role="alert">';
 							echo '<i class="ri-error-warning-line me-3 align-middle fs-16"></i>';
-							echo '<strong>' . _QXZ("Error") . '</strong> - ' . _QXZ("CAMPAIGN ADDED");
+							echo '<strong>' . _QXZ("Succes") . '</strong> - ' . _QXZ("CAMPAIGN ADDED");
 							echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
 							echo '</div>';
 					
@@ -13946,6 +13954,22 @@ if ($ADD==21)
 				}
 			}
 		}
+		if ($SSoutbound_autodial_active > 0)
+				{
+		echo '    <div class="alert alert-info mb-3 alert-border-left alert-dismissible fade show material-shadow" role="alert">';
+		echo '        <i class="ri-error-warning-line me-3 align-middle fs-16"></i>';
+		echo '        <strong>Info</strong> - ';
+	 echo _QXZ("This campaign has")." $hopper_leads "._QXZ("leads in the dial hopper")."\n";
+		echo '        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+		echo '    </div>' . "\n";
+
+		echo '    <div class="alert alert-info mb-3 alert-border-left alert-dismissible fade show material-shadow" role="alert">';
+		echo '        <i class="ri-error-warning-line me-3 align-middle fs-16"></i>';
+		echo '        <strong>Info</strong> - ' . _QXZ("This campaign has") . " $active_lists " . _QXZ("active lists and") . " $inactive_lists " . _QXZ("inactive lists") . "\n";
+		echo '        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+		echo '    </div>' . "\n";
+
+	}
 	$ADD=34;
 	}
 
@@ -25045,7 +25069,7 @@ if ($ADD==61)
 			$rslt=mysql_to_mysqli($stmtR, $link);		
 			$affected_rowsR = mysqli_affected_rows($link);
 
-			echo "<br>"._QXZ("REMOVING LIST HOPPER LEADS FROM OLD CAMPAIGN HOPPER")." ($campaign_id)\n";
+			// echo "<br>"._QXZ("REMOVING LIST HOPPER LEADS FROM OLD CAMPAIGN HOPPER")." ($campaign_id)\n";
 			$stmtS="DELETE from vicidial_hopper where campaign_id='$campaign_id' $LOGallowed_campaignsSQL;";
 			$rslt=mysql_to_mysqli($stmtS, $link);
 			$affected_rowsS = mysqli_affected_rows($link);
@@ -25058,8 +25082,12 @@ if ($ADD==61)
 			if ($DB) {echo "|$stmt|\n";}
 			$rslt=mysql_to_mysqli($stmt, $link);
 
-			echo "<br><B>"._QXZ("CAMPAIGN DELETION COMPLETED").": $campaign_id</B>\n";
-			echo "<br><br>\n";
+			echo '<div style="margin-left: 256px;margin-top: 21px;" class="alert alert-success mb-3 alert-border-left alert-dismissible fade show material-shadow" role="alert">
+				<i class="ri-error-warning-line me-3 align-middle fs-16"></i>
+				<strong>Succes</strong> -'. _QXZ("CAMPAIGN DELETION COMPLETED")
+				.'<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>';
+
 			}
 		}
 	$ADD='10';		# go to campaigns list
@@ -31850,7 +31878,7 @@ if ($ADD==31)
 					{$fSQL = '';}
 	
 				$camp_lists = preg_replace('/.$/i','',$camp_lists);
-				echo "<center><B>"._QXZ("This campaign has")." $active_lists "._QXZ("active lists and")." $inactive_lists "._QXZ("inactive lists")."</B><br><br>\n";
+				// echo "<center><B>"._QXZ("This campaign has hh")." $active_lists "._QXZ("active lists and")." $inactive_lists "._QXZ("inactive lists")."</B><br><br>\n";
 	
 				$dial_statuses_original = $dial_statuses;
 	
@@ -32027,27 +32055,27 @@ if ($ADD==31)
 					}
 				else
 					{
-					echo "<font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=show_leadscount\">"._QXZ("SHOW LEAD STATUSES IN THIS CAMPAIGN")."</a></font><BR><BR>";
+					//echo "<font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=show_leadscount\">"._QXZ("SHOW LEAD STATUSES IN THIS CAMPAIGN")."</a></font><BR><BR>";
 					}
 	
 	
 	
 				echo "<center><b>\n";
 	
-				if ($display_dialable_count == 'Y')
-					{
-					### call function to calculate and print dialable leads
-					$single_status=0;
-					$only_return=0;
-					$dial_statuses = $dial_statuses_original;
-					dialable_leads($DB,$link,$local_call_time,$dial_statuses,$camp_lists,$drop_lockout_time,$call_count_limit,$single_status,$fSQL,$only_return);
-					echo " - <font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=hide_dialable\">"._QXZ("HIDE")."</a></font><BR><BR>";
-					}
-				else
-					{
-					echo "<a href=\"$PHP_SELF?ADD=73&campaign_id=$campaign_id\" target=\"_blank\">"._QXZ("Popup Dialable Leads Count")."</a>";
-					echo " - <font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=show_dialable\">"._QXZ("SHOW")."</a></font><BR><BR>";
-					}
+				// if ($display_dialable_count == 'Y')
+				// 	{
+				// 	### call function to calculate and print dialable leads
+				// 	// $single_status=0;
+				// 	// $only_return=0;
+				// 	// $dial_statuses = $dial_statuses_original;
+				// 	// dialable_leads($DB,$link,$local_call_time,$dial_statuses,$camp_lists,$drop_lockout_time,$call_count_limit,$single_status,$fSQL,$only_return);
+				// 	// echo " - <font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=hide_dialable\">"._QXZ("HIDE")."</a></font><BR><BR>";
+				// 	}
+				// else
+				// 	{
+				// 	echo "<a href=\"$PHP_SELF?ADD=73&campaign_id=$campaign_id\" target=\"_blank\">"._QXZ("Popup Dialable Leads Count")."</a>";
+				// 	echo " - <font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=show_dialable\">"._QXZ("SHOW")."</a></font><BR><BR>";
+				// 	}
 	
 				$stmt="SELECT count(*) FROM vicidial_hopper where campaign_id='$campaign_id' $LOGallowed_campaignsSQL and status IN('READY','RHOLD','RQUEUE');";
 				if ($DB) {echo "$stmt\n";}
@@ -32055,11 +32083,11 @@ if ($ADD==31)
 				$rowx=mysqli_fetch_row($rslt);
 				$hopper_leads = "$rowx[0]";
 	
-				echo _QXZ("This campaign has")." $hopper_leads "._QXZ("leads in the dial hopper")."<br><br>\n";
-				echo "<a href=\"./AST_VICIDIAL_hopperlist.php?group=$campaign_id\">"._QXZ("Click here to see what leads are in the hopper right now")."</a><br><br>\n";
-				echo "<a href=\"./AST_VDADstats.php?group=$campaign_id\">"._QXZ("Click here to see a VDAD report for this campaign")."</a><BR><BR>\n";
+				// echo _QXZ("This campaign has")." $hopper_leads "._QXZ("leads in the dial hopper")."<br><br>\n";
+				// echo "<a href=\"./AST_VICIDIAL_hopperlist.php?group=$campaign_id\">"._QXZ("Click here to see what leads are in the hopper right now")."</a><br><br>\n";
+				// echo "<a href=\"./AST_VDADstats.php?group=$campaign_id\">"._QXZ("Click here to see a VDAD report for this campaign")."</a><BR><BR>\n";
 				}
-			echo "<a href=\"$PHP_SELF?ADD=81&campaign_id=$campaign_id\">"._QXZ("Click here to see all CallBack Holds in this campaign")."</a><BR><BR>\n";
+			// echo "<a href=\"$PHP_SELF?ADD=81&campaign_id=$campaign_id\">"._QXZ("Click here to see all CallBack Holds in this campaign")."</a><BR><BR>\n";
 	
 			if ($SSoutbound_autodial_active > 0)
 				{
@@ -33152,19 +33180,51 @@ if ($ADD==31)
 		echo '<strong><h2 class="d-inline">ADD A NEW CAMPAIGN</h2></strong>';
 		echo '</div>';
 		echo '<div class="btn-group">';
-		echo '    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">';
+		echo '    <button style="background-color: #3577f1;color: white;border-radius: 20px;" class="btn  dropdown-toggle" type="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">';
 		echo '        <i class="ri-more-line"></i>';
 		echo '    </button>';
-		echo '    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">';
+		echo '    <ul style="font-size: 15px;" class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">';
 		
-		echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=52&campaign_id=' . $campaign_id . '&DB=' . $DB . '">';
-		echo '      <i class="ri-logout-box-line"></i> ' . _QXZ("LOG ALL AGENTS OUT OF THIS CAMPAIGN") . '</a>';
+		// echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=52&campaign_id=' . $campaign_id . '&DB=' . $DB . '">';
+		// echo '      <i class="ri-logout-box-line"></i> ' . _QXZ("LOG ALL AGENTS OUT OF THIS CAMPAIGN") . '</a>';
 
+		// echo '    <a class="dropdown-item" href="./AST_VICIDIAL_hopperlist.php?group=' . $campaign_id . '">';
+		// echo '      <i class="ri-list-check"></i> ' . _QXZ("Click here to see what leads are in the hopper right now") . '</a>' . "\n";
+
+
+		// echo '    <a class="dropdown-item" href="./AST_VDADstats.php?group=' . $campaign_id . '">';
+		// echo '      <i class="ri-bar-chart-box-line"></i> ' . _QXZ("Click here to see a VDAD report for this campaign") . '</a>' . "\n";
+
+		// echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=81&campaign_id=' . $campaign_id . '">';
+		// echo '      <i class="ri-time-line"></i> ' . _QXZ("Click here to see all CallBack Holds in this campaign") . '</a>' . "\n";
+
+		// echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=720000000000000&category=CAMPAIGNS&stage=' . $campaign_id . '">';
+		// echo '      <i class="ri-admin-line"></i> ' . _QXZ("Click here to see Admin changes to this campaign") . '</a>' . "\n";
+		// if ($display_dialable_count == 'Y') {
+		// 	// Call function to calculate and print dialable leads
+		// 	$single_status = 0;
+		// 	$only_return = 0;
+		// 	dialable_leads($DB, $link, $local_call_time, $dial_statuses, $camp_lists, $drop_lockout_time, $call_count_limit, $single_status, $fSQL, $only_return);
+		// 	echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=34&campaign_id=' . $campaign_id . '&stage=hide_dialable">';
+		// 	echo '        <i class="ri-eye-off-line"></i> ' . _QXZ("HIDE") . '</a>';
+		// } else {
+		// 	echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=73&campaign_id=' . $campaign_id . '" target="_blank">';
+		// 	echo '        <i class="ri-external-link-line"></i> ' . _QXZ("Popup Dialable Leads Count") . '</a>';
+		// 	echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=31&campaign_id=' . $campaign_id . '&stage=show_dialable">';
+		// 	echo '        <i class="ri-eye-line"></i> ' . _QXZ("SHOW") . '</a>';
+		// }
+		
+		
 		// Conditional link to delete the campaign with trash icon
 		if ($LOGdelete_campaigns > 0) {
-			echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=51&campaign_id=' . $campaign_id . '">';
+			echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=61&campaign_id=' . $campaign_id . '&CoNfIrM=YES">';
+		
 			echo '      <i class="ri-delete-bin-line"></i> ' . _QXZ("DELETE THIS CAMPAIGN") . '</a>';
 		}
+
+		// echo '    <a class="dropdown-item" href="' . $PHP_SELF . '?ADD=34&campaign_id=' . $campaign_id . '&stage=show_leadscount">';
+		// echo '      <i class="ri-eye-line"></i> ' . _QXZ("SHOW LEAD STATUSES IN THIS CAMPAIGN") . '</a>';
+
 		echo '    </ul>';
 		echo '</div>';
 		echo '</div>';
@@ -33653,12 +33713,13 @@ if ($ADD==31)
 	
 		if ($SSoutbound_autodial_active > 0)
 			{
-			echo "<form action=$PHP_SELF method=POST>\n";
+			echo "<form class='px-3' action=$PHP_SELF method=POST>\n";
 			echo "<input type=hidden name=ADD value=44>\n";
 			echo "<input type=hidden name=DB value=$DB>\n";
 			echo "<input type=hidden name=stage value=list_activation>\n";
 			echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
-			echo "<br><b>"._QXZ("LISTS WITHIN THIS CAMPAIGN").": &nbsp; $NWB#campaign_lists$NWE</b>\n";
+			echo "<br><b>"._QXZ("LISTS WITHIN THIS CAMPAIGN").": &nbsp; </b>\n";
+			// $NWB#campaign_lists$NWE
 	
 			
 				echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
@@ -33765,7 +33826,7 @@ if ($ADD==31)
 				{$fSQL = '';}
 	
 				$camp_lists = preg_replace('/.$/i','',$camp_lists);
-			echo _QXZ("This campaign has")." $active_lists "._QXZ("active lists and")." $inactive_lists "._QXZ("inactive lists")."<br><br>\n";
+			// echo _QXZ("This campaign has")." $active_lists "._QXZ("active hh lists and")." $inactive_lists "._QXZ("inactive lists")."<br><br>\n";
 	
 	
 			if ( ($display_leads_count == 'Y') and (strlen($camp_lists) > 3) )
@@ -33873,23 +33934,23 @@ if ($ADD==31)
 				}
 			else
 				{
-				echo "<font size=1><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&stage=show_leadscount\">"._QXZ("SHOW LEAD STATUSES IN THIS CAMPAIGN")."</a></font><BR><BR>";
+				// echo "<font size=1><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&stage=show_leadscount\">"._QXZ("SHOW LEAD STATUSES IN THIS CAMPAIGN")."</a></font><BR><BR>";
 				}
 	
 	
-			if ($display_dialable_count == 'Y')
-				{
-				### call function to calculate and print dialable leads
-				$single_status=0;
-				$only_return=0;
-				dialable_leads($DB,$link,$local_call_time,$dial_statuses,$camp_lists,$drop_lockout_time,$call_count_limit,$single_status,$fSQL,$only_return);
-				echo " - <font size=1><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&stage=hide_dialable\">"._QXZ("HIDE")."</a></font><BR><BR>";
-				}
-			else
-				{
-				echo "<a href=\"$PHP_SELF?ADD=73&campaign_id=$campaign_id\" target=\"_blank\">Popup Dialable Leads Count</a>";
-				echo " - <font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=show_dialable\">"._QXZ("SHOW")."</a></font><BR><BR>";
-				}
+			// if ($display_dialable_count == 'Y')
+			// 	{
+			// 	//  call function to calculate and print dialable leads
+			// 	// $single_status=0;
+			// 	// $only_return=0;
+			// 	// dialable_leads($DB,$link,$local_call_time,$dial_statuses,$camp_lists,$drop_lockout_time,$call_count_limit,$single_status,$fSQL,$only_return);
+			// 	// echo " - <font size=1><a href=\"$PHP_SELF?ADD=34&campaign_id=$campaign_id&stage=hide_dialable\">"._QXZ("HIDE")."</a></font><BR><BR>";
+			// 	}
+			// else
+			// 	{
+			// 	echo "<a href=\"$PHP_SELF?ADD=73&campaign_id=$campaign_id\" target=\"_blank\">Popup Dialable Leads Count</a>";
+			// 	echo " - <font size=1><a href=\"$PHP_SELF?ADD=31&campaign_id=$campaign_id&stage=show_dialable\">"._QXZ("SHOW")."</a></font><BR><BR>";
+			// 	}
 	
 			$stmt="SELECT count(*) FROM vicidial_hopper where campaign_id='$campaign_id' and status IN('READY','RHOLD','RQUEUE') $LOGallowed_campaignsSQL;";
 			if ($DB) {echo "$stmt\n";}
@@ -33897,14 +33958,14 @@ if ($ADD==31)
 			$rowx=mysqli_fetch_row($rslt);
 			$hopper_leads = "$rowx[0]";
 	
-			echo _QXZ("This campaign has")." $hopper_leads "._QXZ("leads in the dial hopper")."<br><br>\n";
-			echo "<a href=\"./AST_VICIDIAL_hopperlist.php?group=$campaign_id\">"._QXZ("Click here to see what leads are in the hopper right now")."</a><br><br>\n";
-			echo "<a href=\"./AST_VDADstats.php?group=$campaign_id\">"._QXZ("Click here to see a VDAD report for this campaign")."</a><BR><BR>\n";
+			// echo _QXZ("This campaign has")." $hopper_leads "._QXZ("leads in the dial hopper")."<br><br>\n";
+			// echo "<a href=\"./AST_VICIDIAL_hopperlist.php?group=$campaign_id\">"._QXZ("Click here to see what leads are in the hopper right now")."</a><br><br>\n";
+			// echo "<a href=\"./AST_VDADstats.php?group=$campaign_id\">"._QXZ("Click here to see a VDAD report for this campaign")."</a><BR><BR>\n";
 			}
-			echo "<a href=\"$PHP_SELF?ADD=81&campaign_id=$campaign_id\">"._QXZ("Click here to see all CallBack Holds in this campaign")."</a><BR><BR>\n";
+			// echo "<a href=\"$PHP_SELF?ADD=81&campaign_id=$campaign_id\">"._QXZ("Click here to see all CallBack Holds in this campaign")."</a><BR><BR>\n";
 			if ( ($LOGuser_level >= 9) and ( (preg_match("/Administration Change Log/",$LOGallowed_reports)) or (preg_match("/ALL REPORTS/",$LOGallowed_reports)) ) )
 				{
-				echo "<br><br><a href=\"$PHP_SELF?ADD=720000000000000&category=CAMPAIGNS&stage=$campaign_id\">"._QXZ("Click here to see Admin changes to this campaign")."</a></FONT>\n";
+				// echo "<br><br><a href=\"$PHP_SELF?ADD=720000000000000&category=CAMPAIGNS&stage=$campaign_id\">"._QXZ("Click here to see Admin changes to this campaign")."</a></FONT>\n";
 				}
 	
 			echo "</b></center>\n";
@@ -42877,12 +42938,20 @@ if ($ADD==31)
 			echo '<!--end col-->';
 
 
-			echo '<div class="col-md-6">';
+			echo '<div class="col-md-6 relative">';
 			echo "<div class=\"mb-3\" >";
 		//    echo ""._QXZ("Script Color")." <font size=2>(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)<td align=left bgcolor=\"$script_color\" id=\"script_color_td\"><input type=text name=script_color id=script_color size=7 maxlength=20 value=\"$script_color\"> $NWB#scripts-script_color$NWE</td></tr>\n";
 			echo "<label for=\"emailidInput\" class=\"form-label\">"._QXZ("Script Color")."(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)</label>";
 			echo "<font id=\"script_color\" ><input id=\"script_color_td\" bgcolor=\"$script_color\"  type=text name=\"script_color\" class=\"form-control\" value=\"$script_color\" ></font>";
 			echo '</div>';
+			
+
+			// posix_getppid
+
+			echo '<span style="position:absolute;left:10px;top:72px;z-index:1;visibility:hidden;" id="audio_chooser_span">';
+
+			echo '</span>';
+
 			echo '</div>';
 			echo '<!--end col-->';
 			
@@ -49618,7 +49687,7 @@ if ($ADD==31)
 		{
 		echo "<div class=\"main-content\">";
 		
-		echo '<div class="page-content">';
+		echo '<div class="">';
 		echo '<div class="container-fluid">'; 
 		// 	echo '<div class="page-content">';
 		// 	echo '<div class="container-fluid">';
@@ -49630,12 +49699,7 @@ if ($ADD==31)
 
 		echo '<div class="col-lg-12">';
 		echo '<div class="card">';
-		echo '<div class="card-header align-items-center d-flex">';
-		//echo "<h4 class=\"card-title mb-0 flex-grow-1\">"._QXZ("ADD A NEW CAMPAIGN")."</h4>";
-		echo '<div class="flex-shrink-0">';
-
-		echo '</div>';
-		echo '</div><!-- end card header -->';
+	
 
 
 		//echo "<TABLE><TR><TD>\n";
@@ -57114,12 +57178,12 @@ echo '</thead>';
 			}
 		else
 			{
-			echo _QXZ("no active lists selected for this campaign")."\n";
+			// echo _QXZ("no active lists selected for this campaign")."\n";
 			}
 		}
 	else
 		{
-		echo _QXZ("no active lists selected for this campaign")."\n";
+		// echo _QXZ("no active lists selected for this campaign")."\n";
 		}
 	}
 

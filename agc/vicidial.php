@@ -23328,7 +23328,7 @@ $zi=2;
                         <div class="row g-4 mt-5" style="align-items:center;">
                             <div class="col-md-1" style="margin-top: 0;width: 93px;">
                                 <div class="avatar-md">
-                                    <img src="/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
+                                    <img src="/abdellah/agc/pereine/velzon/assets/images/users/no-profile.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
                                 </div>
 
 								
@@ -23774,7 +23774,7 @@ $zi=2;
 																									if ($label_phone_number != '---HIDE---')
 																										{
 																										echo " <input type=\"hidden\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
-																										// echo "<span id=\"phone_numberDISP\"> </span>";
+																										 echo "<span style=\"display:none\" id=\"phone_numberDISP\"> </span>";
 																										}
 																									else
 																										{
@@ -23786,7 +23786,7 @@ $zi=2;
 																										if ( (preg_match('/Y/',$disable_alter_custphone)) or (preg_match('/HIDE/',$disable_alter_custphone)) )
 																											{
 																											
-																											// echo "<span id=\"phone_numberDISP\">  </span>";
+																											 echo "<span style=\"display:none\" id=\"phone_numberDISP\">  </span>";
 																											echo "<input type=\"text\" class=\"form-control\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
 																											echo '</div>';
 																											echo '</div>';
