@@ -13695,7 +13695,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 					//	alert(checkVDAI_query);
 					//	document.getElementById("debugbottomspan").innerHTML = checkVDAI_query + "\n" + xmlhttprequestcheckauto.responseText;
 						var check_VDIC_array=check_incoming.split("\n");
-						if (check_VDIC_array[0] == '1')
+						if (check_VDIC_array[0] == 1)
 							{
 						//	alert(xmlhttprequestcheckauto.responseText);
 							AutoDialWaiting = 0;
@@ -23340,6 +23340,7 @@ $zi=2;
 									<div style="display:inline" id="call-button">
 										<button type="button" class="btn btn-primary btn-label waves-effect waves-light" id="call_manuel_butt" data-bs-toggle="modal" data-bs-target="#myModal"><i class="ri-phone-line label-icon align-middle fs-16 me-2"></i><?php echo _QXZ("Call Manuel"); ?></button>
 									</div>
+									<span id="CusTInfOSpaN" style="display:none;"></span>  
 										<div style="display:inline" id="HangupControl">
 											<button style="cursor:default;background: gray !important;color: white;border: gray;" disabled type="button" class="btn btn-secondary btn-label waves-effect waves-light" id="HangupControl" ><?php echo $agent_hide_hangup_ACTIVE_style ?>
 											<span class="mdi mdi-phone-hangup label-icon align-middle fs-16 me-2"></span>
@@ -23773,8 +23774,16 @@ $zi=2;
 
 																									if ($label_phone_number != '---HIDE---')
 																										{
+																											echo '<div class="col-lg-3">';
+																										echo '<div class="mb-3">';
+																										echo '<label for="title" class="form-label">'.$label_phone_number.'</label></br>';
 																										echo " <input type=\"hidden\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
-																										 echo "<span style=\"display:none\" id=\"phone_numberDISP\"> </span>";
+
+																										echo "<div  id=\"phone_numberDISP\">
+																										</div>";
+
+																										echo '</div>';
+																										echo '</div>';
 																										}
 																									else
 																										{
@@ -23786,7 +23795,7 @@ $zi=2;
 																										if ( (preg_match('/Y/',$disable_alter_custphone)) or (preg_match('/HIDE/',$disable_alter_custphone)) )
 																											{
 																											
-																											 echo "<span style=\"display:none\" id=\"phone_numberDISP\">  </span>";
+																											 echo "<span id=\"phone_numberDISP\">  </span>";
 																											echo "<input type=\"text\" class=\"form-control\" name=\"phone_number\" id=\"phone_number\" value=\"\" />";
 																											echo '</div>';
 																											echo '</div>';
@@ -24080,19 +24089,19 @@ $zi=2;
 								<?php echo _QXZ("Session ID"); ?> 
 								<span class="ms-auto " id="sessionIDspan"></span>
 							</li>
-							<!--
-								<li class="list-group-item d-flex align-items-center">
+						
+								<li class="list-group-item d-none align-items-center">
 									<?php echo _QXZ("Queu Notice"); ?> 
 									<span class="ms-auto " id="ManualQueueNotice"></span>
 								</li>
-							-->
-							<!--
+						
+						
 
-								<li class="list-group-item d-flex align-items-center">
+								<li class="list-group-item d-none align-items-center">
 									<span id="AgentStatusCalls" class="hidden"></span>
 									<span  class="badge ms-auto bg-primary" id="AgentStatusEmails"></span>
 								</li>
-							-->
+							
 							
 						</ul>
 					
