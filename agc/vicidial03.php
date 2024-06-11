@@ -11451,6 +11451,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 // Update Agent screen with values from vicidial_list record
 	function UpdateFieldsData()
 		{
+		alert("gfgfgfg")
 		var fields_list = update_fields_data + ',';
 		update_fields=0;
 		update_fields_data='';
@@ -13559,6 +13560,7 @@ function set_length(SLnumber,SLlength_goal,SLdirection)
 // Check to see if there is a call being sent from the auto-dialer to agent conf
 	function check_for_auto_incoming()
 		{
+			
 		if (typeof(xmlhttprequestcheckauto) == "undefined") 
 			{
 			CFAI_sent=1;
