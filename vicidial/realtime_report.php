@@ -1988,65 +1988,69 @@ if ($RS_hide_CUST_info < 1)
 </script>
 
 <STYLE type="text/css">
-	#realtime_content > font.top_settings_val{
+	#realtime_content > font > b,
+	#realtime_content > b>font.top_settings_val,
+	#realtime_content > b>font.top_settings_key
+	{
 		display:none;
 
 	}
-	#realtime_content > div:nth-child(6) > pre > font > div.col-xl-12 > div > div.card > div.flex-grow-1 > div > div > div{
+	#realtime_content >b> div:nth-child(6) > pre > font > div.col-xl-12 > div > div.card > div.flex-grow-1 > div > div > div{
 		display:none;
 	}
 	#realtime_content > font.top_settings_key{
 		display:none;
 	}
-	#realtime_content > div:nth-child(6) > pre > font > div.relative{
+	#realtime_content >b> div:nth-child(6) > pre > font > div.relative{
 		margin-top:20px;
-		min-height:136px;
-		max-height:400px;
+		height:200px;
+		overflow-y:scroll;
+		/* max-height:400px; */
 	}
-	#realtime_content > div:nth-child(6) > pre{
+	#realtime_content >b> div:nth-child(6) > pre{
 		overflow-x:hidden;
 	}
-	#realtime_content > div:nth-child(6) > pre > font > div.relative > table{
+	#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table{
 		position:absolute;
 		top:55px
 	}
-	#realtime_content > div:nth-child(6) > pre > font > div.relative > div > div > h4{
+	#realtime_content >b> div:nth-child(6) > pre > font > div.relative > div > div > h4{
 		font-size:19px;
 		padding-bottom:15px;
 	}
 
-	#realtime_content > div:nth-child(6) > pre > font > div.relative > table tbody{
+	#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table tbody{
 		max-height:50px;
 		overflow-y:scroll;
 	}
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table font{
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table font{
 		font-size:14px;
 	}
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:nth-child(1) {
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table > tbody > tr:nth-child(1) {
 		background-color:#405189;
 		font-weight: 400;
 
 	}
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:nth-child(1) font{
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table > tbody > tr:nth-child(1) font{
 		
 		font-weight: 400;
 
 	}
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr font{
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table > tbody > tr font{
 	
 		color:white !important;
 	}
 
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:not(:first-child) td span{
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table > tbody > tr:not(:first-child) td span{
 		padding:5px;
 		border-radius:5px;
 		font-size :14px;
 	}
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody > tr:not(:first-child){
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table > tbody > tr:not(:first-child){
 		background-color: #d3d3ff;
 	}
 
-		#realtime_content > div:nth-child(6) > pre > font > div.relative > table > tbody   td {
+		#realtime_content >b> div:nth-child(6) > pre > font > div.relative > table > tbody   td {
 		text-align:left;
 	}
 	
