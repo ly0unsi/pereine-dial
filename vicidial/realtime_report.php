@@ -2208,7 +2208,7 @@ else
 	echo '<div class="d-flex align-items-lg-center flex-lg-row flex-column">';
 	echo '<div class="flex-grow-1">';
 	echo "<h2 class=\"link-Success\"><b> "._QXZ("$report_name")." </b> </h2>";
-	echo '<p class="text-muted mb-0">Heres whats happening with your CRM today.</p>';
+	echo "<p class=\"text-muted mb-0\">"._QXZ("Heres whats happening with your CRM today.")." </p>";
 	echo '</div>';
 	echo '<div class="mt-3 mt-lg-0">';
 	echo '<form action="javascript:void(0);">';
