@@ -1878,23 +1878,23 @@ else
 			{$bgcolor="bgcolor=\"#$SSstd_row1_background\"";}
 
 		$u++;
-		$call_log .= "<tr >";
-		$call_log .= "<td>$u</td>";
-		$call_log .= "<td>$row[4]</td>";
-		$call_log .= "<td > $row[7]</td>\n";
+		$call_log .= "<tr $bgcolor>";
+		$call_log .= "<td><font size=1>$u</td>";
+		$call_log .= "<td><font size=2>$row[4]</td>";
+		$call_log .= "<td align=left><font size=2> $row[7]</td>\n";
 		if ( ($LOGmodify_leads == '3') or ($LOGmodify_leads == '4') )
 			{
-			$call_log .= "<td ><u><span id=\"vicidial_log_status_$u\" onClick=\"ModifyLogDisplayShow(event, $u,'vicidial_log','$row[0]','$row[1]','$row[4]','$row[8]','$row[11]')\">$row[8]</span></u></td>\n";
+			$call_log .= "<td align=left><font size=2><font color=blue><u><span id=\"vicidial_log_status_$u\" onClick=\"ModifyLogDisplayShow(event, $u,'vicidial_log','$row[0]','$row[1]','$row[4]','$row[8]','$row[11]')\">$row[8]</span></u></font></td>\n";
 			$HTML_inline_script .= "vicidial_log_mod[$u] = \"Call Date: $row[4]<br>$label_lead_id: $row[1]<br>Current Status: $row[8]<br>\";\n";
 			}
 		else
-			{$call_log .= "<td> $row[8]</td>\n";}
-		$call_log .= "<td>$row[11] </td>\n";
-		$call_log .= "<td> $row[3] </td>\n";
-		$call_log .= "<td> $row[2] </td>\n";
-		$call_log .= "<td> $row[1] </td>\n";
-		$call_log .= "<td> $row[15] </td>\n";
-		$call_log .= "<td> $row[10] $row[16] </td>\n";
+			{$call_log .= "<td align=left><font size=2> $row[8]</td>\n";}
+		$call_log .= "<td align=left><font size=2> <A HREF=\"user_stats.php?user=$row[11]\" target=\"_blank\">$row[11]</A> </td>\n";
+		$call_log .= "<td align=right><font size=2> $row[3] </td>\n";
+		$call_log .= "<td align=right><font size=2> $row[2] </td>\n";
+		$call_log .= "<td align=right><font size=2> $row[1] </td>\n";
+		$call_log .= "<td align=center><font size=2> $row[15] </td>\n";
+		$call_log .= "<td align=left><font size=2>&nbsp; $row[10] </font><font size=1>$row[16] </td>\n";
 
 		if ($CIDdisplay=="Yes")
 			{
@@ -2019,24 +2019,24 @@ else
 			{$bgcolor="bgcolor=\"#$SSstd_row1_background\"";}
 
 		$y++;
-		$agent_log .= "<tr >";
-		$agent_log .= "<td>$y</td>";
-		$agent_log .= "<td>$row[3]</td>";
-		$agent_log .= "<td > $row[5]</td>\n";
-		$agent_log .= "<td > $row[1] </td>\n";
-		$agent_log .= "<td> $row[7]</td>\n";
-		$agent_log .= "<td> $row[9] </td>\n";
-		$agent_log .= "<td> $row[11] </td>\n";
-		$agent_log .= "<td> $row[13] </td>\n";
+		$agent_log .= "<tr $bgcolor>";
+		$agent_log .= "<td><font size=1>$y</td>";
+		$agent_log .= "<td><font size=2>$row[3]</td>";
+		$agent_log .= "<td align=left><font size=2> $row[5]</td>\n";
+		$agent_log .= "<td align=left><font size=2> <A HREF=\"user_stats.php?user=$row[1]\" target=\"_blank\">$row[1]</A> </td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[7]</td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[9] </td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[11] </td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[13] </td>\n";
 		if ( ($LOGmodify_leads == '3') or ($LOGmodify_leads == '4') )
 			{
-			$agent_log .= "<td >  <u><span id=\"vicidial_agent_log_status_$y\" onClick=\"ModifyLogDisplayShow(event, $y,'vicidial_agent_log','$row[0]','$row[4]','$row[3]','$row[14]','$row[1]')\">$row[14]</span></u></td>\n";
+			$agent_log .= "<td align=left><font size=2> &nbsp; <font color=blue><u><span id=\"vicidial_agent_log_status_$y\" onClick=\"ModifyLogDisplayShow(event, $y,'vicidial_agent_log','$row[0]','$row[4]','$row[3]','$row[14]','$row[1]')\">$row[14]</span></u></font></td>\n";
 			$HTML_inline_script .= "vicidial_agent_log_mod[$y] = \"Event Date: $row[3]<br>$label_lead_id: $row[4]<br>Current Status: $row[14]<br>\";\n";
 			}
 		else
-			{$agent_log .= "<td> $row[14]</td>\n";}
-		$agent_log .= "<td> &nbsp; $row[15] </td>\n";
-		$agent_log .= "<td> &nbsp; $row[17] </td></tr>\n";
+			{$agent_log .= "<td align=left><font size=2> $row[14]</td>\n";}
+		$agent_log .= "<td align=right><font size=2> &nbsp; $row[15] </td>\n";
+		$agent_log .= "<td align=right><font size=2> &nbsp; $row[17] </td></tr>\n";
 
 		$campaign_id = $row[5];
 		}
@@ -2713,17 +2713,17 @@ else
 		echo '</div><!-- end row -->';
 		echo '</div><!-- end col -->';
 		
-		echo '<div class="col-xxl-12">';
+		echo '<div class="col-xxl-4">';
 		echo '<div class="card">';
 		echo '<div class="card-header border-0">';
-		echo '<h4 class="card-title mb-0">Statuts</h4>';
+		echo '<h4 class="card-title mb-0">Upcoming Schedules</h4>';
 		echo '</div><!-- end cardheader -->';
 		echo '<div class="card-body pt-0">';
-		// echo '<div class="upcoming-scheduled">';
-		// // echo '<input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-deafult-date="today" data-inline-date="true">';
-		// echo '</div>';
+		echo '<div class="upcoming-scheduled">';
+		echo '<input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-deafult-date="today" data-inline-date="true">';
+		echo '</div>';
 		
-		// echo '<h6 class="text-uppercase fw-semibold mt-4 mb-3 text-muted">Events:</h6>';
+		echo '<h6 class="text-uppercase fw-semibold mt-4 mb-3 text-muted">Events:</h6>';
 		if ($LOGadmin_hide_lead_data != '0')
 			{
 
@@ -2873,10 +2873,10 @@ else
 		echo '</div><!-- end row -->';
 		
 		echo '<div class="row">';
-		echo '<div class="col-xl-12">';
+		echo '<div class="col-xl-7">';
 		echo '<div class="card card-height-100">';
 		echo '<div class="card-header d-flex align-items-center">';
-		echo "<h4 class=\"card-title flex-grow-1 mb-0\">"._QXZ("AGENT LOG RECORDS FOR THIS LEAD")."</h4>";
+		echo '<h4 class="card-title flex-grow-1 mb-0">Active Projects</h4>';
 		echo '<div class="flex-shrink-0">';
 		echo '<a href="javascript:void(0);" class="btn btn-soft-info btn-sm material-shadow-none">Export Report</a>';
 		echo '</div>';
@@ -2886,35 +2886,815 @@ else
 		echo '<table class="table table-nowrap table-centered align-middle">';
 		echo '<thead class="bg-light text-muted">';
 		echo '<tr>';
-		echo "<th scope=\"col\">#</th>";
-		echo "<th scope=\"col\">"._QXZ("DATE/TIME")."</th>";
-		echo "<th scope=\"col\">"._QXZ("CAMPAIGN")."</th>";
-		echo "<th scope=\"col\">"._QXZ("TSR")."</th>";
-		echo "<th scope=\"col\">"._QXZ("PAUSE")."</th>";
-		echo "<th scope=\"col\">"._QXZ("WAIT")."</th>";
-		echo "<th scope=\"col\">"._QXZ("TALK")."</th>";
-		echo "<th scope=\"col\">"._QXZ("DISPO")."</th>";
-		echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
-		echo "<th scope=\"col\">"._QXZ("GROUP")."</th>";
-		echo "<th scope=\"col\" style=\"width: 10%;\">"._QXZ("SUB")."</th>";
+		echo '<th scope="col">Project Name</th>';
+		echo '<th scope="col">Project Lead</th>';
+		echo '<th scope="col">Progress</th>';
+		echo '<th scope="col">Assignee</th>';
+		echo '<th scope="col">Status</th>';
+		echo '<th scope="col" style="width: 10%;">Due Date</th>';
 		echo '</tr><!-- end tr -->';
 		echo '</thead><!-- thead -->';
 		
 		echo '<tbody>';
-		
-		echo "$agent_log\n";
-		
+		echo '<tr>';
+		echo '<td class="fw-medium">Brand Logo Design</td>';
+		echo '<td>';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-1.jpg" class="avatar-xxs rounded-circle me-1 material-shadow" alt="">';
+		echo '<a href="javascript: void(0);" class="text-reset">Donald Risher</a>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="d-flex align-items-center">';
+		echo '<div class="flex-shrink-0 me-1 text-muted fs-13">53%</div>';
+		echo '<div class="progress progress-sm  flex-grow-1" style="width: 68%;">';
+		echo '<div class="progress-bar bg-primary rounded" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="avatar-group flex-nowrap">';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-3.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td><span class="badge bg-warning-subtle text-warning">Inprogress</span></td>';
+		echo '<td class="text-muted">06 Sep 2021</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="fw-medium">Redesign - Landing Page</td>';
+		echo '<td>';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" class="avatar-xxs rounded-circle me-1 material-shadow" alt="">';
+		echo '<a href="javascript: void(0);" class="text-reset">Prezy William</a>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="d-flex align-items-center">';
+		echo '<div class="flex-shrink-0 text-muted me-1">0%</div>';
+		echo '<div class="progress progress-sm flex-grow-1" style="width: 68%;">';
+		echo '<div class="progress-bar bg-primary rounded" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="avatar-group">';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-5.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-6.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td><span class="badge bg-danger-subtle text-danger">Pending</span></td>';
+		echo '<td class="text-muted">13 Nov 2021</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="fw-medium">Multipurpose Landing Template</td>';
+		echo '<td>';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-3.jpg" class="avatar-xxs rounded-circle me-1 material-shadow" alt="">';
+		echo '<a href="javascript: void(0);" class="text-reset">Boonie Hoynas</a>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="d-flex align-items-center">';
+		echo '<div class="flex-shrink-0 text-muted me-1">100%</div>';
+		echo '<div class="progress progress-sm flex-grow-1" style="width: 68%;">';
+		echo '<div class="progress-bar bg-primary rounded" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="avatar-group">';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-7.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-8.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td><span class="badge bg-success-subtle text-success">Completed</span></td>';
+		echo '<td class="text-muted">26 Nov 2021</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="fw-medium">Chat Application</td>';
+		echo '<td>';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-5.jpg" class="avatar-xxs rounded-circle me-1 material-shadow" alt="">';
+		echo '<a href="javascript: void(0);" class="text-reset">Pauline Moll</a>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="d-flex align-items-center">';
+		echo '<div class="flex-shrink-0 text-muted me-1">64%</div>';
+		echo '<div class="progress flex-grow-1 progress-sm" style="width: 68%;">';
+		echo '<div class="progress-bar bg-primary rounded" role="progressbar" style="width: 64%" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="avatar-group">';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td><span class="badge bg-warning-subtle text-warning">Progress</span></td>';
+		echo '<td class="text-muted">15 Dec 2021</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="fw-medium">Create Wireframe</td>';
+		echo '<td>';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-6.jpg" class="avatar-xxs rounded-circle me-1 material-shadow" alt="">';
+		echo '<a href="javascript: void(0);" class="text-reset">James Bangs</a>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="d-flex align-items-center">';
+		echo '<div class="flex-shrink-0 text-muted me-1">77%</div>';
+		echo '<div class="progress flex-grow-1 progress-sm" style="width: 68%;">';
+		echo '<div class="progress-bar bg-primary rounded" role="progressbar" style="width: 77%" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<div class="avatar-group">';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-6.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="avatar-group-item">';
+		echo '<a href="javascript: void(0);" class="d-inline-block">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td><span class="badge bg-warning-subtle text-warning">Progress</span></td>';
+		echo '<td class="text-muted">21 Dec 2021</td>';
+		echo '</tr><!-- end tr -->';
 		echo '</tbody><!-- end tbody -->';
 		echo '</table><!-- end table -->';
 		echo '</div>';
 		
-		
+		echo '<div class="align-items-center mt-xl-3 mt-4 justify-content-between d-flex">';
+		echo '<div class="flex-shrink-0">';
+		echo '<div class="text-muted">Showing <span class="fw-semibold">5</span> of <span class="fw-semibold">25</span> Results </div>';
+		echo '</div>';
+		echo '<ul class="pagination pagination-separated pagination-sm mb-0">';
+		echo '<li class="page-item disabled">';
+		echo '<a href="#" class="page-link">←</a>';
+		echo '</li>';
+		echo '<li class="page-item">';
+		echo '<a href="#" class="page-link">1</a>';
+		echo '</li>';
+		echo '<li class="page-item active">';
+		echo '<a href="#" class="page-link">2</a>';
+		echo '</li>';
+		echo '<li class="page-item">';
+		echo '<a href="#" class="page-link">3</a>';
+		echo '</li>';
+		echo '<li class="page-item">';
+		echo '<a href="#" class="page-link">→</a>';
+		echo '</li>';
+		echo '</ul>';
+		echo '</div>';
 		
 		echo '</div><!-- end card body -->';
 		echo '</div><!-- end card -->';
 		echo '</div><!-- end col -->';
 		
+		echo '<div class="col-xl-5">';
+		echo '<div class="card card-height-100">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo '<h4 class="card-title mb-0 flex-grow-1 py-1">My Tasks</h4>';
+		echo '<div class="flex-shrink-0">';
+		echo '<div class="dropdown card-header-dropdown">';
+		echo '<a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<span class="text-muted">All Tasks <i class="mdi mdi-chevron-down ms-1"></i></span>';
+		echo '</a>';
+		echo '<div class="dropdown-menu dropdown-menu-end">';
+		echo '<a class="dropdown-item" href="#">All Tasks</a>';
+		echo '<a class="dropdown-item" href="#">Completed </a>';
+		echo '<a class="dropdown-item" href="#">Inprogress</a>';
+		echo '<a class="dropdown-item" href="#">Pending</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card header -->';
+		echo '<div class="card-body">';
+		echo '<div class="table-responsive table-card">';
+		echo '<table class="table table-borderless table-nowrap table-centered align-middle mb-0">';
+		echo '<thead class="table-light text-muted">';
+		echo '<tr>';
+		echo '<th scope="col">Name</th>';
+		echo '<th scope="col">Dedline</th>';
+		echo '<th scope="col">Status</th>';
+		echo '<th scope="col">Assignee</th>';
+		echo '</tr>';
+		echo '</thead><!-- end thead -->';
+		echo '<tbody>';
+		echo '<tr>';
+		echo '<td>';
+		echo '<div class="form-check">';
+		echo '<input class="form-check-input fs-15" type="checkbox" value="" id="checkTask1">';
+		echo '<label class="form-check-label ms-1" for="checkTask1">';
+		echo 'Create new Admin Template';
+		echo '</label>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td class="text-muted">03 Nov 2021</td>';
+		echo '<td><span class="badge bg-success-subtle text-success">Completed</span></td>';
+		echo '<td>';
+		echo '<a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Mary Stoner">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr><!-- end -->';
+		echo '<tr>';
+		echo '<td>';
+		echo '<div class="form-check">';
+		echo '<input class="form-check-input fs-15" type="checkbox" value="" id="checkTask2">';
+		echo '<label class="form-check-label ms-1" for="checkTask2">';
+		echo 'Marketing Coordinator';
+		echo '</label>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td class="text-muted">17 Nov 2021</td>';
+		echo '<td><span class="badge bg-warning-subtle text-warning">Progress</span></td>';
+		echo '<td>';
+		echo '<a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Den Davis">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-7.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr><!-- end -->';
+		echo '<tr>';
+		echo '<td>';
+		echo '<div class="form-check">';
+		echo '<input class="form-check-input fs-15" type="checkbox" value="" id="checkTask3">';
+		echo '<label class="form-check-label ms-1" for="checkTask3">';
+		echo 'Administrative Analyst';
+		echo '</label>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td class="text-muted">26 Nov 2021</td>';
+		echo '<td><span class="badge bg-success-subtle text-success">Completed</span></td>';
+		echo '<td>';
+		echo '<a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Alex Brown">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-6.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr><!-- end -->';
+		echo '<tr>';
+		echo '<td>';
+		echo '<div class="form-check">';
+		echo '<input class="form-check-input fs-15" type="checkbox" value="" id="checkTask4">';
+		echo '<label class="form-check-label ms-1" for="checkTask4">';
+		echo 'E-commerce Landing Page';
+		echo '</label>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td class="text-muted">10 Dec 2021</td>';
+		echo '<td><span class="badge bg-danger-subtle text-danger">Pending</span></td>';
+		echo '<td>';
+		echo '<a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Prezy Morin">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-5.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr><!-- end -->';
+		echo '<tr>';
+		echo '<td>';
+		echo '<div class="form-check">';
+		echo '<input class="form-check-input fs-15" type="checkbox" value="" id="checkTask5">';
+		echo '<label class="form-check-label ms-1" for="checkTask5">';
+		echo 'UI/UX Design';
+		echo '</label>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td class="text-muted">22 Dec 2021</td>';
+		echo '<td><span class="badge bg-warning-subtle text-warning">Progress</span></td>';
+		echo '<td>';
+		echo '<a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Stine Nielsen">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr><!-- end -->';
+		echo '<tr>';
+		echo '<td>';
+		echo '<div class="form-check">';
+		echo '<input class="form-check-input fs-15" type="checkbox" value="" id="checkTask6">';
+		echo '<label class="form-check-label ms-1" for="checkTask6">';
+		echo 'Projects Design';
+		echo '</label>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td class="text-muted">31 Dec 2021</td>';
+		echo '<td><span class="badge bg-danger-subtle text-danger">Pending</span></td>';
+		echo '<td>';
+		echo '<a href="javascript: void(0);" class="d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Jansh William">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xxs material-shadow">';
+		echo '</a>';
+		echo '</td>';
+		echo '</tr><!-- end -->';
+		echo '</tbody><!-- end tbody -->';
+		echo '</table><!-- end table -->';
+		echo '</div>';
+		echo '<div class="mt-3 text-center">';
+		echo '<a href="javascript:void(0);" class="text-muted text-decoration-underline">Load More</a>';
+		echo '</div>';
+		echo '</div><!-- end card body -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
+		echo '</div><!-- end row -->';
 		
+		echo '<div class="row">';
+		echo '<div class="col-xxl-4">';
+		echo '<div class="card card-height-100">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo '<h4 class="card-title mb-0 flex-grow-1">Team Members</h4>';
+		echo '<div class="flex-shrink-0">';
+		echo '<div class="dropdown card-header-dropdown">';
+		echo '<a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<span class="fw-semibold text-uppercase fs-12">Sort by: </span><span class="text-muted">Last 30 Days<i class="mdi mdi-chevron-down ms-1"></i></span>';
+		echo '</a>';
+		echo '<div class="dropdown-menu dropdown-menu-end">';
+		echo '<a class="dropdown-item" href="#">Today</a>';
+		echo '<a class="dropdown-item" href="#">Yesterday</a>';
+		echo '<a class="dropdown-item" href="#">Last 7 Days</a>';
+		echo '<a class="dropdown-item" href="#">Last 30 Days</a>';
+		echo '<a class="dropdown-item" href="#">This Month</a>';
+		echo '<a class="dropdown-item" href="#">Last Month</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card header -->';
+		
+		echo '<div class="card-body">';
+		
+		echo '<div class="table-responsive table-card">';
+		echo '<table class="table table-borderless table-nowrap align-middle mb-0">';
+		echo '<thead class="table-light text-muted">';
+		echo '<tr>';
+		echo '<th scope="col">Member</th>';
+		echo '<th scope="col">Hours</th>';
+		echo '<th scope="col">Tasks</th>';
+		echo '<th scope="col">Status</th>';
+		echo '</tr>';
+		echo '</thead>';
+		echo '<tbody>';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">Donald Risher</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">Product Manager</p>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<h6 class="mb-0">110h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '258';
+		echo '</td>';
+		echo '<td style="width:5%;">';
+		echo "<div id=\"radialBar_chart_1\" data-colors='[\"--vz-primary\"]' data-chart-series=\"50\" class=\"apex-charts\" dir=\"ltr\"></div>";
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">Jansh Brown</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">Lead Developer</p>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<h6 class="mb-0">83h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '105';
+		echo '</td>';
+		echo '<td>';
+		echo "<div id=\"radialBar_chart_2\" data-colors='[\"--vz-primary\"]' data-chart-series=\"45\" class=\"apex-charts\" dir=\"ltr\"></div>";
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-7.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">Carroll Adams</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">Lead Designer</p>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<h6 class="mb-0">58h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '75';
+		echo '</td>';
+		echo '<td>';
+		// echo '<div id="radialBar_chart_3" data-colors='["--vz-primary"]' data-chart-series="75" class="apex-charts" dir="ltr"></div>';
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">William Pinto</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">UI/UX Designer</p>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<h6 class="mb-0">96h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '85';
+		echo '</td>';
+		echo '<td>';
+		// echo '<div id="radialBar_chart_4" data-colors='["--vz-warning"]' data-chart-series="25" class="apex-charts" dir="ltr"></div>';
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">Garry Fournier</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">Web Designer</p>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<h6 class="mb-0">76h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '69';
+		echo '</td>';
+		echo '<td>';
+		// echo '<div id="radialBar_chart_5" data-colors='["--vz-primary"]' data-chart-series="60" class="apex-charts" dir="ltr"></div>';
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-5.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">Susan Denton</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">Lead Designer</p>';
+		echo '</div>';
+		echo '</td>';
+		
+		echo '<td>';
+		echo '<h6 class="mb-0">123h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '658';
+		echo '</td>';
+		echo '<td>';
+		// echo '<div id="radialBar_chart_6" data-colors='["--vz-success"]' data-chart-series="85" class="apex-charts" dir="ltr"></div>';
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '<tr>';
+		echo '<td class="d-flex">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-3 me-2 material-shadow">';
+		echo '<div>';
+		echo '<h5 class="fs-13 mb-0">Joseph Jackson</h5>';
+		echo '<p class="fs-12 mb-0 text-muted">React Developer</p>';
+		echo '</div>';
+		echo '</td>';
+		echo '<td>';
+		echo '<h6 class="mb-0">117h : <span class="text-muted">150h</span></h6>';
+		echo '</td>';
+		echo '<td>';
+		echo '125';
+		echo '</td>';
+		echo '<td>';
+		// echo '<div id="radialBar_chart_7" data-colors='["--vz-primary"]' data-chart-series="70" class="apex-charts" dir="ltr"></div>';
+		echo '</td>';
+		echo '</tr><!-- end tr -->';
+		echo '</tbody><!-- end tbody -->';
+		echo '</table><!-- end table -->';
+		echo '</div>';
+		echo '</div><!-- end cardbody -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
+		
+		echo '<div class="col-xxl-4 col-lg-6">';
+		echo '<div class="card card-height-100">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo '<h4 class="card-title mb-0 flex-grow-1">Chat</h4>';
+		echo '<div class="flex-shrink-0">';
+		echo '<div class="dropdown card-header-dropdown">';
+		echo '<a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<span class="text-muted"><i class="ri-settings-4-line align-bottom me-1"></i>Setting <i class="mdi mdi-chevron-down ms-1"></i></span>';
+		echo '</a>';
+		echo '<div class="dropdown-menu dropdown-menu-end">';
+		echo '<a class="dropdown-item" href="#"><i class="ri-user-2-fill align-bottom text-muted me-2"></i> View Profile</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-inbox-archive-line align-bottom text-muted me-2"></i> Archive</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-mic-off-line align-bottom text-muted me-2"></i> Muted</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-delete-bin-5-line align-bottom text-muted me-2"></i> Delete</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card header -->';
+		
+		echo '<div class="card-body p-0">';
+		echo '<div id="users-chat">';
+		echo '<div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 400px;">';
+		echo '<ul class="list-unstyled chat-conversation-list chat-sm" id="users-conversation">';
+		echo '<li class="chat-list left">';
+		echo '<div class="conversation-list">';
+		echo '<div class="chat-avatar">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="material-shadow">';
+		echo '</div>';
+		echo '<div class="user-chat-content">';
+		echo '<div class="ctext-wrap">';
+		echo '<div class="ctext-wrap-content">';
+		echo '<p class="mb-0 ctext-content">Good morning 😊</p>';
+		echo '</div>';
+		echo '<div class="dropdown align-self-start message-box-drop">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-2-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="conversation-name"><small class="text-muted time">09:07 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</li>';
+		echo '<!-- chat-list -->';
+		
+		echo '<li class="chat-list right">';
+		echo '<div class="conversation-list">';
+		echo '<div class="user-chat-content">';
+		echo '<div class="ctext-wrap">';
+		echo '<div class="ctext-wrap-content">';
+		echo '<p class="mb-0 ctext-content">Good morning, How are you? What about our next meeting?</p>';
+		echo '</div>';
+		echo '<div class="dropdown align-self-start message-box-drop">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-2-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="conversation-name"><small class="text-muted time">09:08 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</li>';
+		echo '<!-- chat-list -->';
+		
+		echo '<li class="chat-list left">';
+		echo '<div class="conversation-list">';
+		echo '<div class="chat-avatar">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="material-shadow">';
+		echo '</div>';
+		echo '<div class="user-chat-content">';
+		echo '<div class="ctext-wrap">';
+		echo '<div class="ctext-wrap-content">';
+		echo '<p class="mb-0 ctext-content">Yeah everything is fine. Our next meeting tomorrow at 10.00 AM</p>';
+		echo '</div>';
+		echo '<div class="dropdown align-self-start message-box-drop">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-2-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="ctext-wrap">';
+		echo '<div class="ctext-wrap-content">';
+		// echo '<p class="mb-0 ctext-content">Hey, I'm going to meet a friend of mine at the department store. I have to buy some presents for my parents 🎁.</p>';
+		echo '</div>';
+		echo '<div class="dropdown align-self-start message-box-drop">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-2-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="conversation-name"><small class="text-muted time">09:10 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</li>';
+		echo '<!-- chat-list -->';
+		
+		echo '<li class="chat-list right">';
+		echo '<div class="conversation-list">';
+		echo '<div class="user-chat-content">';
+		echo '<div class="ctext-wrap">';
+		echo '<div class="ctext-wrap-content">';
+		echo '<p class="mb-0 ctext-content">Wow thats great</p>';
+		echo '</div>';
+		echo '<div class="dropdown align-self-start message-box-drop">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-2-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="conversation-name"><small class="text-muted time">09:12 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</li>';
+		echo '<!-- chat-list -->';
+		
+		echo '<li class="chat-list left">';
+		echo '<div class="conversation-list">';
+		echo '<div class="chat-avatar">';
+		echo '<img src="../agc/pereine/velzon/assets/images/users/avatar-2.jpg" alt="" class="material-shadow">';
+		echo '</div>';
+		echo '<div class="user-chat-content">';
+		echo '<div class="ctext-wrap">';
+		echo '<div class="message-img mb-0">';
+		echo '<div class="message-img-list">';
+		echo '<div>';
+		echo '<a class="popup-img d-inline-block" href="../agc/pereine/velzon/assets/images/small/img-1.jpg">';
+		echo '<img src="../agc/pereine/velzon/assets/images/small/img-1.jpg" alt="" class="rounded border">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="message-img-link">';
+		echo '<ul class="list-inline mb-0">';
+		echo '<li class="list-inline-item dropdown">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="../agc/pereine/velzon/assets/images/small/img-1.jpg" download=""><i class="ri-download-2-line me-2 text-muted align-bottom"></i>Download</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</li>';
+		echo '</ul>';
+		echo '</div>';
+		echo '</div>';
+		
+		echo '<div class="message-img-list">';
+		echo '<div>';
+		echo '<a class="popup-img d-inline-block" href="../agc/pereine/velzon/assets/images/small/img-2.jpg">';
+		echo '<img src="../agc/pereine/velzon/assets/images/small/img-2.jpg" alt="" class="rounded border">';
+		echo '</a>';
+		echo '</div>';
+		echo '<div class="message-img-link">';
+		echo '<ul class="list-inline mb-0">';
+		echo '<li class="list-inline-item dropdown">';
+		echo '<a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo '<i class="ri-more-fill"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu">';
+		echo '<a class="dropdown-item" href="../agc/pereine/velzon/assets/images/small/img-2.jpg" download=""><i class="ri-download-2-line me-2 text-muted align-bottom"></i>Download</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>';
+		echo '<a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>';
+		echo '<a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>';
+		echo '</div>';
+		echo '</li>';
+		echo '</ul>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		
+		echo '<div class="conversation-name"><small class="text-muted time">09:30 am</small> <span class="text-success check-message-icon"><i class="ri-check-double-line align-bottom"></i></span></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</li>';
+		echo '<!-- chat-list -->';
+		echo '</ul>';
+		echo '</div>';
+		echo '</div>';
+		echo '<div class="border-top border-top-dashed">';
+		echo '<div class="row g-2 mx-3 mt-2 mb-3">';
+		echo '<div class="col">';
+		echo '<div class="position-relative">';
+		echo '<input type="text" class="form-control border-light bg-light" placeholder="Enter Message...">';
+		echo '</div>';
+		echo '</div><!-- end col -->';
+		echo '<div class="col-auto">';
+		echo '<button type="submit" class="btn btn-info"><span class="d-none d-sm-inline-block me-2">Send</span> <i class="mdi mdi-send float-end"></i></button>';
+		echo '</div><!-- end col -->';
+		echo '</div><!-- end row -->';
+		echo '</div>';
+		echo '</div><!-- end cardbody -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
+		
+		echo '<div class="col-xxl-4 col-lg-6">';
+		echo '<div class="card card-height-100">';
+		echo '<div class="card-header align-items-center d-flex">';
+		echo '<h4 class="card-title mb-0 flex-grow-1">Projects Status</h4>';
+		echo '<div class="flex-shrink-0">';
+		echo '<div class="dropdown card-header-dropdown">';
+		echo '<a class="dropdown-btn text-muted" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+		echo 'All Time <i class="mdi mdi-chevron-down ms-1"></i>';
+		echo '</a>';
+		echo '<div class="dropdown-menu dropdown-menu-end">';
+		echo '<a class="dropdown-item" href="#">All Time</a>';
+		echo '<a class="dropdown-item" href="#">Last 7 Days</a>';
+		echo '<a class="dropdown-item" href="#">Last 30 Days</a>';
+		echo '<a class="dropdown-item" href="#">Last 90 Days</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div><!-- end card header -->';
+		
+		echo '<div class="card-body">';
+		// echo '<div id="prjects-status" data-colors='["--vz-success", "--vz-primary", "--vz-warning", "--vz-danger"]' data-colors-minimal='["--vz-primary", "--vz-primary-rgb, 0.85", "--vz-primary-rgb, 0.70", "--vz-primary-rgb, 0.50"]' data-colors-galaxy='["--vz-primary", "--vz-primary-rgb, 0.85", "--vz-primary-rgb, 0.70", "--vz-primary-rgb, 0.50"]' class="apex-charts" dir="ltr"></div>';
+		echo '<div class="mt-3">';
+		echo '<div class="d-flex justify-content-center align-items-center mb-4">';
+		echo '<h2 class="me-3 ff-secondary mb-0">258</h2>';
+		echo '<div>';
+		echo '<p class="text-muted mb-0">Total Projects</p>';
+		echo '<p class="text-success fw-medium mb-0">';
+		echo '<span class="badge bg-success-subtle text-success p-1 rounded-circle"><i class="ri-arrow-right-up-line"></i></span> +3 New';
+		echo '</p>';
+		echo '</div>';
+		echo '</div>';
+		
+		echo '<div class="d-flex justify-content-between border-bottom border-bottom-dashed py-2">';
+		echo '<p class="fw-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-success align-middle me-2"></i> Completed</p>';
+		echo '<div>';
+		echo '<span class="text-muted pe-5">125 Projects</span>';
+		echo '<span class="text-success fw-medium fs-12">15870hrs</span>';
+		echo '</div>';
+		echo '</div><!-- end -->';
+		echo '<div class="d-flex justify-content-between border-bottom border-bottom-dashed py-2">';
+		echo '<p class="fw-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i> In Progress</p>';
+		echo '<div>';
+		echo '<span class="text-muted pe-5">42 Projects</span>';
+		echo '<span class="text-success fw-medium fs-12">243hrs</span>';
+		echo '</div>';
+		echo '</div><!-- end -->';
+		echo '<div class="d-flex justify-content-between border-bottom border-bottom-dashed py-2">';
+		echo '<p class="fw-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-warning align-middle me-2"></i> Yet to Start</p>';
+		echo '<div>';
+		echo '<span class="text-muted pe-5">58 Projects</span>';
+		echo '<span class="text-success fw-medium fs-12">~2050hrs</span>';
+		echo '</div>';
+		echo '</div><!-- end -->';
+		echo '<div class="d-flex justify-content-between py-2">';
+		echo '<p class="fw-medium mb-0"><i class="ri-checkbox-blank-circle-fill text-danger align-middle me-2"></i> Cancelled</p>';
+		echo '<div>';
+		echo '<span class="text-muted pe-5">89 Projects</span>';
+		echo '<span class="text-success fw-medium fs-12">~900hrs</span>';
+		echo '</div>';
+		echo '</div><!-- end -->';
+		echo '</div>';
+		echo '</div><!-- end cardbody -->';
+		echo '</div><!-- end card -->';
+		echo '</div><!-- end col -->';
 		// echo '</div><!-- end row -->';
 		// 
 		// echo '</div>';
@@ -2977,9 +3757,9 @@ else
 			}
 		else
 			{
-			// echo "<tr><td colspan=2 align='center'>";
-			// echo "<a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=Yes&CIDdisplay=$CIDdisplay\">"._QXZ("Turn on archived logs display")."</a>";
-			// echo "</td></tr>\n";
+			echo "<tr><td colspan=2 align='center'>";
+			echo "<a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=Yes&CIDdisplay=$CIDdisplay\">"._QXZ("Turn on archived logs display")."</a>";
+			echo "</td></tr>\n";
 			}
 
 		if ($lead_id == 'NEW') {$list_id='';}
@@ -3113,7 +3893,7 @@ else
 			echo "<tr><td align=center></td><td><hr></td></tr>\n";
 			}
 
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=right>"._QXZ("Disposition").": </td><td align=left><select size=1 name=status>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=right>"._QXZ("Disposition").": </td><td align=left><select size=1 name=status>\n";
 
 		### find out if status(dispo) is a scheduled callback status
 		$scheduled_callback='';
@@ -3209,15 +3989,15 @@ else
 			{$statuses_list .= "<option SELECTED value=\"$dispo\">$dispo</option>\n";}
 		if ($CBhold_set < 1)
 			{$statuses_list .= "<option value=\"CBHOLD\">CBHOLD - "._QXZ("Scheduled Callback")."</option>\n";}
-		// echo "$statuses_list";
-		// echo "</select> <i>("._QXZ("with")." $list_campaign "._QXZ("statuses").")</i></td></tr>\n";
+		echo "$statuses_list";
+		echo "</select> <i>("._QXZ("with")." $list_campaign "._QXZ("statuses").")</i></td></tr>\n";
 
 
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify vicidial log")." </td><td align=left><input type=checkbox name=modify_logs value=\"1\" CHECKED></td></tr>\n";
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify agent log")." </td><td align=left><input type=checkbox name=modify_agent_logs value=\"1\" CHECKED></td></tr>\n";
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify closer log")." </td><td align=left><input type=checkbox name=modify_closer_logs value=\"1\"></td></tr>\n";
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Add closer log record")." </td><td align=left><input type=checkbox name=add_closer_record value=\"1\"></td></tr>\n";
-		 }
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify vicidial log")." </td><td align=left><input type=checkbox name=modify_logs value=\"1\" CHECKED></td></tr>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify agent log")." </td><td align=left><input type=checkbox name=modify_agent_logs value=\"1\" CHECKED></td></tr>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify closer log")." </td><td align=left><input type=checkbox name=modify_closer_logs value=\"1\"></td></tr>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Add closer log record")." </td><td align=left><input type=checkbox name=add_closer_record value=\"1\"></td></tr>\n";
+		}
 	else
 		{
 		echo "<input type=hidden name=status value=\"NEW\">\n";
@@ -3237,7 +4017,7 @@ else
 	if ($lead_id != 'NEW') 
 		{
 		echo "<TABLE BGCOLOR=#".$SSstd_row4_background." WIDTH=750><TR><TD>\n";
-		// echo _QXZ("Callback Details").":<BR>\n";
+		echo _QXZ("Callback Details").":<BR>\n";
 		if ( ($dispo == 'CALLBK') or ($dispo == 'CBHOLD') or ($scheduled_callback == 'Y') )
 			{
 			### find any vicidial_callback records for this lead 
@@ -3469,7 +4249,7 @@ else
 			}
 		else
 			{
-			// echo "<BR>"._QXZ("If you want to change this lead to a scheduled callback, first change the Disposition to CBHOLD, then submit and you will be able to set the callback date and time").".<BR>\n";
+			echo "<BR>"._QXZ("If you want to change this lead to a scheduled callback, first change the Disposition to CBHOLD, then submit and you will be able to set the callback date and time").".<BR>\n";
 			echo "</TD></TR></table>\n";
 
 			echo "<br><br>\n";
@@ -3600,12 +4380,12 @@ else
 			}
 
 
-		// echo "<B>"._QXZ("CALLS TO THIS LEAD").":</B>\n";
+		echo "<B>"._QXZ("CALLS TO THIS LEAD").":</B>\n";
 		if ($CIDdisplay=="Yes")
 			{
 			$out_log_width=1300;
 			if ($AMDcount > 0) {$out_log_width=1500;}
-			// echo "<TABLE width=$out_log_width cellspacing=0 cellpadding=1>\n";
+			echo "<TABLE width=$out_log_width cellspacing=0 cellpadding=1>\n";
 			echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("LENGTH")."</td><td align=left><font size=2> "._QXZ("STATUS")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=right><font size=2> "._QXZ("CAMPAIGN")."</td><td align=right><font size=2> "._QXZ("LIST")."</td><td align=right><font size=2> "._QXZ("LEAD")."</td><td align=right><font size=2> "._QXZ("HANGUP REASON")."</td><td align=center><font size=2> "._QXZ("PHONE")."</td><td align=center><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("UNIQUEID")."</a></td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("SERVER IP")."</a></td>";
 			if ($AMDcount > 0)
 				{echo "<td align=right><font size=2> "._QXZ("AMD STATUS")."</td><td align=right><font size=2> "._QXZ("AMD RESPONSE")."</td>";}
@@ -3613,54 +4393,14 @@ else
 			}
 		else
 			{
+			echo "<TABLE width=850 cellspacing=0 cellpadding=1>\n";
+			echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("LENGTH")."</td><td align=left><font size=2> "._QXZ("STATUS")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=right><font size=2> "._QXZ("CAMPAIGN")."</td><td align=right><font size=2> "._QXZ("LIST")."</td><td align=right><font size=2> "._QXZ("LEAD")."</td><td align=right><font size=2> "._QXZ("HANGUP REASON")."</td><td align=center><font size=2> "._QXZ("PHONE")."</td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></td></tr>\n";
+			}
 
-				echo '<div class="row">';
-				echo '<div class="col-xl-12">';
-				echo '<div class="card card-height-100">';
-				echo '<div class="card-header d-flex align-items-center">';
-				echo "<h4 class=\"card-title flex-grow-1 mb-0\">"._QXZ("CALLS TO THIS LEAD")."</h4>";
-				echo '<div class="flex-shrink-0">';
-				echo '<a href="javascript:void(0);" class="btn btn-soft-info btn-sm material-shadow-none">Export Report</a>';
-				echo '</div>';
-				echo '</div><!-- end cardheader -->';
-				echo '<div class="card-body">';
-				echo '<div class="table-responsive table-card">';
-				echo '<table class="table table-nowrap table-centered align-middle">';
-				echo '<thead class="bg-light text-muted">';
-				echo '<tr>';
-				echo "<th scope=\"col\">#</th>";
-				echo "<th scope=\"col\">"._QXZ("DATE/TIME")."</th>";
-				echo "<th scope=\"col\">"._QXZ("LENGTH")."</th>";
-				echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
-				echo "<th scope=\"col\">"._QXZ("TSR")."</th>";
-				echo "<th scope=\"col\">"._QXZ("CAMPAIGN")."</th>";
-				echo "<th scope=\"col\">"._QXZ("LIST")."</th>";
-				echo "<th scope=\"col\">"._QXZ("LEAD")."</th>";
-				echo "<th scope=\"col\">"._QXZ("HANGUP REASON")."</th>";
-				echo "<th scope=\"col\">"._QXZ("PHONE")."</th>";
-				echo "<th scope=\"col\" style=\"width: 10%;\"><a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></th>";
-				echo '</tr><!-- end tr -->';
-				echo '</thead><!-- thead -->';
-				
-				echo '<tbody>';
-				
-				echo "$call_log\n";
-				
-				echo '</tbody><!-- end tbody -->';
-				echo '</table><!-- end table -->';
-				echo '</div>';
-				echo '</div><!-- end card body -->';
-				echo '</div><!-- end card -->';
-				echo '</div><!-- end col -->';
+		echo "$call_log\n";
 
-			// echo "<TABLE width=850 cellspacing=0 cellpadding=1>\n";
-			// echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("LENGTH")."</td><td align=left><font size=2> "._QXZ("STATUS")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=right><font size=2> "._QXZ("CAMPAIGN")."</td><td align=right><font size=2> "._QXZ("LIST")."</td><td align=right><font size=2> "._QXZ("LEAD")."</td><td align=right><font size=2> "._QXZ("HANGUP REASON")."</td><td align=center><font size=2> "._QXZ("PHONE")."</td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></td></tr>\n";
-			 }
-
-		// echo "$call_log\n";
-
-		// echo "</TABLE>\n";
-		// echo "<BR><BR>\n";
+		echo "</TABLE>\n";
+		echo "<BR><BR>\n";
 
 		echo "<B>"._QXZ("CLOSER RECORDS FOR THIS LEAD").":</B>\n";
 		if ($CIDdisplay=="Yes")
@@ -3680,45 +4420,14 @@ else
 		echo "<BR><BR>\n";
 
 
-		// echo "<B>"._QXZ("AGENT LOG RECORDS FOR THIS LEAD").":</B>\n";
+		echo "<B>"._QXZ("AGENT LOG RECORDS FOR THIS LEAD").":</B>\n";
+		echo "<TABLE width=750 cellspacing=0 cellpadding=1>\n";
+		echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("CAMPAIGN")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=left><font size=2> "._QXZ("PAUSE")."</td><td align=right><font size=2> "._QXZ("WAIT")."</td><td align=right><font size=2> "._QXZ("TALK")."</td><td align=right><font size=2> "._QXZ("DISPO")."</td><td align=right><font size=2> "._QXZ("STATUS")."</td><td align=right><font size=2> "._QXZ("GROUP")."</td><td align=right><font size=2> "._QXZ("SUB")."</td></tr>\n";
 
-		// echo '<div class="row">';
-		// echo '<div class="col-xl-12">';
-		// echo '<div class="card card-height-100">';
-		// echo '<div class="card-header d-flex align-items-center">';
-		// echo "<h4 class=\"card-title flex-grow-1 mb-0\">"._QXZ("AGENT LOG RECORDS FOR THIS LEAD")."</h4>";
-		// echo '<div class="flex-shrink-0">';
-		// echo '<a href="javascript:void(0);" class="btn btn-soft-info btn-sm material-shadow-none">Export Report</a>';
-		// echo '</div>';
-		// echo '</div><!-- end cardheader -->';
-		// echo '<div class="card-body">';
-		// echo '<div class="table-responsive table-card">';
-		// echo '<table class="table table-nowrap table-centered align-middle">';
-		// echo '<thead class="bg-light text-muted">';
-		// echo '<tr>';
-		// echo "<th scope=\"col\">"._QXZ("DATE/TIME")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("CAMPAIGN")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("TSR")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("PAUSE")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("WAIT")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("TALK")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("DISPO")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("GROUP")."</th>";
-		// echo "<th scope=\"col\" style=\"width: 10%;\">"._QXZ("SUB")."</th>";
-		// echo '</tr><!-- end tr -->';
-		// echo '</thead><!-- thead -->';
-		
-		// echo '<tbody>';
-		// echo '<tr>';
+			echo "$agent_log\n";
 
-		// // echo "<TABLE width=750 cellspacing=0 cellpadding=1>\n";
-		// echo "<tr><td># </td><td>"._QXZ("DATE/TIME")." </td><td align=left>"._QXZ("CAMPAIGN")."</td><td align=left> "._QXZ("TSR")."</td><td align=left> "._QXZ("PAUSE")."</td><td align=right><font size=2> "._QXZ("WAIT")."</td><td align=right><font size=2> "._QXZ("TALK")."</td><td align=right><font size=2> "._QXZ("DISPO")."</td><td align=right><font size=2> "._QXZ("STATUS")."</td><td align=right><font size=2> "._QXZ("GROUP")."</td><td align=right><font size=2> "._QXZ("SUB")."</td></tr>\n";
-
-		// 	echo "$agent_log\n";
-
-		// echo "</TABLE>\n";
-		// echo "<BR><BR>\n";
+		echo "</TABLE>\n";
+		echo "<BR><BR>\n";
 
 
 		echo "<B>"._QXZ("PARK LOGS FOR THIS LEAD").":</B>\n";
@@ -4229,7 +4938,7 @@ else
 				{
 				if ($log_recording_access<1) 
 					{
-					$play_audio = "<td align=left><font size=2> <audio controls preload=\"none\"> <source src ='$location' type='audio/mpeg' > <source src ='$location' type='audio/mpeg' >"._QXZ("No browser audio playback support")."</audio> </td>\n";
+					$play_audio = "<td align=left><font size=2> <audio controls preload=\"none\"> <source src ='$location' type='audio/mp3' > <source src ='$location' type='audio/mpeg' >"._QXZ("No browser audio playback support")."</audio> </td>\n";
 					$location = "<a href=\"$location\">$locat</a>";
 					}
 				else

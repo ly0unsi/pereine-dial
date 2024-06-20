@@ -1878,23 +1878,23 @@ else
 			{$bgcolor="bgcolor=\"#$SSstd_row1_background\"";}
 
 		$u++;
-		$call_log .= "<tr >";
-		$call_log .= "<td>$u</td>";
-		$call_log .= "<td>$row[4]</td>";
-		$call_log .= "<td > $row[7]</td>\n";
+		$call_log .= "<tr $bgcolor>";
+		$call_log .= "<td><font size=1>$u</td>";
+		$call_log .= "<td><font size=2>$row[4]</td>";
+		$call_log .= "<td align=left><font size=2> $row[7]</td>\n";
 		if ( ($LOGmodify_leads == '3') or ($LOGmodify_leads == '4') )
 			{
-			$call_log .= "<td ><u><span id=\"vicidial_log_status_$u\" onClick=\"ModifyLogDisplayShow(event, $u,'vicidial_log','$row[0]','$row[1]','$row[4]','$row[8]','$row[11]')\">$row[8]</span></u></td>\n";
+			$call_log .= "<td align=left><font size=2><font color=blue><u><span id=\"vicidial_log_status_$u\" onClick=\"ModifyLogDisplayShow(event, $u,'vicidial_log','$row[0]','$row[1]','$row[4]','$row[8]','$row[11]')\">$row[8]</span></u></font></td>\n";
 			$HTML_inline_script .= "vicidial_log_mod[$u] = \"Call Date: $row[4]<br>$label_lead_id: $row[1]<br>Current Status: $row[8]<br>\";\n";
 			}
 		else
-			{$call_log .= "<td> $row[8]</td>\n";}
-		$call_log .= "<td>$row[11] </td>\n";
-		$call_log .= "<td> $row[3] </td>\n";
-		$call_log .= "<td> $row[2] </td>\n";
-		$call_log .= "<td> $row[1] </td>\n";
-		$call_log .= "<td> $row[15] </td>\n";
-		$call_log .= "<td> $row[10] $row[16] </td>\n";
+			{$call_log .= "<td align=left><font size=2> $row[8]</td>\n";}
+		$call_log .= "<td align=left><font size=2> <A HREF=\"user_stats.php?user=$row[11]\" target=\"_blank\">$row[11]</A> </td>\n";
+		$call_log .= "<td align=right><font size=2> $row[3] </td>\n";
+		$call_log .= "<td align=right><font size=2> $row[2] </td>\n";
+		$call_log .= "<td align=right><font size=2> $row[1] </td>\n";
+		$call_log .= "<td align=center><font size=2> $row[15] </td>\n";
+		$call_log .= "<td align=left><font size=2>&nbsp; $row[10] </font><font size=1>$row[16] </td>\n";
 
 		if ($CIDdisplay=="Yes")
 			{
@@ -2019,24 +2019,24 @@ else
 			{$bgcolor="bgcolor=\"#$SSstd_row1_background\"";}
 
 		$y++;
-		$agent_log .= "<tr >";
-		$agent_log .= "<td>$y</td>";
-		$agent_log .= "<td>$row[3]</td>";
-		$agent_log .= "<td > $row[5]</td>\n";
-		$agent_log .= "<td > $row[1] </td>\n";
-		$agent_log .= "<td> $row[7]</td>\n";
-		$agent_log .= "<td> $row[9] </td>\n";
-		$agent_log .= "<td> $row[11] </td>\n";
-		$agent_log .= "<td> $row[13] </td>\n";
+		$agent_log .= "<tr $bgcolor>";
+		$agent_log .= "<td><font size=1>$y</td>";
+		$agent_log .= "<td><font size=2>$row[3]</td>";
+		$agent_log .= "<td align=left><font size=2> $row[5]</td>\n";
+		$agent_log .= "<td align=left><font size=2> <A HREF=\"user_stats.php?user=$row[1]\" target=\"_blank\">$row[1]</A> </td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[7]</td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[9] </td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[11] </td>\n";
+		$agent_log .= "<td align=right><font size=2> $row[13] </td>\n";
 		if ( ($LOGmodify_leads == '3') or ($LOGmodify_leads == '4') )
 			{
-			$agent_log .= "<td >  <u><span id=\"vicidial_agent_log_status_$y\" onClick=\"ModifyLogDisplayShow(event, $y,'vicidial_agent_log','$row[0]','$row[4]','$row[3]','$row[14]','$row[1]')\">$row[14]</span></u></td>\n";
+			$agent_log .= "<td align=left><font size=2> &nbsp; <font color=blue><u><span id=\"vicidial_agent_log_status_$y\" onClick=\"ModifyLogDisplayShow(event, $y,'vicidial_agent_log','$row[0]','$row[4]','$row[3]','$row[14]','$row[1]')\">$row[14]</span></u></font></td>\n";
 			$HTML_inline_script .= "vicidial_agent_log_mod[$y] = \"Event Date: $row[3]<br>$label_lead_id: $row[4]<br>Current Status: $row[14]<br>\";\n";
 			}
 		else
-			{$agent_log .= "<td> $row[14]</td>\n";}
-		$agent_log .= "<td> &nbsp; $row[15] </td>\n";
-		$agent_log .= "<td> &nbsp; $row[17] </td></tr>\n";
+			{$agent_log .= "<td align=left><font size=2> $row[14]</td>\n";}
+		$agent_log .= "<td align=right><font size=2> &nbsp; $row[15] </td>\n";
+		$agent_log .= "<td align=right><font size=2> &nbsp; $row[17] </td></tr>\n";
 
 		$campaign_id = $row[5];
 		}
@@ -2528,280 +2528,74 @@ else
 	if ( ($lead_count > 0) or ($lead_id == 'NEW') )
 		{
 		if ($campaign_id=='---NONE') {$campaign_id='';}
+		echo "<br><br><form action=$PHP_SELF method=POST>\n";
+		echo "<input type=hidden name=end_call value=1>\n";
+		echo "<input type=hidden name=DB value=\"$DB\">\n";
+		echo "<input type=hidden name=lead_id value=\"$lead_id\">\n";
+		echo "<input type=hidden name=dispo value=\"$dispo\">\n";
+		echo "<input type=hidden name=list_id value=\"$list_id\">\n";
+		echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
+		echo "<input type=hidden name=old_phone value=\"$phone_number\">\n";
+		echo "<input type=hidden name=server_ip value=\"$server_ip\">\n";
+		echo "<input type=hidden name=extension value=\"$extension\">\n";
+		echo "<input type=hidden name=channel value=\"$channel\">\n";
+		echo "<input type=hidden name=call_began value=\"$call_began\">\n";
+		echo "<input type=hidden name=parked_time value=\"$parked_time\">\n";
+		echo "<input type=hidden name=FORM_LOADED id=FORM_LOADED value=\"0\" />\n";
+		echo "<table cellpadding=1 cellspacing=0>\n";
+		echo "<tr><td colspan=2>$label_lead_id: $lead_id &nbsp; &nbsp; $label_list_id:  $list_id &nbsp; &nbsp; <font size=2>$label_gmt_offset_now: $gmt_offset_now &nbsp; &nbsp; $label_called_since_last_reset: $called_since_last_reset</td></tr>\n";
+		echo "<tr><td colspan=2>$label_user: <A HREF=\"user_stats.php?user=$tsr\">$tsr</A> &nbsp; &nbsp; $label_called_count: $called_count <font size=2>("._QXZ("today").": $call_count_today)</font> &nbsp; &nbsp; $label_last_local_call_time: $last_local_call_time</td></tr>\n";
+		if ($archive_search=="Yes") 
+			{
+			echo "<tr><td colspan=2 align='center'>";
+			echo "<B><font color='#FF0000'>*** "._QXZ("ARCHIVED LEAD")." ***</font></B>";
+			echo "<input type='hidden' name='archive_search' value='Yes'>";
+			echo "</td></tr>\n";
+			}
+		if ($archive_log=="Yes") 
+			{
+			echo "<tr><td colspan=2 align='center'>";
+			echo "<B><font color='#FF0000'>*** "._QXZ("ARCHIVED LOG SEARCH ENABLED")." ***</font></B> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=No&CIDdisplay=$CIDdisplay\">"._QXZ("Turn off archived logs display")."</a><BR>";
+			echo "<B><font color='#FF0000'>*** "._QXZ("ARCHIVED LOGS SHOWN IN RED, THERE MAY BE DUPLICATES WITH NON-ARCHIVED LOG ENTRIES")." ***</font></B>";
+			echo "<input type='hidden' name='archive_log' value='Yes'>";
+			echo "</td></tr>\n";
+			}
+		else
+			{
+			echo "<tr><td colspan=2 align='center'>";
+			echo "<a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=Yes&CIDdisplay=$CIDdisplay\">"._QXZ("Turn on archived logs display")."</a>";
+			echo "</td></tr>\n";
+			}
 
+		if ($lead_id == 'NEW') {$list_id='';}
 
-
-
-
-		// echo '<div class="main-content">';
-		// // 
-		// echo '<div class="page-content">';
-		echo '<div class="container-fluid">';
-		// // 
-		// echo '<!-- start page title -->';
-		echo '<div class="row">';
-		// echo '<div class="col-12">';
-		// echo '<div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">';
-		// echo '<h4 class="mb-sm-0">Projects</h4>';
-		
-		echo '<div class="page-title-right">';
-		echo '<ol class="breadcrumb m-0">';
-		// echo '<li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>';
-		// echo '<li class="breadcrumb-item active">Projects</li>';
-		echo '</ol>';
-		echo '</div>';
-		
-		echo '</div>';
-		echo '</div>';
-		echo '</div>';
-		echo '<!-- end page title -->';
-		
-		echo '<div class="row project-wrapper">';
-		echo '<div class="col-xxl-12">';
-		echo '<div class="row">';
-		echo '<div class="col-xl-3">';
-		echo '<div class="card card-animate">';
-		echo '<div class="card-body">';
-		echo '<div class="d-flex align-items-center">';
-		echo '<div class="avatar-sm flex-shrink-0">';
-		echo '<span class="avatar-title bg-primary-subtle text-primary rounded-2 fs-2">';
-		echo '<i data-feather="briefcase" class="text-primary"></i>';
-		echo '</span>';
-		echo '</div>';
-		echo '<div class="flex-grow-1 overflow-hidden ms-3">';
-		echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-3\">$label_lead_id</p>";
-		// echo "<tr><td colspan=2>$label_lead_id: $lead_id &nbsp; &nbsp; $label_list_id:  $list_id &nbsp; &nbsp; <font size=2>$label_gmt_offset_now: $gmt_offset_now &nbsp; &nbsp; $label_called_since_last_reset: $called_since_last_reset</td></tr>\n";
-		echo '<div class="d-flex align-items-center mb-3">';
-		echo "<h4 class=\"fs-4 flex-grow-1 mb-0\"><span class=\"counter-value\" data-target=\"825\">$lead_id</span></h4>";
-		echo '<span class="badge bg-danger-subtle text-danger fs-12"><i class="ri-arrow-down-s-line fs-13 align-middle me-1"></i>5.02 %</span>';
-		echo '</div>';
-		echo '<p class="text-muted text-truncate mb-0">Projects this month</p>';
-		echo '</div>';
-		echo '</div>';
-		echo '</div><!-- end card body -->';
-		echo '</div>';
-		echo '</div><!-- end col -->';
-		
-		echo '<div class="col-xl-3">';
-		echo '<div class="card card-animate">';
-		echo '<div class="card-body">';
-		echo '<div class="d-flex align-items-center">';
-		echo '<div class="avatar-sm flex-shrink-0">';
-		echo '<span class="avatar-title bg-warning-subtle text-warning rounded-2 fs-2">';
-		echo '<i data-feather="award" class="text-warning"></i>';
-		echo '</span>';
-		echo '</div>';
-		echo '<div class="flex-grow-1 ms-3">';
-		echo "<p class=\"text-uppercase fw-medium text-muted mb-3\">$label_list_id</p>";
-		echo '<div class="d-flex align-items-center mb-3">';
-		echo "<h4 class=\"fs-4 flex-grow-1 mb-0\"><span class=\"counter-value\" data-target=\"7522\">$list_id</span></h4>";
-		echo '<span class="badge bg-success-subtle text-success fs-12"><i class="ri-arrow-up-s-line fs-13 align-middle me-1"></i>3.58 %</span>';
-		echo '</div>';
-		echo '<p class="text-muted mb-0">Leads this month</p>';
-		echo '</div>';
-		echo '</div>';
-		echo '</div><!-- end card body -->';
-		echo '</div>';
-		echo '</div><!-- end col -->';
-		
-		echo '<div class="col-xl-3">';
-		echo '<div class="card card-animate">';
-		echo '<div class="card-body">';
-		echo '<div class="d-flex align-items-center">';
-		echo '<div class="avatar-sm flex-shrink-0">';
-		echo '<span class="avatar-title bg-info-subtle text-info rounded-2 fs-2">';
-		echo '<i data-feather="clock" class="text-info"></i>';
-		echo '</span>';
-		echo '</div>';
-		echo '<div class="flex-grow-1 overflow-hidden ms-3">';
-		echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-3\">$label_gmt_offset_now</p>";
-		echo '<div class="d-flex align-items-center mb-3">';
-		echo "<h4 class=\"fs-4 flex-grow-1 mb-0\"><span class=\"counter-value\" data-target=\"168\">$gmt_offset_now</span></h4>";
-		echo '<span class="badge bg-danger-subtle text-danger fs-12"><i class="ri-arrow-down-s-line fs-13 align-middle me-1"></i>10.35 %</span>';
-		echo '</div>';
-		echo '<p class="text-muted text-truncate mb-0">Work this month</p>';
-		echo '</div>';
-		echo '</div>';
-		echo '</div><!-- end card body -->';
-		echo '</div>';
-		echo '</div><!-- end col -->';
-
-		echo '<div class="col-xl-3">';
-		echo '<div class="card card-animate">';
-		echo '<div class="card-body">';
-		echo '<div class="d-flex align-items-center">';
-		echo '<div class="avatar-sm flex-shrink-0">';
-		echo '<span class="avatar-title bg-info-subtle text-info rounded-2 fs-2">';
-		echo '<i data-feather="clock" class="text-info"></i>';
-		echo '</span>';
-		echo '</div>';
-		echo '<div class="flex-grow-1 overflow-hidden ms-3">';
-		echo "<p class=\"text-uppercase fw-medium text-muted text-truncate mb-3\">$label_called_since_last_reset</p>";
-		echo '<div class="d-flex align-items-center mb-3">';
-		echo "<h4 class=\"fs-4 flex-grow-1 mb-0\"><span class=\"counter-value\" data-target=\"168\">$called_since_last_reset</span></h4>";
-		echo '<span class="badge bg-danger-subtle text-danger fs-12"><i class="ri-arrow-down-s-line fs-13 align-middle me-1"></i>10.35 %</span>';
-		echo '</div>';
-		echo '<p class="text-muted text-truncate mb-0">Work this month</p>';
-		echo '</div>';
-		echo '</div>';
-		echo '</div><!-- end card body -->';
-		echo '</div>';
-		echo '</div><!-- end col -->';
-		echo '</div><!-- end row -->';
-		
-		echo '<div class="row">';
-		echo '<div class="col-xl-12">';
-		echo '<div class="card">';
-		echo '<div class="card-header border-0 align-items-center d-flex">';
-		echo "<h4 class=\"card-title mb-0 flex-grow-1\">$label_user:<font class=\"text-success\"> $tsr</font></h4>";
-		// echo '<div>';
-		// echo '<button type="button" class="btn btn-soft-secondary btn-sm material-shadow-none">';
-		// echo 'ALL';
-		// echo '</button>';
-		// echo '<button type="button" class="btn btn-soft-secondary btn-sm material-shadow-none">';
-		// echo '1M';
-		// echo '</button>';
-		// echo '<button type="button" class="btn btn-soft-secondary btn-sm material-shadow-none">';
-		// echo '6M';
-		// echo '</button>';
-		// echo '<button type="button" class="btn btn-soft-primary btn-sm material-shadow-none">';
-		// echo '1Y';
-		// echo '</button>';
-		// echo '</div>';
-		echo '</div><!-- end card header -->';
-		
-		echo '<div class="card-header p-0 border-0 bg-light-subtle">';
-		echo '<div class="row g-0 text-center">';
-		echo '<div class="col-3 ">';
-		echo '<div class="p-3 border border-dashed border-start-0">';
-		// echo "<tr><td colspan=2>$label_user: <A HREF=\"user_stats.php?user=$tsr\">$tsr</A> &nbsp; &nbsp; $label_called_count: $called_count <font size=2>("._QXZ("today").": $call_count_today)</font> &nbsp; &nbsp; $label_last_local_call_time: $last_local_call_time</td></tr>\n";
-		echo "<h5 class=\"mb-1\"><span class=\"counter-value\" data-target=\"9851\">$called_count</span></h5>";
-		echo "<p class=\"text-muted mb-0\">$label_called_count</p>";
-		echo '</div>';
-		echo '</div>';
-		echo '<!--end col-->';
-		echo '<div class="col-3 ">';
-		echo '<div class="p-3 border border-dashed border-start-0">';
-		echo "<h5 class=\"mb-1\"><span class=\"counter-value\" data-target=\"1026\">$call_count_today</span></h5>";
-		echo "<p class=\"text-muted mb-0\">"._QXZ("today")."</p>";
-		echo '</div>';
-		echo '</div>';
-		echo '<!--end col-->';
-		echo '<div class="col-6">';
-		echo '<div class="p-3 border border-dashed border-start-0">';
-		echo "<h5 class=\"mb-1\"><span class=\"counter-value\" data-target=\"228.89\">$last_local_call_time</span></h5>";
-		echo "<p class=\"text-muted mb-0\">$label_last_local_call_time</p>";
-		echo '</div>';
-		echo '</div>';
-		echo '<!--end col-->';
-		// echo '<div class="col-6 col-sm-3">';
-		// echo '<div class="p-3 border border-dashed border-start-0 border-end-0">';
-		// echo '<h5 class="mb-1 text-success"><span class="counter-value" data-target="10589">0</span>h</h5>';
-		// echo '<p class="text-muted mb-0">Working Hours</p>';
-		// echo '</div>';
-		// echo '</div>';
-		// echo '<!--end col-->';
-		echo '</div>';
-		echo '</div><!-- end card header -->';
-		echo '<div class="card-body p-0 pb-2">';
-		echo '<div>';
-		// echo "<div id="projects-overview-chart" data-colors='["--vz-primary", "--vz-warning", "--vz-success"]' data-colors-minimal='["--vz-primary", "--vz-primary-rgb, 0.1", "--vz-primary-rgb, 0.50"]' data-colors-interactive='["--vz-primary", "--vz-info", "--vz-warning"]' data-colors-creative='["--vz-secondary", "--vz-warning", "--vz-success"]' data-colors-corporate='["--vz-primary", "--vz-secondary", "--vz-danger"]' data-colors-galaxy='["--vz-primary", "--vz-primary-rgb, 0.1", "--vz-primary-rgb, 0.50"]' data-colors-classic='["--vz-primary", "--vz-secondary", "--vz-warning"]' dir="ltr" class="apex-charts"></div>";
-		echo '</div>';
-		echo '</div><!-- end card body -->';
-		echo '</div><!-- end card -->';
-		echo '</div><!-- end col -->';
-		echo '</div><!-- end row -->';
-		echo '</div><!-- end col -->';
-		
-		echo '<div class="col-xxl-12">';
-		echo '<div class="card">';
-		echo '<div class="card-header border-0">';
-		echo '<h4 class="card-title mb-0">Statuts</h4>';
-		echo '</div><!-- end cardheader -->';
-		echo '<div class="card-body pt-0">';
-		// echo '<div class="upcoming-scheduled">';
-		// // echo '<input type="text" class="form-control" data-provider="flatpickr" data-date-format="d M, Y" data-deafult-date="today" data-inline-date="true">';
-		// echo '</div>';
-		
-		// echo '<h6 class="text-uppercase fw-semibold mt-4 mb-3 text-muted">Events:</h6>';
 		if ($LOGadmin_hide_lead_data != '0')
 			{
+			echo "<tr><td align=right>$label_title: </td><td align=left>$title &nbsp; \n";
+			echo "$label_first_name: $first_name </td></tr>\n";
+			echo "<tr><td align=right>$label_middle_initial:  </td><td align=left>$middle_initial &nbsp; \n";
+			echo " $label_last_name: $last_name </td></tr>\n";
+			echo "<tr><td align=right>$label_address1 : </td><td align=left>$address1</td></tr>\n";
+			echo "<tr><td align=right>$label_address2 : </td><td align=left>$address2</td></tr>\n";
+			echo "<tr><td align=right>$label_address3 : </td><td align=left>$address3</td></tr>\n";
+			echo "<tr><td align=right>$label_city : </td><td align=left>$city</td></tr>\n";
+			echo "<tr><td align=right>$label_state: </td><td align=left>$state &nbsp; \n";
+			echo " $label_postal_code: $postal_code </td></tr>\n";
 
-
-				echo '<div class="row">';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_first_name</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$first_name\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_last_name</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$last_name\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_address1</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$address1\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_address2</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$address2\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_city</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$city\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_postal_code</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$postal_code\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_gender</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$gender\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_phone_number</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$phone_code|$phone_number\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '<div class="col-9">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_email</label>";
-				echo "<input type=\"text\" class=\"form-control\" id=\"disabledInput\" value=\"$email\" disabled>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				// echo '<div class="col-6">';
-				// echo '<div class="mb-3">';
-				// echo "<label for=\"firstNameinput\" class=\"form-label\">$label_comments</label>";
-				// echo "<textarea rows=\"3\" class=\"form-control\" id=\"disabledInput\" value=\"$comments\" disabled></textarea>";
-				// echo '</div>';
-				// echo '</div><!--end col-->';
-				// echo '</div><!--end row-->';
-
-
-
-		
+			echo "<tr><td align=right>$label_province : </td><td align=left>$province</td></tr>\n";
+			echo "<tr><td align=right>$label_country_code : </td><td align=left>$country_code &nbsp; \n";
+			echo " $label_date_of_birth: $date_of_birth </td></tr>\n";
+			echo "<tr><td align=right>$label_phone_number : </td><td align=left>$phone_number</td></tr>\n";
+			echo "<tr><td align=right>$label_phone_code : </td><td align=left>$phone_code</td></tr>\n";
+			echo "<tr><td align=right>$label_alt_phone : </td><td align=left>$alt_phone</td></tr>\n";
+			echo "<tr><td align=right>$label_email : </td><td align=left>$email</td></tr>\n";
+			echo "<tr><td align=right>$label_security_phrase : </td><td align=left>$security</td></tr>\n";
+			echo "<tr><td align=right>$label_vendor_lead_code : </td><td align=left>$vendor_id></td></tr>\n";
 			if ($SSsource_id_display > 0)
-			echo '<div class="col-6">';
-				echo '<div class="mb-3">';
-				echo "<label for=\"firstNameinput\" class=\"form-label\">$label_comments</label>";
-				echo "<textarea rows=\"3\" class=\"form-control\" id=\"disabledInput\" value=\"$comments\" disabled></textarea>";
-				echo '</div>';
-				echo '</div><!--end col-->';
-				echo '</div><!--end row-->';
+				{echo "<tr><td align=right>$label_source_id : </td><td align=left>$source_id></td></tr>\n";}
+			echo "<tr><td align=right>$label_rank : </td><td align=left>$rank</td></tr>\n";
+			echo "<tr><td align=right>$label_owner : </td><td align=left>$owner</td></tr>\n";
+			echo "<tr><td align=right>$label_comments : </td><td align=left>$comments</td></tr>\n";
 			}
 		else
 			{
@@ -2862,215 +2656,6 @@ else
 		echo "<input type=hidden name=FORM_LOADED id=FORM_LOADED value=\"0\" />\n";
 		echo "<table cellpadding=1 cellspacing=0>\n";
 		}
-		
-		// echo '<div class="mt-3 text-center">';
-		// echo '<a href="javascript:void(0);" class="text-muted text-decoration-underline">View all Events</a>';
-		// echo '</div>';
-		
-		echo '</div><!-- end cardbody -->';
-		echo '</div><!-- end card -->';
-		echo '</div><!-- end col -->';
-		echo '</div><!-- end row -->';
-		
-		echo '<div class="row">';
-		echo '<div class="col-xl-12">';
-		echo '<div class="card card-height-100">';
-		echo '<div class="card-header d-flex align-items-center">';
-		echo "<h4 class=\"card-title flex-grow-1 mb-0\">"._QXZ("AGENT LOG RECORDS FOR THIS LEAD")."</h4>";
-		echo '<div class="flex-shrink-0">';
-		echo '<a href="javascript:void(0);" class="btn btn-soft-info btn-sm material-shadow-none">Export Report</a>';
-		echo '</div>';
-		echo '</div><!-- end cardheader -->';
-		echo '<div class="card-body">';
-		echo '<div class="table-responsive table-card">';
-		echo '<table class="table table-nowrap table-centered align-middle">';
-		echo '<thead class="bg-light text-muted">';
-		echo '<tr>';
-		echo "<th scope=\"col\">#</th>";
-		echo "<th scope=\"col\">"._QXZ("DATE/TIME")."</th>";
-		echo "<th scope=\"col\">"._QXZ("CAMPAIGN")."</th>";
-		echo "<th scope=\"col\">"._QXZ("TSR")."</th>";
-		echo "<th scope=\"col\">"._QXZ("PAUSE")."</th>";
-		echo "<th scope=\"col\">"._QXZ("WAIT")."</th>";
-		echo "<th scope=\"col\">"._QXZ("TALK")."</th>";
-		echo "<th scope=\"col\">"._QXZ("DISPO")."</th>";
-		echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
-		echo "<th scope=\"col\">"._QXZ("GROUP")."</th>";
-		echo "<th scope=\"col\" style=\"width: 10%;\">"._QXZ("SUB")."</th>";
-		echo '</tr><!-- end tr -->';
-		echo '</thead><!-- thead -->';
-		
-		echo '<tbody>';
-		
-		echo "$agent_log\n";
-		
-		echo '</tbody><!-- end tbody -->';
-		echo '</table><!-- end table -->';
-		echo '</div>';
-		
-		
-		
-		echo '</div><!-- end card body -->';
-		echo '</div><!-- end card -->';
-		echo '</div><!-- end col -->';
-		
-		
-		// echo '</div><!-- end row -->';
-		// 
-		// echo '</div>';
-		// echo '<!-- container-fluid -->';
-		// echo '</div>';
-		// echo '<!-- End Page-content -->';
-		// 
-		// echo '<footer class="footer">';
-		// echo '<div class="container-fluid">';
-		// echo '<div class="row">';
-		// echo '<div class="col-sm-6">';
-		// echo '<script>document.write(new Date().getFullYear())</script> © Velzon.';
-		// echo '</div>';
-		// echo '<div class="col-sm-6">';
-		// echo '<div class="text-sm-end d-none d-sm-block">';
-		// echo 'Design & Develop by Themesbrand';
-		// echo '</div>';
-		// echo '</div>';
-		// echo '</div>';
-		// echo '</div>';
-		// echo '</footer>';
-		// echo '</div>';
-		// echo '<!-- end main content-->';
-
-
-
-
-
-		echo "<br><br><form action=$PHP_SELF method=POST>\n";
-		echo "<input type=hidden name=end_call value=1>\n";
-		echo "<input type=hidden name=DB value=\"$DB\">\n";
-		echo "<input type=hidden name=lead_id value=\"$lead_id\">\n";
-		echo "<input type=hidden name=dispo value=\"$dispo\">\n";
-		echo "<input type=hidden name=list_id value=\"$list_id\">\n";
-		echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
-		echo "<input type=hidden name=old_phone value=\"$phone_number\">\n";
-		echo "<input type=hidden name=server_ip value=\"$server_ip\">\n";
-		echo "<input type=hidden name=extension value=\"$extension\">\n";
-		echo "<input type=hidden name=channel value=\"$channel\">\n";
-		echo "<input type=hidden name=call_began value=\"$call_began\">\n";
-		echo "<input type=hidden name=parked_time value=\"$parked_time\">\n";
-		echo "<input type=hidden name=FORM_LOADED id=FORM_LOADED value=\"0\" />\n";
-		echo "<table cellpadding=1 cellspacing=0>\n";
-		// echo "<tr><td colspan=2>$label_lead_id: $lead_id &nbsp; &nbsp; $label_list_id:  $list_id &nbsp; &nbsp; <font size=2>$label_gmt_offset_now: $gmt_offset_now &nbsp; &nbsp; $label_called_since_last_reset: $called_since_last_reset</td></tr>\n";
-		// echo "<tr><td colspan=2>$label_user: <A HREF=\"user_stats.php?user=$tsr\">$tsr</A> &nbsp; &nbsp; $label_called_count: $called_count <font size=2>("._QXZ("today").": $call_count_today)</font> &nbsp; &nbsp; $label_last_local_call_time: $last_local_call_time</td></tr>\n";
-		if ($archive_search=="Yes") 
-			{
-			echo "<tr><td colspan=2 align='center'>";
-			echo "<B><font color='#FF0000'>*** "._QXZ("ARCHIVED LEAD")." ***</font></B>";
-			echo "<input type='hidden' name='archive_search' value='Yes'>";
-			echo "</td></tr>\n";
-			}
-		if ($archive_log=="Yes") 
-			{
-			echo "<tr><td colspan=2 align='center'>";
-			echo "<B><font color='#FF0000'>*** "._QXZ("ARCHIVED LOG SEARCH ENABLED")." ***</font></B> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=No&CIDdisplay=$CIDdisplay\">"._QXZ("Turn off archived logs display")."</a><BR>";
-			echo "<B><font color='#FF0000'>*** "._QXZ("ARCHIVED LOGS SHOWN IN RED, THERE MAY BE DUPLICATES WITH NON-ARCHIVED LOG ENTRIES")." ***</font></B>";
-			echo "<input type='hidden' name='archive_log' value='Yes'>";
-			echo "</td></tr>\n";
-			}
-		else
-			{
-			// echo "<tr><td colspan=2 align='center'>";
-			// echo "<a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=Yes&CIDdisplay=$CIDdisplay\">"._QXZ("Turn on archived logs display")."</a>";
-			// echo "</td></tr>\n";
-			}
-
-		if ($lead_id == 'NEW') {$list_id='';}
-
-	// 	if ($LOGadmin_hide_lead_data != '0')
-	// 		{
-	// 		echo "<tr><td align=right>$label_title: </td><td align=left>$title &nbsp; \n";
-	// 		echo "$label_first_name: $first_name </td></tr>\n";
-	// 		echo "<tr><td align=right>$label_middle_initial:  </td><td align=left>$middle_initial &nbsp; \n";
-	// 		echo " $label_last_name: $last_name </td></tr>\n";
-	// 		echo "<tr><td align=right>$label_address1 : </td><td align=left>$address1</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_address2 : </td><td align=left>$address2</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_address3 : </td><td align=left>$address3</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_city : </td><td align=left>$city</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_state: </td><td align=left>$state &nbsp; \n";
-	// 		echo " $label_postal_code: $postal_code </td></tr>\n";
-
-	// 		echo "<tr><td align=right>$label_province : </td><td align=left>$province</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_country_code : </td><td align=left>$country_code &nbsp; \n";
-	// 		echo " $label_date_of_birth: $date_of_birth </td></tr>\n";
-	// 		echo "<tr><td align=right>$label_phone_number : </td><td align=left>$phone_number</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_phone_code : </td><td align=left>$phone_code</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_alt_phone : </td><td align=left>$alt_phone</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_email : </td><td align=left>$email</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_security_phrase : </td><td align=left>$security</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_vendor_lead_code : </td><td align=left>$vendor_id></td></tr>\n";
-	// 		if ($SSsource_id_display > 0)
-	// 			{echo "<tr><td align=right>$label_source_id : </td><td align=left>$source_id></td></tr>\n";}
-	// 		echo "<tr><td align=right>$label_rank : </td><td align=left>$rank</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_owner : </td><td align=left>$owner</td></tr>\n";
-	// 		echo "<tr><td align=right>$label_comments : </td><td align=left>$comments</td></tr>\n";
-	// 		}
-	// 	else
-	// 		{
-	// 		echo "<tr><td align=right>$label_title: </td><td align=left><input type=text name=title id=title size=4 maxlength=$MAXtitle value=\"$title\"> &nbsp; \n";
-	// 		echo "$label_first_name: <input type=text name=first_name id=first_name size=15 maxlength=$MAXfirst_name value=\"".htmlparse($first_name)."\"> </td></tr>\n";
-	// 		echo "<tr><td align=right>$label_middle_initial:  </td><td align=left><input type=text name=middle_initial id=middle_initial size=4 maxlength=$MAXmiddle_initial value=\"".htmlparse($middle_initial)."\"> &nbsp; \n";
-	// 		echo " $label_last_name: <input type=text name=last_name id=last_name size=15 maxlength=$MAXlast_name value=\"".htmlparse($last_name)."\"> </td></tr>\n";
-	// 		echo "<tr><td align=right>$label_address1 : </td><td align=left><input type=text name=address1 id=address1 size=40 maxlength=$MAXaddress1 value=\"".htmlparse($address1)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_address2 : </td><td align=left><input type=text name=address2 id=address2 size=40 maxlength=$MAXaddress2 value=\"".htmlparse($address2)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_address3 : </td><td align=left><input type=text name=address3 id=address3 size=40 maxlength=$MAXaddress3 value=\"".htmlparse($address3)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_city : </td><td align=left><input type=text name=city id=city size=40 maxlength=$MAXcity value=\"".htmlparse($city)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_state: </td><td align=left><input type=text name=state id=state size=2 maxlength=$MAXstate value=\"".htmlparse($state)."\"> &nbsp; \n";
-	// 		echo " $label_postal_code: <input type=text name=postal_code id=postal_code size=10 maxlength=$MAXpostal_code value=\"".htmlparse($postal_code)."\"> </td></tr>\n";
-
-	// 		echo "<tr><td align=right>$label_province : </td><td align=left><input type=text name=province id=province size=40 maxlength=$MAXprovince value=\"".htmlparse($province)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_country_code : </td><td align=left><input type=text name=country_code id=country_code size=3 maxlength=$MAXcountry_code value=\"".htmlparse($country_code)."\"> &nbsp; \n";
-	// 		echo " $label_date_of_birth: <input type=text name=date_of_birth id=date_of_birth size=12 maxlength=10 value=\"".htmlparse($date_of_birth)."\"></td></tr>\n";
-
-	// 		if ( ($LOGmodify_leads == '1') or ($LOGmodify_leads == '3') or ($lead_id == 'NEW') )
-	// 			{
-	// 			echo "<tr><td align=right>$label_phone_number : </td><td align=left><input type=text name=phone_number id=phone_number size=18 maxlength=$MAXphone_number value=\"".htmlparse($phone_number)."\"></td></tr>\n";
-	// 			echo "<tr><td align=right>$label_phone_code : </td><td align=left><input type=text name=phone_code id=phone_code size=10 maxlength=$MAXphone_code value=\"".htmlparse($phone_code)."\"></td></tr>\n";
-	// 			echo "<tr><td align=right>$label_alt_phone : </td><td align=left><input type=text name=alt_phone id=alt_phone size=12 maxlength=$MAXalt_phone value=\"".htmlparse($alt_phone)."\"></td></tr>\n";
-	// 			}
-	// 		else
-	// 			{
-	// 			echo "<tr><td align=right>$label_phone_number : </td><td align=left><input type=hidden name=phone_number value=\"".htmlparse($phone_number)."\">".htmlparse($phone_number)."</td></tr>\n";
-	// 			echo "<tr><td align=right>$label_phone_code : </td><td align=left><input type=hidden name=phone_code value=\"".htmlparse($phone_code)."\">".htmlparse($phone_code)."</td></tr>\n";
-	// 			echo "<tr><td align=right>$label_alt_phone : </td><td align=left><input type=hidden name=alt_phone value=\"".htmlparse($alt_phone)."\">".htmlparse($alt_phone)."</td></tr>\n";
-	// 			}
-
-	// 		echo "<tr><td align=right>$label_email : </td><td align=left><input type=text name=email size=40 maxlength=$MAXemail value=\"".htmlparse($email)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_security_phrase : </td><td align=left><input type=text name=security id=security_phrase size=30 maxlength=$MAXsecurity_phrase value=\"".htmlparse($security)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_vendor_lead_code : </td><td align=left><input type=text name=vendor_id id=vendor_lead_code size=30 maxlength=$MAXvendor_lead_code value=\"".htmlparse($vendor_id)."\"></td></tr>\n";
-	// 		if ($SSsource_id_display > 0)
-	// 			{echo "<tr><td align=right>$label_source_id : </td><td align=left><input type=text name=source_id id=source_id size=30 maxlength=$MAXsource_id value=\"".htmlparse($source_id)."\"></td></tr>\n";}
-	// 		echo "<tr><td align=right>$label_rank : </td><td align=left><input type=text name=rank id=rank size=7 maxlength=5 value=\"".htmlparse($rank)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_owner : </td><td align=left><input type=text name=owner id=owner size=22 maxlength=$MAXowner value=\"".htmlparse($owner)."\"></td></tr>\n";
-	// 		echo "<tr><td align=right>$label_comments : </td><td align=left><TEXTAREA name=comments id=comments ROWS=3 COLS=65>".htmlparse($comments)."</TEXTAREA></td></tr>\n";
-	// 		}
-	// 	}
-	// else
-	// 	{
-	// 	echo "<!-- "._QXZ("no lead fields form display lead does not exist")." -->\n";
-	// 	echo "<br><br><form action=$PHP_SELF method=POST>\n";
-	// 	echo "<input type=hidden name=end_call value=1>\n";
-	// 	echo "<input type=hidden name=DB value=\"$DB\">\n";
-	// 	echo "<input type=hidden name=lead_id value=\"$lead_id\">\n";
-	// 	echo "<input type=hidden name=dispo value=\"$dispo\">\n";
-	// 	echo "<input type=hidden name=list_id value=\"$list_id\">\n";
-	// 	echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
-	// 	echo "<input type=hidden name=old_phone value=\"$phone_number\">\n";
-	// 	echo "<input type=hidden name=server_ip value=\"$server_ip\">\n";
-	// 	echo "<input type=hidden name=extension value=\"$extension\">\n";
-	// 	echo "<input type=hidden name=channel value=\"$channel\">\n";
-	// 	echo "<input type=hidden name=call_began value=\"$call_began\">\n";
-	// 	echo "<input type=hidden name=parked_time value=\"$parked_time\">\n";
-	// 	echo "<input type=hidden name=FORM_LOADED id=FORM_LOADED value=\"0\" />\n";
-	// 	echo "<table cellpadding=1 cellspacing=0>\n";
-	// 	}
 
 	if ($lead_id != 'NEW') 
 		{
@@ -3113,7 +2698,7 @@ else
 			echo "<tr><td align=center></td><td><hr></td></tr>\n";
 			}
 
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=right>"._QXZ("Disposition").": </td><td align=left><select size=1 name=status>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=right>"._QXZ("Disposition").": </td><td align=left><select size=1 name=status>\n";
 
 		### find out if status(dispo) is a scheduled callback status
 		$scheduled_callback='';
@@ -3209,15 +2794,15 @@ else
 			{$statuses_list .= "<option SELECTED value=\"$dispo\">$dispo</option>\n";}
 		if ($CBhold_set < 1)
 			{$statuses_list .= "<option value=\"CBHOLD\">CBHOLD - "._QXZ("Scheduled Callback")."</option>\n";}
-		// echo "$statuses_list";
-		// echo "</select> <i>("._QXZ("with")." $list_campaign "._QXZ("statuses").")</i></td></tr>\n";
+		echo "$statuses_list";
+		echo "</select> <i>("._QXZ("with")." $list_campaign "._QXZ("statuses").")</i></td></tr>\n";
 
 
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify vicidial log")." </td><td align=left><input type=checkbox name=modify_logs value=\"1\" CHECKED></td></tr>\n";
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify agent log")." </td><td align=left><input type=checkbox name=modify_agent_logs value=\"1\" CHECKED></td></tr>\n";
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify closer log")." </td><td align=left><input type=checkbox name=modify_closer_logs value=\"1\"></td></tr>\n";
-		// echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Add closer log record")." </td><td align=left><input type=checkbox name=add_closer_record value=\"1\"></td></tr>\n";
-		 }
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify vicidial log")." </td><td align=left><input type=checkbox name=modify_logs value=\"1\" CHECKED></td></tr>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify agent log")." </td><td align=left><input type=checkbox name=modify_agent_logs value=\"1\" CHECKED></td></tr>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Modify closer log")." </td><td align=left><input type=checkbox name=modify_closer_logs value=\"1\"></td></tr>\n";
+		echo "<tr bgcolor=#".$SSstd_row4_background."><td align=left>"._QXZ("Add closer log record")." </td><td align=left><input type=checkbox name=add_closer_record value=\"1\"></td></tr>\n";
+		}
 	else
 		{
 		echo "<input type=hidden name=status value=\"NEW\">\n";
@@ -3237,7 +2822,7 @@ else
 	if ($lead_id != 'NEW') 
 		{
 		echo "<TABLE BGCOLOR=#".$SSstd_row4_background." WIDTH=750><TR><TD>\n";
-		// echo _QXZ("Callback Details").":<BR>\n";
+		echo _QXZ("Callback Details").":<BR>\n";
 		if ( ($dispo == 'CALLBK') or ($dispo == 'CBHOLD') or ($scheduled_callback == 'Y') )
 			{
 			### find any vicidial_callback records for this lead 
@@ -3469,7 +3054,7 @@ else
 			}
 		else
 			{
-			// echo "<BR>"._QXZ("If you want to change this lead to a scheduled callback, first change the Disposition to CBHOLD, then submit and you will be able to set the callback date and time").".<BR>\n";
+			echo "<BR>"._QXZ("If you want to change this lead to a scheduled callback, first change the Disposition to CBHOLD, then submit and you will be able to set the callback date and time").".<BR>\n";
 			echo "</TD></TR></table>\n";
 
 			echo "<br><br>\n";
@@ -3600,12 +3185,12 @@ else
 			}
 
 
-		// echo "<B>"._QXZ("CALLS TO THIS LEAD").":</B>\n";
+		echo "<B>"._QXZ("CALLS TO THIS LEAD").":</B>\n";
 		if ($CIDdisplay=="Yes")
 			{
 			$out_log_width=1300;
 			if ($AMDcount > 0) {$out_log_width=1500;}
-			// echo "<TABLE width=$out_log_width cellspacing=0 cellpadding=1>\n";
+			echo "<TABLE width=$out_log_width cellspacing=0 cellpadding=1>\n";
 			echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("LENGTH")."</td><td align=left><font size=2> "._QXZ("STATUS")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=right><font size=2> "._QXZ("CAMPAIGN")."</td><td align=right><font size=2> "._QXZ("LIST")."</td><td align=right><font size=2> "._QXZ("LEAD")."</td><td align=right><font size=2> "._QXZ("HANGUP REASON")."</td><td align=center><font size=2> "._QXZ("PHONE")."</td><td align=center><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("UNIQUEID")."</a></td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("SERVER IP")."</a></td>";
 			if ($AMDcount > 0)
 				{echo "<td align=right><font size=2> "._QXZ("AMD STATUS")."</td><td align=right><font size=2> "._QXZ("AMD RESPONSE")."</td>";}
@@ -3613,54 +3198,14 @@ else
 			}
 		else
 			{
+			echo "<TABLE width=850 cellspacing=0 cellpadding=1>\n";
+			echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("LENGTH")."</td><td align=left><font size=2> "._QXZ("STATUS")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=right><font size=2> "._QXZ("CAMPAIGN")."</td><td align=right><font size=2> "._QXZ("LIST")."</td><td align=right><font size=2> "._QXZ("LEAD")."</td><td align=right><font size=2> "._QXZ("HANGUP REASON")."</td><td align=center><font size=2> "._QXZ("PHONE")."</td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></td></tr>\n";
+			}
 
-				echo '<div class="row">';
-				echo '<div class="col-xl-12">';
-				echo '<div class="card card-height-100">';
-				echo '<div class="card-header d-flex align-items-center">';
-				echo "<h4 class=\"card-title flex-grow-1 mb-0\">"._QXZ("CALLS TO THIS LEAD")."</h4>";
-				echo '<div class="flex-shrink-0">';
-				echo '<a href="javascript:void(0);" class="btn btn-soft-info btn-sm material-shadow-none">Export Report</a>';
-				echo '</div>';
-				echo '</div><!-- end cardheader -->';
-				echo '<div class="card-body">';
-				echo '<div class="table-responsive table-card">';
-				echo '<table class="table table-nowrap table-centered align-middle">';
-				echo '<thead class="bg-light text-muted">';
-				echo '<tr>';
-				echo "<th scope=\"col\">#</th>";
-				echo "<th scope=\"col\">"._QXZ("DATE/TIME")."</th>";
-				echo "<th scope=\"col\">"._QXZ("LENGTH")."</th>";
-				echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
-				echo "<th scope=\"col\">"._QXZ("TSR")."</th>";
-				echo "<th scope=\"col\">"._QXZ("CAMPAIGN")."</th>";
-				echo "<th scope=\"col\">"._QXZ("LIST")."</th>";
-				echo "<th scope=\"col\">"._QXZ("LEAD")."</th>";
-				echo "<th scope=\"col\">"._QXZ("HANGUP REASON")."</th>";
-				echo "<th scope=\"col\">"._QXZ("PHONE")."</th>";
-				echo "<th scope=\"col\" style=\"width: 10%;\"><a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></th>";
-				echo '</tr><!-- end tr -->';
-				echo '</thead><!-- thead -->';
-				
-				echo '<tbody>';
-				
-				echo "$call_log\n";
-				
-				echo '</tbody><!-- end tbody -->';
-				echo '</table><!-- end table -->';
-				echo '</div>';
-				echo '</div><!-- end card body -->';
-				echo '</div><!-- end card -->';
-				echo '</div><!-- end col -->';
+		echo "$call_log\n";
 
-			// echo "<TABLE width=850 cellspacing=0 cellpadding=1>\n";
-			// echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("LENGTH")."</td><td align=left><font size=2> "._QXZ("STATUS")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=right><font size=2> "._QXZ("CAMPAIGN")."</td><td align=right><font size=2> "._QXZ("LIST")."</td><td align=right><font size=2> "._QXZ("LEAD")."</td><td align=right><font size=2> "._QXZ("HANGUP REASON")."</td><td align=center><font size=2> "._QXZ("PHONE")."</td><td align=right><font size=2> <a href=\"$PHP_SELF?lead_id=$lead_id&archive_search=$archive_search&archive_log=$archive_log&CIDdisplay=$altCIDdisplay\">"._QXZ("CALLER ID")."</a></td></tr>\n";
-			 }
-
-		// echo "$call_log\n";
-
-		// echo "</TABLE>\n";
-		// echo "<BR><BR>\n";
+		echo "</TABLE>\n";
+		echo "<BR><BR>\n";
 
 		echo "<B>"._QXZ("CLOSER RECORDS FOR THIS LEAD").":</B>\n";
 		if ($CIDdisplay=="Yes")
@@ -3680,45 +3225,14 @@ else
 		echo "<BR><BR>\n";
 
 
-		// echo "<B>"._QXZ("AGENT LOG RECORDS FOR THIS LEAD").":</B>\n";
+		echo "<B>"._QXZ("AGENT LOG RECORDS FOR THIS LEAD").":</B>\n";
+		echo "<TABLE width=750 cellspacing=0 cellpadding=1>\n";
+		echo "<tr><td><font size=1># </td><td><font size=2>"._QXZ("DATE/TIME")." </td><td align=left><font size=2>"._QXZ("CAMPAIGN")."</td><td align=left><font size=2> "._QXZ("TSR")."</td><td align=left><font size=2> "._QXZ("PAUSE")."</td><td align=right><font size=2> "._QXZ("WAIT")."</td><td align=right><font size=2> "._QXZ("TALK")."</td><td align=right><font size=2> "._QXZ("DISPO")."</td><td align=right><font size=2> "._QXZ("STATUS")."</td><td align=right><font size=2> "._QXZ("GROUP")."</td><td align=right><font size=2> "._QXZ("SUB")."</td></tr>\n";
 
-		// echo '<div class="row">';
-		// echo '<div class="col-xl-12">';
-		// echo '<div class="card card-height-100">';
-		// echo '<div class="card-header d-flex align-items-center">';
-		// echo "<h4 class=\"card-title flex-grow-1 mb-0\">"._QXZ("AGENT LOG RECORDS FOR THIS LEAD")."</h4>";
-		// echo '<div class="flex-shrink-0">';
-		// echo '<a href="javascript:void(0);" class="btn btn-soft-info btn-sm material-shadow-none">Export Report</a>';
-		// echo '</div>';
-		// echo '</div><!-- end cardheader -->';
-		// echo '<div class="card-body">';
-		// echo '<div class="table-responsive table-card">';
-		// echo '<table class="table table-nowrap table-centered align-middle">';
-		// echo '<thead class="bg-light text-muted">';
-		// echo '<tr>';
-		// echo "<th scope=\"col\">"._QXZ("DATE/TIME")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("CAMPAIGN")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("TSR")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("PAUSE")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("WAIT")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("TALK")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("DISPO")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("STATUS")."</th>";
-		// echo "<th scope=\"col\">"._QXZ("GROUP")."</th>";
-		// echo "<th scope=\"col\" style=\"width: 10%;\">"._QXZ("SUB")."</th>";
-		// echo '</tr><!-- end tr -->';
-		// echo '</thead><!-- thead -->';
-		
-		// echo '<tbody>';
-		// echo '<tr>';
+			echo "$agent_log\n";
 
-		// // echo "<TABLE width=750 cellspacing=0 cellpadding=1>\n";
-		// echo "<tr><td># </td><td>"._QXZ("DATE/TIME")." </td><td align=left>"._QXZ("CAMPAIGN")."</td><td align=left> "._QXZ("TSR")."</td><td align=left> "._QXZ("PAUSE")."</td><td align=right><font size=2> "._QXZ("WAIT")."</td><td align=right><font size=2> "._QXZ("TALK")."</td><td align=right><font size=2> "._QXZ("DISPO")."</td><td align=right><font size=2> "._QXZ("STATUS")."</td><td align=right><font size=2> "._QXZ("GROUP")."</td><td align=right><font size=2> "._QXZ("SUB")."</td></tr>\n";
-
-		// 	echo "$agent_log\n";
-
-		// echo "</TABLE>\n";
-		// echo "<BR><BR>\n";
+		echo "</TABLE>\n";
+		echo "<BR><BR>\n";
 
 
 		echo "<B>"._QXZ("PARK LOGS FOR THIS LEAD").":</B>\n";
@@ -4229,7 +3743,7 @@ else
 				{
 				if ($log_recording_access<1) 
 					{
-					$play_audio = "<td align=left><font size=2> <audio controls preload=\"none\"> <source src ='$location' type='audio/mpeg' > <source src ='$location' type='audio/mpeg' >"._QXZ("No browser audio playback support")."</audio> </td>\n";
+					$play_audio = "<td align=left><font size=2> <audio controls preload=\"none\"> <source src ='$location' type='audio/mp3' > <source src ='$location' type='audio/mpeg' >"._QXZ("No browser audio playback support")."</audio> </td>\n";
 					$location = "<a href=\"$location\">$locat</a>";
 					}
 				else
@@ -4324,7 +3838,7 @@ else
 				{
 				if ($log_recording_access<1) 
 					{
-					$play_audio = "<td align=left><font size=2> <audio controls preload=\"none\"> <source src ='$location' type='audio/mp3' > <source src ='$location' type='audio/mp3' >"._QXZ("No browser audio playback support")."</audio> </td>\n";
+					$play_audio = "<td align=left><font size=2> <audio controls preload=\"none\"> <source src ='$location' type='audio/mpeg' > <source src ='$location' type='audio/mpeg' >"._QXZ("No browser audio playback support")."</audio> </td>\n";
 					$location = "<a href=\"$location\">$locat</a>";
 					}
 				else

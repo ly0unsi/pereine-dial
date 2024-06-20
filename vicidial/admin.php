@@ -8261,7 +8261,7 @@ if ($ADD==7111111)
 
 	echo "</head>\n";
 	echo "<BODY BGCOLOR=white marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>\n";
-	echo '<div class="main-content">';
+	// echo '<div class="main-content">';
 	echo '<div class="container-fluid">';
 	echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
@@ -8420,10 +8420,16 @@ if ($ADD==7111111)
 	$script_text = preg_replace('/\n/i', "<BR>",$script_text);
 
 
-	echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+	// echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
-	echo _QXZ("Preview Script").": $script_id<BR>\n";
-	echo "<TABLE WIDTH=600";
+	// echo _QXZ("Preview Script").": $script_id<BR>\n";
+
+	echo '<!-- Secondary Alert -->';
+	echo '<div class="alert alert-secondary material-shadow" role="alert">';
+	echo "<strong>". _QXZ("Preview Script")." : $script_id </strong> ";
+	echo '</div>';
+	echo "<center>";
+	echo "<TABLE";
 	if (strlen($script_color)>1) {echo " bgcolor=\"$script_color\"";}
 	echo "><TR><TD>\n";
 	echo "<center><B>$script_name</B><BR></center>\n";
@@ -8431,7 +8437,7 @@ if ($ADD==7111111)
 	echo "</TD></TR></TABLE></center>\n";
 
 	echo "</BODY></HTML>\n";
-
+echo "</center>";
 	exit;
 	}
 
@@ -31854,6 +31860,8 @@ if ($ADD==31)
 				{
 				echo "<br><b>"._QXZ("LISTS WITHIN THIS CAMPAIGN").": &nbsp; $NWB#campaign_lists$NWE</b>\n";
 	
+
+				
 				echo "<TABLE><TR><TD>\n";
 					echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
@@ -33043,6 +33051,9 @@ if ($ADD==31)
 	
 	if ($ADD==34)
 		{
+			echo "<div class=\"main-content\">";
+			echo '<div class="page-content">';
+			// echo '<div class="container-fluid">'; 
 		if ($LOGmodify_campaigns==1)
 			{
 			if ( ($SSadmin_modify_refresh > 1) and ($modify_refresh_set < 1) )
@@ -33797,10 +33808,14 @@ if ($ADD==31)
 			echo "<input type=hidden name=DB value=$DB>\n";
 			echo "<input type=hidden name=stage value=list_activation>\n";
 			echo "<input type=hidden name=campaign_id value=\"$campaign_id\">\n";
-			echo "<br><b>"._QXZ("LISTS WITHIN THIS CAMPAIGN").": &nbsp; </b>\n";
+			// echo "<br><b>"._QXZ("LISTS WITHIN THIS CAMPAIGN").": &nbsp; </b>\n";
 			// $NWB#campaign_lists$NWE
-	
-			
+			echo "<center>";
+			echo '<!-- Secondary Alert -->';
+			echo '<div class="alert alert-secondary material-shadow" role="alert">';
+			echo "<strong> "._QXZ("LISTS WITHIN THIS CAMPAIGN")." </strong> ";
+			echo '</div>';
+			echo "</center>";
 				echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 	
 			$LISTlink='stage=LISTIDDOWN';
@@ -33839,7 +33854,7 @@ if ($ADD==31)
 			echo '<th>'._QXZ("DESCRIPTION").'</th>';
 			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$TALLYlink.'" class="text-white">'._QXZ("LEADS COUNT").'</a></th>';
 			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$CALLTIMElink.'" class="text-white">'._QXZ("Call Time").'</a></th>';
-			echo '<th colspan="3"><a href="'.$PHP_SELF.'?ADD=31&campaign_id='.$campaign_id.'&'.$ACTIVElink.'" class="text-white">'._QXZ("ACTIVE").'</a></th>';
+			echo '<th colspan="3"><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$LISTlink.'" class="text-white">'._QXZ("ACTIVE").'</a></th>';
 			echo '<th><a href="'.$PHP_SELF.'?ADD=34&campaign_id='.$campaign_id.'&'.$CALLDATElink.'" class="text-white">'._QXZ("LAST CALL DATE").'</a></th>';
 			echo '<th>'._QXZ("MODIFY").'</th>';
 			echo '</tr>';
@@ -34053,9 +34068,15 @@ if ($ADD==31)
 	
 			### list of agent rank or skill-level for this campaign
 			echo "<center>\n";
-			echo "<br><b>"._QXZ("AGENT RANKS FOR THIS CAMPAIGN").":</b><br>\n";
-			echo "<TABLE width=600 cellspacing=3>\n";
-			echo "<tr><td>"._QXZ("USER")."</td><td> &nbsp; &nbsp; "._QXZ("RANK")."</td><td> &nbsp; &nbsp; "._QXZ("GRADE")."</td><td> &nbsp; &nbsp; "._QXZ("CALLS TODAY")."</td></tr>\n";
+			// echo ""._QXZ("AGENT RANKS FOR THIS CAMPAIGN").":\n";
+			echo '<!-- Secondary Alert -->';
+			echo '<div class="alert alert-secondary material-shadow" role="alert">';
+			echo "<strong> "._QXZ("AGENT RANKS FOR THIS CAMPAIGN")." </strong> ";
+			echo '</div>';
+
+
+			echo "<TABLE class=\"table table-bordered table-hover bg-primary\" >\n";
+			echo "<tr class=\"text-white\"><td>"._QXZ("USER")."</td><td> &nbsp; &nbsp; "._QXZ("RANK")."</td><td> &nbsp; &nbsp; "._QXZ("GRADE")."</td><td> &nbsp; &nbsp; "._QXZ("CALLS TODAY")."</td></tr>\n";
 	
 			$stmt="SELECT vu.user,vca.campaign_rank,vca.calls_today,full_name,vca.campaign_grade from vicidial_campaign_agents vca, vicidial_users vu where campaign_id='$campaign_id' and active='Y' and vu.user=vca.user $LOGadmin_viewable_groupsSQL order by vu.user;";
 			$rsltx=mysql_to_mysqli($stmt, $link);
@@ -42909,9 +42930,9 @@ if ($ADD==31)
 			
 			echo "<label for=\"ForminputState\" class=\"form-label\">"._QXZ("Active")."</label>";
 			echo '<select name="active" class="form-select" >';
-			echo "<option value='Y' SELECTED>"._QXZ("Y")."</option>";
+			echo "<option value='$active' SELECTED>"._QXZ("Y")."</option>";
 			echo "<option value='N'>"._QXZ("N")."</option>";
-			echo "<option value='$active' selected>"._QXZ("$active")."</option>";
+			// echo "<option value='$active' selected>"._QXZ("$active")."</option>";
 			echo '</select>';
 			echo '</div>';
 			echo '</div>';
@@ -43019,9 +43040,9 @@ if ($ADD==31)
 
 			echo '<div class="col-md-6 relative">';
 			echo "<div class=\"mb-3\" >";
-		//    echo ""._QXZ("Script Color")." <font size=2>(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)<td align=left bgcolor=\"$script_color\" id=\"script_color_td\"><input type=text name=script_color id=script_color size=7 maxlength=20 value=\"$script_color\"> $NWB#scripts-script_color$NWE</td></tr>\n";
-			echo "<label for=\"emailidInput\" class=\"form-label\">"._QXZ("Script Color")."(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)</label>";
-			echo "<font id=\"script_color\" ><input id=\"script_color_td\" bgcolor=\"$script_color\"  type=text name=\"script_color\" class=\"form-control\" value=\"$script_color\" ></font>";
+		    echo "<label for=\"emailidInput\" class=\"form-label\">"._QXZ("Script Color")." <font size=2>(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)<td align=left bgcolor=\"$script_color\" id=\"script_color_td\"></label><input bgcolor=\"$script_color\" class=\"form-control\" type=text name=script_color id=script_color size=7 maxlength=20 value=\"$script_color\"> $NWB#scripts-script_color$NWE</td></tr>\n";
+			// echo "<label for=\"emailidInput\" class=\"form-label\">"._QXZ("Script Color")."(<a href=\"javascript:launch_color_chooser('script_color','color','1');\">"._QXZ("color chooser")."</a>)</label>";
+			 echo "<font id=\"script_color\" ><input id=\"script_color_td\" bgcolor=\"$script_color\"  type=text name=\"script_color\" class=\"form-control\" value=\"$script_color\" ></font>";
 			echo '</div>';
 			
 
@@ -53365,6 +53386,9 @@ if ($ADD==31)
 	######################
 	if ($ADD==720000000000000)
 		{
+			echo '<div class="main-content">';
+// echo '<div class="page-content">';
+// echo '<div class="container-fluid">';
 		if ( ($LOGuser_level >= 9) and ( (preg_match("/Administration Change Log/",$LOGallowed_reports)) or (preg_match("/ALL REPORTS/",$LOGallowed_reports)) ) )
 			{
 			echo "<TABLE><TR><TD>\n";
